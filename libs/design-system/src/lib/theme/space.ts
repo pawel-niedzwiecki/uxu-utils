@@ -1,7 +1,8 @@
-
 export type Space = typeof space;
 
 export const space = {
-  s0: '0px',
-  s15: '15px',
-} as const
+  without: '0rem',
+  small: '0.5rem',
+  bases: '1.5rem',
+  big: '3rem',
+} as const;
