@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { ComponentStyle } from './commponent.flex.container.style';
 
-type Props = FC<{
+export type Props = {
   full?: boolean;
-}>;
+};
 
-export const Container: Props = ({ full }, props) => (
-  <ComponentStyle full={full} {...props}>
+export const Container: FC<Props> = ({ ...arg }, props) => (
+  <ComponentStyle full={arg.full} {...props}>
     {props.children}
   </ComponentStyle>
 );

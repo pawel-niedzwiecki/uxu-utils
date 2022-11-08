@@ -1,8 +1,5 @@
 import styled, { css } from 'styled-components';
-
-type Props = {
-  full?: boolean;
-};
+import { Props } from './commponent.flex.container';
 
 export const ComponentStyle = styled.div<Props>`
   ${({ theme: { space, content } }) => css`
