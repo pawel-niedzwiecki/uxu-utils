@@ -1,6 +1,5 @@
-import { theme } from 'theme';
-import { ThemeProvider as Provider } from 'styled-components';
+import { ThemeProvider } from './ThemeProvider';
 
-type ThemeProviderProps = { children: JSX.Element | JSX.Element[] };
+type WrapperProviderProps = { children: JSX.Element | JSX.Element[] };
 
-export const ThemeProvider = ({ children }: ThemeProviderProps) => <Provider theme={theme}>{children}</Provider>;
+export const WrapperProvider = ({ children }: WrapperProviderProps) => <ThemeProvider>{children}</ThemeProvider>;
