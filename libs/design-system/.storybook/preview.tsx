@@ -1,9 +1,9 @@
-import { ThemeProvider } from 'styled-components';
+import { WrapperProvider } from 'providers';
 
 export const decorators = [
-  (story) => (
-    <ThemeProvider theme="default">
+  (Story) => (
+    <WrapperProvider>
       <Story />
-    </ThemeProvider>
+    </WrapperProvider>
   ),
 ];
