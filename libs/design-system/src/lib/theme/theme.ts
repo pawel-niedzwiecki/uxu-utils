@@ -8,6 +8,8 @@ import { motion } from './motion';
 import { radii } from './radii';
 import { shadows } from './shadows';
 import { space } from './space';
+import { grid } from './grid';
+import { content } from './content';
 
 export { breakpoints } from './breakpoints';
 export { colors } from './colors';
@@ -19,7 +21,8 @@ export { motion } from './motion';
 export { radii } from './radii';
 export { shadows } from './shadows';
 export { space } from './space';
-
+export { grid } from './grid';
+export { content } from './content';
 
 export type Theme = typeof theme;
 
@@ -34,4 +37,6 @@ export const theme = {
   radii,
   shadows,
   space,
-} as const
+  grid,
+  content,
+} as const;

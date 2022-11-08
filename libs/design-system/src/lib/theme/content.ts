@@ -1,6 +1,5 @@
-export type Settings = typeof settings;
+export type Content = typeof content;
 
-export const settings = {
-  gridCol: 12,
+export const content = {
   maxWidth: '128rem',
 } as const;
