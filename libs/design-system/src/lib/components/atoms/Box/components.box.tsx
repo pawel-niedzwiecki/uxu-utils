@@ -1,5 +1,5 @@
-import styled from 'styled-components';
 import { forwardRef, Ref } from 'react';
+import styled from 'styled-components';
 import { borderRadius, boxShadow, color, space } from 'styled-system';
 
 import { BoxProps } from './props';

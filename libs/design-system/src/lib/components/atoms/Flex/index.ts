@@ -1,2 +1,1 @@
-export { Flex } from './Flex';
-export type { FlexProps } from './props';
+export * from './container/commponent.flex.container';

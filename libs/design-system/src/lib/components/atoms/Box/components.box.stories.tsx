@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { Text } from './components.text';
+import { Box } from './components.box';
 
 export default {
-  title: 'Text',
-  component: Text,
+  title: 'Box',
+  component: Box,
 };
 
-export const Primary = () => <Text />;
+export const Primary = () => <Box color="black" />;
