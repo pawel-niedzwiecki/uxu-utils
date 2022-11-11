@@ -1,37 +1,32 @@
-import { breakpoints } from './breakpoints';
-import { colors } from './colors';
-import { focuses } from './focuses';
-import { fontSizes } from './fontSizes';
-import { fontWeights } from './fontWeights';
-import { lineHeights } from './lineHeights';
-import { motion } from './motion';
-import { radii } from './radii';
-import { shadows } from './shadows';
-import { space } from './space';
+export * from './breakpoints';
+export type { Breakpoints } from './breakpoints';
 
-export { breakpoints } from './breakpoints';
-export { colors } from './colors';
-export { focuses } from './focuses';
-export { fontSizes } from './fontSizes';
-export { fontWeights } from './fontWeights';
-export { lineHeights } from './lineHeights';
-export { motion } from './motion';
-export { radii } from './radii';
-export { shadows } from './shadows';
-export { space } from './space';
+export * from './colors';
+export type { Colors } from './colors';
 
+export * from './fontSizes';
+export type { FontSizes } from './fontSizes';
 
-export type Theme = typeof theme;
+export * from './fontWeights';
+export type { FontWeights } from './fontWeights';
 
-export const theme = {
-  breakpoints,
-  colors,
-  focuses,
-  fontSizes,
-  fontWeights,
-  lineHeights,
-  motion,
-  radii,
-  shadows,
-  space,
-} as const
+export * from './lineHeights';
+export type { LineHeights } from './lineHeights';
+
+export * from './radii';
+export type { Radii } from './radii';
+
+export * from './shadows';
+export type { Shadows } from './shadows';
+
+export * from './space';
+export type { Space } from './space';
+
+export * from './grid';
+export { Grid } from './grid';
+
+export * from './content';
+export { Content } from './content';
+
+export * from './theme';
+export type { Theme } from './theme';

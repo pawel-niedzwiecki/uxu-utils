@@ -1,6 +1,7 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "jsx": "react",
     "emitDecoratorMetadata": true,
     "outDir": ""
   },
@@ -10,12 +11,7 @@
     "../../../node_modules/@nrwl/react/typings/image.d.ts"
   ],
 
-  "exclude": [
-    "../**/*.spec.ts",
-    "../**/*.spec.js",
-    "../**/*.spec.tsx",
-    "../**/*.spec.jsx"
-  ],
+  "exclude": ["../**/*.spec.ts", "../**/*.spec.js", "../**/*.spec.tsx", "../**/*.spec.jsx"],
   "include": [
     "../src/**/*.stories.ts",
     "../src/**/*.stories.js",
