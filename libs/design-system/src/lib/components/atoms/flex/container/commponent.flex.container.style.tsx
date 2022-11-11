@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
-import { Props } from './commponent.flex.container';
+import { ContainerProps } from './commponent.flex.container';
 
-export const ComponentStyle = styled.div<Props>`
+export const ContainerStyle = styled.div<ContainerProps>`
   ${({ theme: { space, content } }) => css`
     width: 100%;
     margin-left: auto;
