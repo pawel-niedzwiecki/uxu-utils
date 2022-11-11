@@ -25,6 +25,9 @@ export type { Space } from './space';
 export * from './grid';
 export { Grid } from './grid';
 
+export * from './flex';
+export { Flex } from './flex';
+
 export * from './content';
 export { Content } from './content';
 

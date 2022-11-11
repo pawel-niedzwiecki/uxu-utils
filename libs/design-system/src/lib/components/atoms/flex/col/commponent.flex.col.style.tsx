@@ -3,7 +3,7 @@ import { Props } from './commponent.flex.col';
 import { Breakpoints } from 'theme';
 
 export const ColStyle = styled.div<Props<Breakpoints> & { cols: Props<Breakpoints> }>`
-  ${({ theme: { space, breakpoints, grid }, ...props }) => css`
+  ${({ theme: { space, breakpoints, flex }, ...props }) => css`
     width: 100%;
     position: relative;
     padding-left: ${space.bases};
@@ -14,7 +14,7 @@ export const ColStyle = styled.div<Props<Breakpoints> & { cols: Props<Breakpoint
 
       return keysInProps.map((key) => {
         if (keysInBreakpoints.some((keyInBreakpoint) => keyInBreakpoint === key)) {
-          const countW = (100 * props.cols[key]) / grid.col;
+          const countW = (100 * props.cols[key]) / flex.col;
           const w = countW % 1 === 0 ? countW : countW.toFixed(4);
           const styleCol = css`
             flex: ${w}%;
