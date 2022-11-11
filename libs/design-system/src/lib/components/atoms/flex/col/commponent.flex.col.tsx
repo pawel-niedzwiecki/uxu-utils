@@ -6,10 +6,8 @@ export type Props<T> = {
   [P in keyof T]?: number;
 };
 
-export const Col: FC<Props<Breakpoints> & { children?: React.ReactNode }> = ({ children, ...cols }, props) => {
-  return (
-    <ColStyle {...props} {...cols} cols={cols}>
-      {children}
-    </ColStyle>
-  );
-};
+export const Col: FC<Props<Breakpoints> & { children?: React.ReactNode }> = ({ children, ...cols }, props) => (
+  <ColStyle {...props} {...cols} cols={cols}>
+    {children}
+  </ColStyle>
+);
