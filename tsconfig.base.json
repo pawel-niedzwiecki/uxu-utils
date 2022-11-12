@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+<<<<<<< HEAD
       "@uxu/design-system": ["libs/design-system/src/index.ts"]
+=======
+      "@uxu/types": ["libs/types/src/index.ts"]
+>>>>>>> dev
     }
   },
   "exclude": ["node_modules", "tmp"]
