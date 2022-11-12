@@ -1,3 +1,28 @@
 {
-  "singleQuote": true
+  "printWidth": 120,
+  "singleQuote": true,
+  "trailingComma": 'all',
+  "arrowParens": 'avoid',
+  "endOfLine": 'auto',
+  "importOrder": [
+    '^\\u0000',
+    '^react',
+    '^@uxu/\\w',
+    '^@?\\w',
+    '^\\.'
+  ],
+  "importOrderSeparation": false,
+  "importOrderCaseInsensitive": true,
+  "importOrderBuiltinModulesToTop": false,
+  "importOrderSortSpecifiers": true,
+  "rangeStart": 0,
+  "rangeEnd": Infinity,
+  "overrides": [
+    {
+      "files": '*.svg',
+      "options": {
+        "parser": 'html'
+      }
+    }
+  ]
 }
