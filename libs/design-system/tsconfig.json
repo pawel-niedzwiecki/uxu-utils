@@ -13,6 +13,9 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "src/lib"
   },
+  "paths": {
+    "@uxu/types": ["libs/types/src/index.ts"]
+  },
   "files": [],
   "include": [],
   "references": [

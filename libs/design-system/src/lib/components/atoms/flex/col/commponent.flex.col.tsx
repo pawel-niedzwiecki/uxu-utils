@@ -1,12 +1,9 @@
-import React, { FC } from 'react';
-import { Breakpoints } from 'theme';
 import { ColStyle } from './commponent.flex.col.style';
+import { FunctionComponentDiv, MarkAsNumberNotRequired } from '@uxu/types';
+import { Breakpoints } from 'theme';
+import React, { FC } from 'react';
 
-export type Props<T> = {
-  [P in keyof T]?: number;
-};
-
-export const Col: FC<Props<Breakpoints> & { children?: React.ReactNode }> = ({ children, ...cols }, props) => (
+export const Col: FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints>> = ({ children, ...cols }, props) => (
   <ColStyle {...props} {...cols} cols={cols}>
     {children}
   </ColStyle>

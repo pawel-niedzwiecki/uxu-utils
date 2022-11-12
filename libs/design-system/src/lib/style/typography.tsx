@@ -1,6 +1,6 @@
 import { css } from 'styled-components';
 
-export const body = css`
+export const typography = css`
   ${({ theme: { fontSizes } }) => css`
     p,
     h1,

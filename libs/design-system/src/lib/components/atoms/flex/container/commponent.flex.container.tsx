@@ -1,12 +1,12 @@
-import React, { FC } from 'react';
 import { ContainerStyle } from './commponent.flex.container.style';
+import { FunctionComponentDiv } from '@uxu/types';
+import React, { FC } from 'react';
 
 export type ContainerProps = {
   full?: boolean;
-  children?: React.ReactNode;
 };
 
-export const Container: FC<ContainerProps> = ({ full = false, children }, props) => (
+export const Container: FC<FunctionComponentDiv & ContainerProps> = ({ children, full = false }, props) => (
   <ContainerStyle full={full} {...props}>
     {children}
   </ContainerStyle>
