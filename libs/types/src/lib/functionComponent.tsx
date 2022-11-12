@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-export type FunctionComponentDiv<T> = {
-  children?: React.ReactNode;
-  style?: React.CSSProperties;
-  className?: string;
-  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+type Children = React.ReactNode;
+type Style = React.CSSProperties;
+type ClassName = string;
+type onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+
+export type FunctionComponentDiv = {
+  children: Children;
+  style: Style;
+  className: ClassName;
+  onClick: onClick;
 };
