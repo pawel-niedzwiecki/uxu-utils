@@ -1,9 +1,9 @@
-import { MarkAsNumberNotRequired } from '@uxu/types';
-import styled, { css } from 'styled-components';
-import { Breakpoints } from 'theme';
+import {MarkAsNumberNotRequired} from '@uxu/types';
+import styled, {css} from 'styled-components';
+import {Breakpoints} from 'theme';
 
 export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> }>`
-  ${({ theme: { space, breakpoints, flex }, ...props }) => {
+  ${({theme: {space, breakpoints, flex}, ...props}) => {
     const keysInProps = Object.keys(props);
     const keysInBreakpoints = Object.keys(breakpoints);
 
@@ -19,7 +19,6 @@ export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> 
           padding-left: ${space.bases};
           padding-right: ${space.bases};
         `;
-
         if (breakpoints[key] === 0)
           return css`
             ${styleCol};
