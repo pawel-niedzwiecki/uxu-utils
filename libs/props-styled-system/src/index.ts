@@ -1,2 +1,3 @@
 
-export * from './lib/props-styled-system';
+export * from './lib/core';
+export * from './lib/color';

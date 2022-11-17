@@ -2,6 +2,8 @@ import {MarkAsNumberNotRequired} from '@uxu/types';
 import styled, {css} from 'styled-components';
 import {Breakpoints} from 'theme';
 
+import {color} from '../../../../../../../props-styled-system/src/index'
+
 export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> }>`
   ${({theme: {space, breakpoints, flex}, ...props}) => {
     const keysInProps = Object.keys(props);
@@ -14,6 +16,7 @@ export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> 
         const styleCol = css`
           flex: ${w}%;
           width: 100%;
+          ${color};
           max-width: ${w}%;
           position: relative;
           padding-left: ${space.bases};
