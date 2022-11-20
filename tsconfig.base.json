@@ -10,27 +10,15 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2017", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@uxu/design-system": [
-        "libs/design-system/src/index.ts"
-      ],
-      "@uxu/props-styled-system": [
-        "libs/props-styled-system/src/index.ts"
-      ],
-      "@uxu/types": [
-        "libs/types/src/index.ts"
-      ]
+      "@uxu/design-system": ["libs/design-system/src/index.ts"],
+      "@uxu/props-styled-system": ["libs/props-styled-system/src/index.ts"],
+      "@uxu/types": ["libs/types/src/index.ts"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

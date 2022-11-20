@@ -1,11 +1,10 @@
-import {MarkAsNumberNotRequired} from '@uxu/types';
-import styled, {css} from 'styled-components';
-import {Breakpoints} from 'theme';
-
-import {color} from '../../../../../../../props-styled-system/src/index'
+import { color } from '@uxu/props-styled-system';
+import { MarkAsNumberNotRequired } from '@uxu/types';
+import styled, { css } from 'styled-components';
+import { Breakpoints } from 'theme';
 
 export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> }>`
-  ${({theme: {space, breakpoints, flex}, ...props}) => {
+  ${({ theme: { space, breakpoints, flex }, ...props }) => {
     const keysInProps = Object.keys(props);
     const keysInBreakpoints = Object.keys(breakpoints);
 

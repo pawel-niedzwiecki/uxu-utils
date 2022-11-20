@@ -1,14 +1,12 @@
-import {ColStyle} from './commponent.flex.col.style';
-import {FunctionComponentDiv, MarkAsNumberNotRequired} from '@uxu/types';
-import {Breakpoints} from 'theme';
-import React, {FC} from 'react';
-import {color} from '../../../../../../../props-styled-system/src/index'
+import { ColStyle } from './commponent.flex.col.style';
+import { FunctionComponentDiv, MarkAsNumberNotRequired } from '@uxu/types';
+import { Breakpoints } from 'theme';
+import React, { FC } from 'react';
 
-export const Col: FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints>> = ({children, ...cols}, props) => {
-
+export const Col: FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints>> = ({ children, ...cols }, props) => {
   return (
     <ColStyle {...props} {...cols} cols={cols} color="red">
       {children}
     </ColStyle>
-  )
+  );
 };
