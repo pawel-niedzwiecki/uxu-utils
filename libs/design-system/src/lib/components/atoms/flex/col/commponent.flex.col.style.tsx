@@ -8,14 +8,16 @@ export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> 
     const keysInProps = Object.keys(props);
     const keysInBreakpoints = Object.keys(breakpoints);
 
+
+
     return keysInProps.map(key => {
       if (keysInBreakpoints.some(keyInBreakpoint => keyInBreakpoint === key)) {
         const countW = (100 * props.cols[key]) / flex.col;
         const w = countW % 1 === 0 ? countW : countW.toFixed(4);
         const styleCol = css`
           flex: ${w}%;
-          width: 100%;
           ${color};
+          width: 100%;
           max-width: ${w}%;
           position: relative;
           padding-left: ${space.bases};
