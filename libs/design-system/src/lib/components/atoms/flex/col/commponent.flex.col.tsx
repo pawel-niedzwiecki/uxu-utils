@@ -5,7 +5,7 @@ import React, { FC } from 'react';
 
 export const Col: FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints>> = ({ children, ...cols }, props) => {
   return (
-    <ColStyle {...props} {...cols} cols={cols} color="red">
+    <ColStyle {...props} {...cols} cols={cols}>
       {children}
     </ColStyle>
   );

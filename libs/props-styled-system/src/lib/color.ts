@@ -1,21 +1,20 @@
 import { system } from './core';
 
+
+export type ConfigColor = typeof config;
+
 const config = {
   color: {
     property: 'color',
     scale: 'colors',
-    cssVariables: true,
   },
 
   backgroundColor: {
     property: 'backgroundColor',
     scale: 'colors',
-    cssVariables: true,
   },
 
   opacity: true,
-};
+} as const;
 
 export const color = system(config);
-
-export default color;

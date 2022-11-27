@@ -38,9 +38,8 @@ const Template = (args: Args) => {
             l={args.l}
             xl={args.xl}
             key={index}
+            opacity="0.5"
             style={{
-              color: colors.primary.foreground.dark,
-              background: colors.primary.background.dark,
               margin: space.small,
               paddingTop: space.small,
               paddingBottom: space.small,

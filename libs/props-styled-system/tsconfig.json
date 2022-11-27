@@ -10,7 +10,11 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "src/lib",
+    "paths": {
+      "@uxu/design-system": ["./../../../design-system/src/index.ts"],
+    }
   },
   "files": [],
   "include": [],

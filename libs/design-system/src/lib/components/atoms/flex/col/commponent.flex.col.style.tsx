@@ -15,8 +15,8 @@ export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> 
         const countW = (100 * props.cols[key]) / flex.col;
         const w = countW % 1 === 0 ? countW : countW.toFixed(4);
         const styleCol = css`
-          flex: ${w}%;
           ${color};
+          flex: ${w}%;
           width: 100%;
           max-width: ${w}%;
           position: relative;
