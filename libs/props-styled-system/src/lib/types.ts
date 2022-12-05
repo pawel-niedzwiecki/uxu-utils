@@ -1,9 +1,13 @@
-import { createStyleFunction}  from 'core'
+import {ColorProps} from "color";
+import {createStyleFunction} from 'core'
+import {ObjectMapType, FunctionComponentDiv} from "@uxu/types";
 
-export type Arg =  {
+
+export type ConfigArg = {
   property: string;
   scale: string;
-} | boolean | string | string[] | typeof createStyleFunction
+} | boolean | typeof createStyleFunction;
 
-export type Args = { [key: string]: Arg };
+export type ConfigArgs = ObjectMapType<ConfigArg>;
 
+export type Props = ObjectMapType<FunctionComponentDiv & ColorProps>;

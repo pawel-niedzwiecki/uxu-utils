@@ -1,64 +1,45 @@
-import {Arg, Args} from 'types';
-import type {Theme} from "@uxu/design-system";
-import {css} from 'styled-components';
-import {ConfigColor} from 'color'
+import {ConfigArg, ConfigArgs, Props} from 'types';
 
 
-const keys = (obj: Args) => Object.keys(obj);
 
-const parser = (configs: Args) => {
+const keys = (obj: ConfigArgs) => Object.keys(obj);
 
-  return (props) => {
-    const style: string[] = []
+const parser = (configs: ConfigArgs) => (props: Props) => {
+  const style = {}
 
-    keys(configs).forEach((key) => {
-      const value = props[key];
+  keys(configs).forEach((key) => {
+    const value = props[key];
+    if (typeof configs[key] === 'boolean') Object.assign(style, {[key]: value});
+    else Object.assign(style, configs[key](props))
 
-      if (key === 'color' && typeof configs[key] === 'function') style.push(configs[key](value, props.theme))
-      else if(typeof configs[key] === 'boolean') style.push(`${key}: ${value};`)
-    })
 
-    return style
-  }
+  })
+  return style
 }
 
-export const createStyleFunction = (config: { property: string, scale: string }) => (value: string, theme: Theme) => {
-  let variableCss = "uxu-"
-  let res;
 
 
-  const search = (obj: Theme) => {
-    let val;
+export const createStyleFunction = (config: ConfigArg) => {
+  const sx = (props: Props) => {
 
-    keys(obj).forEach((key) => {
-      if(typeof obj[key] === "object") {
-        if(keys(obj[key]).some((key) => key === value)){
-          if(config.property === 'color') val = `var(--uxu-${key}-${value});`
-          else val = obj[key][value]
-        }
-      } else return obj[key]
-    });
-
-    return [`${config.property}:${val}`]
+    const property = props[config.property];
+    if (typeof property === 'string') { // @ts-ignore
+      return {[config.property]: `var(${property.split('.').reduce((acc, item, index, arr) => acc + item + (index + 1 === arr.length ? "" : "-") , `--uxu-color-`)})`}
+    }
   }
 
+  sx.config = config
 
-  return search(theme[config.scale])
+  return sx
 };
 
-export const system = (args: Args = {}) => {
-  const configs: Args = {};
+export const system = (args: ConfigArgs = {}) => {
+  const configs: ConfigArgs = {};
 
   Object.keys(args).forEach((key): void => {
-    let config: Arg = args[key];
-
-    switch (typeof config) {
-      case 'boolean':
-        configs[key] = config;
-        break;
-      case 'object':
-        configs[key] = createStyleFunction(config);
-    }
+    let config: ConfigArg = args[key];
+    if (typeof config === 'boolean') configs[key] = config;
+    else configs[key] = createStyleFunction(config);
   });
 
 

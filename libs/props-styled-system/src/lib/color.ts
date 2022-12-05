@@ -1,7 +1,13 @@
 import { system } from './core';
 
 
-export type ConfigColor = typeof config;
+export type ColorConfig = typeof config;
+
+export type ColorProps = {
+  color?: string;
+  backgroundColor?: string;
+  opacity?: string;
+}
 
 const config = {
   color: {
@@ -16,5 +22,6 @@ const config = {
 
   opacity: true,
 } as const;
+
 
 export const color = system(config);

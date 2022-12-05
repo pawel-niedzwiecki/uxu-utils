@@ -1,5 +1,5 @@
-import { Col, Container, Row } from './index';
-import { colors, space } from 'theme';
+import {Col, Container, Row} from './index';
+import {space} from 'theme';
 import * as React from 'react';
 
 type Args = typeof args;
@@ -17,20 +17,20 @@ export default {
   title: 'Styleguide /Grid',
   component: Container,
   argTypes: {
-    full: { control: 'boolean' },
-    xs: { control: { type: 'number', min: 1, max: 12, step: 1 } },
-    s: { control: { type: 'number', min: 1, max: 12, step: 1 } },
-    m: { control: { type: 'number', min: 1, max: 12, step: 1 } },
-    l: { control: { type: 'number', min: 1, max: 12, step: 1 } },
-    xl: { control: { type: 'number', min: 1, max: 12, step: 1 } },
+    full: {control: 'boolean'},
+    xs: {control: {type: 'number', min: 1, max: 12, step: 1}},
+    s: {control: {type: 'number', min: 1, max: 12, step: 1}},
+    m: {control: {type: 'number', min: 1, max: 12, step: 1}},
+    l: {control: {type: 'number', min: 1, max: 12, step: 1}},
+    xl: {control: {type: 'number', min: 1, max: 12, step: 1}},
   },
 };
 
 const Template = (args: Args) => {
   return (
-    <Container full={args.full}>
+    <Container full={args?.full}>
       <Row>
-        {new Array(6).fill(null).map((_, index) => (
+        {new Array(12).fill(null).map((_, index) => (
           <Col
             xs={args.xs}
             s={args.s}
@@ -38,7 +38,9 @@ const Template = (args: Args) => {
             l={args.l}
             xl={args.xl}
             key={index}
-            opacity="0.5"
+            opacity="0.6"
+            color="highlight.pink"
+            backgroundColor="primary.foreground"
             style={{
               margin: space.small,
               paddingTop: space.small,
@@ -56,4 +58,5 @@ const Template = (args: Args) => {
 };
 
 export const Primary = Template.bind({});
+// @ts-ignore
 Primary.args = args;
