@@ -1,43 +1,48 @@
-import {ConfigArg, ConfigArgs, Props} from 'types';
+import {ObjectMapType, Nullable} from "@uxu/types";
+import {ConfigArgType, ConfigArgsType, PropsType} from 'types';
 
+const keys = (obj: ConfigArgsType) => Object.keys(obj);
 
+const get = ({property, value, type = ""}: { property: string, value: string, type?: string }) => {
+  if (type.length) return {[property]: `var(${value.split('.').reduce((acc: string, item: string, index: number, arr: string[]) => acc + item + (index + 1 === arr.length ? "" : "-"), `--uxu-${type}-`)})`}
+  else return {[property]: value}
+}
 
-const keys = (obj: ConfigArgs) => Object.keys(obj);
+const parser = (configs: ConfigArgsType) => (props: PropsType) => {
+  let style = {}
 
-const parser = (configs: ConfigArgs) => (props: Props) => {
-  const style = {}
+  keys(configs).forEach((property) => {
+    const value = props[property];
 
-  keys(configs).forEach((key) => {
-    const value = props[key];
-    if (typeof configs[key] === 'boolean') Object.assign(style, {[key]: value});
-    else Object.assign(style, configs[key](props))
-
-
+    if (typeof value === 'string') {
+      if (typeof configs[property] === 'boolean')  Object.assign(style, get({property, value}))
+      if (typeof configs[property] === typeof createStyleFunction)  Object.assign(style, configs[property](props))
+    } else if(typeof value === 'object') console.log(value)
   })
+
   return style
 }
 
 
+export const createStyleFunction = (config: ConfigArgType) => {
+  const sx = (props: PropsType): ObjectMapType<string> | Nullable<null> => {
+    if (typeof config === "object") {
+      const value = props[config.property];
+      if (typeof value === "string" && config?.type?.length) return get({property: config.property, value, type: config.type})
+      else return null
+    } else return null
 
-export const createStyleFunction = (config: ConfigArg) => {
-  const sx = (props: Props) => {
-
-    const property = props[config.property];
-    if (typeof property === 'string') { // @ts-ignore
-      return {[config.property]: `var(${property.split('.').reduce((acc, item, index, arr) => acc + item + (index + 1 === arr.length ? "" : "-") , `--uxu-color-`)})`}
-    }
   }
-
   sx.config = config
 
   return sx
-};
+}
 
-export const system = (args: ConfigArgs = {}) => {
-  const configs: ConfigArgs = {};
+export const system = (args: ConfigArgsType = {}) => {
+  let configs: ConfigArgsType = {};
 
-  Object.keys(args).forEach((key): void => {
-    let config: ConfigArg = args[key];
+  keys(args).forEach((key): void => {
+    let config: ConfigArgType = args[key];
     if (typeof config === 'boolean') configs[key] = config;
     else configs[key] = createStyleFunction(config);
   });

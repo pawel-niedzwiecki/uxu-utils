@@ -1,13 +1,18 @@
-import {ColorProps} from "color";
-import {createStyleFunction} from 'core'
+import {ColorProps} from "./color";
+import {Theme} from "@uxu/design-system";
 import {ObjectMapType, FunctionComponentDiv} from "@uxu/types";
 
 
-export type ConfigArg = {
+export type ConfigArgType = {
   property: string;
   scale: string;
-} | boolean | typeof createStyleFunction;
+  type?: string;
+} | boolean;
 
-export type ConfigArgs = ObjectMapType<ConfigArg>;
 
-export type Props = ObjectMapType<FunctionComponentDiv & ColorProps>;
+export type ConfigArgsType = ObjectMapType<ConfigArgType>;
+
+export type PropsType = ColorProps | Theme;
+
+export class VariabelTypeInCss {
+}

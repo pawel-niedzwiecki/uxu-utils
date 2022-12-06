@@ -39,7 +39,7 @@ const Template = (args: Args) => {
             xl={args.xl}
             key={index}
             opacity="0.6"
-            color="highlight.pink"
+            color={{xs: 'highlight.pink', lg: 'success.dark'}}
             backgroundColor="primary.foreground"
             style={{
               margin: space.small,
