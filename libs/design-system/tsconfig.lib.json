@@ -8,6 +8,9 @@
     "../../node_modules/@nrwl/react/typings/cssmodule.d.ts",
     "../../node_modules/@nrwl/react/typings/image.d.ts"
   ],
+  "paths": {
+    "@uxu/design-system": ["./../props-styled-system/src/index.ts"]
+  },
   "exclude": [
     "jest.config.ts",
     "**/*.spec.ts",

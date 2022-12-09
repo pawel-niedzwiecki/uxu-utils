@@ -1,17 +1,20 @@
-import {MarkAsNumberNotRequired} from '@uxu/types';
+import {ObjectMapType} from '@uxu/types';
+import {listensPropsColor, listensPropsSpace} from '@uxu/props-styled-system';
 import styled, {css} from 'styled-components';
-import {Breakpoints} from 'theme';
 
-export const ColStyle = styled.div<{ cols: MarkAsNumberNotRequired<Breakpoints> }>`
-  ${({theme: {space, breakpoints, flex}, ...props}) => {
-    const keysInProps = Object.keys(props);
+export const ColStyle = styled.div<{ cols: ObjectMapType<number> }>`
+  ${({theme: {space, breakpoints, flex}, cols}) => {
+    const keyInCols = Object.keys(cols);
     const keysInBreakpoints = Object.keys(breakpoints);
 
-    return keysInProps.map(key => {
+
+    return keyInCols.map(key => {
       if (keysInBreakpoints.some(keyInBreakpoint => keyInBreakpoint === key)) {
-        const countW = (100 * props.cols[key]) / flex.col;
+        const countW = (100 * cols[key]) / flex.col;
         const w = countW % 1 === 0 ? countW : countW.toFixed(4);
         const styleCol = css`
+          ${listensPropsSpace};
+          ${listensPropsColor};
           flex: ${w}%;
           width: 100%;
           max-width: ${w}%;

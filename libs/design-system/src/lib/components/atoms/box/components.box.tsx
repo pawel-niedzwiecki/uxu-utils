@@ -1,15 +1,9 @@
-import { forwardRef, Ref } from 'react';
-import styled from 'styled-components';
-import { borderRadius, boxShadow, color, space } from 'styled-system';
-
 import { BoxProps } from './props';
+import styled from 'styled-components';
+import { forwardRef, Ref } from 'react';
 
 export const Box = forwardRef((props: BoxProps, ref: Ref<HTMLElement>) => <StyledBox ref={ref} {...props} />);
 
 const StyledBox = styled.div`
-  ${borderRadius};
-  ${boxShadow};
-  ${color};
-  ${space};
   box-sizing: border-box;
 `;
