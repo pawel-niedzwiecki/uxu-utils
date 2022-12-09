@@ -3,34 +3,61 @@ import {ConfigArgType, ConfigArgsType, PropsType} from 'types';
 
 const keys = (obj: ConfigArgsType) => Object.keys(obj);
 
-const get = ({property, value, type = ""}: { property: string, value: string, type?: string }) => {
-  if (type.length) return {[property]: `var(${value.split('.').reduce((acc: string, item: string, index: number, arr: string[]) => acc + item + (index + 1 === arr.length ? "" : "-"), `--uxu-${type}-`)})`}
+const createMediaQuery = (width: number) => `@media screen and (min-width: ${width}px)`
+
+type ParseResponsiveObjectProps = { sx: typeof createStyleFunction, obj: ObjectMapType<string>, props: PropsType }
+
+const parseResponsiveObject = ({sx, obj, props}: ParseResponsiveObjectProps) => {
+  let styles = {}
+  const breakpoints = props.theme.breakpoints
+
+  for (let key in obj) {
+    const breakpoint = breakpoints[key];
+    const style = sx(obj[key], props)
+    if (!breakpoint) Object.assign(styles, style)
+    else {
+      const media = createMediaQuery(breakpoint)
+      Object.assign(styles, {
+        [media]: Object.assign({}, styles[media], style),
+      })
+    }
+  }
+
+  return styles
+}
+
+
+const get = ({property, value, variable}: { property: string, value: string, variable?: { prefix: string } }) => {
+  if (variable?.prefix) return {[property]: `var(${value.split('.').reduce((acc: string, item: string, index: number, arr: string[]) => acc + item + (index + 1 === arr.length ? "" : "-"), `--uxu-${variable.prefix}-`)})`}
   else return {[property]: value}
 }
 
-const parser = (configs: ConfigArgsType) => (props: PropsType) => {
-  let style = {}
+const parser = (configs: ObjectMapType<typeof createStyleFunction>) => (props: PropsType) => {
+  let styles = {}
 
-  keys(configs).forEach((property) => {
-    const value = props[property];
+  keys(configs).forEach((key) => {
+    const value = props[key];
+    const type = typeof value;
+    const sx = configs[key];
 
-    if (typeof value === 'string') {
-      if (typeof configs[property] === 'boolean')  Object.assign(style, get({property, value}))
-      if (typeof configs[property] === typeof createStyleFunction)  Object.assign(style, configs[property](props))
-    } else if(typeof value === 'object') console.log(value)
+    if (type === 'string') Object.assign(styles, sx(value, props))
+    else if (type === 'object') Object.assign(styles, parseResponsiveObject({sx, obj: value, props}))
   })
 
-  return style
+  return styles
 }
 
 
 export const createStyleFunction = (config: ConfigArgType) => {
-  const sx = (props: PropsType): ObjectMapType<string> | Nullable<null> => {
-    if (typeof config === "object") {
-      const value = props[config.property];
-      if (typeof value === "string" && config?.type?.length) return get({property: config.property, value, type: config.type})
-      else return null
-    } else return null
+  const sx = (value: string, props: PropsType): ObjectMapType<string> | Nullable<null> => {
+    const property = config.property
+    const variable = config.variable
+
+    if (config?.variable) return get({value, property, variable})
+    else if (config?.scale) {
+      const scale = props.theme[config.scale]
+      return get({value: value.split('.').reduce((acc, key) => acc[key], scale), property})
+    } else return get({value, property})
 
   }
   sx.config = config
@@ -39,14 +66,12 @@ export const createStyleFunction = (config: ConfigArgType) => {
 }
 
 export const system = (args: ConfigArgsType = {}) => {
-  let configs: ConfigArgsType = {};
+  let configs: ObjectMapType<typeof createStyleFunction> = {};
 
   keys(args).forEach((key): void => {
     let config: ConfigArgType = args[key];
-    if (typeof config === 'boolean') configs[key] = config;
-    else configs[key] = createStyleFunction(config);
+    configs[key] = createStyleFunction(config);
   });
-
 
   return parser(configs)
 };

@@ -1,5 +1,5 @@
 import {ObjectMapType} from '@uxu/types';
-import {color} from '@uxu/props-styled-system';
+import {listensPropsColor, listensPropsSpace} from '@uxu/props-styled-system';
 import styled, {css} from 'styled-components';
 
 export const ColStyle = styled.div<{ cols: ObjectMapType<number> }>`
@@ -13,7 +13,8 @@ export const ColStyle = styled.div<{ cols: ObjectMapType<number> }>`
         const countW = (100 * cols[key]) / flex.col;
         const w = countW % 1 === 0 ? countW : countW.toFixed(4);
         const styleCol = css`
-          ${color};
+          ${listensPropsSpace};
+          ${listensPropsColor};
           flex: ${w}%;
           width: 100%;
           max-width: ${w}%;

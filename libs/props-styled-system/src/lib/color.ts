@@ -7,23 +7,23 @@ export type ColorProps = {
   opacity?: string | ObjectMapType<string>;
 }
 
-export type ColorConfig = typeof config;
+export type ColorConfig = typeof configs;
 
-const config = {
+const configs = {
   color: {
     property: 'color',
     scale: 'colors',
-    type: 'color'
+    variable: {prefix: 'color'}
   },
-
   backgroundColor: {
     property: 'backgroundColor',
     scale: 'colors',
-    type:'color'
+    variable: {prefix: 'color'}
   },
-
-  opacity: true,
+  opacity: {
+    property: 'opacity',
+  }
 } as const;
 
 
-export const color = system(config);
+export const listensPropsColor = system(configs);
