@@ -1,2 +1,2 @@
-export { ComponentsBox } from './Box';
+export {Box} from "./components.box";
 export * from './props';
