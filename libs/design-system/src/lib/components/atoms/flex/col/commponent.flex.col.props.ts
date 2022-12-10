@@ -4,4 +4,4 @@ import {Breakpoints} from 'theme';
 import React, {FC} from 'react';
 
 
-export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & ShadowProps>
+export type CommponentFlexColProps = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & ShadowProps>
