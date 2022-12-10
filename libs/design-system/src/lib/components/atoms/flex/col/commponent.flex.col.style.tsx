@@ -20,8 +20,8 @@ export const ColStyle = styled.div<{ cols: ObjectMapType<number> }>`
           width: 100%;
           max-width: ${w}%;
           position: relative;
-          padding-left: ${space.bases};
-          padding-right: ${space.bases};
+          padding-left: ${space.default};
+          padding-right: ${space.default};
         `;
         if (breakpoints[key] === 0)
           return css`
