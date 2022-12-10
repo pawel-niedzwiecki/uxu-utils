@@ -2,6 +2,7 @@ import {ColorProps} from "./color";
 import {SpaceProps} from "./space";
 import {GridProps} from "./grid";
 import {PositionProps} from "./position";
+import {TypographyProps} from "./typography";
 import {Theme} from "@uxu/design-system";
 import {ObjectMapType} from "@uxu/types";
 
@@ -15,4 +16,4 @@ export type ConfigArgType = {
 
 export type ConfigArgsType = ObjectMapType<ConfigArgType>;
 
-export type PropsType = ColorProps | SpaceProps | GridProps | PositionProps | Theme;
+export type PropsType = ColorProps | SpaceProps | GridProps | PositionProps | TypographyProps | Theme;
