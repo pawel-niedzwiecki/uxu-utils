@@ -1,7 +1,7 @@
 import {system} from './core';
 import {ObjectMapType} from "@uxu/types";
 
-export type GridProps = {
+export type TypographyProps = {
   gridGap?: string | ObjectMapType<string>;
   gridColumnGap?: string | ObjectMapType<string>;
   gridRowGap?: string | ObjectMapType<string>;
@@ -16,46 +16,36 @@ export type GridProps = {
   gridArea?: string | ObjectMapType<string>;
 }
 
-export type GridConfig = typeof configs;
+export type TypographyConfig = typeof configs;
 
 const configs = {
-  gridGap: {
-    property: 'gridGap',
+  fontFamily: {
+    property: 'fontFamily',
+    scale: 'fonts',
   },
-  gridColumnGap: {
-    property: 'gridColumnGap',
+  fontSize: {
+    property: 'fontSize',
+    scale: 'fontSizes',
   },
-  gridRowGap: {
-    property: 'gridRowGap',
+  fontWeight: {
+    property: 'fontWeight',
+    scale: 'fontWeights',
   },
-  gridColumn: {
-    property: 'gridColumn',
+  lineHeight: {
+    property: 'lineHeight',
+    scale: 'lineHeights',
   },
-  gridRow: {
-    property: 'gridRow',
+  letterSpacing: {
+    property: 'letterSpacing',
+    scale: 'letterSpacings',
   },
-  gridAutoFlow: {
-    property: 'gridAutoFlow',
+  textAlign: {
+    property: 'textAlign',
   },
-  gridAutoColumns: {
-    property: 'gridAutoColumns',
-  },
-  gridAutoRows: {
-    property: 'gridAutoRows',
-  },
-  gridTemplateColumns: {
-    property: 'gridTemplateColumns',
-  },
-  gridTemplateRows: {
-    property: 'gridTemplateRows',
-  },
-  gridTemplateAreas: {
-    property: 'gridTemplateAreas',
-  },
-  gridArea: {
-    property: 'gridArea',
+  fontStyle: {
+    property: 'fontStyle',
   },
 } as const;
 
 
-export const listensPropsGrid = system(configs);
+export const listensPropsTypography = system(configs);
