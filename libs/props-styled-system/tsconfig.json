@@ -12,9 +12,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "src/lib",
+
     "paths": {
-      "@uxu/types": ["./../../../types/src/index.ts"],
-      "@uxu/props-styled-system": ["./../../../props-styled-system/src/index.ts"]
+      "@uxu/design-system": ["./../../../design-system/src/index.ts"],
+      "@uxu/types": ["./../../../types/src/index.ts"]
     }
   },
   "files": [],
@@ -25,9 +26,6 @@
     },
     {
       "path": "./tsconfig.spec.json"
-    },
-    {
-      "path": "./.storybook/tsconfig.json"
     }
   ]
 }

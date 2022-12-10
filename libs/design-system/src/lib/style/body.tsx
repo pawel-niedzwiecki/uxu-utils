@@ -1,7 +1,7 @@
 import { css } from 'styled-components';
 
 export const body = css`
-  ${({ theme: { colors, fontSizes, fontWeights, lineHeights } }) => css`
+  ${({ theme: { fontSizes, fontWeights, lineHeights } }) => css`
     body {
       font-style: normal;
       font-size: ${fontSizes.bases};
