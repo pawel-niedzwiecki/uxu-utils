@@ -1,5 +1,5 @@
 import {ColStyle} from './commponent.flex.col.style';
-import type {CommponentFlexColProps} from './commponent.flex.col.props'
+import type {Props} from './props'
 
+export const Col: Props = ({children, ...args}, props) => <ColStyle {...props} {...args} cols={args}>{children}</ColStyle>
 
-export const Col: CommponentFlexColProps = ({children, ...args}, props) => <ColStyle {...props} {...args} cols={args}>{children}</ColStyle>
