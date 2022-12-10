@@ -42,13 +42,6 @@ const Template = (args: Args) => {
             marginBottom="bases"
             color={{xs: 'highlight.pink', l: 'success.dark'}}
             backgroundColor="primary.foreground"
-            style={{
-              margin: space.small,
-              paddingTop: space.small,
-              paddingBottom: space.small,
-              justifyContent: 'center',
-              display: 'flex',
-            }}
           >
             <p>column {index + 1}</p>
           </Col>
