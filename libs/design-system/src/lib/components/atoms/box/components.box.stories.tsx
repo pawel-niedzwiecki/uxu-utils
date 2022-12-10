@@ -6,10 +6,10 @@ type Args = typeof args;
 const args = {
   color: 'primary.foreground',
   backgroundColor: 'primary.background',
-  padding: 'default',
+  padding: 'small',
   textAlign: 'center',
   width: '20rem',
-  height: '4.5rem',
+  height: '3rem',
 } as const;
 
 export default {
