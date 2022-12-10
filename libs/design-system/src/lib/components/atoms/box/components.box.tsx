@@ -1,9 +1,5 @@
-import { BoxProps } from './props';
-import styled from 'styled-components';
-import { forwardRef, Ref } from 'react';
+import React from 'react';
+import type {Props} from './props'
+import {ComponentBox} from './components.box.style'
 
-export const Box = forwardRef((props: BoxProps, ref: Ref<HTMLElement>) => <StyledBox ref={ref} {...props} />);
-
-const StyledBox = styled.div`
-  box-sizing: border-box;
-`;
+export const Box: Props = ({children, ...args}, props) => <ComponentBox {...props} {...args}>{children}</ComponentBox>
