@@ -7,7 +7,7 @@ export const RowStyle = styled.div`
     flex-wrap: wrap;
     flex-direction: row;
     box-sizing: border-box;
-    margin-left: ${space.bases};
-    margin-right: ${space.bases};
+    margin-left: ${space.default};
+    margin-right: ${space.default};
   `}
 `;
