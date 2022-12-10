@@ -47,7 +47,6 @@ const parser = (configs: ObjectMapType<typeof createStyleFunction>) => (props: P
   return styles
 }
 
-
 export const createStyleFunction = (config: ConfigArgType) => {
   const sx = (value: string, props: PropsType): ObjectMapType<string> | Nullable<null> => {
     const property = config.property
