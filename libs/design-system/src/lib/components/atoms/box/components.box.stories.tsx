@@ -2,8 +2,8 @@ import * as React from 'react';
 import { Box } from './components.box';
 
 export default {
-  title: 'Box',
+  title: 'Components /Box',
   component: Box,
 };
 
-export const Primary = () => <Box color="black" />;
+export const Primary = () => <Box color="black"  />;
