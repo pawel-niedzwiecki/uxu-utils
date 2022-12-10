@@ -42,7 +42,7 @@ export const variables = css`
 
           --uxu-color-highlight-lighter: ${colors.highlight.purple.dark};
           --uxu-color-highlight-light: ${colors.highlight.magenta.dark};
-          --uxu-color-highlight-highlight: ${colors.highlight.pink.dark};
+          --uxu-color-highlight-pink: ${colors.highlight.pink.dark};
           --uxu-color-highlight-dark: ${colors.highlight.yellow.dark};
         }
         @media (prefers-color-scheme: light) {
