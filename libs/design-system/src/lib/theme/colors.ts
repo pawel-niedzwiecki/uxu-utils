@@ -53,6 +53,6 @@ export const colors = {
     purple: {dark: '#F81CE5', light: '#F81CE5'},
     magenta: {dark: '#EB367F', light: '#EB367F'},
     pink: {dark: '#FF0080', light: '#FF0080'},
-    yellow: {dark: '#FFF500', light: '#FFF500'},
+    yellow: {dark: '#ffcc00', light: '#ffcc00'},
   },
 } as const;

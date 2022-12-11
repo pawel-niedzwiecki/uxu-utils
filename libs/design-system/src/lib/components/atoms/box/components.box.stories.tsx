@@ -1,20 +1,20 @@
 import * as React from 'react';
-import {Box} from './components.box';
+import {Box as B} from './components.box';
 
 type Args = typeof args;
 
 const args = {
   color: 'primary.foreground',
   backgroundColor: 'primary.background',
-  padding: 'default',
+  padding: 'small',
   textAlign: 'center',
   width: '20rem',
-  height: '4.5rem',
+  height: '3rem',
 } as const;
 
 export default {
   title: 'Components /Box',
-  component: Box,
+  component: B,
   argTypes: {
     color: {
       options: ['primary.foreground', 'primary.accent1', 'primary.accent2', 'primary.accent3', 'primary.accent4', 'primary.accent5', 'primary.accent6'],
@@ -34,9 +34,9 @@ export default {
   },
 };
 
-const Template = (args: Args) => <Box {...args}>Component box</Box>;
+const Template = (args: Args) => <B {...args}>Component box</B>;
 
-export const Primary = Template.bind({});
+export const Box = Template.bind({});
 
 // @ts-ignore
-Primary.args = args;
+Box.args = args;

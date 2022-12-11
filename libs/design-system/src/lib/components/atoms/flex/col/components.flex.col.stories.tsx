@@ -1,11 +1,10 @@
-import {Col, Container, Row} from './index';
+import {Col, Container, Row} from '../index';
 import {Box} from 'components/atoms/box'
 import * as React from 'react';
 
 type Args = typeof args;
 
 const args = {
-  full: false,
   xs: 12,
   s: 12,
   m: 2,
@@ -15,9 +14,8 @@ const args = {
 
 export default {
   title: 'Styleguide /Flex',
-  component: Container,
+  component: Col,
   argTypes: {
-    full: {control: 'boolean'},
     xs: {control: {type: 'number', min: 1, max: 12, step: 1}},
     s: {control: {type: 'number', min: 1, max: 12, step: 1}},
     m: {control: {type: 'number', min: 1, max: 12, step: 1}},
@@ -27,7 +25,7 @@ export default {
 };
 
 const Template = (args: Args) => (
-  <Container full={args.full}>
+  <Container full>
     <Row>
       {new Array(8).fill(null).map((_, index) => (
         <Col
@@ -48,6 +46,6 @@ const Template = (args: Args) => (
   </Container>
 )
 
-export const Flex = Template.bind({});
+export const Column = Template.bind({});
 // @ts-ignore
-Flex.args = args;
+Column.args = args;
