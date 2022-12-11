@@ -5,6 +5,7 @@ export type ColorProps = {
   color?: string | ObjectMapType<string>;
   backgroundColor?: string | ObjectMapType<string>;
   opacity?: string | ObjectMapType<string>;
+  mixBlendMode?: string | ObjectMapType<string>;
 }
 
 export type ColorConfig = typeof configs;
@@ -22,6 +23,9 @@ const configs = {
   },
   opacity: {
     property: 'opacity',
+  },
+  mixBlendMode: {
+    property: 'mixBlendMode',
   }
 } as const;
 
