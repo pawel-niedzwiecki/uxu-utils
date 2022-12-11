@@ -2,18 +2,13 @@ import {system} from './core';
 import {ObjectMapType} from "@uxu/types";
 
 export type TypographyProps = {
-  gridGap?: string | ObjectMapType<string>;
-  gridColumnGap?: string | ObjectMapType<string>;
-  gridRowGap?: string | ObjectMapType<string>;
-  gridColumn?: string | ObjectMapType<string>;
-  gridRow?: string | ObjectMapType<string>;
-  gridAutoFlow?: string | ObjectMapType<string>;
-  gridAutoColumns?: string | ObjectMapType<string>;
-  gridAutoRows?: string | ObjectMapType<string>;
-  gridTemplateColumns?: string | ObjectMapType<string>;
-  gridTemplateRows?: string | ObjectMapType<string>;
-  gridTemplateAreas?: string | ObjectMapType<string>;
-  gridArea?: string | ObjectMapType<string>;
+  fontFamily?: string | ObjectMapType<string>;
+  fontSize?: string | ObjectMapType<string>;
+  fontWeight?: string | ObjectMapType<string>;
+  lineHeight?: string | ObjectMapType<string>;
+  letterSpacing?: string | ObjectMapType<string>;
+  textAlign?: string | ObjectMapType<string>;
+  fontStyle?: string | ObjectMapType<string>;
 }
 
 export type TypographyConfig = typeof configs;

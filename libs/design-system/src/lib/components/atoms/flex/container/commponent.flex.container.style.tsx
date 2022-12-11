@@ -7,8 +7,8 @@ export const ContainerStyle = styled.div<ContainerProps>`
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    padding-left: ${space.bases};
-    padding-right: ${space.bases};
+    padding-left: ${space.default};
+    padding-right: ${space.default};
     max-width: ${full ? '100%' : content.maxWidth};
   `}
 `;
