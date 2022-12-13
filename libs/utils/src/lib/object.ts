@@ -1,3 +1,5 @@
 import type {ObjectMapType} from "@uxu/types";
-export const keys = (obj: ObjectMapType) => Object.keys(obj);
+
+export const keys = <Type>(obj: ObjectMapType<Type>): string[] => Object.keys(obj);
+
 
