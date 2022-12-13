@@ -12,10 +12,10 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": "src/lib",
-
     "paths": {
       "@uxu/design-system": ["./../../../design-system/src/index.ts"],
-      "@uxu/types": ["./../../../types/src/index.ts"]
+      "@uxu/types": ["./../../../types/src/index.ts"],
+      "@uxu/utils": ["./../../../utils/src/index.ts"]
     }
   },
   "files": [],
