@@ -7,7 +7,7 @@ const createMediaQuery = (width: number) => `@media screen and (min-width: ${wid
 
 type ParseResponsiveObjectProps = { sx: typeof createStyleFunction, obj: ObjectMapType<string>, props: PropsType }
 
-const parseResponsiveObject = ({sx, obj, props}: ParseResponsiveObjectProps) => {
+const parseResponsiveObject = ({sx, obj, props}: ParseResponsiveObjectProps) => {:
   let styles = {}
   const breakpoints = props.theme.breakpoints
 
