@@ -20,6 +20,7 @@ export type GridConfig = typeof configs;
 
 const configs = {
   gridGap: {
+<<<<<<< HEAD
     property: 'gridGap',
   },
   gridColumnGap: {
@@ -54,6 +55,42 @@ const configs = {
   },
   gridArea: {
     property: 'gridArea',
+=======
+    property: 'grid-gap',
+  },
+  gridColumnGap: {
+    property: 'grid-column-gap',
+  },
+  gridRowGap: {
+    property: 'grid-row-gap',
+  },
+  gridColumn: {
+    property: 'grid-column',
+  },
+  gridRow: {
+    property: 'grid-row',
+  },
+  gridAutoFlow: {
+    property: 'grid-auto-flow',
+  },
+  gridAutoColumns: {
+    property: 'grid-auto-columns',
+  },
+  gridAutoRows: {
+    property: 'grid-auto-rows',
+  },
+  gridTemplateColumns: {
+    property: 'grid-template-columns',
+  },
+  gridTemplateRows: {
+    property: 'grid-template-rows',
+  },
+  gridTemplateAreas: {
+    property: 'grid-template-areas',
+  },
+  gridArea: {
+    property: 'grid-area',
+>>>>>>> dcd9d27 (feat: add config for grid (#13))
   },
 } as const;
 
