@@ -1,17 +1,17 @@
 import {listensPropsColor} from "color";
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type SpaceProps = {
-  margin?: string | ObjectMapType<string>;
-  marginTop?: string | ObjectMapType<string>;
-  marginRight?: string | ObjectMapType<string>;
-  marginBottom?: string | ObjectMapType<string>;
-  padding?: string | ObjectMapType<string>;
-  paddingTop?: string | ObjectMapType<string>;
-  paddingRight?: string | ObjectMapType<string>;
-  paddingBottom?: string | ObjectMapType<string>;
-  paddingLeft?: string | ObjectMapType<string>;
+  margin?: PropType;
+  marginTop?: PropType;
+  marginRight?: PropType;
+  marginBottom?: PropType;
+  padding?: PropType;
+  paddingTop?: PropType;
+  paddingRight?: PropType;
+  paddingBottom?: PropType;
+  paddingLeft?: PropType;
 }
 
 export type SpaceConfig = typeof configs;
