@@ -19,6 +19,7 @@ export type ConfigArgType = {
 
 export type ConfigArgsType = ObjectMapType<ConfigArgType>;
 
+<<<<<<< HEAD
 export type PropsType =
   ColorProps
   | SpaceProps
@@ -31,3 +32,6 @@ export type PropsType =
   | Theme;
 
 
+=======
+export type PropsType = ColorProps | SpaceProps | GridProps | PositionProps | TypographyProps | ShadowProps | Theme;
+>>>>>>> 6c29f7a (feat: add config for shadow (#16))
