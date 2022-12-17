@@ -86,12 +86,7 @@ const configs = {
     property: 'gridTemplateAreas',
   },
   gridArea: {
-<<<<<<< HEAD
-    property: 'grid-area',
->>>>>>> dcd9d27 (feat: add config for grid (#13))
-=======
     property: 'gridArea',
->>>>>>> 2a883d4 (feat: add config for topografy (#15))
   },
 } as const;
 
