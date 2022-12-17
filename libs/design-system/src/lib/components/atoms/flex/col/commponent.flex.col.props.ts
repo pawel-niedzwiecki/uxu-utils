@@ -1,6 +1,7 @@
-import {FunctionComponentDiv, MarkAsNumberNotRequired} from '@uxu/types';
-import {ColorProps, ShadowProps} from '@uxu/props-styled-system'
+import {FC} from 'react';
 import {Breakpoints} from 'theme';
-import React, {FC} from 'react';
+import {ColorProps} from '@uxu/props-styled-system'
+import {FunctionComponentDiv, MarkAsNumberNotRequired} from '@uxu/types';
 
-export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & ShadowProps>
+
+export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps>

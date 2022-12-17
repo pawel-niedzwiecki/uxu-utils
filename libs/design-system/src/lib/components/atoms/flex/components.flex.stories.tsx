@@ -40,8 +40,7 @@ const Template = (args: Args) => (
           color={{xs: 'highlight.pink', l: 'success.dark'}}
 
         >
-          <Box margin="small" padding="small" textAlign="center" backgroundColor="primary.background"
-               color="primary.foreground">COL {index + 1}</Box>
+          <Box marginTop="default" marginBottom="default" padding="small" textAlign="center" backgroundColor="primary.background" color="primary.foreground">COL {index + 1}</Box>
         </Col>
       ))}
     </Row>

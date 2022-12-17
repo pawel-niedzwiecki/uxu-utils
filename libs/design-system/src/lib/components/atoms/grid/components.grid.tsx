@@ -1,13 +1,5 @@
-import { GridProps } from './props';
-import styled from 'styled-components';
-import { FC } from 'react';
+import {Props} from './commponent.grid.props';
+import {Wrapper} from './commponent.grid.style';
 
-export const ComponentsGrid: FC<GridProps> = ({ as, ...rest }) => <StyledGrid forwardedAs={as} {...rest} />;
 
-ComponentsGrid.defaultProps = {
-  as: 'div',
-};
-
-const StyledGrid = styled(Box)<GridProps>`
-  display: grid;
-`;
+export const Grid: Props = ({children, ...args}, props) => <Wrapper {...args} {...props}>{children}</Wrapper>;
