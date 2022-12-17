@@ -5,6 +5,7 @@ import {PositionProps} from "./position";
 import {TypographyProps} from "./typography";
 import {ShadowProps} from "./shadow";
 import {SizeProps} from "./size";
+import {VectorProps} from "./vector";
 import {Theme} from "@uxu/design-system";
 import {ObjectMapType} from "@uxu/types";
 
@@ -26,4 +27,5 @@ export type PropsType =
   | TypographyProps
   | ShadowProps
   | SizeProps
+  | VectorProps
   | Theme;
