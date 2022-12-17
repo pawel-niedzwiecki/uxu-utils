@@ -1,11 +1,11 @@
-import {Col, Container, Row as ROW} from '../index';
+import {Row as ROW} from '../index';
 import {Box} from 'components/atoms/box'
 import * as React from 'react';
 
 
 export default {
   title: 'Styleguide /Flex',
-  component: Container,
+  component: ROW,
 };
 
 const Template = () => (

@@ -5,7 +5,7 @@ export type VectorProps = {
   fill?: string | ObjectMapType<string>;
 }
 
-export type ColorConfig = typeof configs;
+export type VectorConfig = typeof configs;
 
 const configs = {
   fill: {
