@@ -19,7 +19,6 @@ export type ConfigArgType = {
 
 export type ConfigArgsType = ObjectMapType<ConfigArgType>;
 
-
 export type PropsType =
   ColorProps
   | SpaceProps
@@ -30,3 +29,4 @@ export type PropsType =
   | SizeProps
   | VectorProps
   | Theme;
+
