@@ -20,7 +20,6 @@ export type GridConfig = typeof configs;
 
 const configs = {
   gridGap: {
-<<<<<<< HEAD
     property: 'gridGap',
   },
   gridColumnGap: {
@@ -55,42 +54,44 @@ const configs = {
   },
   gridArea: {
     property: 'gridArea',
-=======
-    property: 'grid-gap',
   },
   gridColumnGap: {
-    property: 'grid-column-gap',
+    property: 'gridColumnGap',
   },
   gridRowGap: {
-    property: 'grid-row-gap',
+    property: 'gridRowGap',
   },
   gridColumn: {
-    property: 'grid-column',
+    property: 'gridColumn',
   },
   gridRow: {
-    property: 'grid-row',
+    property: 'gridRow',
   },
   gridAutoFlow: {
-    property: 'grid-auto-flow',
+    property: 'gridAutoFlow',
   },
   gridAutoColumns: {
-    property: 'grid-auto-columns',
+    property: 'gridAutoColumns',
   },
   gridAutoRows: {
-    property: 'grid-auto-rows',
+    property: 'gridAutoRows',
   },
   gridTemplateColumns: {
-    property: 'grid-template-columns',
+    property: 'gridTemplateColumns',
   },
   gridTemplateRows: {
-    property: 'grid-template-rows',
+    property: 'gridTemplateRows',
   },
   gridTemplateAreas: {
-    property: 'grid-template-areas',
+    property: 'gridTemplateAreas',
   },
   gridArea: {
+<<<<<<< HEAD
     property: 'grid-area',
 >>>>>>> dcd9d27 (feat: add config for grid (#13))
+=======
+    property: 'gridArea',
+>>>>>>> 2a883d4 (feat: add config for topografy (#15))
   },
 } as const;
 
