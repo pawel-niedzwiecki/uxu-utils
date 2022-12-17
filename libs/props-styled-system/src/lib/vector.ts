@@ -1,8 +1,8 @@
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type VectorProps = {
-  fill?: string | ObjectMapType<string>;
+  fill?: PropType;
 }
 
 export type VectorConfig = typeof configs;

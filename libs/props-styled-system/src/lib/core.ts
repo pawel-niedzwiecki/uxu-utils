@@ -42,6 +42,7 @@ const parser = (configs: ObjectMapType<typeof createStyleFunction>) => (props: P
     else if (type === 'object') Object.assign(styles, parseResponsiveObject({sx, obj: value, props}))
   })
 
+
   return styles
 }
 
@@ -64,10 +65,9 @@ export const createStyleFunction = (config: ConfigArgType) => {
 
 export const system = (args: ConfigArgsType = {}) => {
   let configs: ObjectMapType<typeof createStyleFunction> = {};
-
   keys(args).forEach((key): void => {
     let config: ConfigArgType = args[key];
-    configs[key] = createStyleFunction(config);
+    Object.assign(configs, {[key]: createStyleFunction(config)})
   });
 
   return parser(configs)

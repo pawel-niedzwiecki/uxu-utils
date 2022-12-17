@@ -1,11 +1,11 @@
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type ColorProps = {
-  color?: string | ObjectMapType<string>;
-  backgroundColor?: string | ObjectMapType<string>;
-  opacity?: string | ObjectMapType<string>;
-  mixBlendMode?: string | ObjectMapType<string>;
+  color?: PropType;
+  backgroundColor?: PropType;
+  opacity?: PropType;
+  mixBlendMode?: PropType;
 }
 
 export type ColorConfig = typeof configs;

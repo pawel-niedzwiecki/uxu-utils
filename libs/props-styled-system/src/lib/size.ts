@@ -1,9 +1,9 @@
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type SizeProps = {
-  width?: string | ObjectMapType<string>;
-  height?: string | ObjectMapType<string>;
+  width?: PropType;
+  height?: PropType;
 }
 
 export type SizeConfig = typeof configs;
