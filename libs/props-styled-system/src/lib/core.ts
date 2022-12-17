@@ -1,6 +1,7 @@
 import type {ObjectMapType, Nullable} from "@uxu/types";
- import {createMediaQuery, keys} from "@uxu/utils";
+import {createMediaQuery, keys} from "@uxu/utils";
 import {ConfigArgType, ConfigArgsType, PropsType} from 'types';
+
 
 type ParseResponsiveObjectProps = { sx: typeof createStyleFunction, obj: ObjectMapType<string>, props: PropsType }
 
