@@ -19,6 +19,8 @@ export type ConfigArgType = {
 
 export type ConfigArgsType = ObjectMapType<ConfigArgType>;
 
+export type PropType = string | ObjectMapType<string>;
+
 export type PropsType =
   ColorProps
   | SpaceProps

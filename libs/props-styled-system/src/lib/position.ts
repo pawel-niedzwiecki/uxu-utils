@@ -1,12 +1,12 @@
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type PositionProps = {
-  position?: string | ObjectMapType<string>;
-  top?: string | ObjectMapType<string>;
-  right?: string | ObjectMapType<string>;
-  left?: string | ObjectMapType<string>;
-  bottom?: string | ObjectMapType<string>;
+  position?: PropType;
+  top?: PropType;
+  right?: PropType;
+  left?: PropType;
+  bottom?: PropType;
 }
 
 export type PositionConfig = typeof configs;

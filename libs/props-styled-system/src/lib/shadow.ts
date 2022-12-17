@@ -1,9 +1,9 @@
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type ShadowProps = {
-  boxShadow?: string | ObjectMapType<string>;
-  textShadow?: string | ObjectMapType<string>;
+  boxShadow?: PropType;
+  textShadow?: PropType;
 }
 
 export type ShadowConfig = typeof configs;
