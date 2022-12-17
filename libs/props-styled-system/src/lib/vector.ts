@@ -7,7 +7,6 @@ export type VectorProps = {
 
 export type VectorConfig = typeof configs;
 
-
 const configs = {
   fill: {
     property: 'fill',
