@@ -31,5 +31,8 @@ export { Flex } from './flex';
 export * from './content';
 export { Content } from './content';
 
+export * from './borders';
+export { Borders } from './borders';
+
 export * from './theme';
 export type { Theme } from './theme';
