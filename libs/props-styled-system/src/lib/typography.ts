@@ -1,14 +1,14 @@
 import {system} from './core';
-import {ObjectMapType} from "@uxu/types";
+import {PropType} from "./types";
 
 export type TypographyProps = {
-  fontFamily?: string | ObjectMapType<string>;
-  fontSize?: string | ObjectMapType<string>;
-  fontWeight?: string | ObjectMapType<string>;
-  lineHeight?: string | ObjectMapType<string>;
-  letterSpacing?: string | ObjectMapType<string>;
-  textAlign?: string | ObjectMapType<string>;
-  fontStyle?: string | ObjectMapType<string>;
+  fontFamily?: PropType;
+  fontSize?: PropType;
+  fontWeight?: PropType;
+  lineHeight?: PropType;
+  letterSpacing?: PropType;
+  textAlign?: PropType;
+  fontStyle?: PropType;
 }
 
 export type TypographyConfig = typeof configs;
