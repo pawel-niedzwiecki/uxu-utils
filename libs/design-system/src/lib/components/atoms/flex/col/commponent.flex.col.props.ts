@@ -5,3 +5,4 @@ import {ColorProps, BorderProps , ShadowProps} from '@uxu/props-styled-system'
 
 
 export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & BorderProps & ShadowProps>
+
