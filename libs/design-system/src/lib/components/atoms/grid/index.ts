@@ -1,2 +1,1 @@
-export { ComponentsGrid } from './Grid';
-export type { GridProps } from './props';
+export * from "./components.grid"

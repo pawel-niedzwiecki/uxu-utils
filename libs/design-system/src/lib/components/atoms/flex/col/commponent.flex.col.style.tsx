@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 import {ObjectMapType} from '@uxu/types';
-import {listensPropsColor, listensPropsShadow} from '@uxu/props-styled-system';
+import {listensPropsColor, listensPropsBorder, listensPropsShadow} from '@uxu/props-styled-system';
 
 
 export const Wrapper = styled.div<{ cols: ObjectMapType<number> }>`
@@ -15,6 +15,7 @@ export const Wrapper = styled.div<{ cols: ObjectMapType<number> }>`
         const w = countW % 1 === 0 ? countW : countW.toFixed(4);
         const styleCol = css`
           ${listensPropsColor};
+          ${listensPropsBorder};
           ${listensPropsShadow};
           flex: ${w}%;
           width: 100%;

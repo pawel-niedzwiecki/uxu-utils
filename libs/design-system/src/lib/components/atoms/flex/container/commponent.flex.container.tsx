@@ -1,14 +1,9 @@
-import {Breakpoints} from "theme";
-import {ContainerStyle} from './commponent.flex.container.style';
-import {FunctionComponentDiv} from '@uxu/types';
-import React, {FC} from 'react';
+import {Props} from "./commponent.flex.container.props";
+import {Wrapper} from './commponent.flex.container.style';
 
-export type ContainerProps = {
-  full?: boolean;
-};
 
-export const Container: FC<FunctionComponentDiv & ContainerProps> = ({children, full = false}, props) => (
-  <ContainerStyle full={full} {...props}>
+export const Container: Props = ({children, full = false, ...args}, props) => (
+  <Wrapper full={full} {...props} {...args}>
     {children}
-  </ContainerStyle>
+  </Wrapper>
 );
