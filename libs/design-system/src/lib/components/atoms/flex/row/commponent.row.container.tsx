@@ -1,5 +1,4 @@
-import { RowStyle } from './commponent.row.container.style';
-import { FunctionComponentDiv } from '@uxu/types';
-import React from 'react';
+import { Wrapper } from './commponent.row.container.style';
+import { Props } from './commponent.flex.row.props';
 
-export const Row: React.FC<FunctionComponentDiv> = ({ children }, props) => <RowStyle {...props}>{children}</RowStyle>;
+export const Row: Props = ({ children, ...args }, props) => <Wrapper {...props} {...args}>{children}</Wrapper>;
