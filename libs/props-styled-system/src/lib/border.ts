@@ -2,10 +2,19 @@ import {system} from './core';
 import {PropType} from "./types";
 
 export type BorderProps = {
-  color?: PropType;
-  backgroundColor?: PropType;
-  opacity?: PropType;
-  mixBlendMode?: PropType;
+  border?: PropType;
+  borderWidth?: PropType;
+  borderStyle?: PropType;
+  borderColor?: PropType;
+  borderRadius?: PropType;
+  borderTop?: PropType;
+  borderTopLeftRadius?: PropType;
+  borderTopRightRadius?: PropType;
+  borderRight?: PropType;
+  borderBottom?: PropType;
+  borderBottomLeftRadius?: PropType;
+  borderBottomRightRadius?: PropType;
+  borderLeft?: PropType;
 }
 
 export type BorderConfig = typeof configs;

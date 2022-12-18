@@ -7,8 +7,8 @@ export const body = css`
       font-size: ${fontSizes.bases};
       line-height: ${lineHeights.bases};
       font-weight: ${fontWeights.normal};
-      color: var(--uxu-foreground);
-      background-color: var(--uxu-background);
+      color: var(--uxu-color-primary-foreground);
+      background-color: var(--uxu-color-primary-background);
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
       -webkit-overflow-scrolling: touch;

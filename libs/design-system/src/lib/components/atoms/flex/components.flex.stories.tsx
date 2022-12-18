@@ -27,24 +27,76 @@ export default {
 };
 
 const Template = (args: Args) => (
-  <Container full={args.full}>
-    <Row>
-      {new Array(8).fill(null).map((_, index) => (
-        <Col
-          xs={args.xs}
-          s={args.s}
-          m={args.m}
-          l={args.l}
-          xl={args.xl}
-          key={index}
-          color={{xs: 'highlight.pink', l: 'success.dark'}}
-
-        >
-          <Box marginTop="default" marginBottom="default" padding="small" textAlign="center" backgroundColor="primary.background" color="primary.foreground">COL {index + 1}</Box>
+  <>
+    <Container full={args.full}>
+      <Row>
+        <Col xs={12}>
+          <Box
+            fontSize="fs1"
+            paddingTop="big"
+            fontWeight="bold"
+            width="100%"
+            color="primary.foreground"
+            textAlign='center'
+          >
+            Flex system
+          </Box>
+          <Box
+            paddingTop="big"
+            width="100%"
+            color="primary.accent4"
+            paddingBottom='big'
+            textAlign='center'
+          >
+            System grid is used in UXU products. The system uses display:flex
+          </Box>
         </Col>
-      ))}
-    </Row>
-  </Container>
+      </Row>
+    </Container>
+    <Container
+      full={args.full}
+      borderRadius="default"
+      border="default"
+      backgroundColor="primary.accent1"
+      style={{paddingBottom: "2rem"}}
+    >
+      <Row>
+        <Col xs={12}>
+          <Box textAlign="center" padding="default">CONTAINER</Box>
+        </Col>
+      </Row>
+      <Row
+        borderRadius="default"
+        border="default"
+        style={{paddingBottom: "2rem"}}
+      >
+        <Col xs={12}><Box textAlign="center" padding="default">ROW</Box></Col>
+        {new Array(12).fill(null).map((_, index) => (
+          <Col
+            xs={args.xs}
+            s={args.s}
+            m={args.m}
+            l={args.l}
+            xl={args.xl}
+            key={index}
+            color="success.dark"
+          >
+            <Box
+              margin="small"
+              padding="default"
+              textAlign="center"
+              fontWeight="bold"
+              borderRadius="default"
+              color="primary.foreground"
+              backgroundColor="success.default"
+            >
+              COL {index + 1}
+            </Box>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  </>
 )
 
 export const Flex = Template.bind({});
