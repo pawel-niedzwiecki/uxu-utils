@@ -5,4 +5,5 @@ export const space = {
   small: '0.5rem',
   default: '1.5rem',
   big: '3rem',
+  auto: 'auto',
 } as const;

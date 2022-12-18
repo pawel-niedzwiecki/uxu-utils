@@ -7,6 +7,7 @@ import {ShadowProps} from "./shadow";
 import {SizeProps} from "./size";
 import {BorderProps} from "./border";
 import {VectorProps} from "./vector";
+import {DisplayProps} from "./display";
 import {Theme} from "@uxu/design-system";
 import {ObjectMapType} from "@uxu/types";
 
@@ -32,4 +33,5 @@ export type PropsType =
   | SizeProps
   | VectorProps
   | BorderProps
+  | DisplayProps
   | Theme;

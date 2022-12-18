@@ -3,10 +3,10 @@ import {createMediaQuery, keys} from "@uxu/utils";
 import {ConfigArgType, ConfigArgsType, PropsType} from 'types';
 
 
-type ParseResponsiveObjectProps = { sx: typeof createStyleFunction, obj: ObjectMapType<string>, props: PropsType }
+type ParseResponsiveObjectProps = { sx: typeof createStyleFunction, obj: ObjectMapType<string>, props: PropsType, styles: ObjectMapType<string | ObjectMapType<string>> }
 
-const parseResponsiveObject = ({sx, obj, props}: ParseResponsiveObjectProps) => {
-  let styles = {}
+const parseResponsiveObject = ({sx, obj, props, styles}: ParseResponsiveObjectProps) => {
+
   const breakpoints = props.theme.breakpoints
 
   for (let key in obj) {
@@ -39,7 +39,7 @@ const parser = (configs: ObjectMapType<typeof createStyleFunction>) => (props: P
     const sx = configs[key];
 
     if (type === 'string') Object.assign(styles, sx(value, props))
-    else if (type === 'object') Object.assign(styles, parseResponsiveObject({sx, obj: value, props}))
+    else if (type === 'object') styles = parseResponsiveObject({sx, obj: value, props, styles})
   })
 
 
