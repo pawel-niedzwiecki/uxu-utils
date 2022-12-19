@@ -67,9 +67,9 @@ const Template = (args: Args) => (
   </>
 );
 
-export const Dots = Template.bind(
+export const Wheel = Template.bind(
   {}
 );
 
 // @ts-ignore
-Dots.args = args;
+Wheel.args = args;
