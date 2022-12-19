@@ -1,7 +1,8 @@
-import {Wrapper} from "./commponent.logo.style";
-import {Props} from './commponent.logo.props';
-import {vectorLogos} from 'assets/vectors/assets.vector.logos'
+import {Wrapper} from "./commponent.loading.wheel.style";
+import {Props} from './commponent.loading.wheel.props';
 
-export const Logo: Props = ({type, ...args}, props) => (
-  <Wrapper {...args} {...props}>{vectorLogos[type] ? vectorLogos[type] : "the type not exist"}</Wrapper>
+export const LoadingWheel: Props = ({...args}, props) => (
+  <Wrapper {...args} {...props} >
+    {new Array(12).fill(undefined).map((item, i) => <span></span>)}
+  </Wrapper>
 )
