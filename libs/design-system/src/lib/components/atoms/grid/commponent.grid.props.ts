@@ -6,4 +6,5 @@ export type SpecialProps = {
   container?: boolean;
 };
 
-export type Props = FC<FunctionComponentDiv & ColorProps & GridProps & BorderProps & ShadowProps & SizeProps & SpecialProps>
+export type Props = FC<FunctionComponentDiv & ColorProps & GridProps & BorderProps & ShadowProps & SizeProps & SpecialProps>;
+
