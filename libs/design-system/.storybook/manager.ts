@@ -4,7 +4,7 @@ import {create} from '@storybook/theming';
 addons.setConfig({
   theme: create({
     base: 'dark',
-    brandTitle: 'UXU DESIGN SYSTEM',
+    brandTitle: 'UXU',
     brandUrl: 'https://uxu.pl',
     brandTarget: '_self',
   })
