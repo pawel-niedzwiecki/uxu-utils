@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Box as B} from './components.box';
-import {Container, Row, Col} from "components/atoms/flex";
+import {SectionStoryBook} from "components/templates/section";
 
 type Args = typeof args;
 
@@ -44,43 +44,13 @@ export default {
   },
 };
 
-const Template = (args: Args) => (
-  <Container>
-    <Row>
-      <Col xs={12}>
-        <B
-          fontSize="fs1"
-          paddingTop="big"
-          fontWeight="bold"
-          width="100%"
-          color="primary.foreground"
-          textAlign='center'
-        >
-          Box system
-        </B>
-        <B
-          paddingTop="big"
-          width="100%"
-          color="primary.accent4"
-          paddingBottom='big'
-          textAlign='center'
-        >
-          This box system generate div with all props for styles
-        </B>
-      </Col>
-      <Col xs={12} style={{display: 'flex'}}>
-        <B
-          {...args}
-        >
-          BOX
-        </B>
-      </Col>
-    </Row>
-  </Container>
-
-);
+const Template = (args: Args) => <SectionStoryBook title={title} description={description}><B {...args} >BOX</B></SectionStoryBook>;
 
 export const Box = Template.bind({});
 
 // @ts-ignore
 Box.args = args;
+
+const title = "Box system";
+const description = "This box system generate div with all props for styles";
+
