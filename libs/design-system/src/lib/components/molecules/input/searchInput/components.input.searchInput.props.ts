@@ -3,5 +3,4 @@ import {ColorProps, SpaceProps, PositionProps, ShadowProps, SizeProps, Typograph
 import {FC} from "react";
 import {Breakpoints} from "theme";
 
-
-export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & SpaceProps & PositionProps & ShadowProps & SizeProps & TypographyProps & BorderProps>
+export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & SpaceProps & PositionProps & ShadowProps & SizeProps & TypographyProps & BorderProps>;

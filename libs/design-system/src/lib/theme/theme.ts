@@ -4,7 +4,7 @@ import {focuses} from './focuses';
 import {fontSizes} from './fontSizes';
 import {fontWeights} from './fontWeights';
 import {lineHeights} from './lineHeights';
-import {motion} from './motion';
+import {motions} from './motions';
 import {radii} from './radii';
 import {shadows} from './shadows';
 import {space} from './space';
@@ -19,7 +19,7 @@ export {focuses} from './focuses';
 export {fontSizes} from './fontSizes';
 export {fontWeights} from './fontWeights';
 export {lineHeights} from './lineHeights';
-export {motion} from './motion';
+export {motions} from './motions';
 export {radii} from './radii';
 export {shadows} from './shadows';
 export {space} from './space';
@@ -37,7 +37,7 @@ export const theme = {
   fontSizes,
   fontWeights,
   lineHeights,
-  motion,
+  motions,
   radii,
   shadows,
   space,
