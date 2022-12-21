@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 
 export const Input = styled.input`
   width: 100%;
-  height: 5rem;
+  height: 4rem;
   display: block;
   -webkit-appearance: none;
   padding: var(--uxu-space-default);
@@ -34,6 +34,10 @@ export const Input = styled.input`
   }
 `;
 
+export const Label = styled.label`
+  width: 100%;
+`;
+
 export const Sugestions = styled.ul`
   width: 100%;
   display: block;
@@ -57,8 +61,8 @@ export const Sugestion = styled.li`
 
 export const ImageBox = styled.div`
   display: flex;
-  width: 4.2rem;
-  height: 4.2rem;
+  width: 3.2rem;
+  height: 3.2rem;
   align-items: center;
   justify-content: center;
   border-radius: var(--uxu-radii-default);
