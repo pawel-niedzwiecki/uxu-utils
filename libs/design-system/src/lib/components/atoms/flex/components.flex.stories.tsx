@@ -1,6 +1,7 @@
-import {Col, Container, Row} from './index';
-import {Box} from 'components/atoms/box'
 import * as React from 'react';
+import {Box} from 'components/atoms/box';
+import {Col, Container, Row} from './index';
+import {SectionStoryBook} from "components/templates/section";
 
 type Args = typeof args;
 
@@ -27,32 +28,8 @@ export default {
 };
 
 const Template = (args: Args) => (
-  <>
-    <Container full={args.full}>
-      <Row>
-        <Col xs={12}>
-          <Box
-            fontSize="fs1"
-            paddingTop="big"
-            fontWeight="bold"
-            width="100%"
-            color="primary.foreground"
-            textAlign='center'
-          >
-            Flex system
-          </Box>
-          <Box
-            paddingTop="big"
-            width="100%"
-            color="primary.accent4"
-            paddingBottom='big'
-            textAlign='center'
-          >
-            System grid is used in UXU products. The system uses display:flex
-          </Box>
-        </Col>
-      </Row>
-    </Container>
+  <SectionStoryBook title="Flex system"
+                    description="System grid is used in UXU products. The system uses display:flex">
     <Container
       full={args.full}
       borderRadius="default"
@@ -96,7 +73,7 @@ const Template = (args: Args) => (
         ))}
       </Row>
     </Container>
-  </>
+  </SectionStoryBook>
 )
 
 export const Flex = Template.bind({});
