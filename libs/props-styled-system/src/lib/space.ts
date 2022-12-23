@@ -19,43 +19,43 @@ export type SpaceConfig = typeof configs;
 const configs = {
   margin: {
     property: 'margin',
-    scale: 'space',
+    scale: 'spaces',
   },
   marginTop: {
     property: 'marginTop',
-    scale: 'space',
+    scale: 'spaces',
   },
   marginRight: {
     property: 'marginRight',
-    scale: 'space',
+    scale: 'spaces',
   },
   marginBottom: {
     property: 'marginBottom',
-    scale: 'space',
+    scale: 'spaces',
   },
   marginLeft: {
     property: 'marginLeft',
-    scale: 'space',
+    scale: 'spaces',
   },
   padding: {
     property: 'padding',
-    scale: 'space',
+    scale: 'spaces',
   },
   paddingTop: {
     property: 'paddingTop',
-    scale: 'space',
+    scale: 'spaces',
   },
   paddingRight: {
     property: 'paddingRight',
-    scale: 'space',
+    scale: 'spaces',
   },
   paddingBottom: {
     property: 'paddingBottom',
-    scale: 'space',
+    scale: 'spaces',
   },
   paddingLeft: {
     property: 'paddingLeft',
-    scale: 'space',
+    scale: 'spaces',
   },
 } as const;
 

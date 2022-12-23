@@ -1,6 +1,6 @@
-export type Space = typeof space;
+export type Spaces = typeof spaces;
 
-export const space = {
+export const spaces = {
   without: '0rem',
   small: '0.5rem',
   default: '1.5rem',

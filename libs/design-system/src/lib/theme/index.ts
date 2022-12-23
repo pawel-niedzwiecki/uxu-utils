@@ -13,23 +13,20 @@ export type { FontWeights } from './fontWeights';
 export * from './lineHeights';
 export type { LineHeights } from './lineHeights';
 
-export * from './radii';
-export type { Radii } from './radii';
+export * from './radiis';
+export type { Radiis } from './radiis';
 
 export * from './shadows';
 export type { Shadows } from './shadows';
 
-export * from './space';
-export type { Space } from './space';
+export * from './spaces';
+export type { Spaces } from './spaces';
 
-export * from './grid';
-export { Grid } from './grid';
+export * from './flexs';
+export { Flexs } from './flexs';
 
-export * from './flex';
-export { Flex } from './flex';
-
-export * from './content';
-export { Content } from './content';
+export * from './contents';
+export { Contents } from './contents';
 
 export * from './borders';
 export { Borders } from './borders';
