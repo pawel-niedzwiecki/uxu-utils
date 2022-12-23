@@ -1,13 +1,13 @@
 export type FontSizes = typeof fontSizes;
 
 export const fontSizes = {
-  fs1: '4.8rem',
-  fs2: '3.2rem',
-  fs3: '2.4rem',
-  fs4: '2.0rem',
-  fs5: '1.6rem',
-  fs6: '1.4rem',
-  fs7: '1.2rem',
-  fs8: '1rem',
-  bases: '1.6rem',
+  h1: '4.8rem',
+  h2: '3.2rem',
+  h3: '2.4rem',
+  h4: '2.0rem',
+  h5: '1.6rem',
+  h6: '1.4rem',
+  small: '1.2rem',
+  default: '1.6rem',
+  large: '2.4rem',
 } as const;

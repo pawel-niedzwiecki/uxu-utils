@@ -1,9 +1,14 @@
-import {FunctionComponentDiv} from '@uxu/types';
-import {SizeProps, VectorProps} from '@uxu/props-styled-system'
 import {FC} from 'react';
+import {FunctionComponentDiv} from '@uxu/types';
+import {SizeProps} from "@uxu/props-styled-system";
 
 export type SpecialProps = {
-  size?: "small" | "large"
+  prefix?: JSX.Element,
+  suffix?: JSX.Element,
+  shape?: "square" | "circle",
+  size?: "small" | "large" | "default",
+  align?: "start" | "grow" | "end" | "center",
+  color?: "primary" | "secondary" | "success" | "error" | "warning" | "violet" | "cyan" | "purple" | "magenta" | "pink" | "yellow"
 };
 
-export type Props = FC<FunctionComponentDiv & SizeProps & VectorProps & SpecialProps>
+export type Props = FC<FunctionComponentDiv & SizeProps & SpecialProps>

@@ -1,3 +1,5 @@
 export type Motions = typeof motions;
 
-export const motions = {} as const
+export const motions = {
+  default: "0.3s"
+} as const

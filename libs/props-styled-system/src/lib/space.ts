@@ -1,4 +1,3 @@
-import {listensPropsColor} from "color";
 import {system} from './core';
 import {PropType} from "./types";
 

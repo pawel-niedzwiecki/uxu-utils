@@ -33,7 +33,7 @@ export const variables = css`
     }
 
     for (const fontWeight in fontWeights) {
-      Object.assign(styles, {[`--uxu-fontWeight-${fontWeight}`]: fontWeights[fontWeight]})
+      Object.assign(styles, {[`--uxu-fontWeight-${fontWeight}`]: `${fontWeights[fontWeight]}`})
     }
 
     for (const lineHeight in lineHeights) {

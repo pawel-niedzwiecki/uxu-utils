@@ -7,7 +7,7 @@ type Args = typeof args;
 const args = {
   color: 'primary.foreground',
   backgroundColor: 'success.default',
-  padding: 'big',
+  padding: 'large',
   fontSize: 'fs3',
   fontWeight: 'bold',
   textAlign: 'center',

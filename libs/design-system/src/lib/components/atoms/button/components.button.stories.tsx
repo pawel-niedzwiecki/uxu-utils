@@ -1,11 +1,13 @@
+import * as React from 'react';
 import {Button} from './index';
 import {SectionStoryBook} from "components/templates/section";
-import * as React from 'react';
+
 
 type Args = typeof args;
 
 const args = {
-  size: 'small',
+  size: 'default',
+  color: "yellow"
 } as const;
 
 
