@@ -4,14 +4,14 @@ import {listensPropsColor, listensPropsBorder, listensPropsShadow} from '@uxu/pr
 
 
 export const Wrapper = styled.div<{ cols: ObjectMapType<number> }>`
-  ${({theme: {space, breakpoints, flex}, cols}) => {
+  ${({theme: {spaces, breakpoints, flexs}, cols}) => {
     const keyInCols = Object.keys(cols);
     const keysInBreakpoints = Object.keys(breakpoints);
 
 
     return keyInCols.map(key => {
       if (keysInBreakpoints.some(keyInBreakpoint => keyInBreakpoint === key)) {
-        const countW = (100 * cols[key]) / flex.col;
+        const countW = (100 * cols[key]) / flexs.col;
         const w = countW % 1 === 0 ? countW : countW.toFixed(4);
         const styleCol = css`
           ${listensPropsColor};
@@ -21,8 +21,8 @@ export const Wrapper = styled.div<{ cols: ObjectMapType<number> }>`
           width: 100%;
           max-width: ${w}%;
           position: relative;
-          padding-left: ${space.default};
-          padding-right: ${space.default};
+          padding-left: ${spaces.default};
+          padding-right: ${spaces.default};
         `;
         if (breakpoints[key] === 0)
           return css`

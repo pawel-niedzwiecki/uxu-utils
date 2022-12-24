@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {listensPropsColor, listensPropsSpace, listensPropsPosition, listensPropsShadow, listensPropsSize, listensPropsTypography, listensPropsBorder, listensPropsDisplay} from "@uxu/props-styled-system";
+import {listensPropsColor, listensPropsSpace, listensPropsPosition, listensPropsShadow, listensPropsSize, listensPropsTypography, listensPropsBorder} from "@uxu/props-styled-system";
 
 export const ComponentBox = styled.div`
   ${listensPropsColor};
@@ -9,5 +9,4 @@ export const ComponentBox = styled.div`
   ${listensPropsSize};
   ${listensPropsTypography};
   ${listensPropsBorder};
-  ${listensPropsDisplay};
 `;

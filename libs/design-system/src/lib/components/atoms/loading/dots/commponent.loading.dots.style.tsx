@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 import {SpecialProps} from './commponent.loading.dots.props'
 
 export const Wrapper = styled.div<SpecialProps>`
-  ${({theme: {space}, size}) => css`
+  ${({theme: {spaces}, size}) => css`
     display: flex;
     position: relative;
 
@@ -11,7 +11,7 @@ export const Wrapper = styled.div<SpecialProps>`
       width: ${size}rem;
       height: ${size}rem;
       border-radius: 100%;
-      margin: ${space.small};
+      margin: ${spaces.small};
       background-color: var(--uxu-color-primary-accent6);
       animation-name: loading-dots_blink;
       animation-duration: 1.4s;
