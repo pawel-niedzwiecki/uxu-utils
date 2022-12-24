@@ -15,7 +15,7 @@ const btn = ({size, shape, align, color, variant}: SpecialProps) => {
     borderRadius: `${shape === 'circle' ? '100%' : 'var(--uxu-radii-default)'}`,
 
     fontWeight: 'var(--uxu-font-weight-regular)',
-    lineHeight: 'var(--uxu-line-height-default)',
+    lineHeight: 'var(--uxu-line-height-small)',
     fontSize: `var(--uxu-font-size-${size ? size : 'default'})`,
     padding: `${shape === 'circle' ? 'var(--uxu-space-default)' : `var(--uxu-space-small) var(--uxu-space-default)`}`,
 
@@ -30,13 +30,13 @@ const btn = ({size, shape, align, color, variant}: SpecialProps) => {
     case 'start':
     case 'end':
       Object.assign(style, {
-        alignItems: align,
+        alignItems: 'center',
         justifyContent: align,
       });
       break;
     case 'grow':
       Object.assign(style, {
-        alignItems: 'space-between',
+        alignItems: 'center',
         justifyContent: 'space-between',
       });
       break;
