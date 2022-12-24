@@ -1,48 +1,48 @@
+import {alphas} from './alphas';
 import {breakpoints} from './breakpoints';
 import {colors} from './colors';
 import {focuses} from './focuses';
 import {fontSizes} from './fontSizes';
 import {fontWeights} from './fontWeights';
 import {lineHeights} from './lineHeights';
-import {motion} from './motion';
-import {radii} from './radii';
+import {motions} from './motions';
+import {radiis} from './radiis';
 import {shadows} from './shadows';
-import {space} from './space';
-import {grid} from './grid';
-import {flex} from './flex';
-import {content} from './content';
+import {spaces} from './spaces';
+import {flexs} from './flexs';
+import {contents} from './contents';
 import {borders} from "./borders";
 
+export {alphas} from './alphas';
 export {breakpoints} from './breakpoints';
 export {colors} from './colors';
 export {focuses} from './focuses';
 export {fontSizes} from './fontSizes';
 export {fontWeights} from './fontWeights';
 export {lineHeights} from './lineHeights';
-export {motion} from './motion';
-export {radii} from './radii';
+export {motions} from './motions';
+export {radiis} from './radiis';
 export {shadows} from './shadows';
-export {space} from './space';
-export {grid} from './grid';
-export {flex} from './flex';
-export {content} from './content';
+export {spaces} from './spaces';
+export {flexs} from './flexs';
+export {contents} from './contents';
 export {borders} from './borders';
 
 export type Theme = typeof theme;
 
 export const theme = {
+  alphas,
   breakpoints,
   colors,
   focuses,
   fontSizes,
   fontWeights,
   lineHeights,
-  motion,
-  radii,
+  motions,
+  radiis,
   shadows,
-  space,
-  grid,
-  flex,
-  content,
+  spaces,
+  flexs,
+  contents,
   borders
 } as const;

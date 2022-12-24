@@ -3,17 +3,17 @@ import {SpecialProps} from './commponent.loading.wheel.props'
 
 
 export const Wrapper = styled.div<SpecialProps>`
-  ${({theme: {space}, size}) => css`
+  ${({size}) => css`
     width: ${size}rem;
     height: ${size}rem;
   `}
 `
 
 export const Wheel = styled.div<SpecialProps & { el: undefined[] }>`
-  ${({theme: {space, radii}, size}) => css`
+  ${({theme: {spaces, radiis}, size}) => css`
 
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 30%;
     width: ${size}rem;
     height: ${size}rem;
     position: relative;
@@ -25,8 +25,8 @@ export const Wheel = styled.div<SpecialProps & { el: undefined[] }>`
       height: 8%;
       display: block;
       position: absolute;
-      margin: ${space.small};
-      border-radius: ${radii.default};
+      margin: ${spaces.small};
+      border-radius: ${radiis.default};
       background-color: var(--uxu-color-primary-accent6);
       animation-name: loading-wheel-blink;
       animation-duration: 1.4s;
