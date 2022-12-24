@@ -1,3 +1,4 @@
+import {alphas} from './alphas';
 import {breakpoints} from './breakpoints';
 import {colors} from './colors';
 import {focuses} from './focuses';
@@ -12,6 +13,7 @@ import {flexs} from './flexs';
 import {contents} from './contents';
 import {borders} from "./borders";
 
+export {alphas} from './alphas';
 export {breakpoints} from './breakpoints';
 export {colors} from './colors';
 export {focuses} from './focuses';
@@ -29,6 +31,7 @@ export {borders} from './borders';
 export type Theme = typeof theme;
 
 export const theme = {
+  alphas,
   breakpoints,
   colors,
   focuses,

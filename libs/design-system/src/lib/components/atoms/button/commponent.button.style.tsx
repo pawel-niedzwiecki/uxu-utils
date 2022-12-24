@@ -2,16 +2,15 @@ import styled, {css} from 'styled-components';
 import {SpecialProps} from "./commponent.button.props"
 import {listensPropsSize} from "@uxu/props-styled-system";
 
-const btn = ({size, shape, align, color}: SpecialProps) => {
+const btn = ({size, shape, align, color, variant}: SpecialProps) => {
+  const ghost = variant === 'ghost';
   const style = {
     display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
 
     maxWidth: '100%',
     cursor: 'pointer',
 
-    border: `var(--uxu-border-primary-foreground)`,
+    border: `1px solid`,
     borderRadius: `${shape === 'circle' ? '100%' : 'var(--uxu-radii-default)'}`,
 
     fontWeight: 'var(--uxu-font-weight-regular)',
@@ -19,22 +18,14 @@ const btn = ({size, shape, align, color}: SpecialProps) => {
     fontSize: `var(--uxu-font-size-${size ? size : 'default'})`,
     padding: `${shape === 'circle' ? 'var(--uxu-space-default)' : `var(--uxu-space-small) var(--uxu-space-default)`}`,
 
-    color: `var(--uxu-color-primary-background)`,
-    background: `var(--uxu-color-primary-foreground)`,
-
+    transitionProperty: `all`,
     transitionTimingFunction: `ease`,
     transitionDuration: `var(--uxu-motions-default)`,
-    transitionProperty: `border-color, background, color, transform, box-shadow`,
 
     '&:focus': {outline: 'none'},
-    '&:hover': {
-      color: `var(--uxu-color-primary-foreground)`,
-      background: `var(--uxu-color-primary-background)`,
-    }
   }
 
-
-  if (align) switch (align) {
+  switch (align) {
     case 'start':
     case 'end':
       Object.assign(style, {
@@ -48,19 +39,25 @@ const btn = ({size, shape, align, color}: SpecialProps) => {
         justifyContent: 'space-between',
       });
       break;
+    default:
+      Object.assign(style, {
+        alignItems: 'center',
+        justifyContent: 'center',
+      });
+      break;
   }
 
-  if (color) switch (color) {
+  if (variant !== "disabled" && variant !== "loading") switch (color) {
     case 'secondary':
       Object.assign(style, {
         color: `var(--uxu-color-primary-accent5)`,
         background: `var(--uxu-color-primary-background)`,
-        border: `var(--uxu-border-primary-secondary)`,
+        borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-primary-secondary)`,
 
         '&:hover': {
-          color: `var(--uxu-color-primary-foreground)`,
-          background: `var(--uxu-color-primary-background)`,
-          border: `var(--uxu-border-primary-foreground)`,
+          color: ghost ? `var(--uxu-color-primary-accent5)` : `var(--uxu-color-primary-foreground)`,
+          background: ghost ? `var(--uxu-color-primary-accent1)` : `var(--uxu-color-primary-background)`,
+          borderColor: ghost ? `var(--uxu-color-primary-accent1)` : `var(--uxu-color-primary-foreground)`,
         }
       });
       break;
@@ -69,27 +66,27 @@ const btn = ({size, shape, align, color}: SpecialProps) => {
     case 'warning':
     case 'violet':
       Object.assign(style, {
-        color: `var(--uxu-color-primary-foreground)`,
-        background: `var(--uxu-color-${color}-default)`,
-        border: `var(--uxu-border-${color}-default)`,
+        color: ghost ? `var(--uxu-color-${color}-default)` : `var(--uxu-color-primary-foreground)`,
+        backgroundColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
+        borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
 
         '&:hover': {
           color: `var(--uxu-color-${color}-default)`,
-          background: `var(--uxu-color-primary-background)`,
-          border: `var(--uxu-border-${color}-default)`,
+          backgroundColor: ghost ? `rgba(var(--uxu-color-${color}-default-rgba), var(--uxu-alpha-small))` : `var(--uxu-color-primary-background)`,
+          borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
         }
       });
       break;
     case `cyan`:
       Object.assign(style, {
-        color: `var(--uxu-color-primary-background)`,
-        background: `var(--uxu-color-${color}-default)`,
-        border: `var(--uxu-border-${color}-default)`,
+        color: ghost ? `var(--uxu-color-${color}-default)` : `var(--uxu-color-primary-background)`,
+        background: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
+        borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
 
         '&:hover': {
           color: `var(--uxu-color-${color}-default)`,
-          background: `var(--uxu-color-primary-background)`,
-          border: `var(--uxu-border-${color}-default)`,
+          background: ghost ? `rgba(var(--uxu-color-${color}-default-rgba), var(--uxu-alpha-small))` : `var(--uxu-color-primary-background)`,
+          borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
         }
       });
       break;
@@ -97,28 +94,60 @@ const btn = ({size, shape, align, color}: SpecialProps) => {
     case `magenta`:
     case `pink`:
       Object.assign(style, {
-        color: `var(--uxu-color-primary-foreground)`,
-        background: `var(--uxu-color-highlight-${color})`,
-        border: `var(--uxu-border-highlight-${color})`,
+        color: ghost ? `var(--uxu-color-highlight-${color})` : `var(--uxu-color-primary-foreground)`,
+        background: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
+        borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
 
         '&:hover': {
           color: `var(--uxu-color-highlight-${color})`,
-          background: `var(--uxu-color-primary-background)`,
-          border: `var(--uxu-border-highlight-${color})`,
+          background: ghost ? `rgba(var(--uxu-color-highlight-${color}-rgba), var(--uxu-alpha-small))` : `var(--uxu-color-primary-background)`,
+          borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
         }
       });
       break;
     case `yellow`:
       Object.assign(style, {
-        color: `var(--uxu-color-primary-background)`,
-        background: `var(--uxu-color-highlight-${color})`,
-        border: `var(--uxu-border-highlight-${color})`,
+        color: ghost ? `var(--uxu-color-highlight-${color})` : `var(--uxu-color-primary-background)`,
+        background: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
+        borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
 
         '&:hover': {
           color: `var(--uxu-color-highlight-${color})`,
-          background: `var(--uxu-color-primary-background)`,
-          border: `var(--uxu-border-highlight-${color})`,
+          background: ghost ? `rgba(var(--uxu-color-highlight-${color}-rgba), var(--uxu-alpha-small))` : `var(--uxu-color-primary-background)`,
+          borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
         }
+      });
+      break;
+    default:
+      Object.assign(style, {
+        color: ghost ? `var(--uxu-color-primary-foreground)` : `var(--uxu-color-primary-background)`,
+        background: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-primary-foreground)`,
+        borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-primary-foreground)`,
+
+        '&:hover': {
+          color: ghost ? `var(--uxu-color-primary-foreground)` : `var(--uxu-color-primary-foreground)`,
+          background: ghost ? `var(--uxu-color-primary-accent1)` : `var(--uxu-color-primary-background)`,
+          borderColor: ghost ? `var(--uxu-color-primary-accent1)` : `var(--uxu-color-primary-foreground)`,
+        }
+      });
+      break;
+  }
+
+  if (variant) switch (variant) {
+    case 'loading':
+    case 'disabled':
+      Object.assign(style, {
+        cursor: `not-allowed`,
+        color: `var(--uxu-color-primary-accent3)`,
+        background: `var(--uxu-color-primary-accent1)`,
+        borderColor: `var(--uxu-color-default)`,
+
+        '&:hover': {
+          color: `var(--uxu-color-primary-accent3)`,
+          background: `var(--uxu-color-primary-accent1)`,
+          borderColor: `var(--uxu-color-default)`,
+        }
+
       });
       break;
   }
@@ -127,8 +156,8 @@ const btn = ({size, shape, align, color}: SpecialProps) => {
 }
 
 export const Wrapper = styled.button<SpecialProps>`
-  ${({size, shape, align, color}) => css`
+  ${({size, shape, align, color, variant}) => css`
     ${listensPropsSize};
-    ${btn({size, shape, align, color})};
+    ${btn({size, shape, align, color, variant})};
   `}
 `

@@ -6,6 +6,7 @@ export type SpaceProps = {
   marginTop?: PropType;
   marginRight?: PropType;
   marginBottom?: PropType;
+  marginLeft?: PropType;
   padding?: PropType;
   paddingTop?: PropType;
   paddingRight?: PropType;

@@ -12,8 +12,8 @@ export const Wrapper = styled.div<SpecialProps>`
 export const Wheel = styled.div<SpecialProps & { el: undefined[] }>`
   ${({theme: {spaces, radiis}, size}) => css`
 
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 30%;
     width: ${size}rem;
     height: ${size}rem;
     position: relative;

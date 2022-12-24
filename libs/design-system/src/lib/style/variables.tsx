@@ -4,10 +4,14 @@ import {ObjectMapType} from "@uxu/types";
 const createMediaPrefersColorScheme = (mode: string) => `@media (prefers-color-scheme: ${mode})`
 
 export const variables = css`
-  ${({theme: {borders, colors, contents, focuses, fontSizes, fontWeights, lineHeights, motions, radiis, shadows, spaces}}) => {
+  ${({theme: {alphas, borders, colors, contents, focuses, fontSizes, fontWeights, lineHeights, motions, radiis, shadows, spaces}}) => {
     const modeDark = createMediaPrefersColorScheme('dark');
     const modeLight = createMediaPrefersColorScheme('light');
     let styles: ObjectMapType<string | object> = {[modeDark]: {}, [modeLight]: {}};
+
+    for (const alpha in alphas) {
+      Object.assign(styles, {[`--uxu-alpha-${alpha}`]: `${alphas[alpha]}`})
+    }
 
     for (const border in borders) {
       Object.assign(styles, {[`--uxu-border-${border}`]: borders[border]})
@@ -15,8 +19,8 @@ export const variables = css`
 
     for (const group in colors) {
       for (const color in colors[group]) {
-        Object.assign(styles[modeDark], {[`--uxu-color-${group}-${color}`]: colors[group][color].dark})
-        Object.assign(styles[modeLight], {[`--uxu-color-${group}-${color}`]: colors[group][color].light})
+        Object.assign(styles[modeDark], {[`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color].dark})`, [`--uxu-color-${group}-${color}-rgba`]: colors[group][color].dark})
+        Object.assign(styles[modeLight], {[`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color].light})`, [`--uxu-color-${group}-${color}-rgba`]: colors[group][color].light})
       }
     }
 

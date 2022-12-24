@@ -1,3 +1,6 @@
+export * from './alphas';
+export type { Alphas } from './alphas';
+
 export * from './breakpoints';
 export type { Breakpoints } from './breakpoints';
 
