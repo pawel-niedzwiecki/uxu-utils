@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {SearchInput} from './components.input.searchInput';
 import {Box} from 'components/atoms/box'
+import {SectionStoryBook} from "components/templates/section";
 import {Container, Row, Col} from "components/atoms/flex";
 
 type Args = typeof args;
@@ -18,34 +19,9 @@ export default {
 };
 
 const Template = (args: Args) => (
-  <Container>
-    <Row>
-      <Col xs={12}>
-        <Box
-          fontSize="fs1"
-          paddingTop="big"
-          fontWeight="bold"
-          width="100%"
-          color="primary.foreground"
-          textAlign='center'
-        >
-          Box system
-        </Box>
-        <Box
-          paddingTop="big"
-          width="100%"
-          color="primary.accent4"
-          paddingBottom='big'
-          textAlign='center'
-        >
-          This box system generate div with all props for styles
-        </Box>
-      </Col>
-      <Col xs={12} style={{display: 'flex'}}>
-       <SearchInput/>
-      </Col>
-    </Row>
-  </Container>
+  <SectionStoryBook title="Input search" description="This component is used in all products UXU. In this story you can look, how works input for search">
+    <SearchInput/>
+  </SectionStoryBook>
 
 );
 

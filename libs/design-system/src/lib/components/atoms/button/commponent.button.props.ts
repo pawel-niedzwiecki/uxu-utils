@@ -3,6 +3,7 @@ import {FunctionComponentDiv} from '@uxu/types';
 import {SizeProps} from "@uxu/props-styled-system";
 
 export type SpecialProps = {
+  type?: string;
   prefix?: JSX.Element,
   suffix?: JSX.Element,
   shape?: "square" | "circle",

@@ -11,12 +11,12 @@ export const Input = styled.input`
   height: 4rem;
   display: block;
   -webkit-appearance: none;
-  padding: var(--uxu-space-default);
   border: var(--uxu-border-default);
   border-radius: var(--uxu-radii-default);
   color: var(--uxu-color-primary-foreground);
   background: var(--uxu-color-primary-background);
   transition: border-color var(--uxu-motion-default);
+  padding: var(--uxu-space-default) 6rem var(--uxu-space-default) var(--uxu-space-default);
 
   &::placeholder {
     opacity: 1;
@@ -36,6 +36,13 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   width: 100%;
+  position: relative;
+
+  button{
+    top: 0.6rem;
+    right: 0.6rem;
+    position: absolute;
+  }
 `;
 
 export const Sugestions = styled.ul`
