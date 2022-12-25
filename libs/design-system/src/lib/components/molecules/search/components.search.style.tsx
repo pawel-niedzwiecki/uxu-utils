@@ -1,51 +1,21 @@
 import styled, {css} from 'styled-components';
+import Link from "next/link";
 
-export const Wrapper = styled.div`
+export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-`;
 
-export const Input = styled.input`
-  width: 100%;
-  height: 4rem;
-  display: block;
-  -webkit-appearance: none;
-  border: var(--uxu-border-default);
-  border-radius: var(--uxu-radii-default);
-  color: var(--uxu-color-primary-foreground);
-  background: var(--uxu-color-primary-background);
-  transition: border-color var(--uxu-motion-default);
-  padding: var(--uxu-space-default) 6rem var(--uxu-space-default) var(--uxu-space-default);
-
-  &::placeholder {
-    opacity: 1;
-    color: var(--uxu-color-primary-accent3);
-    transition: opacity var(--uxu-motion-default);
-  }
-
-  &:focus {
-    outline: none;
-    border: var(--uxu-border-active);
-
-    &::placeholder {
-      opacity: 0;
+  label {
+    button{
+      top: 0.6rem;
+      right: 0.6rem;
+      position: absolute;
     }
   }
 `;
 
-export const Label = styled.label`
-  width: 100%;
-  position: relative;
-
-  button{
-    top: 0.6rem;
-    right: 0.6rem;
-    position: absolute;
-  }
-`;
-
-export const Sugestions = styled.ul`
+export const Sugestions = styled.div`
   width: 100%;
   display: block;
   list-style: none;
@@ -66,7 +36,7 @@ export const Sugestion = styled.li`
   }
 `
 
-export const ImageBox = styled.div`
+export const Cover = styled.div`
   display: flex;
   width: 3.2rem;
   height: 3.2rem;
@@ -76,6 +46,15 @@ export const ImageBox = styled.div`
   background: var(--uxu-color-primary-accent1);
 
 `;
+
+export const Img = styled.img`
+  width: 3.2rem;
+  height: 3.2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--uxu-radii-default);
+`
 
 export const Content = styled.div`
   width: 100%;
