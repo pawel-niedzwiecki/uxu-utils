@@ -2,7 +2,7 @@ import styled, {css} from 'styled-components';
 import {SpecialProps} from "./commponent.button.props"
 import {listensPropsSize} from "@uxu/props-styled-system";
 
-const btn = ({size, shape, align, color, variant}: SpecialProps) => {
+export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
   const ghost = variant === 'ghost';
   const shadow = variant === 'shadow';
   const style = {
