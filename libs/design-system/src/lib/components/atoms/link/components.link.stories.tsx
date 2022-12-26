@@ -42,7 +42,8 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-    <Box border="default" padding="default"> <L {...args}>{args.children}</L></Box>
+    <Box border="default" padding="default" style={{display: 'flex', justifyContent: 'center'}}>
+      <L {...args}>{args.children}</L></Box>
   </SectionStoryBook>
 );
 

@@ -3,13 +3,10 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve",
-    "build": "nx build",
-    "test": "nx test"
+    "start": "nx storybook @uxu/design-system"
   },
   "private": true,
   "dependencies": {
-    "@nrwl/next": "15.4.1",
     "core-js": "^3.6.5",
     "next": "13.0.0",
     "react": "18.2.0",
@@ -29,6 +26,7 @@
     "@nrwl/eslint-plugin-nx": "15.4.1",
     "@nrwl/jest": "15.4.1",
     "@nrwl/linter": "15.4.1",
+    "@nrwl/next": "^15.4.1",
     "@nrwl/nx-cloud": "15.0.2",
     "@nrwl/react": "15.4.1",
     "@nrwl/storybook": "15.4.1",
