@@ -25,6 +25,7 @@ export const Wheel = styled.div<SpecialProps & { el: undefined[] }>`
       height: 8%;
       display: block;
       position: absolute;
+
       margin: ${spaces.small};
       border-radius: ${radiis.default};
       background-color: var(--uxu-color-primary-accent6);
@@ -51,18 +52,18 @@ export const Wheel = styled.div<SpecialProps & { el: undefined[] }>`
 
 const children = css<SpecialProps & { el: undefined[] }>`
   ${({el}) => {
-  let style = {}
-  const count = el.length;
+    let style = {}
+    const count = el.length;
 
-  for (let i = 0; i < count; i++) {
-    Object.assign(style, {
-      [`&:nth-child(${i + 1})`]: {
-        animationDelay: `${0 - (i / 10)}s`,
-        transform: `rotate(${360 / count * i}deg) translate(146%)`
-      }
-    })
-  }
+    for (let i = 0; i < count; i++) {
+      Object.assign(style, {
+        [`&:nth-child(${i + 1})`]: {
+          animationDelay: `${0 - (i / 10)}s`,
+          transform: `rotate(${360 / count * i}deg) translate(146%)`
+        }
+      })
+    }
 
-  return style
-}};
+    return style
+  }};
 `
