@@ -1,2 +1,1 @@
-export {Box} from "./components.box";
-export * from './components.box.props';
+export * from "./components.link";

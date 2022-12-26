@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components';
-import Link from "next/link";
+import styled from 'styled-components';
+import {Link} from 'components/atoms'
 
 export const Form = styled.form`
   width: 100%;
@@ -7,7 +7,7 @@ export const Form = styled.form`
   flex-wrap: wrap;
 
   label {
-    button{
+    button {
       top: 0.6rem;
       right: 0.6rem;
       position: absolute;
@@ -17,24 +17,27 @@ export const Form = styled.form`
 
 export const Sugestions = styled.div`
   width: 100%;
-  display: block;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
   padding: var(--uxu-space-small) 0;
   margin-top: var(--uxu-space-small);
   border: var(--uxu-border-default);
   border-radius: var(--uxu-radii-default);
-`
 
-export const Sugestion = styled.li`
-  width: 100%;
-  display: flex;
-  cursor: pointer;
-  padding: var(--uxu-space-small) var(--uxu-space-default);
+  a {
+    width: 100%;
+    display: flex;
+    cursor: pointer;
+    padding: var(--uxu-space-small) var(--uxu-space-default);
 
-  &:hover {
-    background: var(--uxu-color-primary-accent1);
+    &:hover {
+      opacity: 1;
+      background: var(--uxu-color-primary-accent1);
+    }
   }
 `
+
+export const Sugestion = styled(Link)``
 
 export const Cover = styled.div`
   display: flex;
