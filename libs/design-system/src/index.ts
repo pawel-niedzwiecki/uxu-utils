@@ -12,9 +12,7 @@ export * from 'style';
 
 // #theme
 export * from 'theme';
-export type {
-  Colors, FontSizes, FontWeights, LineHeights, Radii, Shadows, Space, Grid, Flex, Contents, Theme
-} from "theme"
+export type { Colors, FontSizes, FontWeights, LineHeights, Radiis, Shadows, Spaces, Flexs, Contents, Theme} from "theme"
 
 
 
