@@ -2,6 +2,6 @@ export type LineHeights = typeof lineHeights;
 
 export const lineHeights = {
   small: '1',
-  bases: '1.2',
-  big: '1.5',
+  default: '1.2',
+  large: '1.5',
 } as const;

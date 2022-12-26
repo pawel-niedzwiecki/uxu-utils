@@ -3,7 +3,7 @@ import {listensPropsSize, listensPropsVector, listensPropsSpace} from '@uxu/prop
 
 
 export const Wrapper = styled.div`
-  ${({theme: {color}}) => css`
+  ${({theme: {colors}}) => css`
     position: relative;
     ${listensPropsSize};
     ${listensPropsSpace};
