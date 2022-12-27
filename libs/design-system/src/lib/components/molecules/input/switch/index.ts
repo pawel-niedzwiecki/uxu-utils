@@ -1,1 +1,1 @@
-export * from './components.switch';
+export * from './component.switch';

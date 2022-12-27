@@ -1,1 +1,1 @@
-export * from "./components.link";
+export * from "./component.link";
