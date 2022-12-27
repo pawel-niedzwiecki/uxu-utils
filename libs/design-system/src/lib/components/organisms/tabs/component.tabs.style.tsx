@@ -15,7 +15,7 @@ export const List = styled.ul`
   &:after {
     content: "";
     width: 100%;
-    height: 0px;
+    height: 0;
     left: 0;
     bottom: 0;
     z-index: 0;
@@ -26,7 +26,7 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   width: max-content;
-  padding: var(--uxu-space-small) var(--uxu-space-default);
+  border-bottom: var(--uxu-border-transparent);
 
   &.active, &:hover{
     z-index: 1;

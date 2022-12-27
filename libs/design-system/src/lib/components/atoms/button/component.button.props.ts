@@ -9,7 +9,7 @@ export type SpecialProps = {
   shape?: "square" | "circle",
   size?: "small" | "large" | "default",
   align?: "start" | "grow" | "end" | "center",
-  variant?: "primary" | "shadow" | "ghost" | "loading" | "disabled",
+  variant?: "primary" | "shadow" | "ghost" | "loading" | "disabled" | undefined,
   color?: "primary" | "secondary" | "success" | "error" | "warning" | "violet" | "cyan" | "purple" | "magenta" | "pink" | "yellow"
 };
 

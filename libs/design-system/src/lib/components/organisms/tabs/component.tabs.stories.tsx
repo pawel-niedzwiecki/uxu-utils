@@ -7,9 +7,9 @@ type Args = typeof args;
 
 const args = {
   tabs: [
-    {title: 'GitLab', value: '/', icon: <Gitlab/>},
-    {title: 'GitHub', value: () => alert('ok'), icon: <GitHub/>},
-    {title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch/>}
+    {title: 'GitLab', value: 'https://www.uxu.pl', icon: <Gitlab/>, active: true},
+    {title: 'GitHub', value: () => alert('UXU'), icon: <GitHub/>, active: false},
+    {title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch/>, active: false}
   ]
 } as const;
 

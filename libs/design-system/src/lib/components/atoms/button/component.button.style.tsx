@@ -5,6 +5,7 @@ import {listensPropsSize} from "@uxu/props-styled-system";
 export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
   const ghost = variant === 'ghost';
   const shadow = variant === 'shadow';
+
   const style = {
     display: 'flex',
 
@@ -19,6 +20,9 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
     fontSize: `var(--uxu-font-size-${size ? size : 'default'})`,
     padding: `${shape === 'circle' ? 'var(--uxu-space-default)' : `var(--uxu-space-small) var(--uxu-space-default)`}`,
 
+    svg:{
+      height: `var(--uxu-font-size-${size ? size : 'default'})`
+    },
     transitionProperty: `all`,
     transitionTimingFunction: `ease`,
     transitionDuration: `var(--uxu-motions-default)`,
@@ -49,6 +53,19 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
   }
 
   if (variant !== "disabled" && variant !== "loading") switch (color) {
+    case undefined:
+      Object.assign(style, {
+        color: `var(--uxu-color-primary-foreground)`,
+        background: `transparent`,
+        borderColor: `transparent`,
+
+        '&:hover': {
+          color: `var(--uxu-color-primary-accent5)`,
+          background: `transparent`,
+          borderColor: `transparent`,
+        }
+      });
+      break;
     case 'secondary':
       Object.assign(style, {
         color: ghost || shadow ? `var(--uxu-color-primary-accent5)` : `var(--uxu-color-primary-background)`,

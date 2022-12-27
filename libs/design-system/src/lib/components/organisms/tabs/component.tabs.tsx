@@ -6,13 +6,13 @@ import {List, Item} from './component.tabs.style';
 export const Tabs: Props = ({tabs, ...args}, props) => {
 
   const btn = (data: Tab) => {
-   if(typeof data.value === 'string') return <Link href={data.value} title={data.title}><>{data?.icon}{data.title}</></Link>
-  else return <Button onClick={data.value}></Button>
+   if(typeof data.value === 'string') return <Link href={data.value} title={data.title} prefix={data?.icon}>{data.title}</Link>
+  else return <Button title={data.title} prefix={data?.icon} onClick={data.value}>{data.title}</Button>
   }
 
   return (
     <List {...props} {...args}>
-      {tabs?.map((data, i) => <Item className={i === 0 && "active"}>{btn(data)}</Item>)}
+      {tabs?.map((data, i) => <Item className={data?.active ? 'active' : ""}>{btn(data)}</Item>)}
     </List>
   )
 }
