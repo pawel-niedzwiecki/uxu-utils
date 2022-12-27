@@ -1,8 +1,8 @@
 import React from 'react';
-import type {Props} from './components.section.storybook.props'
-import {Section, titleStyle, descriptionStyle} from './components.section.storybook.style'
-import {Col, Container, Row} from 'components/atoms/flex'
-import {Box} from 'components/atoms/box';
+import {Col, Container, Row, Box} from 'components';
+import type {Props} from './components.section.storybook.props';
+import {Section, titleStyle, descriptionStyle} from './components.section.storybook.style';
+
 
 
 export const SectionStoryBook: Props = ({children, title, description}, props) => (

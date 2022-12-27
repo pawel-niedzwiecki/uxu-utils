@@ -1,6 +1,6 @@
 import React from 'react';
 import {regexURL} from "@uxu/utils";
-import {LoadingWheel} from "components/atoms";
+import {LoadingWheel} from "components";
 import {Url, Slug} from './components.link.style';
 import type {Props} from './components.link.types';
 

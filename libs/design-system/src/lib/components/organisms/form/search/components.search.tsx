@@ -2,7 +2,7 @@ import React, {useEffect, useState, FormEvent} from 'react';
 import {Search} from 'react-feather';
 import {useForm} from "react-hook-form";
 import {useRouter} from "next/router";
-import {Button, Input} from "components/atoms";
+import {Button, Input} from "components";
 import type {Props} from './components.search.types';
 import {stateResult} from './components.search.states';
 
@@ -17,7 +17,7 @@ import {
   Excerpt,
 } from './components.search.style'
 
-export const SearchInput: Props = ({callBack, res, ...args}, props) => {
+export const FormSearch: Props = ({callBack, res, ...args}, props) => {
   const router = useRouter();
   const {register, watch} = useForm();
   const [result, setResult] = useState(stateResult);

@@ -1,7 +1,5 @@
-import {Text as T} from './index';
-import {Box} from 'components/atoms/box'
-import {Container, Row, Col} from "components/atoms/flex";
 import * as React from 'react';
+import {Text as T, Box, Container, Row, Col} from "components";
 
 type Args = typeof args;
 
@@ -9,7 +7,6 @@ const args = {
   color: 'primary.foreground',
   text: 'your text',
 } as const;
-
 
 export default {
   title: 'Styleguide /Text',
@@ -22,7 +19,6 @@ export default {
     text: {label: {control: 'text'}},
   },
 };
-
 
 const Template = (args: Args) => {
   const listTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'i', 'b', 'strong'];

@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Box} from 'components/atoms/box';
-import {Col, Container, Row} from './index';
-import {SectionStoryBook} from "components/templates/section";
+import {Box, SectionStoryBook, Col, Container, Row} from "components";
+
 
 type Args = typeof args;
 

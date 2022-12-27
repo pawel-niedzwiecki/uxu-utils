@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Box} from 'components/atoms'
 import {InputSwitch} from './components.switch';
-import {SectionStoryBook} from "components/templates/section";
+import {Box, SectionStoryBook} from "components";
 
 type Args = typeof args;
 

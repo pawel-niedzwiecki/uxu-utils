@@ -1,5 +1,5 @@
-import {Wrapper, Wheel} from "./commponent.loading.wheel.style";
 import {Props} from './commponent.loading.wheel.props';
+import {Wrapper, Wheel} from "./commponent.loading.wheel.style";
 
 const el = new Array(12).fill(undefined)
 

@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {Button} from './index';
-import {Box} from 'components/atoms/box'
 import {ArrowUp} from "react-feather";
-import {SectionStoryBook} from "components/templates/section";
+import {Button, Box, SectionStoryBook} from "components";
 
 
 type Args = typeof args;

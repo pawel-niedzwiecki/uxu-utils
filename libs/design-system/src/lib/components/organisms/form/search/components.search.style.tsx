@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link} from 'components/atoms'
+import {Link} from 'components/atoms';
 
 export const Form = styled.form`
   width: 100%;

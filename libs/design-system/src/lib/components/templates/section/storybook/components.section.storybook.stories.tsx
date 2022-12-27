@@ -1,6 +1,5 @@
 import * as React from 'react';
-import {Text} from 'components/atoms/text'
-import {SectionStoryBook} from './index';
+import {Text, SectionStoryBook} from 'components';
 
 type Args = typeof args;
 
@@ -18,7 +17,8 @@ export default {
   },
 };
 
-const Template = (args: Args) => <SectionStoryBook {...args}><Text type="h3" textAlign="center">children</Text></SectionStoryBook>;
+const Template = (args: Args) => <SectionStoryBook {...args}><Text type="h3"
+                                                                   textAlign="center">children</Text></SectionStoryBook>;
 
 export const StoryBook = Template.bind({});
 

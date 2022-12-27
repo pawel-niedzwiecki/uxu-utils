@@ -1,6 +1,6 @@
-import {Wrapper} from "./commponent.button.style";
+import {LoadingWheel} from "components";
 import {Props} from './commponent.button.props';
-import {LoadingWheel} from "components/atoms/loading";
+import {Wrapper} from "./commponent.button.style";
 
 
 export const Button: Props = ({children, variant, prefix, suffix, ...args}, props) => {

@@ -1,8 +1,6 @@
 import * as React from 'react';
-import {SearchInput} from './components.search';
-import {Box} from 'components/atoms/box'
-import {SectionStoryBook} from "components/templates/section";
-import {Container, Row, Col} from "components/atoms/flex";
+import {SectionStoryBook} from "components";
+import {FormSearch} from './components.search';
 
 type Args = typeof args;
 
@@ -32,7 +30,7 @@ const args = {
 
 export default {
   title: 'Components /Input',
-  component: SearchInput,
+  component: FormSearch,
   argTypes: {
     borderRadius: {label: {control: 'text'}},
   },
@@ -40,7 +38,7 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-    <SearchInput {...args} />
+    <FormSearch {...args} />
   </SectionStoryBook>
 
 );

@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {Box} from "components/atoms/box";
-import {Grid} from 'components/atoms/grid';
-import {LoadingWheel} from './components.loading.wheel';
+import {Box, Grid, LoadingWheel} from "components";
 
 type Args = typeof args;
 

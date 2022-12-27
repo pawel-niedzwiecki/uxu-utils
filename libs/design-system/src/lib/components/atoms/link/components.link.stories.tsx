@@ -1,7 +1,5 @@
 import * as React from 'react';
-import {Box} from 'components/atoms';
-import {Link as L} from './components.link';
-import {SectionStoryBook} from "components/templates";
+import {Box, Link as L, SectionStoryBook} from "components";
 
 type Args = typeof args;
 

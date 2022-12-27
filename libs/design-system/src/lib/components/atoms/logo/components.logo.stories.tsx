@@ -1,7 +1,6 @@
-import {Logo as L} from './index';
-import {Box} from 'components/atoms/box'
-import {Container, Row, Col} from "components/atoms/flex";
 import * as React from 'react';
+import {Logo as L, Box, Container, Row, Col} from 'components'
+
 
 type Args = typeof args;
 
