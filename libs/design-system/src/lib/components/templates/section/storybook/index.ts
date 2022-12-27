@@ -1,2 +1,1 @@
-
-export * from './components.section.storybook';
+export * from './component.section.storybook';

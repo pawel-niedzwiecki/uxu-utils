@@ -1,3 +1,3 @@
-export * from './useMode';
-export * from './useBreakpoints';
-export * from './useMediaQuery';
+export * from './hook.useBreakpoints';
+export * from './hook.useMediaQuery';
+export * from './hook.useMode';
