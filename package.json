@@ -78,9 +78,9 @@
     "url-loader": "^3.0.0"
   },
   "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "pre-commit": "yarn lint-staged -c lint-staged.config.js --debug",
+    "commit-msg": "yarn commitlint -E HUSKY_GIT_PARAMS",
+    "pre-push": "yarn run lint && yarn run test && yarn run e2e"
   },
   "lint-staged": {
     "*.{js,json,md,ts,tsx,jsx}": [
