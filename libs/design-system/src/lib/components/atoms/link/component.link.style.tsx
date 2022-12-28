@@ -1,8 +1,9 @@
-import Link from "next/link";
-import styled, {css} from 'styled-components'
-import {SpecialProps} from './component.link.types'
-import {listensPropsSize} from "@uxu/props-styled-system";
-import {btn} from 'components/atoms/button/component.button.style'
+import Link from 'next/link';
+import styled, { css } from 'styled-components';
+import { SpecialProps } from './component.link.types';
+import { listensPropsSize } from 'utils';
+import { btn } from 'components/atoms/button/component.button.style';
+
 
 export const Url = styled.a<SpecialProps>`
   ${({size, shape, align, color, variant}) => css`

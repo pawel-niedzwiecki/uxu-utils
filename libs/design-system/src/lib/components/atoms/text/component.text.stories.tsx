@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Text as T, Box, Container, Row, Col} from "components";
+import { Box, Col, Container, Row, Text as T } from 'components';
 
 type Args = typeof args;
 
@@ -14,9 +14,9 @@ export default {
   argTypes: {
     color: {
       options: ['primary.foreground', 'primary.background', 'error.default', 'success.default', 'warning.default', 'violet.default', 'cyan.default', 'highlight.yellow', 'highlight.pink'],
-      control: {type: 'select'}
+      control: { type: 'select' },
     },
-    text: {label: {control: 'text'}},
+    text: { label: { control: 'text' } },
   },
 };
 
@@ -28,21 +28,21 @@ const Template = (args: Args) => {
       <Row>
         <Col xs={12}>
           <Box
-            fontSize="fs1"
-            paddingTop="big"
-            fontWeight="bold"
-            width="100%"
-            color="primary.foreground"
+            fontSize='fs1'
+            paddingTop='big'
+            fontWeight='bold'
+            width='100%'
+            color='primary.foreground'
             textAlign='center'
           >
             Text system
           </Box>
           <Box
-            width="100%"
+            width='100%'
             textAlign='center'
-            paddingTop="big"
+            paddingTop='big'
             paddingBottom='big'
-            color="primary.accent4"
+            color='primary.accent4'
           >
             System TXT is used in UXU products.
           </Box>
@@ -50,12 +50,12 @@ const Template = (args: Args) => {
         {listTags.map((tag, i) => (
           <Col xs={12} key={i}>
             <Box
-              width="100%"
-              padding="default"
-              marginBottom="default"
-              borderRadius="default"
-              backgroundColor="success.default"
-              style={{justifyContent: 'center', display: 'flex'}}
+              width='100%'
+              padding='default'
+              marginBottom='default'
+              borderRadius='default'
+              backgroundColor='success.default'
+              style={{ justifyContent: 'center', display: 'flex' }}
             >
               <T color={args.color} type={tag}>{tag}: {args.text}</T>
             </Box>
@@ -63,8 +63,8 @@ const Template = (args: Args) => {
         ))}
       </Row>
     </Container>
-  )
-}
+  );
+};
 
 
 export const Text = Template.bind({});

@@ -1,7 +1,7 @@
-import {Props} from './component.text.props'
-import {H1, H2,H3, H4, H5, H6, P, I, B, Strong} from './component.text.style'
+import { Props } from './component.text.props';
+import { B, H1, H2, H3, H4, H5, H6, I, P, Strong } from './component.text.style';
 
-export const Text: Props = ({type, children, ...args}, props) => {
+export const Text: Props = ({ type, children, ...args }, props) => {
   switch (type) {
     case 'h1':
       return (<H1 {...args} {...props}>{children}</H1>);

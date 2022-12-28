@@ -1,5 +1,5 @@
-import {FC} from "react";
-import {FunctionComponentDiv} from '@uxu/types';
+import { FC } from 'react';
+import type { FunctionComponentDiv } from 'utils';
 
 
 export type Res = { title: string, slug: string, excerpt?: string, cover: string }

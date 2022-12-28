@@ -6,6 +6,8 @@ import {Button, Box, SectionStoryBook} from "components";
 type Args = typeof args;
 
 const args = {
+  color: 'default',
+  variant: 'primary',
   shape: "square"
 } as const;
 

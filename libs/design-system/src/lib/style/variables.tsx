@@ -1,5 +1,5 @@
-import {css} from 'styled-components';
-import {ObjectMapType} from "@uxu/types";
+import { css } from 'styled-components';
+import type { ObjectMapType } from 'utils';
 
 const createMediaPrefersColorScheme = (mode: string) => `@media (prefers-color-scheme: ${mode})`
 
@@ -7,7 +7,7 @@ export const variables = css`
   ${({ theme: {alphas, borders, colors, contents, focuses, fontSizes, fontWeights, lineHeights, motions, radiis, shadows, spaces} }) => {
     const modeDark = createMediaPrefersColorScheme('dark');
     const modeLight = createMediaPrefersColorScheme('light');
-    let styles: ObjectMapType<string | object> = {[modeDark]: {}, [modeLight]: {}};
+    const styles: ObjectMapType<string | object> = {[modeDark]: {}, [modeLight]: {}};
 
 
     for (const alpha in alphas) {
@@ -67,5 +67,5 @@ export const variables = css`
       Object.assign(styles, {[`--uxu-space-${space}`]: spaces[space]})
     }
 
-    return {[':root']: styles}
+    return {':root': styles}
   }}`

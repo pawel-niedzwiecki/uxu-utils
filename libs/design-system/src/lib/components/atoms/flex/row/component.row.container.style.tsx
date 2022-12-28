@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import {listensPropsColor, listensPropsBorder} from "@uxu/props-styled-system";
+import styled from 'styled-components';
+import { listensPropsBorder, listensPropsColor } from 'utils';
 
 export const Wrapper = styled.div`
     display: flex;

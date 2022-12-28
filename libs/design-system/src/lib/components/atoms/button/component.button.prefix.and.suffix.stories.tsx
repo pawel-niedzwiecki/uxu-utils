@@ -8,6 +8,8 @@ type Args = typeof args;
 const args = {
   prefix: true,
   suffix: true,
+  color: 'default',
+  variant: 'primary',
   children: "children"
 } as const;
 
@@ -26,7 +28,7 @@ export default {
 const Template = (args: Args) => (
   <SectionStoryBook title="Button prefix and suffix" description="This component is used in all products UXU. In this story you can look, how you can change prefix and suffix for button">
     <Box marginRight="auto" marginLeft="auto" width="max-content">
-      <Button prefix={args.prefix ? <ArrowUp/> : undefined} suffix={args.suffix ? <ArrowUp/> : undefined}>{args.children}</Button>
+      <Button {...args} prefix={args.prefix ? <ArrowUp/> : undefined} suffix={args.suffix ? <ArrowUp/> : undefined}>{args.children}</Button>
     </Box>
   </SectionStoryBook>
 )

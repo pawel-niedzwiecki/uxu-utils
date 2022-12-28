@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components';
-import {SpecialProps} from './component.loading.dots.props'
+import styled, { css } from 'styled-components';
+import { SpecialProps } from './component.loading.dots.props';
 
 export const Wrapper = styled.div<SpecialProps>`
   ${({theme: {spaces}, size}) => css`
