@@ -1,7 +1,6 @@
-import {FC} from 'react';
-import {FunctionComponentDiv} from '@uxu/types';
-import {ColorProps, GridProps, BorderProps, ShadowProps, SizeProps} from '@uxu/props-styled-system'
-
+import { FC } from 'react';
+import type { FunctionComponentDiv } from 'utils';
+import { BorderProps, ColorProps, GridProps, ShadowProps, SizeProps } from 'utils';
 
 
 export type SpecialProps = {

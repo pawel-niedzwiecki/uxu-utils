@@ -1,6 +1,6 @@
-import {FC} from 'react';
-import {FunctionComponentDiv} from '@uxu/types';
-import {SizeProps} from "@uxu/props-styled-system";
+import { FC } from 'react';
+import type { FunctionComponentDiv } from 'utils';
+import { SizeProps } from 'utils';
 
 export type SpecialProps = {
   type?: string;

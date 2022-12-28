@@ -7,6 +7,8 @@ type Args = typeof args;
 
 const args = {
   width: '100%',
+  color: 'default',
+  variant: 'primary',
   style: {margin: '0.75rem'}
 } as const;
 

@@ -1,3 +1,4 @@
-import {ResData} from "./component.search.types";
+import { ResData } from './component.search.types';
 
-export const stateResult: ResData = []
+export const stateResult: ResData = [];
+

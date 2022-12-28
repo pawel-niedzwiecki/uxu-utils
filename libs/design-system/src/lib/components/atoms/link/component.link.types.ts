@@ -1,7 +1,7 @@
-import {FC} from "react";
-import {FunctionComponentDiv} from '@uxu/types';
-import {SizeProps} from "@uxu/props-styled-system";
-import type {SpecialProps as ButtonProps} from 'components/atoms/button/component.button.props'
+import { FC } from 'react';
+import type { FunctionComponentDiv } from 'utils';
+import { SizeProps } from 'utils';
+import type { SpecialProps as ButtonProps } from 'components/atoms/button/component.button.props';
 
 
 export type SpecialProps = {

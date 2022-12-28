@@ -1,5 +1,6 @@
-import styled, {css} from 'styled-components'
-import {SpecialProps} from "./component.input.types";
+import styled, { css } from 'styled-components';
+import { SpecialProps } from './component.input.types';
+
 
 export const LabelComponent = styled.label`
   width: 100%;
@@ -7,7 +8,7 @@ export const LabelComponent = styled.label`
 `;
 
 export const InputComponent = styled.input<SpecialProps>`
-  ${({error}) => css`
+  ${({ error }) => css`
     width: 100%;
     height: 4rem;
     display: block;

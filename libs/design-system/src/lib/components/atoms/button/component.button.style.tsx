@@ -1,6 +1,6 @@
-import styled, {css} from 'styled-components';
-import {SpecialProps} from "./component.button.props"
-import {listensPropsSize} from "@uxu/props-styled-system";
+import styled, { css } from 'styled-components';
+import { SpecialProps } from './component.button.props';
+import { listensPropsSize } from 'utils';
 
 export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
   const ghost = variant === 'ghost';
