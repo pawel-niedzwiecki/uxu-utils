@@ -1,5 +1,5 @@
-import {FC} from "react";
-import {FunctionComponentDiv} from '@uxu/types';
+import { FC } from 'react';
+import type { FunctionComponentDiv } from 'utils';
 
 export type SpecialProps = {
   title: string;

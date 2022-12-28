@@ -1,8 +1,8 @@
-import {createGlobalStyle} from 'styled-components';
-import {variables} from './variables';
-import {resetCss} from './reset';
-import {typography} from './typography';
-import {body} from './body';
+import { createGlobalStyle } from 'styled-components';
+import { variables } from './variables';
+import { resetCss } from './reset';
+import { typography } from './typography';
+import { body } from './body';
 
 export const GlobalStyle = createGlobalStyle`
   *,

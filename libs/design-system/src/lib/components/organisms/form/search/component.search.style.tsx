@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Link} from 'components';
+import { Link } from 'components';
 
 export const Form = styled.form`
   width: 100%;
@@ -35,9 +35,9 @@ export const Sugestions = styled.div`
       background: var(--uxu-color-primary-accent1);
     }
   }
-`
+`;
 
-export const Sugestion = styled(Link)``
+export const Sugestion = styled(Link)``;
 
 export const Cover = styled.div`
   display: flex;
@@ -57,7 +57,7 @@ export const Img = styled.img`
   background-position: center;
   background-repeat: no-repeat;
   border-radius: var(--uxu-radii-default);
-`
+`;
 
 export const Content = styled.div`
   width: 100%;
@@ -74,4 +74,4 @@ export const Header = styled.strong`
 export const Excerpt = styled.p`
   font-size: var(--uxu-font-size-fs7);
   color: var(--uxu-color-primary-accent3);
-`
+`;

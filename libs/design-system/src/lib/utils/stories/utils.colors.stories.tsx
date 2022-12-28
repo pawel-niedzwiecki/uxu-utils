@@ -1,7 +1,6 @@
 import * as React from 'react';
-import {Box} from 'components/atoms/box';
-import {colors} from "theme/theme";
-import {Container, Row, Col} from "components/atoms/flex";
+import { Box, Col, Container, Row } from 'components';
+import { colors } from 'theme';
 
 
 const args = {

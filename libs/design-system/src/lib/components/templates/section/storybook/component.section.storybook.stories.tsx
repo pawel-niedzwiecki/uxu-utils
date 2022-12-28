@@ -1,24 +1,24 @@
 import * as React from 'react';
-import {Text, SectionStoryBook} from 'components';
+import { SectionStoryBook, Text } from 'components';
 
 type Args = typeof args;
 
 const args = {
   title: 'Section system',
-  description: 'This Section system generate section for stories in StoryBook'
+  description: 'This Section system generate section for stories in StoryBook',
 } as const;
 
 export default {
   title: 'Components /Section',
   component: SectionStoryBook,
   argTypes: {
-    title: {label: {control: 'text'}},
-    description: {label: {control: 'text'}},
+    title: { label: { control: 'text' } },
+    description: { label: { control: 'text' } },
   },
 };
 
-const Template = (args: Args) => <SectionStoryBook {...args}><Text type="h3"
-                                                                   textAlign="center">children</Text></SectionStoryBook>;
+const Template = (args: Args) => <SectionStoryBook {...args}><Text type='h3'
+                                                                   textAlign='center'>children</Text></SectionStoryBook>;
 
 export const StoryBook = Template.bind({});
 
