@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Section = styled.section`
   width: 100%;
@@ -8,18 +8,18 @@ export const Section = styled.section`
 
 
 export const titleStyle = {
-  width: '100%',
-  fontSize: 'h1',
-  fontWeight: 'bold',
-  textAlign: 'center',
-  paddingTop: 'large',
-  color: 'primary.foreground',
-};
+  width: "100%",
+  fontSize: "h1",
+  fontWeight: "bold",
+  textAlign: "center",
+  paddingTop: "large",
+  color: "primary.foreground",
+}
 
 export const descriptionStyle = {
-  paddingTop: 'large',
-  width: '100%',
-  paddingBottom: 'large',
-  textAlign: 'center',
-  color: 'primary.accent4',
-};
+  paddingTop: "large",
+  width: "100%",
+  paddingBottom: "large",
+  textAlign: "center",
+  color: "primary.accent4",
+}

@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { SpecialProps } from './component.input.types';
 
+
 export const LabelComponent = styled.label`
   width: 100%;
   position: relative;

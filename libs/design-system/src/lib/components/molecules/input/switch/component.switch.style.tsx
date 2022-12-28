@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+
 export const LabelComponent = styled.label`
   width: max-content;
   display: flex;
@@ -48,3 +49,4 @@ export const SliderComponent = styled.div`
     background-color: var(--uxu-color-primary-background);
   }
 `;
+

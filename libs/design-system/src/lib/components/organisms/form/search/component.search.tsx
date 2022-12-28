@@ -9,6 +9,7 @@ import { stateResult } from './component.search.states';
 import { Content, Cover, Excerpt, Form, Header, Img, Sugestion, Sugestions } from './component.search.style';
 
 export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
+
   const router = useRouter();
   const { register, watch } = useForm();
   const [result, setResult] = useState(stateResult);

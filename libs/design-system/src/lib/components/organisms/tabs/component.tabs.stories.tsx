@@ -17,7 +17,9 @@ export default {
   title: 'Components /Tabs',
   component: T,
   argTypes: {
+
     borderRadius: { label: { control: 'text' } },
+
   },
 };
 
@@ -35,3 +37,4 @@ Tabs.args = args;
 
 const title = 'Tabs';
 const description = 'This component is used in all products UXU.';
+

@@ -18,3 +18,4 @@ export const Tabs: Props = ({ tabs, ...args }, props) => {
   );
 };
 
+

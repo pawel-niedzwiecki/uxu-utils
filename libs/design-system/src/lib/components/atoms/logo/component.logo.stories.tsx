@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Logo as L, Box, Container, Row, Col} from 'components'
+import { Box, Col, Container, Logo as L, Row } from 'components';
 
 
 type Args = typeof args;
@@ -18,12 +18,12 @@ export default {
   argTypes: {
     fill: {
       options: ['primary.foreground', 'primary.background', 'error.default', 'success.default', 'warning.default', 'violet.default', 'cyan.default', 'highlight.yellow', 'highlight.pink'],
-      control: {type: 'select'}
+      control: { type: 'select' },
     },
-    width: {label: {control: 'text'}},
+    width: { label: { control: 'text' } },
     type: {
       options: ['uxu', 'polskiDev', 'wTrasie'],
-      control: {type: 'select'}
+      control: { type: 'select' },
     },
   },
 };
@@ -34,19 +34,19 @@ const Template = (args: Args) => (
     <Row>
       <Col xs={12}>
         <Box
-          fontSize="fs1"
-          paddingTop="big"
-          fontWeight="bold"
-          width="100%"
-          color="primary.foreground"
+          fontSize='fs1'
+          paddingTop='big'
+          fontWeight='bold'
+          width='100%'
+          color='primary.foreground'
           textAlign='center'
         >
           Brand system
         </Box>
         <Box
-          paddingTop="big"
-          width="100%"
-          color="primary.accent4"
+          paddingTop='big'
+          width='100%'
+          color='primary.accent4'
           paddingBottom='big'
           textAlign='center'
         >
@@ -55,20 +55,20 @@ const Template = (args: Args) => (
       </Col>
       <Col xs={12}>
         <Box
-          fontSize="fs1"
-          padding="big"
-          fontWeight="bold"
-          width="100%"
-          borderRadius="default"
-          backgroundColor="success.default"
-          style={{justifyContent: 'center', display: 'flex'}}
+          fontSize='fs1'
+          padding='big'
+          fontWeight='bold'
+          width='100%'
+          borderRadius='default'
+          backgroundColor='success.default'
+          style={{ justifyContent: 'center', display: 'flex' }}
         >
-          <L {...args}/>
+          <L {...args} />
         </Box>
       </Col>
     </Row>
   </Container>
-)
+);
 
 export const Logo = Template.bind({});
 // @ts-ignore

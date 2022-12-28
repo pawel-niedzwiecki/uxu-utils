@@ -9,9 +9,11 @@ export const List = styled.ul`
 
   z-index: 0;
 
+
   &::-webkit-scrollbar {
     display: none;
   }
+
 
   &:after {
     content: "";
