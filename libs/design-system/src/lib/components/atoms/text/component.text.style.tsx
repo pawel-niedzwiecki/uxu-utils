@@ -1,5 +1,5 @@
-import styled, {css} from 'styled-components'
-import {listensPropsColor, listensPropsTypography, listensPropsSpace} from "@uxu/props-styled-system";
+import styled, { css } from 'styled-components';
+import { listensPropsColor, listensPropsSpace, listensPropsTypography } from 'utils';
 
 const commonCss = css`
   ${listensPropsColor};

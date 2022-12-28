@@ -1,9 +1,8 @@
 import React from 'react';
-import {regexURL} from "@uxu/utils";
-import {LoadingWheel} from "components";
-import {Url, Slug} from './component.link.style';
-import type {Props} from './component.link.types';
-
+import { regexURL } from 'utils';
+import { LoadingWheel } from 'components';
+import { Slug, Url } from './component.link.style';
+import type { Props } from './component.link.types';
 
 
 export const Link: Props = ({children, ...args}, props) => {

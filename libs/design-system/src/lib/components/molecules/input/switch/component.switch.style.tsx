@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled from 'styled-components';
 
 export const LabelComponent = styled.label`
   width: max-content;
@@ -9,7 +9,7 @@ export const LabelComponent = styled.label`
 `;
 
 export const InputComponent = styled.input`
- opacity: 0;
+  opacity: 0;
   width: 0;
   height: 0;
 
@@ -34,7 +34,7 @@ export const SliderComponent = styled.div`
   transition: background-color var(--uxu-motions-slowly);
   background-color: var(--uxu-color-primary-accent3);
 
-  &:after{
+  &:after {
     content: "";
     width: 2rem;
     height: 2rem;
@@ -47,4 +47,4 @@ export const SliderComponent = styled.div`
     transition: transform var(--uxu-motions-slowly);
     background-color: var(--uxu-color-primary-background);
   }
-`
+`;

@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React from 'react';
 
 type ClassName = string;
 type Children = React.ReactNode;

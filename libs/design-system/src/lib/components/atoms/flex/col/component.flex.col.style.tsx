@@ -1,6 +1,6 @@
-import styled, {css} from 'styled-components';
-import {ObjectMapType} from '@uxu/types';
-import {listensPropsColor, listensPropsBorder, listensPropsShadow} from '@uxu/props-styled-system';
+import styled, { css } from 'styled-components';
+import type { ObjectMapType } from 'utils';
+import { listensPropsBorder, listensPropsColor, listensPropsShadow } from 'utils';
 
 
 export const Wrapper = styled.div<{ cols: ObjectMapType<number> }>`

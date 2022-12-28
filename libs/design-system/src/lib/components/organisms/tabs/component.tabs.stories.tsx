@@ -1,23 +1,23 @@
 import * as React from 'react';
-import {GitHub, Gitlab, GitBranch} from "react-feather";
-import {SectionStoryBook, Tabs as T} from "components";
+import { GitBranch, GitHub, Gitlab } from 'react-feather';
+import { SectionStoryBook, Tabs as T } from 'components';
 
 
 type Args = typeof args;
 
 const args = {
   tabs: [
-    {title: 'GitLab', value: 'https://www.uxu.pl', icon: <Gitlab/>, active: true},
-    {title: 'GitHub', value: () => alert('UXU'), icon: <GitHub/>, active: false},
-    {title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch/>, active: false}
-  ]
+    { title: 'GitLab', value: 'https://www.uxu.pl', icon: <Gitlab />, active: true },
+    { title: 'GitHub', value: () => alert('UXU'), icon: <GitHub />, active: false },
+    { title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch />, active: false },
+  ],
 } as const;
 
 export default {
   title: 'Components /Tabs',
   component: T,
   argTypes: {
-    borderRadius: {label: {control: 'text'}},
+    borderRadius: { label: { control: 'text' } },
   },
 };
 
@@ -33,5 +33,5 @@ export const Tabs = Template.bind({});
 // @ts-ignore
 Tabs.args = args;
 
-const title = "Tabs";
-const description = "This component is used in all products UXU.";
+const title = 'Tabs';
+const description = 'This component is used in all products UXU.';

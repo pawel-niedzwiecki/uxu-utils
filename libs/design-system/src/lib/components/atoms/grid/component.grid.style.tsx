@@ -1,13 +1,13 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 import {
-  listensPropsGrid,
-  listensPropsColor,
   listensPropsBorder,
+  listensPropsColor,
+  listensPropsGrid,
   listensPropsShadow,
-  listensPropsSize
-} from '@uxu/props-styled-system';
+  listensPropsSize,
+} from 'utils/styles/props-styled-system';
 
-import {SpecialProps} from "./component.grid.props";
+import { SpecialProps } from './component.grid.props';
 
 export const Wrapper = styled.div<SpecialProps>`
   ${({container}) => css`
