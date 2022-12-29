@@ -1,3 +1,6 @@
+name: stage
+run-name: ${{ github.actor }} is start stage 🥳
+on: [ push, pull_request ]
 jobs:
   testing:
     runs-on: ubuntu-latest
