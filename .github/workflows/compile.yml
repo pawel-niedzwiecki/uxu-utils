@@ -23,7 +23,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/lint
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm install
   Build:
     name: Build project
     needs: [Compile, Install, Testing]
