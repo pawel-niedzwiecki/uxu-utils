@@ -6,7 +6,6 @@ jobs:
     name: Compile
     runs-on: ubuntu-latest
     steps:
-      # This step checks out a copy of your repository.
       - uses: actions/checkout@v3
       - run: echo Hello, world! This is UXU product
   Install:
@@ -15,7 +14,7 @@ jobs:
     steps:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      # This step references the directory that contains the action with install all dependences and node.js.
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/install
   Testing:
     name: Testing
