@@ -1,4 +1,11 @@
-- uses: actions/setup-node@v3
-  with:
-    node-version: '16'
-- run: npm install
+name: install
+on:
+  workflow_dispatch:
+jobs:
+  log:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - run: npm install
