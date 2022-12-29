@@ -15,7 +15,28 @@ jobs:
     steps:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - uses: actions/checkout@v1
-        name: Checkout
-      - uses: ./.github/actions/install
-        name: Test
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: npm i
+    Tests:
+      name: Tests app
+      needs: [ Compile, Install ]
+      runs-on: ubuntu-latest
+      steps:
+        - name: Check out Git repository
+          uses: actions/checkout@v2
+        - name: Set up Node.js
+          uses: actions/setup-node@v1
+          with:
+            node-version: 16
+          # ESLint and Prettier must be in `package.json`
+        - name: Install Node.js dependencies
+          run: npm i
+
+        - name: Run linters
+          uses: wearerequired/lint-action@v2
+          with:
+            eslint: true
+            prettier: true

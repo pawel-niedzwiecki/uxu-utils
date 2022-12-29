@@ -1,8 +1,0 @@
-name: lint
-on:
-  workflow_dispatch:
-jobs:
-  log:
-    runs-on: ubuntu-latest
-    steps:
-      - run: npm run lint:fix
