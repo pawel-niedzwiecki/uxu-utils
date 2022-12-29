@@ -1,6 +1,4 @@
 name: install
-on:
-  workflow_dispatch:
 jobs:
   log:
     runs-on: ubuntu-latest
