@@ -10,23 +10,21 @@ jobs:
       - run: echo Hello, world! This is UXU product
   Install:
     name: Install Dependencies
-    runs-on: ubuntu-latest
     steps:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/install.yml
+      - uses: ./.github/actions/install
   Testing:
     name: Testing project
-    needs: [Install]
-    runs-on: ubuntu-latest
+    needs: [ Install ]
     steps:
-      # This step references the directory that contains the action with testing lint.
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/lint
   Build:
     name: Build project
     needs: [ Install, Testing ]
     runs-on: ubuntu-latest
     steps:
-    # This step references the directory that contains the action with testing lint.
-    - uses: ./.github/actions/lint
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/lint
