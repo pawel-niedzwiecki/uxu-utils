@@ -10,16 +10,18 @@ jobs:
       - run: echo Hello, world! This is UXU product
   Install:
     name: Install dependencies
-    needs: [Compile]
+    needs: [ Compile ]
     runs-on: ubuntu-latest
     steps:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - uses: actions/checkout@v3
-      - uses: pawel-niedzwiecki/uxu-utils/.github/actions/install@development-lib-design-system-components
+      - uses: actions/checkout@v1
+        name: Checkout
+      - uses: ./.github/actions/install
+        name: Test
   Testing:
     name: Testing
-    needs: [Compile, Install]
+    needs: [ Compile, Install ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -29,8 +31,8 @@ jobs:
       - run: npm install
   Build:
     name: Build project
-    needs: [Compile, Install, Testing]
+    needs: [ Compile, Install, Testing ]
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: ./.github/actions/lint
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/lint

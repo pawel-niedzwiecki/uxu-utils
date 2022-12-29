@@ -1,3 +1,5 @@
+name: Install
+on: [ push ]:
 jobs:
   Install:
     steps:
