@@ -10,6 +10,7 @@ jobs:
       - run: echo Hello, world! This is UXU product
   Install:
     name: Install dependencies
+    needs: [Compile]
     runs-on: ubuntu-latest
     steps:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -18,14 +19,14 @@ jobs:
       - uses: ./.github/actions/install.yml
   Testing:
     name: Testing
-    needs: [Install]
+    needs: [Compile, Install]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/lint
   Build:
     name: Build project
-    needs: [ Install, Testing ]
+    needs: [Compile, Install, Testing]
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
