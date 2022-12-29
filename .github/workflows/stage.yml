@@ -1,13 +1,31 @@
-name: stage
-run-name: ${{ github.actor }} is start stage 🥳
+name: Compile
+run-name: ${{ github.actor }} is start compile 🥳
 on: [ push, pull_request ]
 jobs:
-  testing:
+  Compile:
+    name: Compile
     runs-on: ubuntu-latest
+    steps:
+      # This step checks out a copy of your repository.
+      - uses: actions/checkout@v3
+      - run: echo Hello, world! This is UXU product
+  Install:
+    name: Install all dependences
+    needs: [Compile]
     steps:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      # This step checks out a copy of your repository.
-      - uses: actions/checkout@v3
-      # This step references the directory that contains the action.
+      # This step references the directory that contains the action with install all dependences and node.js.
       - uses: ./.github/actions/install
+  Testing:
+    name: Testing  all project
+    needs: [Compile, Install]
+    steps:
+      # This step references the directory that contains the action with testing lint.
+      - uses: ./.github/actions/lint
+  Build:
+    name: Testing  all project
+    needs: [ Compile, Install, Testing ]
+    steps:
+    # This step references the directory that contains the action with testing lint.
+    - uses: ./.github/actions/lint
