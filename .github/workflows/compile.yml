@@ -16,17 +16,16 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - uses: actions/checkout@v3
-      - uses: ./.github/actions/install.yml
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install
   Testing:
     name: Testing
     needs: [Compile, Install]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-      - run: npm install
+      - run: npm run lint:fix
   Build:
     name: Build project
     needs: [Compile, Install, Testing]
