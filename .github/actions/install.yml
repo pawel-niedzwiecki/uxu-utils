@@ -1,7 +1,7 @@
-name: install
-on:
-workflow_dispatch:
- jobs:
+name: Install
+run-name: Install start run 🚀
+on: [ push, pull_request ]
+jobs:
   install:
     runs-on: ubuntu-latest
     steps:
