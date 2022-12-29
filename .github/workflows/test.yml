@@ -1,6 +1,8 @@
-name: install
+name: test
 run-name: ${{ github.actor }} is install 🥳
-on: [ push, pull_request ]
+on:
+  work_flow:
+    dd
 jobs:
   testing:
     runs-on: ubuntu-latest
