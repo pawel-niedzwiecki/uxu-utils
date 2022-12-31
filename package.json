@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nx storybook @uxu/design-system",
+    "lint": "nx run @uxu/design-system:lint",
     "lint:fix": "nx run @uxu/design-system:lint --fix",
     "prepare": "husky install"
   },
