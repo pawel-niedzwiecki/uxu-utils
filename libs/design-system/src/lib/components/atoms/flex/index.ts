@@ -1,3 +1,3 @@
-export { Container } from './container/commponent.flex.container';
-export { Row } from './row/commponent.row.container';
-export { Col } from './col/commponent.flex.col';
+export { Container } from './container/component.flex.container';
+export { Row } from './row/component.row.container';
+export { Col } from './col/component.flex.col';

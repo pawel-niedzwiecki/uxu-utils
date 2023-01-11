@@ -11,10 +11,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "src/lib"
-  },
-  "paths": {
-    "@uxu/types": ["libs/types/src/index.ts"]
+    "baseUrl": "src/lib",
   },
   "files": [],
   "include": [],

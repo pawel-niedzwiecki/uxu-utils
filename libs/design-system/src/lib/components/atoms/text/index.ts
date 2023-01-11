@@ -1,2 +1,1 @@
-export { Text } from './Text';
-export type { TextProps } from './props';
+export * from './component.text';

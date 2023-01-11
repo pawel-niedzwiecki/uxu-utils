@@ -1,93 +1,71 @@
 import { css } from 'styled-components';
+import type { ObjectMapType } from 'utils';
+
+const createMediaPrefersColorScheme = (mode: string) => `@media (prefers-color-scheme: ${mode})`
 
 export const variables = css`
-    ${({ theme: { colors } }) => css`
-      :root {
-        @media (prefers-color-scheme: dark) {
-          --uxu-background: ${colors.primary.background.dark};
-          --uxu-foreground: ${colors.primary.foreground.dark};
-          --uxu-accents-1: ${colors.primary.accent1.dark};
-          --uxu-accents-2: ${colors.primary.accent2.dark};
-          --uxu-accents-3: ${colors.primary.accent3.dark};
-          --uxu-accents-4: ${colors.primary.accent4.dark};
-          --uxu-accents-5: ${colors.primary.accent5.dark};
-          --uxu-accents-6: ${colors.primary.accent6.dark};
-          --uxu-accents-7: ${colors.primary.accent7.dark};
-          --uxu-accents-8: ${colors.primary.accent8.dark};
+  ${({ theme: {alphas, borders, colors, contents, focuses, fontSizes, fontWeights, lineHeights, motions, radiis, shadows, spaces} }) => {
+    const modeDark = createMediaPrefersColorScheme('dark');
+    const modeLight = createMediaPrefersColorScheme('light');
+    const styles: ObjectMapType<string | object> = {[modeDark]: {}, [modeLight]: {}};
 
-          --uxu-error-lighter: ${colors.error.lighter.dark};
-          --uxu-error-light: ${colors.error.light.dark};
-          --uxu-error: ${colors.error.default.dark};
-          --uxu-error-dark: ${colors.error.dark.dark};
 
-          --uxu-success-lighter: ${colors.success.lighter.dark};
-          --uxu-success-light: ${colors.success.light.dark};
-          --uxu-success: ${colors.success.default.dark};
-          --uxu-success-dark: ${colors.success.dark.dark};
+    for (const alpha in alphas) {
+      Object.assign(styles, {[`--uxu-alpha-${alpha}`]: `${alphas[alpha]}`})
+    }
 
-          --uxu-warning-lighter: ${colors.warning.lighter.dark};
-          --uxu-warning-light: ${colors.warning.light.dark};
-          --uxu-warning: ${colors.warning.default.dark};
-          --uxu-warning-dark: ${colors.warning.dark.dark};
+    for (const border in borders) {
+      Object.assign(styles, {[`--uxu-border-${border}`]: borders[border]})
+    }
 
-          --uxu-violet-lighter: ${colors.violet.lighter.dark};
-          --uxu-violet-light: ${colors.violet.light.dark};
-          --uxu-violet: ${colors.violet.default.dark};
-          --uxu-violet-dark: ${colors.violet.dark.dark};
-
-          --uxu-cyan-lighter: ${colors.cyan.lighter.dark};
-          --uxu-cyan-light: ${colors.cyan.light.dark};
-          --uxu-cyan: ${colors.cyan.default.dark};
-          --uxu-cyan-dark: ${colors.cyan.dark.dark};
-
-          --uxu-highlight-lighter: ${colors.highlight.purple.dark};
-          --uxu-highlight-light: ${colors.highlight.magenta.dark};
-          --uxu-highlight: ${colors.highlight.pink.dark};
-          --uxu-highlight-dark: ${colors.highlight.yellow.dark};
-        }
-        @media (prefers-color-scheme: light) {
-          --uxu-background: ${colors.primary.background.dark};
-          --uxu-foreground: ${colors.primary.foreground.dark};
-          --uxu-accents-1: ${colors.primary.accent1.dark};
-          --uxu-accents-2: ${colors.primary.accent2.dark};
-          --uxu-accents-3: ${colors.primary.accent3.dark};
-          --uxu-accents-4: ${colors.primary.accent4.dark};
-          --uxu-accents-5: ${colors.primary.accent5.dark};
-          --uxu-accents-6: ${colors.primary.accent6.dark};
-          --uxu-accents-7: ${colors.primary.accent7.dark};
-          --uxu-accents-8: ${colors.primary.accent8.dark};
-
-          --uxu-error-lighter: ${colors.error.lighter.dark};
-          --uxu-error-light: ${colors.error.light.dark};
-          --uxu-error: ${colors.error.default.dark};
-          --uxu-error-dark: ${colors.error.dark.dark};
-
-          --uxu-success-lighter: ${colors.success.lighter.dark};
-          --uxu-success-light: ${colors.success.light.dark};
-          --uxu-success: ${colors.success.default.dark};
-          --uxu-success-dark: ${colors.success.dark.dark};
-
-          --uxu-warning-lighter: ${colors.warning.lighter.dark};
-          --uxu-warning-light: ${colors.warning.light.dark};
-          --uxu-warning: ${colors.warning.default.dark};
-          --uxu-warning-dark: ${colors.warning.dark.dark};
-
-          --uxu-violet-lighter: ${colors.violet.lighter.dark};
-          --uxu-violet-light: ${colors.violet.light.dark};
-          --uxu-violet: ${colors.violet.default.dark};
-          --uxu-violet-dark: ${colors.violet.dark.dark};
-
-          --uxu-cyan-lighter: ${colors.cyan.lighter.dark};
-          --uxu-cyan-light: ${colors.cyan.light.dark};
-          --uxu-cyan: ${colors.cyan.default.dark};
-          --uxu-cyan-dark: ${colors.cyan.dark.dark};
-
-          --uxu-highlight-lighter: ${colors.highlight.purple.dark};
-          --uxu-highlight-light: ${colors.highlight.magenta.dark};
-          --uxu-highlight: ${colors.highlight.pink.dark};
-          --uxu-highlight-dark: ${colors.highlight.yellow.dark};
-        }
+    for (const group in colors) {
+      for (const color in colors[group]) {
+        Object.assign(styles[modeDark], {
+          [`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color].dark})`,
+          [`--uxu-color-${group}-${color}-rgba`]: colors[group][color].dark
+        })
+        Object.assign(styles[modeLight], {
+          [`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color].light})`,
+          [`--uxu-color-${group}-${color}-rgba`]: colors[group][color].light
+        })
       }
-    `}}
+    }
 
-`;
+    for (const content in contents) {
+      Object.assign(styles, {[`--uxu-content-${content}`]: contents[content]})
+    }
+
+    for (const focuse in focuses) {
+      Object.assign(styles, {[`--uxu-focuse-${focuse}`]: focuses[focuse]})
+    }
+
+    for (const fontSize in fontSizes) {
+      Object.assign(styles, {[`--uxu-fontSize-${fontSize}`]: fontSizes[fontSize]})
+    }
+
+    for (const fontWeight in fontWeights) {
+      Object.assign(styles, {[`--uxu-fontWeight-${fontWeight}`]: `${fontWeights[fontWeight]}`})
+    }
+
+    for (const lineHeight in lineHeights) {
+      Object.assign(styles, {[`--uxu-lineHeight-${lineHeight}`]: lineHeights[lineHeight]})
+    }
+
+    for (const motion in motions) {
+      Object.assign(styles, {[`--uxu-motions-${motion}`]: motions[motion]})
+    }
+
+    for (const radii in radiis) {
+      Object.assign(styles, {[`--uxu-radii-${radii}`]: radiis[radii]})
+    }
+
+    for (const shadow in shadows) {
+      Object.assign(styles, {[`--uxu-shadow-${shadow}`]: shadows[shadow]})
+    }
+
+    for (const space in spaces) {
+      Object.assign(styles, {[`--uxu-space-${space}`]: spaces[space]})
+    }
+
+    return {':root': styles}
+  }}`
