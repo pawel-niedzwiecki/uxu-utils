@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Grid, LoadingWheel} from "components";
+import {Box, Grid, LoadingWheel} from "./../../../../components";
 
 type Args = typeof args;
 

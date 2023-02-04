@@ -1,21 +1,20 @@
 // #components
-export * from 'components';
+export * from './lib/components';
 
 // #hoooks
-export * from 'hooks';
+export * from './lib/hooks';
 
 // #providers
-export * from 'providers';
+export * from './lib/providers';
 
 // #style
-export * from 'style';
+export * from './lib/style';
 
 // #assets
-export * from 'assets';
+export * from './lib/assets';
 
 // #theme
-export * from 'theme';
-export type { Colors, FontSizes, FontWeights, LineHeights, Radiis, Shadows, Spaces, Flexs, Contents, Theme} from "theme"
+export * from './lib/theme';
 
 
 

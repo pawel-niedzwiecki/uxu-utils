@@ -1,4 +1,4 @@
-import { vectorLogos } from 'assets';
+import { vectorLogos } from './../../../assets';
 import { Props } from './component.logo.props';
 import { Wrapper } from './component.logo.style';
 

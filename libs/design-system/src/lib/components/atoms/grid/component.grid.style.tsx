@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { listensPropsBorder, listensPropsColor, listensPropsGrid, listensPropsShadow, listensPropsSize } from 'utils';
+import { listensPropsBorder, listensPropsColor, listensPropsGrid, listensPropsShadow, listensPropsSize } from './../../../utils';
 
 import { SpecialProps } from './component.grid.props';
 

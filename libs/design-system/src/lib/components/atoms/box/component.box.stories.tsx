@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Box as B } from './component.box';
-import { SectionStoryBook } from 'components';
+import { SectionStoryBook } from './../../../components';
 
 
 type Args = typeof args;

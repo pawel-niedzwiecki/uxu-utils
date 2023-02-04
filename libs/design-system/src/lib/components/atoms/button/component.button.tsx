@@ -1,4 +1,4 @@
-import {LoadingWheel} from "components";
+import {LoadingWheel} from "./../../../components";
 import {Props} from './component.button.props';
 import {Wrapper} from "./component.button.style";
 
