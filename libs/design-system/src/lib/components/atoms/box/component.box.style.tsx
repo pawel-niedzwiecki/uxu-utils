@@ -8,7 +8,7 @@ import {
   listensPropsSize,
   listensPropsSpace,
   listensPropsTypography,
-} from 'utils';
+} from './../../../utils';
 
 export const ComponentBox = styled.div`
   ${listensPropsColor};

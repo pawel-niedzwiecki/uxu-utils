@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Box, Col, Container, Row } from 'components';
-import { colors } from 'theme';
+import { Box, Col, Container, Row } from './../../components';
+import { colors } from './../../theme';
 
 
 const args = {

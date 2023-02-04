@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { SpecialProps } from './component.flex.container.props';
-import { listensPropsBorder, listensPropsColor } from 'utils';
+import { listensPropsBorder, listensPropsColor } from './../../../../utils';
 
 export const Wrapper = styled.div<SpecialProps>`
   ${({theme: {spaces, contents}, full}) => css`

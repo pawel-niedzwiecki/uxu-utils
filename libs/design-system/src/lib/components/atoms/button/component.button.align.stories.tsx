@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {ArrowUp} from "react-feather";
-import {Button, Box, Text, Container, Row, Col, SectionStoryBook} from 'components'
+import {Button, Box, Text, Container, Row, Col, SectionStoryBook} from './../../../components'
 
 
 type Args = typeof args;
@@ -18,8 +18,6 @@ export default {
   component: Button,
 };
 
-
-const colors = ['primary', 'secondary', 'success', 'error', 'warning', 'violet', 'cyan', 'purple', 'magenta', 'pink', 'yellow'];
 const headerBoxStyle = {
   width: "100%",
   display: "flex",

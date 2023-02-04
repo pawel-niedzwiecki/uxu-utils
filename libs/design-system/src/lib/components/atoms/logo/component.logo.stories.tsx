@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, Col, Container, Logo as L, Row } from 'components';
+import { Box, Col, Container, Logo as L, Row } from './../../../components';
 
 
 type Args = typeof args;

@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { Breakpoints } from 'theme';
-import type { FunctionComponentDiv, MarkAsNumberNotRequired } from 'utils';
+import { Breakpoints } from './../../../theme';
+import type { FunctionComponentDiv, MarkAsNumberNotRequired } from './../../../utils';
 import {
   BorderProps,
   ColorProps,
@@ -10,7 +10,7 @@ import {
   SizeProps,
   SpaceProps,
   TypographyProps,
-} from 'utils';
+} from './../../../utils';
 
 
 export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & SpaceProps & PositionProps & ShadowProps & SizeProps & TypographyProps & BorderProps & DisplayProps>
