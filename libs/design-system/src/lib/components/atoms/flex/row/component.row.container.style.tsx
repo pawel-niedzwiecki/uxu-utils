@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { listensPropsBorder, listensPropsColor } from 'utils';
+import { listensPropsBorder, listensPropsColor } from './../../../../utils';
 
 export const Wrapper = styled.div`
     display: flex;

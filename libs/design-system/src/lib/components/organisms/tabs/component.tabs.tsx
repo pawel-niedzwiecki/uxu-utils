@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Link } from 'components';
+import { Button, Link } from './../../../components';
 import type { Props, Tab } from './component.tabs.types';
 import { Item, List } from './component.tabs.style';
 

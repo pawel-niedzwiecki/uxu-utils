@@ -1,4 +1,4 @@
-import { WrapperProvider } from 'providers';
+import { WrapperProvider } from './../src';
 
 export const decorators = [
   (Story) => (

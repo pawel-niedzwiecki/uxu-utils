@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GitBranch, GitHub, Gitlab } from 'react-feather';
-import { SectionStoryBook, Tabs as T } from 'components';
+import { SectionStoryBook, Tabs as T } from './../../../components';
 
 
 type Args = typeof args;
