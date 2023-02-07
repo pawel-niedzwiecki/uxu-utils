@@ -22,7 +22,6 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-
     <Box border='default' padding='default' style={{ display: 'flex', justifyContent: 'center' }}>
       <InputSwitch {...args} >{args.children}</InputSwitch>
     </Box>
