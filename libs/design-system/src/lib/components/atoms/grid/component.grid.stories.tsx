@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {Box, Grid as G} from './../../../components';
+import {SectionStoryBook, Box, Grid as G} from './../../../components';
 
 type Args = typeof args;
 
@@ -28,32 +28,9 @@ export default {
 };
 
 const Template = (args: Args) => (
-  <>
-    <G
-      gridTemplateColumns="1fr"
-      width="100%"
-      container
-    >
-      <Box
-        fontSize="fs1"
-        paddingTop="big"
-        fontWeight="bold"
-        width="100%"
-        color="primary.foreground"
-        textAlign='center'
-      >
-        Grid system
-      </Box>
-      <Box
-        paddingTop="big"
-        width="100%"
-        color="primary.accent4"
-        paddingBottom='big'
-        textAlign='center'
-      >
-        System grid is used in UXU products. The system uses display:grid
-      </Box>
-    </G>
+  <SectionStoryBook
+    title="Grid system"
+    description="System grid is used in UXU products. The system uses display:grid">
     <G
       gridGap={args.gridGap}
       gridTemplateRows={args.gridTemplateRows}
@@ -80,8 +57,7 @@ const Template = (args: Args) => (
         </G>
       ))}
     </G>
-
-  </>
+  </SectionStoryBook>
 );
 
 export const Grid = Template.bind(
