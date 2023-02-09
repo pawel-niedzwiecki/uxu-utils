@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import type { ObjectMapType } from 'utils';
+import type { ObjectMapType } from './../utils';
 
 const createMediaPrefersColorScheme = (mode: string) => `@media (prefers-color-scheme: ${mode})`
 

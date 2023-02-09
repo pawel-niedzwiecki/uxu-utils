@@ -8,8 +8,8 @@ import { SizeProps } from './size';
 import { BorderProps } from './border';
 import { VectorProps } from './vector';
 import { DisplayProps } from './display';
-import { Theme } from 'theme';
-import type { ObjectMapType } from 'utils';
+import { Theme } from './../../../theme';
+import type { ObjectMapType } from './../../../utils';
 
 
 export type ConfigArgType = {

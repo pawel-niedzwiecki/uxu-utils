@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Container, Row, Box} from 'components';
+import {Col, Container, Row, Box} from './../../../../components';
 import type {Props} from './component.section.storybook.props';
 import {Section, titleStyle, descriptionStyle} from './component.section.storybook.style';
 

@@ -2,7 +2,7 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import { Search } from 'react-feather';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { Button, Input } from 'components';
+import { Button, Input } from './../../../../components';
 import type { Props } from './component.search.types';
 import { stateResult } from './component.search.states';
 

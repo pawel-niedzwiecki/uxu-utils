@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import type { FunctionComponentDiv } from 'utils';
-import { ColorProps, SpaceProps, TypographyProps } from 'utils';
+import type { FunctionComponentDiv } from './../../../utils';
+import { ColorProps, SpaceProps, TypographyProps } from './../../../utils';
 
 export type SpecialProps = {
   type: string
