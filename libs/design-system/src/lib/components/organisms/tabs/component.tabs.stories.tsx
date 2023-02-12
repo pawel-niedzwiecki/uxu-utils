@@ -1,13 +1,13 @@
 import * as React from 'react';
 import { GitBranch, GitHub, Gitlab } from 'react-feather';
-import { SectionStoryBook, Tabs as T } from 'components';
+import { SectionStoryBook, Tabs as T } from './../../../components';
 
 
 type Args = typeof args;
 
 const args = {
   tabs: [
-    { title: 'GitLab', value: 'https://www.uxu.pl', icon: <Gitlab />, active: true },
+    { title: 'GitLab', value: 'https://www.uxu.pl', active: true },
     { title: 'GitHub', value: () => alert('UXU'), icon: <GitHub />, active: false },
     { title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch />, active: false },
   ],
