@@ -1,5 +1,5 @@
-import type { Nullable, ObjectMapType } from 'utils';
-import { createMediaQuery, keys } from 'utils';
+import type { Nullable, ObjectMapType } from './../../../utils';
+import { createMediaQuery, keys } from './../../../utils';
 import { ConfigArgsType, ConfigArgType, PropsType } from './types';
 
 

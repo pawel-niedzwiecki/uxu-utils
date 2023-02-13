@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {Box, Grid, LoadingWheel} from "components";
+import {Box, LoadingWheel, SectionStoryBook} from "./../../../../components";
+
 
 type Args = typeof args;
 
@@ -16,53 +17,18 @@ export default {
 };
 
 const Template = (args: Args) => (
-  <>
-    <Grid
-      gridTemplateColumns="1fr"
+  <SectionStoryBook title="Loading dots" description="System animate loading is used in UXU products.">
+    <Box
       width="100%"
-      container
+      fontWeight="bold"
+      padding="default"
+      borderRadius="default"
+      backgroundColor="success.default"
+      style={{justifyContent: 'center', display: 'flex'}}
     >
-      <Box
-        fontSize="fs1"
-        paddingTop="big"
-        fontWeight="bold"
-        width="100%"
-        color="primary.foreground"
-        textAlign='center'
-      >
-        Loading dots
-      </Box>
-      <Box
-        paddingTop="big"
-        width="100%"
-        color="primary.accent4"
-        paddingBottom='big'
-        textAlign='center'
-      >
-        System animate loading is used in UXU products.
-      </Box>
-    </Grid>
-    <Grid
-      container
-      width="100%"
-      gridTemplateRows="1fr"
-      gridTemplateColumns="1fr"
-    >
-
-      <Box
-        width="100%"
-        fontWeight="bold"
-        padding="default"
-        borderRadius="default"
-        backgroundColor="success.default"
-        style={{justifyContent: 'center', display: 'flex'}}
-      >
-        <LoadingWheel {...args}/>
-      </Box>
-
-    </Grid>
-
-  </>
+      <LoadingWheel {...args}/>
+    </Box>
+  </SectionStoryBook>
 );
 
 export const Wheel = Template.bind(

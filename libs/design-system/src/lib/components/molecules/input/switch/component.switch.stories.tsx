@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, InputSwitch, SectionStoryBook } from 'components';
+import { Box, InputSwitch, SectionStoryBook } from './../../../../components';
 
 
 type Args = typeof args;
@@ -22,7 +22,6 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-
     <Box border='default' padding='default' style={{ display: 'flex', justifyContent: 'center' }}>
       <InputSwitch {...args} >{args.children}</InputSwitch>
     </Box>
