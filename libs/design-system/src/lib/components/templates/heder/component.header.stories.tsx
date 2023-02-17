@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GitBranch, GitHub } from 'react-feather';
-import { SectionStoryBook, Tabs as T } from './../../../components';
+import { SectionStoryBook, Header as H } from './../../../components';
 
 
 type Args = typeof args;
@@ -14,27 +14,25 @@ const args = {
 } as const;
 
 export default {
-  title: 'Components /Tabs',
-  component: T,
+  title: 'Components /Header',
+  component: H,
   argTypes: {
-
     borderRadius: { label: { control: 'text' } },
-
   },
 };
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-    <T {...args} />
+    <H />
   </SectionStoryBook>
 
 );
 
-export const Tabs = Template.bind({});
+export const Header = Template.bind({});
 
 // @ts-ignore
-Tabs.args = args;
+Header.args = args;
 
-const title = 'Tabs';
+const title = 'Header';
 const description = 'This component is used in all products UXU.';
 
