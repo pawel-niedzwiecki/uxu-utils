@@ -1,7 +1,6 @@
 import * as React from 'react';
 import {SectionStoryBook, Box, Grid as G} from './../../../components';
 
-
 type Args = typeof args;
 
 const args = {

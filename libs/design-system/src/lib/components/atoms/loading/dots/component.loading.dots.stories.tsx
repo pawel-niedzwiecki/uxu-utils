@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Box, LoadingDots, SectionStoryBook} from './../../../../components';
 
+
 type Args = typeof args;
 
 const args = {
