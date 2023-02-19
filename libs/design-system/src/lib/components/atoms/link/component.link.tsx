@@ -5,7 +5,7 @@ import { Slug, Url } from './component.link.style';
 import type { Props } from './component.link.types';
 
 
-export const Link: Props = ({children, style, ...args}, props) => {
+export const Link: Props = ({children, ...args}, props) => {
   const url = regexURL.test(args.href);
   const content = args.variant === 'loading' ? <><LoadingWheel size={2} style={{marginRight: "0.75rem"}}/> Loading</> : <>{args?.prefix}{children}{args?.suffix}</>;
 

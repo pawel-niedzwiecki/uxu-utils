@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FormSearch, SectionStoryBook } from './../../../../components';
-
+import { stateResult } from './component.search.states';
 
 type Args = typeof args;
 
