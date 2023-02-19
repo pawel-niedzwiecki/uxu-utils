@@ -13,7 +13,7 @@ export const Tabs: Props = ({ tabs, ...args }, props) => {
 
   return (
     <List {...props} {...args}>
-      {tabs?.map((data, i) => <Item className={data?.active ? 'active' : ''}>{btn(data)}</Item>)}
+      {tabs?.map((data, i) => <Item className={data?.active ? 'active' : ''} key={i}>{btn(data)}</Item>)}
     </List>
   );
 };
