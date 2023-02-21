@@ -12,6 +12,7 @@ export const HeaderComponent = styled.header<HeaderComponentProps>`
     width: 100%;
     display: block;
     position: fixed;
+    z-index: 999999;
     backdrop-filter: blur(3rem);
     transition: all ${motions.slowly};
     border-bottom: ${borders.default};
@@ -20,9 +21,10 @@ export const HeaderComponent = styled.header<HeaderComponentProps>`
 
 
 export const HeaderBox = styled.div`
+  z-index: 0;
   width: 100%;
-  display: flex;
-  position: relative;
+  height: 155px;
+  display: block;
 
   @media all and (min-width: 768px){
     height: 100px;
