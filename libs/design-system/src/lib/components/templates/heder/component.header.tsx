@@ -13,8 +13,6 @@ export const Header: Props = ({tabs, callBack, res, ...args}, props) => {
     else if (smallMenu && scrollYDirection === 'up') setSmallMenu(false)
   }, [smallMenu, scrollYDirection, scrollY]);
 
-
-  console.log('pl')
   return (
     <>
       <HeaderComponent smallMenu={smallMenu} {...args} {...props}>
