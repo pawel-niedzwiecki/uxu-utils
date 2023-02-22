@@ -11,6 +11,7 @@ export const Link: Props = ({children, style, ...args}, props) => {
 
 
   if (url) return <Url {...args} {...props} target="_blank" rel="noopener noreferrer">{content}</Url>;
-  else return <Slug {...args} {...props} ><a style={style}>{content}</a></Slug>;
+  else return <Slug {...args} {...props} >{content}</Slug>;
+
 }
 
