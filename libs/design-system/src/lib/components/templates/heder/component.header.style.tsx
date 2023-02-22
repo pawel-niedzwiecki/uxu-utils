@@ -1,5 +1,4 @@
 import styled, {css} from 'styled-components';
-import {motions} from "../../../theme";
 
 
 type HeaderComponentProps  = {
