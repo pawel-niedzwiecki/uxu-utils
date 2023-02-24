@@ -2,7 +2,6 @@ import {useEffect, useState} from 'react';
 import {UseMediaQuery} from './index';
 import {breakpoints} from './../theme';
 
-
 const initialMedia = Object.keys(breakpoints).reduce((accumulator, key) => {
   return {...accumulator, [key]: false};
 }, {});
