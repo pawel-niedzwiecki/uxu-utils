@@ -10,3 +10,4 @@ export type SpecialProps = {
 } & ButtonProps
 
 export type Props = FC<FunctionComponentDiv & SizeProps & SpecialProps & DisplayProps & SpaceProps>
+
