@@ -5,8 +5,8 @@ import {Section, titleStyle, descriptionStyle} from './component.section.storybo
 
 
 
-export const SectionStoryBook: Props = ({children, title, description}, props) => (
-  <Section {...props}>
+export const SectionStoryBook: Props = ({children, title, description, ...args}, props) => (
+  <Section {...props} {...args}>
     <Container>
       <Row>
         <Col xs={12}>

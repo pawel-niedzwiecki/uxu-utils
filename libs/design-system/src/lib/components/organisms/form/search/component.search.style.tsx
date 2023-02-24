@@ -6,6 +6,8 @@ export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  position: relative;
+
 
   label {
     button {
@@ -17,13 +19,19 @@ export const Form = styled.form`
 `;
 
 export const Sugestions = styled.div`
+  top: 40px;
   width: 100%;
+  z-index: 999;
   display: flex;
+  position: absolute;
   flex-direction: column;
+  backdrop-filter: blur(3rem);
   padding: var(--uxu-space-small) 0;
   margin-top: var(--uxu-space-small);
   border: var(--uxu-border-default);
   border-radius: var(--uxu-radii-default);
+  background: var(--uxu-color-primary-background);
+
 
   a {
     width: 100%;

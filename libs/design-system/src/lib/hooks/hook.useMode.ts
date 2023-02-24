@@ -1,20 +1,36 @@
-import { useEffect, useState } from 'react';
+import {useState} from 'react';
 
 
-export const UseMode = (): string => {
-  const getMode = (): string | null => {
-    if (window?.matchMedia('(prefers-color-scheme: dark)')) return 'dark';
-    else if (typeof window !== 'undefined') return 'light';
-    return null;
+export const useMode = () => {
+  const setMode = (theme: string): void => {
+    const dataTheme = document?.documentElement?.getAttribute('data-theme');
+    const localStorageTheme = localStorage?.getItem('theme')
+    if (dataTheme !== theme) document?.documentElement?.setAttribute('data-theme', theme)
+    if (localStorageTheme !== theme) localStorage.setItem('theme', theme)
+  };
+  const getMode = (): string => {
+    const mql = window?.matchMedia('(prefers-color-scheme: dark)').matches;
+    const lsg = localStorage?.getItem('theme');
+    let theme = "";
+
+    if (lsg === "dark") {
+      setMode("dark")
+      theme = "dark"
+    } else if (lsg === "light") {
+      setMode("light")
+      theme = "light"
+    } else if (mql) {
+      setMode("dark")
+      theme = "dark"
+    } else {
+      setMode("light")
+      theme = "light"
+    }
+
+    return theme
   };
 
-  const [matches, setMatches] = useState(getMode());
+  const [mode, setModeForce] = useState(getMode());
 
-  useEffect(() => {
-    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
-    matchMedia.addEventListener('change', () => setMatches(getMode()));
-    return () => matchMedia.removeEventListener('change', () => setMatches(getMode()));
-  }, []);
-
-  return <string>matches;
+  return {mode, getMode, setMode, setModeForce}
 };
