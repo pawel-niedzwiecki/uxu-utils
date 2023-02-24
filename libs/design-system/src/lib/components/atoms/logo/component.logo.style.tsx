@@ -10,6 +10,7 @@ export const Wrapper = styled.div`
 
     svg {
       display: block;
+      ${listensPropsSize};
 
       path {
         ${listensPropsVector}

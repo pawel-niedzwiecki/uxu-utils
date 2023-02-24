@@ -14,10 +14,7 @@ export const UseMediaQuery = ({ query }: { query: string }): boolean => {
   useEffect(() => {
     const matchMedia = window.matchMedia(query);
     matchMedia.addEventListener('change', () => setMatches(getMatches(query)));
-
-    return () => {
-      matchMedia.removeEventListener('change', () => setMatches(getMatches(query)));
-    };
+    return () => matchMedia.removeEventListener('change', () => setMatches(getMatches(query)));
   }, [query]);
 
   return matches;
