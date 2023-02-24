@@ -5,10 +5,11 @@ type UseScrollYProps = { wait?: number }
 
 export const useScrollY = ({wait = 200}: UseScrollYProps) => {
     const [scrollYDirection, setScrollYDirection] = useState("");
-    const [scrollY, setScrollY] = useState(document?.documentElement?.scrollTop || 0);
+    const [scrollY, setScrollY] = useState(0);
 
     const direction = useCallback((): void => {
-      const scrollYNew = document.documentElement.scrollTop;
+      const scrollYNew = document?.documentElement?.scrollTop;
+
 
       switch (scrollY > scrollYNew) {
         case true:
