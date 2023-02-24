@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import type { FunctionComponentDiv } from './../../../utils';
 import { SizeProps , DisplayProps, SpaceProps} from './../../../utils';
+
 import type { SpecialProps as ButtonProps } from './../../../components/atoms/button/component.button.props';
 
 
@@ -10,3 +11,4 @@ export type SpecialProps = {
 } & ButtonProps
 
 export type Props = FC<FunctionComponentDiv & SizeProps & SpecialProps & DisplayProps & SpaceProps>
+

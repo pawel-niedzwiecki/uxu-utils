@@ -3,7 +3,7 @@ import type { FunctionComponentDiv } from './../../../../utils';
 
 
 export type Res = { title: string, slug: string, excerpt?: string, cover: string }
-export type ResData = Res[]
+export type ResData = Res[];
 export type CallBack = (query: string) => void
 export type Query = string
 

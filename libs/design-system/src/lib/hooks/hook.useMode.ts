@@ -33,5 +33,4 @@ export const useMode = () => {
   const [mode, setModeForce] = useState(getMode());
 
   return {mode, getMode, setMode, setModeForce}
-
 };

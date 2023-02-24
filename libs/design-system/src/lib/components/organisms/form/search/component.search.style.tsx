@@ -8,6 +8,7 @@ export const Form = styled.form`
   flex-wrap: wrap;
   position: relative;
 
+
   label {
     button {
       top: 0.6rem;
@@ -30,6 +31,7 @@ export const Sugestions = styled.div`
   border: var(--uxu-border-default);
   border-radius: var(--uxu-radii-default);
   background: var(--uxu-color-primary-background);
+
 
   a {
     width: 100%;
