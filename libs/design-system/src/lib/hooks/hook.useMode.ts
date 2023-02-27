@@ -1,20 +1,30 @@
 import { useEffect, useState } from 'react';
+import { checkIsDOM } from './../utils';
 
 
-export const UseMode = (): string => {
-  const getMode = (): string | null => {
-    if (window?.matchMedia('(prefers-color-scheme: dark)')) return 'dark';
-    else if (typeof window !== 'undefined') return 'light';
-    return null;
+export const useMode = () => {
+  const [mode, setModeForce] = useState('dark');
+
+  const setMode = (theme: string): void => {
+    checkIsDOM(() => {
+      localStorage.setItem('theme', theme);
+      document?.documentElement?.setAttribute('data-theme', theme);
+      setModeForce(theme);
+    });
   };
 
-  const [matches, setMatches] = useState(getMode());
 
-  useEffect(() => {
-    const matchMedia = window.matchMedia('(prefers-color-scheme: dark)');
-    matchMedia.addEventListener('change', () => setMatches(getMode()));
-    return () => matchMedia.removeEventListener('change', () => setMatches(getMode()));
-  }, []);
+  const getMode = (): void => {
+    checkIsDOM(() => {
+      const mql = window?.matchMedia('(prefers-color-scheme: dark)').matches;
+      const lsg = localStorage?.getItem('theme');
 
-  return <string>matches;
+      if (lsg) setMode(lsg);
+      else setMode(mql ? 'dark' : 'light');
+    });
+  };
+
+  useEffect(() => getMode(), []);
+
+  return { mode, getMode, setMode, setModeForce };
 };

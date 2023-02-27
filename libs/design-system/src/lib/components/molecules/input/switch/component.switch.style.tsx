@@ -37,10 +37,10 @@ export const SliderComponent = styled.div`
 
   &:after {
     content: "";
-    width: 2rem;
-    height: 2rem;
-    top: 0.25rem;
-    left: 0.25rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    top: 0.2rem;
+    left: 0.2rem;
     display: block;
     position: absolute;
     transform: translateX(0.25rem);
