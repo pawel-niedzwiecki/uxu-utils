@@ -10,6 +10,7 @@ export const useScrollY = ({wait = 200}: UseScrollYProps) => {
     const direction = useCallback((): void => {
       const scrollYNew = document?.documentElement?.scrollTop;
 
+
       switch (scrollY > scrollYNew) {
         case true:
           setScrollY(scrollYNew);

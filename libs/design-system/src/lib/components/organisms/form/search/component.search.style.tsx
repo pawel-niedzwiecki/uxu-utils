@@ -8,6 +8,7 @@ export const Form = styled.form`
   flex-wrap: wrap;
   position: relative;
 
+
   label {
     button {
       top: 0.6rem;
@@ -31,6 +32,7 @@ export const Sugestions = styled.div`
   border-radius: var(--uxu-radii-default);
   background: var(--uxu-color-primary-background);
 
+
   a {
     width: 100%;
     display: flex;
@@ -44,7 +46,7 @@ export const Sugestions = styled.div`
   }
 `;
 
-export const Sugestion = styled(Link)``;
+export const Sugestion = styled.div``;
 
 export const Cover = styled.div`
   display: flex;
