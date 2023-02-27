@@ -46,7 +46,7 @@ export const Sugestions = styled.div`
   }
 `;
 
-export const Sugestion = styled(Link)``;
+export const Sugestion = styled.div``;
 
 export const Cover = styled.div`
   display: flex;

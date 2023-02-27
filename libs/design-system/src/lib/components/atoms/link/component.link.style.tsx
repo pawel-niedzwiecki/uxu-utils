@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from './../link/component.link';
 import styled, { css } from 'styled-components';
 import { SpecialProps } from './component.link.types';
 import { listensPropsSize , listensPropsDisplay, listensPropsSpace} from './../../../utils';
@@ -15,7 +15,7 @@ export const Url = styled.a<SpecialProps>`
 
 `;
 
-export const Slug = styled(Link)<SpecialProps>`
+export const Slug = styled.div<SpecialProps>`
   ${({size, shape, align, color, variant}) => css`
     ${btn({size, shape, align, color, variant})};
     ${listensPropsSize};
