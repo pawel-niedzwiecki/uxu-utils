@@ -19,7 +19,7 @@ export const useMode = () => {
       const mql = window?.matchMedia('(prefers-color-scheme: dark)').matches;
       const lsg = localStorage?.getItem('theme');
 
-      if (!!lsg) setMode(lsg);
+      if (lsg) setMode(lsg);
       else setMode(mql ? 'dark' : 'light');
     });
   };
