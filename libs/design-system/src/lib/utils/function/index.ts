@@ -1,1 +1,2 @@
-export * from './throttle'
+export * from './throttle';
+export * from './checkIsDOM';
