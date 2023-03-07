@@ -1,12 +1,13 @@
-import {forwardRef} from 'react';
+import { ForwardedRef, forwardRef } from 'react';
 import type {Props} from './component.switch.types';
 import {InputComponent, LabelComponent, SliderComponent} from './component.switch.style';
 
-export const InputSwitch = forwardRef<Props>(({className, children, style, ...args}, ref) => {
+// @ts-ignore
+export const InputSwitch = (({className, children, style, ...args}: any) => {
 
   return (
     <LabelComponent className={className} style={style}>
-      <InputComponent {...args} type='checkbox' ref={ref}/>
+      <InputComponent {...args} type='checkbox' />
       <SliderComponent className='slider'/>
       {children}
     </LabelComponent>

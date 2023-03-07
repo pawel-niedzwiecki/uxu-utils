@@ -38,7 +38,7 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-    <FormSearch {...args} />
+    <FormSearch callBack={args.callBack} />
   </SectionStoryBook>
 
 );
