@@ -1,14 +1,14 @@
-import { forwardRef } from 'react';
 import type { Props } from './component.input.types';
 import { InputComponent, LabelComponent } from './component.input.style';
 
-export const Input = forwardRef<Props>((props, ref) => {
+export const Input = (props: any) => {
+  // @ts-ignore
   const { className, children, style, ...otherProps } = props;
   return (
     <LabelComponent className={className} style={style}>
-      <InputComponent {...otherProps} ref={ref} />
+      <InputComponent {...otherProps} />
       {children}
     </LabelComponent>
   );
-});
+};
 
