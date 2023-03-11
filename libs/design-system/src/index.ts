@@ -16,5 +16,6 @@ export * from './lib/assets';
 // #theme
 export * from './lib/theme';
 
-
+// #utils
+export * from './lib/utils'
 
