@@ -1,4 +1,3 @@
-import { Link } from './../link/component.link';
 import styled, { css } from 'styled-components';
 import { SpecialProps } from './component.link.types';
 import { listensPropsSize , listensPropsDisplay, listensPropsSpace} from './../../../utils';
