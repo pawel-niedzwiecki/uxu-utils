@@ -1,4 +1,3 @@
-
 import React, { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMode } from './../../../../hooks';
@@ -23,7 +22,6 @@ export const StyleSwitch: Props = ({ callBack, res, ...args }, props) => {
     if(mode === 'dark') setValue('switchStyle' , false)
     else setValue('switchStyle' , true)
   }, [mode])
-
 
 
   return (
