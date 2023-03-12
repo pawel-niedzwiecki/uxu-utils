@@ -34,7 +34,7 @@ export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
     if (result?.length) return (
       <Sugestions>
         {result?.map((item, i) => (
-          <Sugestion key={i} href={item.slug} title={item.title}>
+          <Sugestion key={i} title={item.title}>
             <Cover>{item?.cover ? <Img style={{ backgroundImage: `url(${item.cover})` }} /> :
               <Search size={16} color='var(--uxu-color-primary-foreground)' />}</Cover>
             <Content>

@@ -24,7 +24,7 @@ export default {
 const Template = (args: Args) => (
   <SectionStoryBook title="Button size" description="This component is used in all products UXU. In this story you can look, how you can change size for button">
     <Box marginRight="auto" marginLeft="auto" width="max-content">
-      <Button {...args}>{args.size}</Button>
+      <Button  color='primary' variant='primary' size='small'>{args.size}</Button>
     </Box>
   </SectionStoryBook>
 )

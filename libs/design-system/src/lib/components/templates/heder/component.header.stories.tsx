@@ -52,7 +52,34 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description} style={{height: "200vh", paddingTop: "10rem"}}>
-    <H {...args}/>
+    <H
+      callBack={(search: string) => {
+        console.log({query: search});
+      }}
+      res={{
+      data: [
+        {
+          title: 'UXU',
+          slug: 'https://www.uxu.pl',
+          excerpt: '#portfolio',
+          cover: 'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
+        },
+
+        {
+          title: 'UXU',
+          slug: 'https://www.uxu.pl',
+          excerpt: '#portfolio',
+          cover: 'https://imgv3.fotor.com/images/blog-cover-image/part-blurry-image.jpg',
+        },
+      ],
+      query: 'uxu',
+    }}
+    tabs={[
+      {title: 'GitLab', value: 'https://www.uxu.pl', active: true},
+      {title: 'GitHub', value: 'https://www.uxu.pl', icon: <GitHub/>, active: false},
+      {title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch/>, active: false},
+    ]}
+    />
   </SectionStoryBook>
 
 );
