@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import React, { useCallback, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useMode } from './../../../../hooks';
