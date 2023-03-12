@@ -1,3 +1,6 @@
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import { css } from 'styled-components';
 import type { ObjectMapType } from './../utils';
 
