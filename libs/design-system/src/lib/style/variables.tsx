@@ -3,8 +3,8 @@
 // @ts-nocheck
 import { css } from 'styled-components';
 import type { ObjectMapType } from './../utils';
-
 const createMediaPrefersColorScheme = (mode: string) => mode === "dark" ? `html[data-theme='${mode}']` : `html`
+
 
 
 export const variables = css`
