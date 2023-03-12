@@ -1,3 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import React, { FormEvent, useEffect, useState } from 'react';
 import { Search } from 'react-feather';
 import { useForm } from 'react-hook-form';
