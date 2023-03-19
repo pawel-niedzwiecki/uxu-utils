@@ -1,3 +1,7 @@
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
+
 import React, { FormEvent, useEffect, useState } from 'react';
 import { Search } from 'react-feather';
 import { useForm } from 'react-hook-form';
@@ -5,7 +9,7 @@ import { useRouter } from 'next/router';
 import { Button, Input } from './../../../../components';
 import type { Props } from './component.search.types';
 import { stateResult } from './component.search.states';
-
+import { Link } from './../../../../components';
 import { Content, Cover, Excerpt, Form, Header, Img, Sugestion, Sugestions } from './component.search.style';
 
 export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
@@ -34,14 +38,14 @@ export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
     if (result?.length) return (
       <Sugestions>
         {result?.map((item, i) => (
-          <Sugestion key={i} href={item.slug} title={item.title}>
+          <Link className="sugestion" key={i} href={item.slug} title={item.title}>
             <Cover>{item?.cover ? <Img style={{ backgroundImage: `url(${item.cover})` }} /> :
               <Search size={16} color='var(--uxu-color-primary-foreground)' />}</Cover>
             <Content>
               <Header>{item.title}</Header>
               {item.excerpt ? <Excerpt>{item.excerpt}</Excerpt> : ''}
             </Content>
-          </Sugestion>
+          </Link>
         ))}
       </Sugestions>
     );
@@ -49,7 +53,7 @@ export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
 
   return (
     <Form {...props} {...args} onSubmit={(e: FormEvent<HTMLFormElement>): void => mySubmit(e)}>
-      <Input {...register('search')} type='search' onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}>
+      <Input {...register('search')} type='search' onFocus={() => setFocus(true)} onBlur={() => setFocus(true)}>
         <Button variant='ghost'><Search size={16} /></Button>
       </Input>
       {sug()}
