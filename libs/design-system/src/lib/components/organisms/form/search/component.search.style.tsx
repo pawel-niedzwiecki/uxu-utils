@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { Link } from './../../../../components';
 
 
 export const Form = styled.form`
@@ -33,7 +32,7 @@ export const Sugestions = styled.div`
   background: var(--uxu-color-primary-background);
 
 
-  a {
+  .sugestion {
     width: 100%;
     display: flex;
     cursor: pointer;
@@ -45,8 +44,6 @@ export const Sugestions = styled.div`
     }
   }
 `;
-
-export const Sugestion = styled.div``;
 
 export const Cover = styled.div`
   display: flex;
