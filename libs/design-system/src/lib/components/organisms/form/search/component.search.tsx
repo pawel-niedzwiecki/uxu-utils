@@ -53,7 +53,7 @@ export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
 
   return (
     <Form {...props} {...args} onSubmit={(e: FormEvent<HTMLFormElement>): void => mySubmit(e)}>
-      <Input {...register('search')} type='search' onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}>
+      <Input {...register('search')} type='search' onFocus={() => setFocus(true)} onBlur={() => setFocus(true)}>
         <Button variant='ghost'><Search size={16} /></Button>
       </Input>
       {sug()}

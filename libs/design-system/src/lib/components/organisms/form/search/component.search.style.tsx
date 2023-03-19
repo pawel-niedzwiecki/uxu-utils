@@ -20,6 +20,7 @@ export const Form = styled.form`
 export const Sugestions = styled.div`
   top: 40px;
   width: 100%;
+  max-width: 100%;
   z-index: 999;
   display: flex;
   position: absolute;
@@ -34,6 +35,7 @@ export const Sugestions = styled.div`
 
   .sugestion {
     width: 100%;
+    max-width: 100%;
     display: flex;
     cursor: pointer;
     padding: var(--uxu-space-small) var(--uxu-space-default);
@@ -66,7 +68,8 @@ export const Img = styled.img`
 `;
 
 export const Content = styled.div`
-  width: 100%;
+  width: calc(100% - 3.2rem);
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,9 +78,16 @@ export const Content = styled.div`
 
 export const Header = styled.strong`
   width: 100%;
+  max-width: 100%;
 `;
 
 export const Excerpt = styled.p`
+
+width: 100%;
+  max-width: 95%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: var(--uxu-font-size-fs7);
   color: var(--uxu-color-primary-accent3);
 `;
