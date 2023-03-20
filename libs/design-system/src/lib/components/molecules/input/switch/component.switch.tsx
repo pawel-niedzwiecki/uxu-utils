@@ -1,8 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import {forwardRef} from 'react';
-import { ForwardedRef, forwardRef } from 'react';
-
 import type {Props} from './component.switch.types';
 import {InputComponent, LabelComponent, SliderComponent} from './component.switch.style';
 
