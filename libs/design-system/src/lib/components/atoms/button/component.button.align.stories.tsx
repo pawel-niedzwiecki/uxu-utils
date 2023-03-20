@@ -44,16 +44,16 @@ const Template = (args: Args) => (
           <Text {...headerStyle}>Alignments</Text>
         </Col>
         <Col xs={12}>
-          <Box {...headerBoxStyle}>
-            <Button {...args} prefix={<ArrowUp/>} align="start">Upload</Button>
-            <Button {...args} prefix={<ArrowUp/>} align="end">Upload</Button>
-            <Button {...args} prefix={<ArrowUp/>} align="grow">Upload</Button>
-            <Button {...args} prefix={<ArrowUp/>} align="center">Upload</Button>
+          <Box width="100%"  display="flex" border="default"  padding="default" borderRadius="default" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}}>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} align="start">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} align="end">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} align="grow">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} align="center">Upload</Button>
 
-            <Button {...args} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="start">Upload</Button>
-            <Button {...args} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="end">Upload</Button>
-            <Button {...args} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="grow">Upload</Button>
-            <Button {...args} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="center">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="start">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="end">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="grow">Upload</Button>
+            <Button width="100%" style={{justifyContent: 'space-between', flexWrap: "wrap", alignItems: 'center'}} prefix={<ArrowUp/>} suffix={<ArrowUp/>} align="center">Upload</Button>
           </Box>
         </Col>
         {/* PRIMARY END */}

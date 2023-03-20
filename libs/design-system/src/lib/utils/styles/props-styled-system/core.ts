@@ -1,3 +1,5 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 import type { Nullable, ObjectMapType } from './../../../utils';
 import { createMediaQuery, keys } from './../../../utils';
 import { ConfigArgsType, ConfigArgType, PropsType } from './types';
