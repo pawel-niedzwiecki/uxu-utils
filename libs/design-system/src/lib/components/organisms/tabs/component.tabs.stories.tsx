@@ -25,7 +25,11 @@ export default {
 
 const Template = (args: Args) => (
   <SectionStoryBook title={title} description={description}>
-    <T {...args} />
+    <T tabs={[
+      { title: 'GitLab', value: 'https://www.uxu.pl', active: true },
+      { title: 'GitHub', value: 'https://www.uxu.pl', icon: <GitHub />, active: false },
+      { title: 'Bitbucket', value: 'https://www.uxu.pl', icon: <GitBranch />, active: false },
+    ]} />
   </SectionStoryBook>
 
 );

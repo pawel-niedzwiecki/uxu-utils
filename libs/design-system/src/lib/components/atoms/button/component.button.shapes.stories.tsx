@@ -27,7 +27,7 @@ export default {
 const Template = (args: Args) => (
   <SectionStoryBook title="Button shapes" description="This component is used in all products UXU. In this story you can look, how you can change shape for button">
     <Box marginRight="auto" marginLeft="auto" width="max-content">
-      <Button {...args}><Upload/></Button>
+      <Button color="primary" variant="primary"><Upload/></Button>
     </Box>
   </SectionStoryBook>
 )

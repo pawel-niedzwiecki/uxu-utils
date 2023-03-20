@@ -13,4 +13,8 @@ import {
 } from './../../../utils';
 
 
-export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & SpaceProps & PositionProps & ShadowProps & SizeProps & TypographyProps & BorderProps & DisplayProps>
+type PropsSpecial = {
+  title?: string
+}
+
+export type Props = FC<FunctionComponentDiv & MarkAsNumberNotRequired<Breakpoints> & ColorProps & SpaceProps & PositionProps & ShadowProps & SizeProps & TypographyProps & BorderProps & DisplayProps & PropsSpecial>

@@ -7,7 +7,7 @@ export const LabelComponent = styled.label`
   position: relative;
 `;
 
-export const InputComponent = styled.input<SpecialProps>`
+export const InputComponent = styled.input<any>`
   ${({ error }) => css`
     width: 100%;
     height: 4rem;
