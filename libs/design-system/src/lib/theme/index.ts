@@ -10,4 +10,6 @@ export * from './spaces';
 export * from './flexs';
 export * from './contents';
 export * from './borders';
+export * from './motions';
 export * from './theme';
+
