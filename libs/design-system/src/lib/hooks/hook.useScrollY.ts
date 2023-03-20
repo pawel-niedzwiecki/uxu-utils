@@ -25,8 +25,8 @@ export const useScrollY = ({wait = 200}: UseScrollYProps) => {
     }, [scrollY])
 
     useEffect(() => {
-        window.addEventListener('scroll', throttle(direction, wait));
-        return () => window.removeEventListener('scroll', throttle(direction, wait));
+        window.addEventListener('scroll', () => throttle(direction, wait));
+        return () => window.removeEventListener('scroll', () => throttle(direction, wait));
       }, [scrollY, direction, wait]
     )
     return {scrollYDirection, scrollY}
