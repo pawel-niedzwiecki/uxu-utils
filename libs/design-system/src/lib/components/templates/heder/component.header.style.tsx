@@ -1,12 +1,12 @@
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 
-type HeaderComponentProps  = {
-  smallMenu: boolean
+type HeaderComponentProps = {
+  hiddeMenu: boolean
 }
 export const HeaderComponent = styled.header<HeaderComponentProps>`
-  ${({theme: {borders, motions}, smallMenu}) => css`
-    top: ${smallMenu ? "-160px" : "0"};
+  ${({ theme: { borders, motions }, hiddeMenu }) => css`
+    top: ${hiddeMenu ? '-160px' : '0'};
     left: 0;
     width: 100%;
     display: block;
@@ -25,7 +25,7 @@ export const HeaderBox = styled.div`
   height: 155px;
   display: block;
 
-  @media all and (min-width: 768px){
+  @media all and (min-width: 768px) {
     height: 100px;
   }
 `;
