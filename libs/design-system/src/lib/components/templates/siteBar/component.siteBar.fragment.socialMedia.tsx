@@ -1,23 +1,27 @@
 import React from 'react';
-import { DummyIMG, LoadingLine } from './../../../components';
+import { Link, LoadingLine } from './../../../components';
 import { BoxSocialMedia, Header, Item } from './component.siteBar.style';
-import { FilterProps } from './component.siteBar.props';
+import { SocialMediaProps } from './component.siteBar.props';
+import { functionSelectIcon } from './../../../utils';
 
-export const SiteSocialMedia = ({ filter }: { filter?: FilterProps }) => {
-  if (filter) {
-    const { isLoading, links } = filter;
-    const showLinks = links ? <p>img nexjs</p> : <Item><DummyIMG height='13rem' /></Item>;
-    const showAnimationLoad = new Array(4).fill(undefined).map(() => {
-      return (
-        <Item>
-          <LoadingLine height='3rem' width='70%' borderRadius='default' /><span>0</span>
-        </Item>);
-    });
+
+export const SiteSocialMedia = ({ socialMedia }: { socialMedia?: SocialMediaProps }) => {
+  if (socialMedia) {
+    const { isLoading, list } = socialMedia;
+    const showList = list?.length && list.map((item, index) => (
+      <Item key={index}>
+        <Link href={item.url} title={item.typ}>{functionSelectIcon(item.typ)}</Link>
+      </Item>
+    ));
+    const showAnimationLoad = new Array(4).fill(undefined).map(() => (
+      <Item><LoadingLine height='3rem' borderRadius='default' /></Item>
+    ));
+
 
     return (
       <BoxSocialMedia>
         <Item><Header>Cover</Header></Item>
-        {isLoading ? showAnimationLoad : showLinks}
+        {isLoading ? showAnimationLoad : showList}
       </BoxSocialMedia>
     );
   } else return null;

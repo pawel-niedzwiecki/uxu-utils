@@ -18,7 +18,7 @@ export class testThrottle {
 
 }
 
-export const throttle = (callBack: () => void, wait = 0) => {
+export const functionThrottle = (callBack: () => void, wait = 0) => {
   lastTimeOut && clearTimeout(lastTimeOut);
   lastTimeOut = setTimeout(callBack, wait);
 };

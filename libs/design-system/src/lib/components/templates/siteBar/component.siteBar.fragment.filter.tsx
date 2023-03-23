@@ -1,15 +1,25 @@
 import React from 'react';
-import { DummyIMG, LoadingLine } from './../../../components';
+
+import { Link, LoadingLine } from './../../../components';
 import { BoxMenu, Header, Item } from './component.siteBar.style';
 import { FilterProps } from './component.siteBar.props';
 
 export const SiteBarFilter = ({ filter }: { filter?: FilterProps }) => {
   if (filter) {
     const { isLoading, links } = filter;
-    const showLinks = links ? <p>img nexjs</p> : <Item><DummyIMG height='13rem' /></Item>;
-    const showAnimationLoad = new Array(4).fill(undefined).map(() => {
+    const showLinks = links?.length && links.map((link) => (
+      <Item>
+        <Link
+          type='button'
+          color='primarry'
+          variant={link.active ? 'disabled' : 'primary'} href={link.slug}
+          title={link.title}>{link.title}</Link>
+        <span>{link.score}</span>
+      </Item>
+    ));
+    const showAnimationLoad = new Array(4).fill(undefined).map((_, i) => {
       return (
-        <Item>
+        <Item key={i}>
           <LoadingLine height='3rem' width='70%' borderRadius='default' /><span>0</span>
         </Item>);
     });

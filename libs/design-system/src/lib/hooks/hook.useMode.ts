@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { checkIsDOM } from './../utils';
+import { functionCheckIsDOM } from './../utils';
 
 
 export const useMode = () => {
   const [mode, setModeForce] = useState('dark');
 
   const setMode = (theme: string): void => {
-    checkIsDOM(() => {
+    functionCheckIsDOM(() => {
       localStorage.setItem('theme', theme);
       document?.documentElement?.setAttribute('data-theme', theme);
       setModeForce(theme);
@@ -15,7 +15,7 @@ export const useMode = () => {
 
 
   const getMode = (): void => {
-    checkIsDOM(() => {
+    functionCheckIsDOM(() => {
       const mql = window?.matchMedia('(prefers-color-scheme: dark)').matches;
       const lsg = localStorage?.getItem('theme');
 

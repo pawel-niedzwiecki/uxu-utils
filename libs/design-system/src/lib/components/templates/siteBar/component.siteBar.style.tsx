@@ -33,6 +33,16 @@ export const BoxCover = styled.ul`
   ${styleList}
 `;
 
+export const BoxImg = styled.div`
+  ${({ theme: { radiis } }) => css`
+    width: 100%;
+    height: 13rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: ${radiis.default};
+  `}
+`;
+
 export const BoxMenu = styled.ul`
   ${styleList}
 `;
