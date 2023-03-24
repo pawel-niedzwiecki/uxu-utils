@@ -50,6 +50,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
       width: 20rem;
+      padding: 0;
       border: none;
       position: relative;
       background-color: transparent;
