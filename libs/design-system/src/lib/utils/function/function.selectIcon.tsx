@@ -9,6 +9,6 @@ export const functionSelectIcon = (type: string) => {
     case 'instagram':
       return <Instagram />;
     default:
-      return <p>unknown type</p>;
+      return false;
   }
 };

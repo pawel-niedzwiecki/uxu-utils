@@ -1,7 +1,4 @@
-let lastTimeOut: ReturnType<typeof setTimeout> | null = null;
-
-
-export class testThrottle {
+export class Throttle {
   public wait: number;
   private lastTimeOut: ReturnType<typeof setTimeout> | null;
 
@@ -18,7 +15,3 @@ export class testThrottle {
 
 }
 
-export const functionThrottle = (callBack: () => void, wait = 0) => {
-  lastTimeOut && clearTimeout(lastTimeOut);
-  lastTimeOut = setTimeout(callBack, wait);
-};

@@ -20,7 +20,7 @@ export const SiteSocialMedia = ({ socialMedia }: { socialMedia?: SocialMediaProp
 
     return (
       <BoxSocialMedia>
-        <Item><Header>Cover</Header></Item>
+        <Item><Header>Social Media</Header></Item>
         {isLoading ? showAnimationLoad : showList}
       </BoxSocialMedia>
     );

@@ -1,13 +1,17 @@
 import { useCallback, useEffect, useState } from 'react';
-import { testThrottle } from './../utils';
+import { Throttle } from './../utils';
+
 
 type Props = {
   wait?: number
 }
+
+
 export const useScrollY = ({ wait = 10 }: Props) => {
     const [scrollYDirection, setScrollYDirection] = useState('');
     const [scrollY, setScrollY] = useState(0);
-    const throttle = new testThrottle({ wait });
+    const throttle = new Throttle({ wait });
+
 
     const direction = useCallback((): void => {
       const scrollYNew = document?.documentElement?.scrollTop;

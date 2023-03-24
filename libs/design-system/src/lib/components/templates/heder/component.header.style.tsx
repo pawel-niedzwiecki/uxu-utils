@@ -6,15 +6,16 @@ type HeaderComponentProps = {
 }
 export const HeaderComponent = styled.header<HeaderComponentProps>`
   ${({ theme: { borders, motions }, hiddeMenu }) => css`
-    top: ${hiddeMenu ? '-160px' : '0'};
+    top: ${hiddeMenu ? '-165px' : '0'};
     left: 0;
     width: 100%;
     display: block;
     position: fixed;
     z-index: 999999;
-    backdrop-filter: blur(3rem);
+    backdrop-filter: blur(1rem);
     transition: all ${motions.slowly};
     border-bottom: ${borders.default};
+
   `}
 `;
 

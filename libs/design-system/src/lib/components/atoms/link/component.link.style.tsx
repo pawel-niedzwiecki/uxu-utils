@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import { SpecialProps } from './component.link.types';
-import { listensPropsSize , listensPropsDisplay, listensPropsSpace} from './../../../utils';
+import { listensPropsDisplay, listensPropsSize, listensPropsSpace } from './../../../utils';
 import { btn } from './../../../components/atoms/button/component.button.style';
-import Link from 'next/link'
+import Link from 'next/link';
 
 export const Url = styled.a<SpecialProps>`
-  ${({size, shape, align, color, variant}) => css`
-    ${btn({size, shape, align, color, variant})};
+  ${({ type, size, shape, align, color, variant }) => css`
+    ${type === 'button' && btn({ size, shape, align, color, variant })};
     ${listensPropsSize};
     ${listensPropsSpace};
     ${listensPropsDisplay};
@@ -15,8 +15,8 @@ export const Url = styled.a<SpecialProps>`
 `;
 
 export const Slug = styled(Link)<SpecialProps>`
-  ${({size, shape, align, color, variant}) => css`
-    ${btn({size, shape, align, color, variant})};
+  ${({ type, size, shape, align, color, variant }) => css`
+    ${type === 'button' && btn({ size, shape, align, color, variant })};
     ${listensPropsSize};
     ${listensPropsSpace};
     ${listensPropsDisplay};

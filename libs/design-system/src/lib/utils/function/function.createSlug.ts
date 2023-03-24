@@ -1,3 +1,3 @@
 import { deburr, kebabCase } from 'lodash';
 
-export const functionCreateSlug = (title: string) => kebabCase(deburr(title.toLowerCase()));
+export const createSlug = (title: string) => kebabCase(deburr(title.toLowerCase()));

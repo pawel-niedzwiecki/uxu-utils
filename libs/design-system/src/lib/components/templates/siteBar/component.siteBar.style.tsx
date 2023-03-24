@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { motions } from '../../../theme';
 
 
 const styleList = css`
@@ -7,18 +6,74 @@ const styleList = css`
   margin-bottom: 1.5rem;
 `;
 
-export const Wrapper = styled.div`
-  position: relative;
+
+export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
+  ${({ open, hiddeMenu, theme: { motions, breakpoints, spaces, borders } }) => css`
+    top: 0;
+    left: ${open ? '0rem' : '-25rem'};
+    width: 25rem;
+    height: 100%;
+    z-index: 999999;
+    position: fixed;
+    padding: ${spaces.default};
+    border-right: ${borders.default};
+    transition: left ${motions.default};
+    background-color: var(--uxu-color-primary-accent1);
+
+    .switch {
+      width: 40px;
+      height: 40px;
+      left: 24.9rem;
+      top: ${hiddeMenu ? spaces.default : '180px'};
+      padding: 0;
+      display: block;
+      position: absolute;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-top: ${borders.default};
+      border-right: ${borders.default};
+      border-bottom: ${borders.default};
+      background-color: var(--uxu-color-primary-accent1);
+
+      svg {
+        transform: ${open ? 'rotate(180deg)' : 'rotate(0deg)'};
+      }
+    }
+
+    @media all and (min-width: ${breakpoints.s}px) {
+      .switch {
+        top: ${hiddeMenu ? spaces.default : '125px'};
+      }
+    }
+
+
+    @media all and (min-width: ${breakpoints.m}px) {
+      left: auto;
+      width: 20rem;
+      border: none;
+      position: relative;
+      background-color: transparent;
+
+      .switch {
+        display: none;
+      }
+    }
+  `}
 `;
 
 
 export const Box = styled.div<{ top: number }>`
-  ${({ top, theme: { motions } }) => css`
-    top: ${top}px;
-    display: flex;
-    position: sticky;
-    flex-direction: column;`}
-  transition: top ${motions.default};
+  ${({ top, theme: { motions, breakpoints } }) => css`
+    top: 0px;
+    transition: top ${motions.default};
+
+    @media all and (min-width: ${breakpoints.m}px) {
+      top: ${top}px;
+      display: flex;
+      position: sticky;
+      flex-direction: column;
+    }
+  `}
 `;
 
 
@@ -60,7 +115,10 @@ export const BoxSocialMedia = styled.ul`
 
       a {
         width: 100%;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
       }
 
       &:first-of-type {

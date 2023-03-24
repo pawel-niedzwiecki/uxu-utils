@@ -21,11 +21,11 @@ export const Header: Props = ({ tabs, callBack, res, ...args }, props) => {
                   x: '1fr 1fr',
                   s: '220px 1fr 1fr',
                 }}
+                style={{ alignItems: 'center' }}
               >
                 <Link
                   href='/'
                   title='wTrasie'
-                  style={{ padding: 0, justifyContent: 'flex-start' }}
                 >
                   <Logo type='wTrasie' height={{ x: '2rem', s: '3rem' }} fill='primary.foreground' />
                 </Link>
