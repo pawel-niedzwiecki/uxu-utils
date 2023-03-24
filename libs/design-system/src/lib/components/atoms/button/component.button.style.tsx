@@ -2,33 +2,30 @@ import styled, { css } from 'styled-components';
 import { SpecialProps } from './component.button.props';
 import { listensPropsSize } from './../../../utils';
 
-export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
+export const btn = ({ size, shape, align, color, variant }: SpecialProps) => {
   const ghost = variant === 'ghost';
   const shadow = variant === 'shadow';
 
   const style = {
     display: 'flex',
-
     maxWidth: '100%',
     cursor: 'pointer',
-
     border: `1px solid`,
     borderRadius: `${shape === 'circle' ? '100%' : 'var(--uxu-radii-default)'}`,
-
     fontWeight: 'var(--uxu-font-weight-regular)',
     lineHeight: 'var(--uxu-line-height-small)',
     fontSize: `var(--uxu-font-size-${size ? size : 'default'})`,
     padding: `${shape === 'circle' ? 'var(--uxu-space-default)' : `var(--uxu-space-small) var(--uxu-space-default)`}`,
 
-    svg:{
-      height: `var(--uxu-font-size-${size ? size : 'default'})`
+    svg: {
+      height: `var(--uxu-font-size-${size ? size : 'default'})`,
     },
     transitionProperty: `all`,
     transitionTimingFunction: `ease`,
     transitionDuration: `var(--uxu-motions-default)`,
 
-    '&:focus': {outline: 'none'},
-  }
+    '&:focus': { outline: 'none' },
+  };
 
   switch (align) {
     case 'start':
@@ -52,7 +49,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
       break;
   }
 
-  if (variant !== "disabled" && variant !== "loading") switch (color) {
+  if (variant !== 'disabled' && variant !== 'loading') switch (color) {
     case undefined:
       Object.assign(style, {
         color: `var(--uxu-color-primary-foreground)`,
@@ -63,7 +60,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: `var(--uxu-color-primary-accent5)`,
           background: `transparent`,
           borderColor: `transparent`,
-        }
+        },
       });
       break;
     case 'secondary':
@@ -76,7 +73,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: shadow ? `var(--uxu-color-primary-background)` : `var(--uxu-color-primary-accent5)`,
           background: ghost ? `rgba(var(--uxu-color-primary-accent5-rgba), var(--uxu-alpha-small))` : shadow ? `var(--uxu-color-primary-accent5)` : `var(--uxu-color-primary-background)`,
           borderColor: ghost ? `var(--uxu-color-primary-accent1)` : `var(--uxu-color-primary-accent5)`,
-        }
+        },
       });
       break;
     case 'success':
@@ -92,7 +89,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: shadow ? `var(--uxu-color-primary-foreground)` : `var(--uxu-color-${color}-default)`,
           background: ghost ? `rgba(var(--uxu-color-${color}-default-rgba), var(--uxu-alpha-small))` : shadow ? `var(--uxu-color-${color}-default)` : `var(--uxu-color-primary-background)`,
           borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
-        }
+        },
       });
       break;
     case `cyan`:
@@ -105,7 +102,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: shadow ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
           background: ghost ? `rgba(var(--uxu-color-${color}-default-rgba), var(--uxu-alpha-small))` : shadow ? `var(--uxu-color-${color}-default)` : `var(--uxu-color-primary-background)`,
           borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-${color}-default)`,
-        }
+        },
       });
       break;
     case `purple`:
@@ -120,7 +117,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: shadow ? `var(--uxu-color-primary-foreground)` : `var(--uxu-color-highlight-${color})`,
           background: ghost ? `rgba(var(--uxu-color-highlight-${color}-rgba), var(--uxu-alpha-small))` : shadow ? `var(--uxu-color-highlight-${color})` : `var(--uxu-color-primary-background)`,
           borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
-        }
+        },
       });
       break;
     case `yellow`:
@@ -133,7 +130,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: shadow ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
           background: ghost ? `rgba(var(--uxu-color-highlight-${color}-rgba), var(--uxu-alpha-small))` : shadow ? `var(--uxu-color-highlight-${color})` : `var(--uxu-color-primary-background)`,
           borderColor: ghost ? `var(--uxu-color-primary-background)` : `var(--uxu-color-highlight-${color})`,
-        }
+        },
       });
       break;
     default:
@@ -146,7 +143,7 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: shadow ? `var(--uxu-color-primary-background)` : `var(--uxu-color-primary-foreground)`,
           background: ghost ? `var(--uxu-color-primary-accent1)` : shadow ? `var(--uxu-color-primary-foreground)` : `var(--uxu-color-primary-background)`,
           borderColor: ghost ? `var(--uxu-color-primary-accent1)` : `var(--uxu-color-primary-foreground)`,
-        }
+        },
       });
       break;
   }
@@ -164,18 +161,18 @@ export const btn = ({size, shape, align, color, variant}: SpecialProps) => {
           color: `var(--uxu-color-primary-accent3)`,
           background: `var(--uxu-color-primary-accent1)`,
           borderColor: `var(--uxu-color-default)`,
-        }
+        },
 
       });
       break;
   }
 
-  return style
-}
+  return style;
+};
 
 export const Wrapper = styled.button<SpecialProps>`
-  ${({size, shape, align, color, variant}) => css`
+  ${({ size, shape, align, color, variant }) => css`
     ${listensPropsSize};
-    ${btn({size, shape, align, color, variant})};
+    ${btn({ size, shape, align, color, variant })};
   `}
-`
+`;

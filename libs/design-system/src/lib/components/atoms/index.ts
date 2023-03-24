@@ -6,3 +6,4 @@ export * from './link';
 export * from './loading';
 export * from './logo';
 export * from './text';
+export * from './dummyIMG';
