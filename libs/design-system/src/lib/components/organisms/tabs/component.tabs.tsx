@@ -6,8 +6,16 @@ import { Item, List } from './component.tabs.style';
 export const Tabs: Props = ({ tabs, ...args }, props) => {
 
   const btn = (data: Tab) => {
-    if (typeof data.value === 'string') return <Link href={data.value} title={data.title} prefix={data?.icon}>{data.title}</Link>;
-    else return <Button prefix={data?.icon} onClick={data.value}>{data.title}</Button>;
+    if (typeof data.value === 'string') return (
+      <Link href={data.value} title={data.title} prefix={data?.icon}>
+        <span>{data.title}</span>
+      </Link>
+    );
+    else return (
+      <Button prefix={data?.icon} onClick={data.value}>
+        <span>{data.title}</span>
+      </Button>
+    );
   };
 
   return (

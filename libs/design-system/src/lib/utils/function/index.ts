@@ -1,3 +1,4 @@
-export * from './throttle'
-export * from './checkIsDOM'
-export * from './createSlug'
+export * from './function.throttle';
+export * from './function.checkIsDOM';
+export * from './function.createSlug';
+export * from './function.selectIcon';
