@@ -1,4 +1,4 @@
-export function checkIsDOM(callBack: () => void) {
+export function functionCheckIsDOM(callBack: () => void) {
   if (typeof document !== 'undefined') callBack();
   else return null;
 }

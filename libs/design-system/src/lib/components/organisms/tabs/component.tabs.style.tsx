@@ -1,14 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const List = styled.ul`
+  z-index: 0;
   width: 100%;
   display: flex;
   overflow-x: scroll;
   list-style: none;
   position: relative;
-
-  z-index: 0;
-
 
   &::-webkit-scrollbar {
     display: none;
@@ -28,11 +26,26 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: max-content;
-  border-bottom: var(--uxu-border-transparent);
+  ${({ theme: { spaces } }) => css`
 
-  &.active, &:hover{
-    z-index: 1;
-    border-bottom: var(--uxu-border-primary-foreground);
-  }
+    width: max-content;
+
+    border-bottom: var(--uxu-border-transparent);
+
+    a {
+      display: flex;
+      padding: 0.6rem 1.5rem;
+      align-items: center;
+
+      span {
+        padding-left: 0.6rem;
+      }
+    }
+
+    &.active, &:hover {
+      z-index: 1;
+      border-bottom: var(--uxu-border-primary-foreground);
+    }
+
+  `}
 `;
