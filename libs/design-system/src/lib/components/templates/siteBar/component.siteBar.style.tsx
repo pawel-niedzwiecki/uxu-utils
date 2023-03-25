@@ -1,11 +1,9 @@
 import styled, { css } from 'styled-components';
 
-
 const styleList = css`
   list-style: none;
   margin-bottom: 1.5rem;
 `;
-
 
 export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
   ${({ open, hiddeMenu, theme: { motions, breakpoints, spaces, borders } }) => css`
@@ -50,7 +48,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
       width: 20rem;
-      padding: 0;
+      padding: ${spaces.default} 0;
       border: none;
       position: relative;
       background-color: transparent;
@@ -117,6 +115,7 @@ export const BoxSocialMedia = styled.ul`
       a {
         width: 100%;
         display: flex;
+        font-size: 1rem;
         align-items: center;
         justify-content: center;
 

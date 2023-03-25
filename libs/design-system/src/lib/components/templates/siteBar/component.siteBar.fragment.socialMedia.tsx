@@ -10,7 +10,7 @@ export const SiteSocialMedia = ({ socialMedia }: { socialMedia?: SocialMediaProp
     const { isLoading, list } = socialMedia;
     const showList = list?.length && list.map((item, index) => (
       <Item key={index}>
-        <Link href={item.url} title={item.typ}>{functionSelectIcon(item.typ)}</Link>
+        <Link href={item.url} title={item.typ}>{functionSelectIcon(item.typ, 16)}</Link>
       </Item>
     ));
     const showAnimationLoad = new Array(4).fill(undefined).map(() => (
