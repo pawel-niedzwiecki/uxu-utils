@@ -15,11 +15,10 @@ export type SocialMediaProps = { isLoading: boolean, list: { url: string, typ: s
 
 
 export type SpecialProps = {
-  data: {
-    cover?: CoverProps
-    filter?: FilterProps
-    socialMedia?: SocialMediaProps
-  }
+  cover?: CoverProps
+  filter?: FilterProps
+  socialMedia?: SocialMediaProps
+
 }
 
 export type Props = FC<FunctionComponentDiv & SpecialProps>
