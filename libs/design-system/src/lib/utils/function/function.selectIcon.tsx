@@ -1,13 +1,17 @@
-import { Facebook, Instagram, Twitter } from 'react-feather';
+import { Facebook, Instagram, Link, ShoppingCart, Twitter } from 'react-feather';
 
-export const functionSelectIcon = (type: string) => {
+export const functionSelectIcon = (type: string, size: number) => {
   switch (type.toLowerCase()) {
+    case 'shop':
+      return <ShoppingCart size={size} />;
+    case 'page':
+      return <Link size={size} />;
     case 'facebook':
-      return <Facebook />;
+      return <Facebook size={size} />;
     case 'twitter':
-      return <Twitter />;
+      return <Twitter size={size} />;
     case 'instagram':
-      return <Instagram />;
+      return <Instagram size={size} />;
     default:
       return false;
   }
