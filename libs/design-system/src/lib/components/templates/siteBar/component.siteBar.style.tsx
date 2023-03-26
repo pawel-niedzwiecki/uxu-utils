@@ -47,7 +47,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
 
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
-      width: 20rem;
+      width: 25rem;
       padding: ${spaces.default} 0;
       border: none;
       position: relative;
@@ -103,7 +103,7 @@ export const BoxMenu = styled.ul`
 
 
 export const BoxSocialMedia = styled.ul`
-  ${({ theme: { spaces } }) => css`
+  ${({ theme: { spaces, motions } }) => css`
     ${styleList}
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +118,11 @@ export const BoxSocialMedia = styled.ul`
         font-size: 1rem;
         align-items: center;
         justify-content: center;
+        transition: color ${motions.default};
 
+        &:hover {
+          color: var(--uxu-color-primary-accent5)
+        }
       }
 
       &:first-of-type {
