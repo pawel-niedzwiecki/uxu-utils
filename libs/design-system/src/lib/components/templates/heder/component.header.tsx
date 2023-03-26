@@ -19,7 +19,7 @@ export const Header: Props = ({ tabs, callBack, res, ...args }, props) => {
                 gridTemplateRows={{ x: '1fr 1fr', s: '1fr' }}
                 gridTemplateColumns={{
                   x: '1fr 1fr',
-                  s: '220px 1fr 1fr',
+                  s: '250px 1fr 1fr',
                 }}
                 style={{ alignItems: 'center' }}
               >

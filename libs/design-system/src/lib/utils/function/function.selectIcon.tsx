@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Link, ShoppingCart, Twitter } from 'react-feather';
+import { Facebook, Instagram, Link, ShoppingCart, Twitter, Youtube } from 'react-feather';
 
 export const functionSelectIcon = (type: string, size: number) => {
   switch (type.toLowerCase()) {
@@ -8,6 +8,8 @@ export const functionSelectIcon = (type: string, size: number) => {
       return <Link size={size} />;
     case 'facebook':
       return <Facebook size={size} />;
+    case 'youtube':
+      return <Youtube size={size} />;
     case 'twitter':
       return <Twitter size={size} />;
     case 'instagram':
