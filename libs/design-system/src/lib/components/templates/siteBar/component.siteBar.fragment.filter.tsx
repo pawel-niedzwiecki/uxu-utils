@@ -7,8 +7,8 @@ import { FilterProps } from './component.siteBar.props';
 export const SiteBarFilter = ({ filter }: { filter?: FilterProps }) => {
   if (filter) {
     const { isLoading, links } = filter;
-    const showLinks = links?.length && links.map((link) => (
-      <Item>
+    const showLinks = links?.length && links.map((link, index) => (
+      <Item key={index}>
         <Link
           size='small'
           type='button'
@@ -18,9 +18,9 @@ export const SiteBarFilter = ({ filter }: { filter?: FilterProps }) => {
         <span>{link.score}</span>
       </Item>
     ));
-    const showAnimationLoad = new Array(4).fill(undefined).map((_, i) => {
+    const showAnimationLoad = new Array(4).fill(undefined).map((_, index) => {
       return (
-        <Item key={i}>
+        <Item key={index}>
           <LoadingLine height='3rem' width='70%' borderRadius='default' /><span>0</span>
         </Item>);
     });

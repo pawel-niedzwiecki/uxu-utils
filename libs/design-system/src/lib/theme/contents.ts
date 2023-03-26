@@ -1,5 +1,5 @@
 export type Contents = typeof contents;
 
 export const contents = {
-  maxWidth: '128rem',
+  maxWidth: '144rem',
 } as const;
