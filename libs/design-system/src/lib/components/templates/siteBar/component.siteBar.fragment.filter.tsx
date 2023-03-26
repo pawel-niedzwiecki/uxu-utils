@@ -10,6 +10,7 @@ export const SiteBarFilter = ({ filter }: { filter?: FilterProps }) => {
     const showLinks = links?.length && links.map((link, index) => (
       <Item key={index}>
         <Link
+          size='small'
           type='button'
           color='primarry'
           variant={link.active ? 'disabled' : 'primary'} href={link.slug}

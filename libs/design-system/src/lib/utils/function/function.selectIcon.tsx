@@ -1,5 +1,6 @@
 import { Facebook, Instagram, Link, ShoppingCart, Twitter, Youtube } from 'react-feather';
 
+
 export const functionSelectIcon = (type: string, size: number) => {
   switch (type.toLowerCase()) {
     case 'shop':
