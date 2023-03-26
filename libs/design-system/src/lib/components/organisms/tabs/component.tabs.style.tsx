@@ -26,7 +26,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  ${({ theme: { spaces } }) => css`
+  ${({ theme: { motions } }) => css`
 
     width: max-content;
 
@@ -34,8 +34,9 @@ export const Item = styled.li`
 
     a {
       display: flex;
-      padding: 0.6rem 1.5rem;
       align-items: center;
+      padding: 0.6rem 1.5rem;
+      transition: color ${motions.default};
 
       span {
         padding-left: 0.6rem;
@@ -44,8 +45,14 @@ export const Item = styled.li`
 
     &.active, &:hover {
       z-index: 1;
+      color: var(--uxu-color-primary-accent5);
       border-bottom: var(--uxu-border-primary-foreground);
     }
 
+    &.active {
+      a {
+        cursor: no-drop;
+      }
+    }
   `}
 `;
