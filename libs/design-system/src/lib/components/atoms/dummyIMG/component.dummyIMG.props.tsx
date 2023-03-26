@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import type { FunctionComponentDiv } from './../../../utils';
+import { BorderProps } from './../../../utils';
 
 
 export type SpecialProps = {
@@ -7,5 +8,5 @@ export type SpecialProps = {
   height?: string,
 }
 
-export type Props = FC<FunctionComponentDiv & SpecialProps>
+export type Props = FC<FunctionComponentDiv & BorderProps & SpecialProps>
 
