@@ -14,13 +14,17 @@ export const Article = styled.article`
 
 
 export const BoxImg = styled.div`
-  ${({ theme: { motions, alphas } }) => css`
+  ${({ theme: { motions, alphas, breakpoints } }) => css`
     width: 100%;
-    height: 250px;
+    height: 220px;
     opacity: 1;
     display: block;
     position: relative;
     transition: opacity ${motions.default};
+
+    @media all and (min-width: ${breakpoints.s}px) {
+      height: 250px;
+    }
 
     &:hover {
       opacity: ${alphas.default};
@@ -29,9 +33,9 @@ export const BoxImg = styled.div`
 `;
 
 export const BoxContent = styled.div`
-  ${({ theme: { spaces, fontSizes } }) => css`
+  ${({ theme: { spaces, fontSizes, breakpoints } }) => css`
     width: 100%;
-    height: 7.8rem;
+    height: 6.2rem;
     padding: ${spaces.default};
     display: flex;
     align-items: center;
@@ -45,11 +49,20 @@ export const BoxContent = styled.div`
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       font-weight: bold;
-      font-size: ${fontSizes.large};
+      font-size: ${fontSizes.default};
       overflow: hidden;
       white-space: unset;
       text-overflow: ellipsis;
       text-align: center;
     }
+
+    @media all and (min-width: ${breakpoints.s}px) {
+      height: 7.8rem;
+
+      a {
+        font-size: ${fontSizes.large};
+      }
+    }
+
   `}
 `;
