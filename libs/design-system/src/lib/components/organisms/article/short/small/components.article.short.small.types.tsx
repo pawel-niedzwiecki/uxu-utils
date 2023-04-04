@@ -6,10 +6,10 @@ export type SpecialProps = {
   data: {
     isLoading: boolean
     content: {
-      cover: { src: string | null, alt: string | null } | null
-      title: string
-      slug: string
-    } | null
+      cover?: { src?: string, alt?: string }
+      title?: string
+      slug?: string
+    }
   }
 }
 

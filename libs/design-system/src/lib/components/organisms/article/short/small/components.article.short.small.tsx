@@ -3,42 +3,47 @@ import { DummyIMG, Link, LoadingLine } from '../../../../atoms';
 import { Article, BoxContent, BoxImg } from './components.article.short.small.style';
 import { Props } from './components.article.short.small.types';
 
-export const ArticleShortSmall: Props = ({ data: { isLoading, content } }) => {
+export const ArticleShortSmall: Props = ({ data: { isLoading, content: { title = '', slug = '/', cover } } }) => {
 
-  const title = content?.title ? content?.title : 'add title';
-  const slug = content?.slug ? content?.slug : '/';
 
-  const isLoadingImg = isLoading ? (
-    <LoadingLine height='25rem' />
-  ) : (
-    <Link title={title} href={slug}>
-      {content?.cover?.src ? (
-        <Image
-          src={content.cover.src}
-          alt={content?.cover?.alt ? content?.cover?.alt : ''}
-          layout='fill'
-          objectFit='cover'
-        />
+  const isLoadingImg = (
+    <BoxImg>
+      {isLoading ? (
+        <LoadingLine height='18rem' />
       ) : (
-        <DummyIMG height='25rem' width='100%' />
+        <Link title={title} href={slug}>
+          {cover?.src ? (
+            <Image
+              layout='fill'
+              objectFit='cover'
+              src={cover.src}
+              alt={cover?.alt ? cover?.alt : ''}
+            />
+          ) : (
+            <DummyIMG height='18rem' width='100%' />
+          )}
+        </Link>
       )}
-    </Link>
+    </BoxImg>
   );
 
 
-  const isLoadingContent = isLoading ? (
-    <LoadingLine height='2.4rem' borderRadius='default' />
-  ) : (
-    <Link title={title} href={slug}>{title}</Link>
+  const isLoadingContent = (
+    <BoxContent>
+      {isLoading ? (
+        <>
+          <LoadingLine height='2.4rem' />
+          <LoadingLine height='2.4rem' />
+        </>
+      ) : (
+        <Link title={title} href={slug}>{title}</Link>
+      )}
+    </BoxContent>
   );
 
   return (
     <Article>
-      <BoxImg>
-        {isLoadingImg}
-      </BoxImg>
-      <BoxContent>
-        {isLoadingContent}
-      </BoxContent>
+      {isLoadingImg}
+      {isLoadingContent}
     </Article>);
 };

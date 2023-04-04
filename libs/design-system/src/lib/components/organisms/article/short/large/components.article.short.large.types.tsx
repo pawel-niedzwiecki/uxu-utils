@@ -6,18 +6,17 @@ export type SpecialProps = {
   data: {
     isLoading: boolean
     content: {
-      cover: { src: string | null, alt: string | null } | null
+      cover?: { src?: string, alt?: string }
       author: {
         name: string
-        avatar: { src: string | null, alt: string | null } | null
-      } | null
-      tags: { title: string, slug: string }[] | null
-      stats: { ratings: number, comments: number, views: number } | null
+        avatar?: { src?: string, alt?: string }
+      }
+      tags?: { title: string, slug: string }[]
+      stats?: { ratings: number, comments: number, views: number }
       title: string
       slug: string
       createdAt: Date
-
-    } | null
+    }
   }
 }
 
