@@ -17,18 +17,23 @@ export const BoxImg = styled.div`
   ${({ theme: { motions, alphas, breakpoints } }) => css`
     width: 100%;
     height: 18rem;
-    opacity: 1;
     display: block;
     position: relative;
-    transition: opacity ${motions.default};
 
     @media all and (min-width: ${breakpoints.s}px) {
       height: 30rem;
     }
 
-    &:hover {
-      opacity: ${alphas.default};
+
+    a {
+      opacity: 1;
+      transition: opacity ${motions.default};
+
+      &:hover {
+        opacity: ${alphas.default};
+      }
     }
+
   `}
 `;
 
