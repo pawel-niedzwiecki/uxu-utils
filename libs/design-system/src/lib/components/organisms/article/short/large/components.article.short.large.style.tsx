@@ -1,14 +1,20 @@
 import styled, { css } from 'styled-components';
 
 export const Article = styled.article`
-  ${({ theme: { radiis } }) => css`
+  ${({ theme: { radiis, shadows } }) => css`
     width: 100%;
     height: fit-content;
     position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     border-radius: ${radiis.default};
     border: var(--uxu-border-default);
+    background-color: var(--uxu-color-primary-background);
+
+    html[data-theme="light"] & {
+      box-shadow: ${shadows.default};
+    }
   `}
 `;
 

@@ -15,7 +15,7 @@ export const HeaderComponent = styled.header<HeaderComponentProps>`
     backdrop-filter: blur(1rem);
     transition: all ${motions.slowly};
     border-bottom: ${borders.default};
-
+    background-color: rgba(var(--uxu-color-primary-background-rgba), 0.5);
   `}
 `;
 
