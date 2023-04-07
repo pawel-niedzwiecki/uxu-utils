@@ -48,7 +48,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
       width: 25rem;
-      padding: ${spaces.default} 0;
+      padding: 0;
       border: none;
       position: relative;
       background-color: transparent;
@@ -77,10 +77,12 @@ export const Box = styled.div<{ top: number }>`
 
 
 export const Header = styled.p`
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  ${({ theme: { spaces } }) => css`
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: ${spaces.default} 0;
+  `}
 `;
 
 export const BoxCover = styled.ul`
@@ -103,7 +105,7 @@ export const BoxMenu = styled.ul`
 
 
 export const BoxSocialMedia = styled.ul`
-  ${({ theme: { spaces, motions } }) => css`
+  ${({ theme: { spaces } }) => css`
     ${styleList}
     display: flex;
     flex-wrap: wrap;
