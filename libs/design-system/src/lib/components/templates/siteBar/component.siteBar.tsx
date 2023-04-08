@@ -14,7 +14,7 @@ export const SiteBar: Props = ({ cover, filter, socialMedia }) => {
 
   if (cover || filter || socialMedia) return (
     <Wrapper open={open} hiddeMenu={hiddeMenu}>
-      <Box top={hiddeMenu ? 15 : 115}>
+      <Box top={hiddeMenu ? 15 : 108}>
         <Button
           variant='primary'
           className='switch'

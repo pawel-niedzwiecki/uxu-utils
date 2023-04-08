@@ -27,6 +27,6 @@ export const HeaderBox = styled.div`
   display: block;
 
   @media all and (min-width: 768px) {
-    height: 100px;
+    height: 108px;
   }
 `;

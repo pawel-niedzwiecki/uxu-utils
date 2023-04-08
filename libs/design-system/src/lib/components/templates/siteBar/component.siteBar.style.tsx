@@ -13,7 +13,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     height: 100%;
     z-index: 999999;
     position: fixed;
-    padding: ${spaces.default};
+    padding: 0 ${spaces.default};
     border-right: ${borders.default};
     transition: left ${motions.default};
     background-color: var(--uxu-color-primary-accent1);
@@ -48,7 +48,6 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
       width: 25rem;
-      padding: 0;
       border: none;
       position: relative;
       background-color: transparent;
