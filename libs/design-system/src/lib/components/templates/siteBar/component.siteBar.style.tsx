@@ -78,10 +78,15 @@ export const Box = styled.div<{ top: number }>`
 
 export const Header = styled.p`
   ${({ theme: { spaces } }) => css`
-    display: block;
+    display: flex;
+    align-items: center;
     font-size: 1.2rem;
     font-weight: bold;
     margin: ${spaces.default} 0;
+
+    &:first-of-type {
+      height: 3rem;
+    }
   `}
 `;
 

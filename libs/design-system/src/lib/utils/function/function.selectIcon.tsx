@@ -1,4 +1,16 @@
-import { Eye, Facebook, Instagram, Link, MessageSquare, ShoppingCart, Smile, Twitter, Youtube } from 'react-feather';
+import {
+  Eye,
+  Facebook,
+  Grid,
+  Instagram,
+  Link,
+  Menu,
+  MessageSquare,
+  ShoppingCart,
+  Smile,
+  Twitter,
+  Youtube,
+} from 'react-feather';
 
 
 export const functionSelectIcon = (type: string, size: number) => {
@@ -21,7 +33,11 @@ export const functionSelectIcon = (type: string, size: number) => {
       return <MessageSquare size={size} />;
     case 'eye':
       return <Eye size={size} />;
+    case 'grid':
+      return <Grid size={size} />;
+    case 'list':
+      return <Menu size={size} />;
     default:
-      return false;
+      return <></>;
   }
 };
