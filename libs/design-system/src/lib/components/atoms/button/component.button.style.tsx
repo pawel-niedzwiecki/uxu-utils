@@ -6,6 +6,8 @@ export const btn = ({ size, shape, align, color, variant }: SpecialProps) => {
   const ghost = variant === 'ghost';
   const shadow = variant === 'shadow';
 
+  const hardSize = shape === 'circle' ? `calc(var(--uxu-space-${size}) * 2)` : '';
+
   const style = {
     display: 'flex',
     maxWidth: '100%',
@@ -14,8 +16,10 @@ export const btn = ({ size, shape, align, color, variant }: SpecialProps) => {
     borderRadius: `${shape === 'circle' ? '100%' : 'var(--uxu-radii-default)'}`,
     fontWeight: 'var(--uxu-font-weight-regular)',
     lineHeight: 'var(--uxu-line-height-small)',
-    fontSize: `var(--uxu-font-size-${size ? size : 'default'})`,
-    padding: `${shape === 'circle' ? 'var(--uxu-space-default)' : `var(--uxu-space-small) var(--uxu-space-default)`}`,
+    fontSize: shape === 'circle' ? `var(--uxu-space-${size})` : `var(--uxu-font-size-${size})`,
+    padding: `${shape === 'circle' ? '' : `var(--uxu-space-small) var(--uxu-space-default)`}`,
+    height: hardSize,
+    width: hardSize,
 
     svg: {
       height: `var(--uxu-font-size-${size ? size : 'default'})`,
