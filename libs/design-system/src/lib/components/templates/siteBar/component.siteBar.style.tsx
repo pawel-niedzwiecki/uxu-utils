@@ -131,6 +131,9 @@ export const BoxSocialMedia = styled.ul`
         }
 
 
+        &:hover {
+          color: var(--uxu-color-primary-accent5)
+        }
       }
 
       &:first-of-type {
