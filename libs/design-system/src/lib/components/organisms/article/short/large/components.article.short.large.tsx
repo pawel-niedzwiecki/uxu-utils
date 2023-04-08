@@ -13,10 +13,10 @@ import {
   Tag,
   Tags,
 } from './components.article.short.large.style';
-import { Props } from './components.article.short.large.types';
+import { Props } from './../components.article.short.types';
 import { functionSelectIcon, parserDayToName, parserMonthToName } from './../../../../../utils';
 
-export const ArticleShortLarge: Props = ({ data: { isLoading, content } }) => {
+export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
   const { slug, createdAt, cover, title, author, tags, stats } = content;
   const statIcons = ['smile', 'messagesquare', 'eye'];
 
