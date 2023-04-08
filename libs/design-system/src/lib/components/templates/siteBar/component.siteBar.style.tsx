@@ -13,7 +13,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     height: 100%;
     z-index: 999999;
     position: fixed;
-    padding: ${spaces.default};
+    padding: 0 ${spaces.default};
     border-right: ${borders.default};
     transition: left ${motions.default};
     background-color: var(--uxu-color-primary-accent1);
@@ -48,7 +48,6 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
       width: 25rem;
-      padding: ${spaces.default} 0;
       border: none;
       position: relative;
       background-color: transparent;
@@ -77,10 +76,17 @@ export const Box = styled.div<{ top: number }>`
 
 
 export const Header = styled.p`
-  display: block;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  ${({ theme: { spaces } }) => css`
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: ${spaces.default} 0;
+
+    &:first-of-type {
+      height: 3rem;
+    }
+  `}
 `;
 
 export const BoxCover = styled.ul`
@@ -123,6 +129,8 @@ export const BoxSocialMedia = styled.ul`
         &:hover {
           color: var(--uxu-color-primary-accent5)
         }
+
+
       }
 
       &:first-of-type {

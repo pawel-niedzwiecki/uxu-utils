@@ -13,9 +13,9 @@ export const HeaderComponent = styled.header<HeaderComponentProps>`
     position: fixed;
     z-index: 999999;
     backdrop-filter: blur(1rem);
-    transition: all ${motions.slowly};
-    border-bottom: ${borders.default};
-
+    transition: all ${motions?.slowly};
+    border-bottom: ${borders?.default};
+    background-color: rgba(var(--uxu-color-primary-background-rgba), 0.5);
   `}
 `;
 
@@ -27,6 +27,6 @@ export const HeaderBox = styled.div`
   display: block;
 
   @media all and (min-width: 768px) {
-    height: 100px;
+    height: 108px;
   }
 `;
