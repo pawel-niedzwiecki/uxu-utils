@@ -101,11 +101,7 @@ export const resetCss = css`
   section {
     display: block;
   }
-
-  body {
-    line-height: 1;
-  }
-
+  
   blockquote,
   q {
     quotes: none;

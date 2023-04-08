@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/legacy/image';
 import { DummyIMG, LoadingLine } from './../../../components';
 import { BoxCover, BoxImg, Header, Item } from './component.siteBar.style';
 import { CoverProps } from './component.siteBar.props';
@@ -16,7 +16,7 @@ export const SiteBarCover = ({ cover }: { cover?: CoverProps }) => {
       )
       : (
         <Item>
-          <DummyIMG height='13rem' />
+          <DummyIMG height='13rem' borderRadius='default' />
         </Item>
       );
 

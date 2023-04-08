@@ -11,6 +11,8 @@ export type SpecialProps = {
   align?: string,
   variant?: string | undefined,
   color?: string
+
+  title?: string
 };
 
 export type Props = FC<FunctionComponentDiv & SizeProps & SpecialProps>

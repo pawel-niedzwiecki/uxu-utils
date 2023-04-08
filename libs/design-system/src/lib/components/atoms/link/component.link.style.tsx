@@ -4,8 +4,19 @@ import { listensPropsDisplay, listensPropsSize, listensPropsSpace } from './../.
 import { btn } from './../../../components/atoms/button/component.button.style';
 import Link from 'next/link';
 
+
+const styleLink = css`
+  ${({ theme: { motions } }) => css`
+    transition: color ${motions.default};
+
+    &:hover {
+      color: var(--uxu-color-primary-accent5);
+    }`}
+`;
+
 export const Url = styled.a<SpecialProps>`
   ${({ type, size, shape, align, color, variant }) => css`
+    ${styleLink};
     ${type === 'button' && btn({ size, shape, align, color, variant })};
     ${listensPropsSize};
     ${listensPropsSpace};
@@ -16,6 +27,7 @@ export const Url = styled.a<SpecialProps>`
 
 export const Slug = styled(Link)<SpecialProps>`
   ${({ type, size, shape, align, color, variant }) => css`
+    ${styleLink};
     ${type === 'button' && btn({ size, shape, align, color, variant })};
     ${listensPropsSize};
     ${listensPropsSpace};
