@@ -4,9 +4,7 @@ import { Header, Wraper } from './component.section.article.styles';
 import type { Props } from './component.section.article.type';
 
 export function SectionArticleFull({ data, isLoading }: Props) {
-
-  console.log(data);
-
+  
   return (
     <Wraper>
       <Container>

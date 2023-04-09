@@ -18,7 +18,7 @@ export type SpecialProps = {
   cover?: CoverProps
   filter?: FilterProps
   socialMedia?: SocialMediaProps
-
+  alert?: boolean
 }
 
 export type Props = FC<FunctionComponentDiv & SpecialProps>
