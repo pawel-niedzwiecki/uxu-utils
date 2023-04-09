@@ -8,3 +8,4 @@ export * from './logo';
 export * from './text';
 export * from './avatar';
 export * from './dummyIMG';
+export * from './alert';

@@ -11,7 +11,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     left: ${open ? '0rem' : '-25rem'};
     width: 25rem;
     height: 100%;
-    z-index: 999999;
+    z-index: 9999;
     position: fixed;
     padding: 0 ${spaces.default};
     border-right: ${borders.default};
@@ -131,12 +131,11 @@ export const BoxSocialMedia = styled.ul`
         }
 
 
-<<<<<<< HEAD
-=======
-        &:hover {
-          color: var(--uxu-color-primary-accent5)
-        }
->>>>>>> development-lib-design-system
+      < < < < < < < HEAD = = = = = = = &: hover {
+        color: var(--uxu-color-primary-accent5)
+      }
+
+        > > > > > > > development-lib-design-system
       }
 
       &:first-of-type {
