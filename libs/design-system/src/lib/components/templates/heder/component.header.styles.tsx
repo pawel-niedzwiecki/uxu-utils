@@ -6,7 +6,7 @@ type HeaderComponentProps = {
 }
 export const HeaderComponent = styled.header<HeaderComponentProps>`
   ${({ theme: { borders, motions }, hiddeMenu }) => css`
-    top: ${hiddeMenu ? '-165px' : '0'};
+    top: ${hiddeMenu ? '-260px' : '0'};
     left: 0;
     width: 100%;
     display: block;
@@ -20,13 +20,19 @@ export const HeaderComponent = styled.header<HeaderComponentProps>`
 `;
 
 
-export const HeaderBox = styled.div`
-  z-index: 0;
-  width: 100%;
-  height: 155px;
-  display: block;
+type HeaderBoxProps = {
+  alert: boolean
+}
 
-  @media all and (min-width: 768px) {
-    height: 108px;
-  }
+export const HeaderBox = styled.div<HeaderBoxProps>`
+  ${({ theme: { spaces, fontSizes, breakpoints }, alert }) => css`
+    z-index: 0;
+    width: 100%;
+    height: ${alert ? '258px' : '155px'};
+    display: block;
+
+    @media all and (min-width: ${breakpoints.s}px) {
+      height: ${alert ? '209px' : '108px'};
+    }
+  `}
 `;

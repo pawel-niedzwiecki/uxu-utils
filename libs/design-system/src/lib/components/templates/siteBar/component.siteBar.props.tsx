@@ -1,6 +1,3 @@
-import { FC } from 'react';
-import type { FunctionComponentDiv } from './../../../utils';
-
 export type CoverProps = {
   isLoading: boolean
   img: { url: string, alt: string } | null
@@ -14,11 +11,12 @@ export type FilterProps = {
 export type SocialMediaProps = { isLoading: boolean, list: { url: string, typ: string }[] } | null
 
 
-export type SpecialProps = {
+export type Props = {
   cover?: CoverProps
   filter?: FilterProps
   socialMedia?: SocialMediaProps
 
+  alert?: boolean
 }
 
-export type Props = FC<FunctionComponentDiv & SpecialProps>
+
