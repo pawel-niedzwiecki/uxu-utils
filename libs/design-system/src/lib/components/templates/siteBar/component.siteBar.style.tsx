@@ -131,6 +131,12 @@ export const BoxSocialMedia = styled.ul`
         }
 
 
+<<<<<<< HEAD
+=======
+        &:hover {
+          color: var(--uxu-color-primary-accent5)
+        }
+>>>>>>> development-lib-design-system
       }
 
       &:first-of-type {
