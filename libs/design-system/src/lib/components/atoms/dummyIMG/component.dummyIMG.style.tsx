@@ -9,5 +9,4 @@ export const Wrapper = styled.div`
   background: var(--uxu-color-primary-accent2);
   ${listensPropsSize};
   ${listensPropsBorder};
-
 `;
