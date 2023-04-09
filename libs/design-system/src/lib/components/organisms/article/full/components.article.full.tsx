@@ -18,9 +18,6 @@ import { parserDayToName, parserMonthToName } from '../../../../utils';
 export const ArticleFull: Props = ({ data: { content }, isLoading }) => {
     const { createdAt, cover, title, author, tags, stats, lead, contentparts } = content;
 
-
-    console.log(content, 'content');
-
     const isLoadingImg = (
       <BoxImg>
         {isLoading ? (

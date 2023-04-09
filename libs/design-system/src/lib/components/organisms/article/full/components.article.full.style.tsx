@@ -45,7 +45,7 @@ export const BoxImg = styled.div`
 `;
 
 export const BoxContent = styled.div`
-  ${({ theme: { spaces, fontSizes, breakpoints } }) => css`
+  ${({ theme: { spaces } }) => css`
 
     width: 100%;
     display: flex;
@@ -189,6 +189,7 @@ export const BoxText = styled.div`
     }
 
     .img {
+      max-width: 100%;
       width: 30rem;
       height: 20rem;
       margin: 0 auto;
