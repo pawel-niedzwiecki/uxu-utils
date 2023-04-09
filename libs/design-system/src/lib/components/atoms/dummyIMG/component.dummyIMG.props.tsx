@@ -4,4 +4,3 @@ import type { BorderProps, FunctionComponentDiv, SizeProps } from './../../../ut
 
 export type Props = FC<FunctionComponentDiv & SizeProps & BorderProps>
 
-
