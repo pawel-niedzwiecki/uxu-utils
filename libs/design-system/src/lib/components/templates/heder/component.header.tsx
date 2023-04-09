@@ -1,15 +1,28 @@
 import React from 'react';
-import { Box, Col, Container, FormSearch, Grid, Link, Logo, Row, StyleSwitch, Tabs } from './../../../components';
+import {
+  Alert,
+  Box,
+  Col,
+  Container,
+  FormSearch,
+  Grid,
+  Link,
+  Logo,
+  Row,
+  StyleSwitch,
+  Tabs,
+} from './../../../components';
 import { useMenu } from './../../../hooks';
-import { HeaderBox, HeaderComponent } from './component.header.style';
-import { Props } from './component.header.types';
+import { HeaderBox, HeaderComponent } from './component.header.styles';
+import { Props } from './component.header.type';
 
-export const Header: Props = ({ tabs, callBack, res, ...args }, props) => {
+export const Header: Props = ({ tabs, callBack, res, alert, ...args }, props) => {
   const { hiddeMenu } = useMenu();
 
   return (
     <>
-      <HeaderComponent hiddeMenu={hiddeMenu} {...args} {...props}>
+      <HeaderComponent hiddeMenu={hiddeMenu} {...args} {...props} >
+        {alert && <Alert {...alert} />}
         <Container>
           <Row>
             <Col xs={12} style={{ padding: '1.5rem' }}>
@@ -48,7 +61,7 @@ export const Header: Props = ({ tabs, callBack, res, ...args }, props) => {
           </Row>
         </Container>
       </HeaderComponent>
-      <HeaderBox />
+      <HeaderBox alert={!!alert} />
     </>
   );
 };
