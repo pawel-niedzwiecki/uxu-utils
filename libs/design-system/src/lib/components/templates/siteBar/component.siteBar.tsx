@@ -8,7 +8,7 @@ import { SiteBarCover } from './component.siteBar.fragment.cover';
 import { SiteBarFilter } from './component.siteBar.fragment.filter';
 import { SiteSocialMedia } from './component.siteBar.fragment.socialMedia';
 
-export const SiteBar = ({ cover, filter, socialMedia, alert }: Props) => {
+export const SiteBar: Props = ({ cover, filter, socialMedia, alert }) => {
   const { hiddeMenu } = useMenu();
   const [open, setOpen] = useState(false);
 
