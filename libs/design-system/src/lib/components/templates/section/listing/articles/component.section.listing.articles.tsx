@@ -5,7 +5,7 @@ import { Header, Wraper } from './component.section.listing.articles.styles';
 import { ArticleShortLarge, ArticleShortSmall } from './../../../../organisms';
 import type { Props } from './component.section.listing.articles.type';
 
-export function ListingArticles({ data, isLoading }: Props) {
+export function SectionListingArticles({ data, isLoading }: Props) {
   const [listingType, setListingType] = useState('grid');
 
   useEffect(() => {

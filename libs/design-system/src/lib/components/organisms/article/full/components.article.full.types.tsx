@@ -2,25 +2,26 @@ import { FC } from 'react';
 import type { FunctionComponentDiv } from './../../../../utils';
 
 
-export type ArticleShortDataType = {
+export type ArticleDataType = {
   content: {
-    id: string
-    cover?: { src?: string, alt?: string }
+    lead: string
+    type: string
+    title: string
+    createdAt: Date
+    cover: { src?: string, alt?: string }
     author: {
       name: string
       avatar?: { src?: string, alt?: string }
     }
     tags?: { title: string, slug: string }[]
     stats?: { ratings: number, comments: number, views: number }
-    title: string
-    slug: string
-    createdAt: Date
+    contentparts?: { __typename: string, content?: string, src?: string, alt?: string }[]
   }
 }
 
 export type SpecialProps = {
   isLoading: boolean
-  data: ArticleShortDataType
+  data: ArticleDataType
 }
 
 
