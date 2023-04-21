@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC, PropsWithChildren, PropsWithRef } from 'react';
 
 type ClassName = string;
 type Children = React.ReactNode;
@@ -11,3 +11,12 @@ export type FunctionComponentDiv = {
   children?: Children;
   className?: ClassName;
 };
+
+export type OtherProps = {
+  className?: string;
+  style?: object;
+};
+
+export type ComponentRefWithProps<T> = FC<PropsWithRef<PropsWithChildren & OtherProps & T>>;
+
+export type ComponentWithProps<T> = FC<PropsWithChildren & OtherProps & T>;

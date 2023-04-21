@@ -1,6 +1,4 @@
 import styled, { css } from 'styled-components';
-import { SpecialProps } from './component.input.types';
-
 
 export const LabelComponent = styled.label`
   width: 100%;
@@ -10,7 +8,7 @@ export const LabelComponent = styled.label`
 export const InputComponent = styled.input<any>`
   ${({ error }) => css`
     width: 100%;
-    height: 4rem;
+    height: 3rem;
     display: block;
     -webkit-appearance: none;
     border: ${error ? `var(--uxu-border-error-default)` : `var(--uxu-border-default)`};

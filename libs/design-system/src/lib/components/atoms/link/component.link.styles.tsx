@@ -1,9 +1,7 @@
 import styled, { css } from 'styled-components';
-import { SpecialProps } from './component.link.types';
+import { OtherProps } from './component.link.types';
 import { listensPropsDisplay, listensPropsSize, listensPropsSpace } from './../../../utils';
-import { btn } from './../../../components/atoms/button/component.button.style';
-import Link from 'next/link';
-
+import { btn } from './../../../components/atoms/button/component.button.styles';
 
 const styleLink = css`
   ${({ theme: { motions } }) => css`
@@ -11,21 +9,11 @@ const styleLink = css`
 
     &:hover {
       color: var(--uxu-color-primary-accent5);
-    }`}
-`;
-
-export const Url = styled.a<SpecialProps>`
-  ${({ type, size, shape, align, color, variant }) => css`
-    ${styleLink};
-    ${type === 'button' && btn({ size, shape, align, color, variant })};
-    ${listensPropsSize};
-    ${listensPropsSpace};
-    ${listensPropsDisplay};
+    }
   `}
-
 `;
 
-export const Slug = styled(Link)<SpecialProps>`
+export const Wrapper = styled.a<OtherProps>`
   ${({ type, size, shape, align, color, variant }) => css`
     ${styleLink};
     ${type === 'button' && btn({ size, shape, align, color, variant })};

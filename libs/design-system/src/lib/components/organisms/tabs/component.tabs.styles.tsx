@@ -12,9 +12,8 @@ export const List = styled.ul`
     display: none;
   }
 
-
   &:after {
-    content: "";
+    content: '';
     width: 100%;
     height: 0;
     left: 0;
@@ -27,9 +26,7 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   ${({ theme: { motions } }) => css`
-
     width: max-content;
-
     border-bottom: var(--uxu-border-transparent);
 
     a {
@@ -43,7 +40,8 @@ export const Item = styled.li`
       }
     }
 
-    &.active, &:hover {
+    &.active,
+    &:hover {
       z-index: 1;
       color: var(--uxu-color-primary-accent5);
       border-bottom: var(--uxu-border-primary-foreground);
