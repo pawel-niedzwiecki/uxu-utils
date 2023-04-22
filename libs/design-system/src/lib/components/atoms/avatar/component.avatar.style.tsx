@@ -6,6 +6,8 @@ export const Wrapper = styled.div<PropsSpecial>`
     return css`
       min-width: ${size}px;
       min-height: ${size}px;
+      max-width: ${size}px;
+      max-height: ${size}px;
       display: flex;
       justify-content: center;
       align-items: center;

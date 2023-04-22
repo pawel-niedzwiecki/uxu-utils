@@ -7,6 +7,8 @@ export const fontSizes = {
   h4: '2.0rem',
   h5: '1.6rem',
   h6: '1.4rem',
+  micro: '0.8rem',
+  mini: '1rem',
   small: '1.2rem',
   default: '1.6rem',
   large: '2.4rem',

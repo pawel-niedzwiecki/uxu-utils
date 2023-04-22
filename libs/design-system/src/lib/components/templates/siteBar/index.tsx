@@ -1,2 +1,2 @@
-export * from './component.siteBar';
-
+export * from './primary';
+export * from './secondary';
