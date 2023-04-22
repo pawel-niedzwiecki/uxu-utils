@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
-
 export const Form = styled.form`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   position: relative;
 
-
   label {
     button {
-      top: 0.6rem;
-      right: 0.6rem;
+      top: 0.3rem;
+      right: 0rem;
       position: absolute;
     }
   }
 `;
 
 export const Sugestions = styled.div`
-  top: 40px;
+  top: 30px;
   width: 100%;
   max-width: 100%;
   z-index: 999;
@@ -31,7 +29,6 @@ export const Sugestions = styled.div`
   border: var(--uxu-border-default);
   border-radius: var(--uxu-radii-default);
   background: var(--uxu-color-primary-background);
-
 
   .sugestion {
     width: 100%;
@@ -55,7 +52,6 @@ export const Cover = styled.div`
   justify-content: center;
   border-radius: var(--uxu-radii-default);
   background: var(--uxu-color-primary-accent1);
-
 `;
 
 export const Img = styled.img`
@@ -82,12 +78,11 @@ export const Header = styled.strong`
 `;
 
 export const Excerpt = styled.p`
-
-width: 100%;
+  width: 100%;
   max-width: 95%;
   overflow: hidden;
-  text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
   font-size: var(--uxu-font-size-fs7);
   color: var(--uxu-color-primary-accent3);
 `;

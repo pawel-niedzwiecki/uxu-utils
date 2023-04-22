@@ -1,40 +1,15 @@
-import { useCallback, useEffect, useState } from 'react';
-import { Throttle } from './../utils';
-
+import { useEffect, useState } from 'react';
 
 type Props = {
-  wait?: number
-}
+  wait?: number;
+};
 
+export const useScrollY = ({ wait = 0 }: Props) => {
+  const [scrollY, setScrollY] = useState(0);
 
-export const useScrollY = ({ wait = 10 }: Props) => {
-    const [scrollYDirection, setScrollYDirection] = useState('');
-    const [scrollY, setScrollY] = useState(0);
-    const throttle = new Throttle({ wait });
-
-
-    const direction = useCallback((): void => {
-      const scrollYNew = document?.documentElement?.scrollTop;
-
-      switch (scrollY > scrollYNew) {
-        case true:
-          setScrollYDirection('up');
-          setScrollY(scrollYNew);
-          break;
-        case false:
-          setScrollYDirection('down');
-          setScrollY(scrollYNew);
-          break;
-      }
-
-    }, [scrollY]);
-
-    useEffect(() => {
-        window.addEventListener('scroll', () => throttle.setLastTimeOut(direction));
-        return () => window.removeEventListener('scroll', () => throttle.setLastTimeOut(direction));
-      }, [scrollY],
-    );
-    return { scrollYDirection, scrollY };
-
-  }
-;
+  useEffect(() => {
+    window.addEventListener('scroll', () => setScrollY(document?.documentElement?.scrollTop));
+    return () => window.removeEventListener('scroll', () => setScrollY(document?.documentElement?.scrollTop));
+  }, []);
+  return { scrollY };
+};

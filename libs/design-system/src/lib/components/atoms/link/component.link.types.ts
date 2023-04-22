@@ -1,13 +1,10 @@
-import { FC } from 'react';
-import type { FunctionComponentDiv } from './../../../utils';
-import { SizeProps , DisplayProps, SpaceProps} from './../../../utils';
-import type { SpecialProps as ButtonProps } from './../../../components/atoms/button/component.button.props';
+import type { ComponentWithProps } from './../../../utils';
+import { DisplayProps, SizeProps, SpaceProps } from './../../../utils';
+import type { OtherProps as ButtonProps } from './../../../components/atoms/button/component.button.types';
 
+export type OtherProps = {
+  href: string;
+  title: string;
+} & ButtonProps;
 
-export type SpecialProps = {
-  href: string,
-  title: string,
-} & ButtonProps
-
-export type Props = FC<FunctionComponentDiv & SizeProps & SpecialProps & DisplayProps & SpaceProps>
-
+export type ComponentLinkType = ComponentWithProps<SizeProps & OtherProps & DisplayProps & SpaceProps>;

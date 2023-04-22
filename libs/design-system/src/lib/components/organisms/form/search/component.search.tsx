@@ -4,14 +4,12 @@ import React, { FormEvent, useEffect, useState } from 'react';
 import { Search } from 'react-feather';
 import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
-import { Button, Input } from './../../../../components';
-import type { Props } from './component.search.types';
+import { Button, Input, Link } from './../../../../components';
+import type { ComponentType } from './component.search.types';
 import { stateResult } from './component.search.states';
-import { Link } from './../../../../components';
-import { Content, Cover, Excerpt, Form, Header, Img, Sugestion, Sugestions } from './component.search.style';
+import { Content, Cover, Excerpt, Form, Header, Img, Sugestions } from './component.search.style';
 
-export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
-
+export const FormSearch: ComponentType = ({ callBack, res, ...args }, props) => {
   const router = useRouter();
   const { register, watch } = useForm();
   const [result, setResult] = useState(stateResult);
@@ -33,29 +31,30 @@ export const FormSearch: Props = ({ callBack, res, ...args }, props) => {
   }, [search, focus, res]);
 
   const sug = (): JSX.Element | void => {
-    if (result?.length) return (
-      <Sugestions>
-        {result?.map((item, i) => (
-          <Link className="sugestion" key={i} href={item.slug} title={item.title}>
-            <Cover>{item?.cover ? <Img style={{ backgroundImage: `url(${item.cover})` }} /> :
-              <Search size={16} color='var(--uxu-color-primary-foreground)' />}</Cover>
-            <Content>
-              <Header>{item.title}</Header>
-              {item.excerpt ? <Excerpt>{item.excerpt}</Excerpt> : ''}
-            </Content>
-          </Link>
-        ))}
-      </Sugestions>
-    );
+    if (result?.length)
+      return (
+        <Sugestions>
+          {result?.map((item, i) => (
+            <Link className="sugestion" key={i} href={item.slug} title={item.title}>
+              <Cover>{item?.cover ? <Img style={{ backgroundImage: `url(${item.cover})` }} /> : <Search size={16} color="var(--uxu-color-primary-foreground)" />}</Cover>
+              <Content>
+                <Header>{item.title}</Header>
+                {item.excerpt ? <Excerpt>{item.excerpt}</Excerpt> : ''}
+              </Content>
+            </Link>
+          ))}
+        </Sugestions>
+      );
   };
 
   return (
     <Form {...props} {...args} onSubmit={(e: FormEvent<HTMLFormElement>): void => mySubmit(e)}>
-      <Input {...register('search')} type='search' onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}>
-        <Button variant='ghost'><Search size={16} /></Button>
+      <Input {...register('search')} type="search" onFocus={() => setFocus(true)} onBlur={() => setFocus(false)}>
+        <Button variant="ghost">
+          <Search size={16} />
+        </Button>
       </Input>
       {sug()}
     </Form>
   );
 };
-

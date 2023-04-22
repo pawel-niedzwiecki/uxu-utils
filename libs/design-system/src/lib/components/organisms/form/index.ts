@@ -1,2 +1,2 @@
 export * from './search';
-export * from './styleSwitch';
+export * from './modeSwitch';
