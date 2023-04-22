@@ -14,7 +14,6 @@ export function SectionListingArticles({ data, isLoading }: Props) {
       if (!localStorage) window.localStorage.setItem('LISTING_TYPE', listingType);
       else if (listingType !== localStorage) setListingType(localStorage);
     });
-
   }, []);
 
   useEffect(() => {
@@ -24,16 +23,18 @@ export function SectionListingArticles({ data, isLoading }: Props) {
     });
   }, [listingType]);
 
-
-  const listing = listingType === 'grid' ? data?.map((content, index) => (
-    <Col xs={12} s={4} l={3} style={{ marginBottom: '3rem' }} key={index}>
-      <ArticleShortSmall data={content} isLoading={isLoading} />
-    </Col>
-  )) : data?.map((content, index) => (
-    <Col xs={12} style={{ marginBottom: '3rem' }}>
-      <ArticleShortLarge data={content} isLoading={isLoading} />
-    </Col>
-  ));
+  const listing =
+    listingType === 'grid'
+      ? data?.map((content, index) => (
+          <Col xs={12} s={6} m={4} style={{ marginBottom: '3rem' }} key={index}>
+            <ArticleShortSmall data={content} isLoading={isLoading} />
+          </Col>
+        ))
+      : data?.map((content, index) => (
+          <Col xs={12} style={{ marginBottom: '3rem' }}>
+            <ArticleShortLarge data={content} isLoading={isLoading} />
+          </Col>
+        ));
 
   return (
     <Wraper>
@@ -43,13 +44,13 @@ export function SectionListingArticles({ data, isLoading }: Props) {
             <Header>
               <span>Lista</span>
               <Button
-                type='button'
-                variant='shadow'
-                color='danger'
-                shape='circle'
-                size='default'
+                type="button"
+                variant="shadow"
+                color="danger"
+                shape="circle"
+                size="default"
                 title={`zmień listę artykułów na ${listingType === 'grid' ? 'listę' : 'siatkę'}`}
-                onClick={() => listingType === 'grid' ? setListingType('list') : setListingType('grid')}
+                onClick={() => (listingType === 'grid' ? setListingType('list') : setListingType('grid'))}
               >
                 {functionSelectIcon(listingType === 'grid' ? 'list' : 'grid', 20)}
               </Button>

@@ -5,14 +5,14 @@ const styleList = css`
   margin-bottom: 1.5rem;
 `;
 
-export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
-  ${({ open, hiddeMenu, theme: { motions, breakpoints, spaces, borders } }) => css`
+export const Wrapper = styled.div<{ open: boolean }>`
+  ${({ open, theme: { motions, breakpoints, spaces, borders } }) => css`
     top: 0;
-    left: ${open ? '0rem' : '-25rem'};
-    width: 25rem;
+    left: ${open ? '0rem' : '-27rem'};
+    width: 27rem;
     height: 100%;
-    z-index: 9999;
     position: fixed;
+    z-index: 9999999;
     padding: 0 ${spaces.default};
     border-right: ${borders.default};
     transition: left ${motions.default};
@@ -21,8 +21,7 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     .switch {
       width: 40px;
       height: 40px;
-      left: 24.9rem;
-      top: ${hiddeMenu ? spaces.default : '180px'};
+      transform: translate(25.4rem, 50vh);
       padding: 0;
       display: block;
       position: absolute;
@@ -40,15 +39,15 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
 
     @media all and (min-width: ${breakpoints.s}px) {
       .switch {
-        top: ${hiddeMenu ? spaces.default : '125px'};
+        top: ${spaces.default};
       }
     }
 
-
     @media all and (min-width: ${breakpoints.m}px) {
       left: auto;
-      width: 25rem;
+      z-index: 0;
       border: none;
+      width: 25rem;
       position: relative;
       background-color: transparent;
 
@@ -58,7 +57,6 @@ export const Wrapper = styled.div<{ open: boolean, hiddeMenu: boolean }>`
     }
   `}
 `;
-
 
 export const Box = styled.div<{ top: number }>`
   ${({ top, theme: { motions, breakpoints } }) => css`
@@ -73,7 +71,6 @@ export const Box = styled.div<{ top: number }>`
     }
   `}
 `;
-
 
 export const Header = styled.p`
   ${({ theme: { spaces } }) => css`
@@ -107,7 +104,6 @@ export const BoxMenu = styled.ul`
   ${styleList}
 `;
 
-
 export const BoxSocialMedia = styled.ul`
   ${({ theme: { spaces, motions } }) => css`
     ${styleList}
@@ -127,24 +123,17 @@ export const BoxSocialMedia = styled.ul`
         transition: color ${motions.default};
 
         &:hover {
-          color: var(--uxu-color-primary-accent5)
+          color: var(--uxu-color-primary-accent5);
         }
-
-
-      < < < < < < < HEAD = = = = = = = &: hover {
-        color: var(--uxu-color-primary-accent5)
-      }
-
-        > > > > > > > development-lib-design-system
       }
 
       &:first-of-type {
         width: 100%;
+        padding: 0;
       }
     }
   `}
 `;
-
 
 export const Item = styled.li`
   ${({ theme: { spaces } }) => css`
@@ -152,7 +141,8 @@ export const Item = styled.li`
     margin-bottom: ${spaces.small};
     justify-content: flex-start;
 
-    a, button {
+    a,
+    button {
       width: 70%;
     }
 
@@ -168,3 +158,5 @@ export const Item = styled.li`
     }
   `};
 `;
+
+export const BoxAds = styled.ul``;

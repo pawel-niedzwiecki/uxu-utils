@@ -14,10 +14,10 @@ export const useBreakpoints = () => {
     query: `(max-width: 768px)`,
   });
   const isTabletOrMobile = useMediaQuery({
-    query: `(max-width: 1224px)`,
+    query: `(max-width: 1279px)`,
   });
   const isDesktopOrLaptop = useMediaQuery({
-    query: `(min-width: 1225px)`,
+    query: `(min-width: 1280px)`,
   });
 
   useEffect(() => {

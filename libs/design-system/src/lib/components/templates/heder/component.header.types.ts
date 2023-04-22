@@ -13,7 +13,7 @@ export namespace HeaderDataTypes {
     };
   };
   export type Alert = {
-    alert: {
+    alert?: {
       tel?: string;
       title: string;
     };
