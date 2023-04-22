@@ -1,8 +1,12 @@
 import { vectorLogos } from './../../../assets';
-import { Props } from './component.logo.props';
+import { ComponentType } from './component.logo.types';
 import { Wrapper } from './component.logo.style';
 
-
-export const Logo: Props = ({ type, ...args }, props) => (
-  <Wrapper {...args} {...props}>{vectorLogos[type] ? vectorLogos[type] : 'the type not exist'}</Wrapper>
-);
+export const Logo: ComponentType = ({ type, ...args }, props) => {
+  const logo = vectorLogos[type];
+  return (
+    <Wrapper {...args} {...props}>
+      {logo}
+    </Wrapper>
+  );
+};
