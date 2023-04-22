@@ -5,7 +5,7 @@ type Props = {
 };
 
 export const useScrollY = ({ wait = 0 }: Props) => {
-  let [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     window.addEventListener('scroll', () => setScrollY(document?.documentElement?.scrollTop));
