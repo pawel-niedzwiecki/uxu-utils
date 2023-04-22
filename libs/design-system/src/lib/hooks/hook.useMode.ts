@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { functionCheckIsDOM } from './../utils';
 
-
 export const useMode = () => {
   const [mode, setModeForce] = useState('dark');
 
@@ -13,7 +12,6 @@ export const useMode = () => {
     });
   };
 
-
   const getMode = (): void => {
     functionCheckIsDOM(() => {
       const mql = window?.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -23,7 +21,8 @@ export const useMode = () => {
       else setMode(mql ? 'dark' : 'light');
     });
   };
-
+  
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => getMode(), []);
 
   return { mode, getMode, setMode, setModeForce };

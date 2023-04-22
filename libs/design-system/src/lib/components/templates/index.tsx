@@ -1,3 +1,4 @@
 export * from './section';
 export * from './heder';
-export * from './siteBar'
+export * from './footer';
+export * from './siteBar';
