@@ -8,13 +8,13 @@ export const Tabs: ComponentTabsType = ({ tabs, ...args }) => {
   const btn = (data: Tab) => {
     if (typeof data.value === 'string')
       return (
-        <Link href={data.value} title={data.title} prefix={data?.icon} size="small">
+        <Link href={data.value} title={data.title} prefix={data?.icon} size="default" type="button">
           <span>{data.title}</span>
         </Link>
       );
     else
       return (
-        <Button prefix={data?.icon} onClick={data.value} size="small">
+        <Button prefix={data?.icon} onClick={data.value} size="default">
           <span>{data.title}</span>
         </Button>
       );

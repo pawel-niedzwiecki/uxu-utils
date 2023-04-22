@@ -8,9 +8,10 @@ export type OtherProps = {
   shape?: string;
   size?: string;
   align?: string;
-  variant?: string | undefined;
+  variant?: string;
   color?: string;
   title?: string;
+  onClick?: () => void;
 };
 
 export type ComponentButtonType = ComponentWithProps<SizeProps & OtherProps>;
