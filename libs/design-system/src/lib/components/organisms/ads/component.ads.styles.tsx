@@ -9,6 +9,7 @@ export const Wrapper = styled.div<ParamsAd>`
     height: ${height};
     flex-direction: column;
     justify-content: center;
+    border: var(--uxu-border-default);
     background-color: var(--uxu-color-primary-accent2);
 
     &:before {
@@ -17,14 +18,14 @@ export const Wrapper = styled.div<ParamsAd>`
       font-size: 2.4rem;
       position: relative;
       text-align: center;
-      color: var(--uxu-color-primary-accent1);
+      color: var(--uxu-color-primary-accent3);
     }
 
     &:after {
       content: 'reklama';
       position: relative;
       text-align: center;
-      color: var(--uxu-color-primary-accent1);
+      color: var(--uxu-color-primary-accent3);
     }
   `}
 `;

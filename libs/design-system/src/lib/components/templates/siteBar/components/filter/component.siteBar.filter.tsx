@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link, LoadingLine } from '../../../../index';
 import { BoxMenu, Header, Item } from '../../component.siteBar.styles';
-import type { FilterProps } from '../../primary/component.siteBar.types';
+import type { FilterProps } from './../../component.siteBar.types';
 
 export const SiteBarFilter = ({ filter }: { filter?: FilterProps }) => {
   if (filter) {

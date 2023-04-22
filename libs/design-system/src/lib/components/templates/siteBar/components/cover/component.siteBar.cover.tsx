@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/legacy/image';
 import { DummyIMG, LoadingLine } from '../../../../index';
-import type { CoverProps } from '../../primary/component.siteBar.types';
+import type { CoverProps } from './../../component.siteBar.types';
 import { BoxCover, BoxImg, Header, Item } from '../../component.siteBar.styles';
 
 export const SiteBarCover = ({ cover }: { cover?: CoverProps }) => {

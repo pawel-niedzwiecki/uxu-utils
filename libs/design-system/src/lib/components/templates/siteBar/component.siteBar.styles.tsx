@@ -14,6 +14,7 @@ export const Wrapper = styled.div<{ open: boolean }>`
     position: fixed;
     z-index: 9999999;
     padding: 0 ${spaces.default};
+    margin-bottom: ${spaces.large};
     border-right: ${borders.default};
     transition: left ${motions.default};
     background-color: var(--uxu-color-primary-accent1);
