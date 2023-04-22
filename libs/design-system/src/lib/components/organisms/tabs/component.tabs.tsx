@@ -1,28 +1,32 @@
 import React from 'react';
 import { Button, Link } from './../../../components';
-import type { Props, Tab } from './component.tabs.types';
-import { Item, List } from './component.tabs.style';
+import type { Tab } from './component.tabs.types';
+import { ComponentTabsType } from './component.tabs.types';
+import { Item, List } from './component.tabs.styles';
 
-export const Tabs: Props = ({ tabs, ...args }, props) => {
-
+export const Tabs: ComponentTabsType = ({ tabs, ...args }) => {
   const btn = (data: Tab) => {
-    if (typeof data.value === 'string') return (
-      <Link href={data.value} title={data.title} prefix={data?.icon}>
-        <span>{data.title}</span>
-      </Link>
-    );
-    else return (
-      <Button prefix={data?.icon} onClick={data.value}>
-        <span>{data.title}</span>
-      </Button>
-    );
+    if (typeof data.value === 'string')
+      return (
+        <Link href={data.value} title={data.title} prefix={data?.icon} size="default" type="button">
+          <span>{data.title}</span>
+        </Link>
+      );
+    else
+      return (
+        <Button prefix={data?.icon} onClick={data.value} size="default">
+          <span>{data.title}</span>
+        </Button>
+      );
   };
 
   return (
-    <List {...props} {...args}>
-      {tabs?.map((data, i) => <Item className={data?.active ? 'active' : ''} key={i}>{btn(data)}</Item>)}
+    <List {...args}>
+      {tabs?.map((data, i) => (
+        <Item className={data?.active ? 'active' : ''} key={i}>
+          {btn(data)}
+        </Item>
+      ))}
     </List>
   );
 };
-
-

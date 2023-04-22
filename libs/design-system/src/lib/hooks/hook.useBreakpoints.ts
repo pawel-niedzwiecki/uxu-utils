@@ -1,21 +1,36 @@
-import {useEffect, useState} from 'react';
-import {UseMediaQuery} from './index';
-import {breakpoints} from './../theme';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from './hook.useMediaQuery';
 
-const initialMedia = Object.keys(breakpoints).reduce((accumulator, key) => {
-  return {...accumulator, [key]: false};
-}, {});
+const initialMedia = {
+  isMobile: false,
+  isTabletOrMobile: false,
+  isDesktopOrLaptop: false,
+};
 
 export const useBreakpoints = () => {
   const [reactiveMedia, setReactiveMedia] = useState(initialMedia);
 
-  const isActivity = Object.keys(reactiveMedia).reduce((accumulator, key) => {
-    return {...accumulator, [key]: UseMediaQuery({query: `(min-width: ${breakpoints[key]}px)`})};
-  }, {});
+  const isMobile = useMediaQuery({
+    query: `(max-width: 768px)`,
+  });
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width: 1279px)`,
+  });
+  const isDesktopOrLaptop = useMediaQuery({
+    query: `(min-width: 1280px)`,
+  });
 
   useEffect(() => {
-    reactiveMedia !== isActivity && setReactiveMedia(isActivity)
-  }, [isActivity, reactiveMedia]);
+    setReactiveMedia({
+      isMobile,
+      isTabletOrMobile,
+      isDesktopOrLaptop,
+    });
+  }, [isMobile, isTabletOrMobile, isDesktopOrLaptop]);
 
-  return reactiveMedia;
+  return {
+    isDesktopOrLaptop: reactiveMedia.isDesktopOrLaptop,
+    isTabletOrMobile: reactiveMedia.isTabletOrMobile,
+    isMobile: reactiveMedia.isMobile,
+  };
 };

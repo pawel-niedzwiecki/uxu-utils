@@ -10,14 +10,13 @@ export const Article = styled.article`
     flex-direction: column;
     border-radius: ${radiis.default};
     border: var(--uxu-border-default);
-    background-color: var(--uxu-color-primary-background);
+    background-color: var(--uxu-color-primary-accent1);
 
-    html[data-theme="light"] & {
+    html[data-theme='light'] & {
       box-shadow: ${shadows.default};
     }
   `}
 `;
-
 
 export const BoxImg = styled.div`
   ${({ theme: { motions, alphas, breakpoints } }) => css`
@@ -30,7 +29,6 @@ export const BoxImg = styled.div`
       height: 30rem;
     }
 
-
     a {
       opacity: 1;
       transition: opacity ${motions.default};
@@ -39,13 +37,11 @@ export const BoxImg = styled.div`
         opacity: ${alphas.default};
       }
     }
-
   `}
 `;
 
 export const BoxContent = styled.div`
   ${({ theme: { spaces, fontSizes, breakpoints } }) => css`
-
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -55,13 +51,11 @@ export const BoxContent = styled.div`
   `}
 `;
 
-
 export const BoxAuthor = styled.div`
   width: 100%;
   display: flex;
   position: relative;
 `;
-
 
 export const BoxAuthorData = styled.div`
   ${({ theme: { spaces, fontSizes } }) => css`
@@ -105,7 +99,6 @@ export const Header = styled.div`
     @media all and (min-width: ${breakpoints.s}px) {
       font-size: ${fontSizes.h3};
     }
-
   `}
 `;
 export const Tags = styled.ul`
@@ -127,7 +120,7 @@ export const Tag = styled.li`
       }
 
       &:before {
-        content: "#";
+        content: '#';
         color: var(--uxu-color-primary-accent5);
       }
     }
@@ -164,7 +157,6 @@ export const StatList = styled.ul`
     display: flex;
     flex-wrap: wrap;
 
-
     @media all and (min-width: ${breakpoints.s}px) {
       width: calc(100% - 10rem);
     }
@@ -185,7 +177,7 @@ export const Stat = styled.li`
     span {
       display: flex;
       align-items: center;
-      margin: 0 ${spaces.default} 0 ${spaces.small}
+      margin: 0 ${spaces.default} 0 ${spaces.small};
     }
   `}
 `;
