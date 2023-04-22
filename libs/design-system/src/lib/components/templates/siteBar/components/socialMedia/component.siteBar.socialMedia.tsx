@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, LoadingLine } from '../../../../index';
 import { BoxSocialMedia, Header, Item } from '../../component.siteBar.styles';
-import type { SocialMediaProps } from '../../primary/component.siteBar.types';
+import type { SocialMediaProps } from './../../component.siteBar.types';
 import { functionSelectIcon } from '../../../../../utils';
 
 export const SiteSocialMedia = ({ socialMedia }: { socialMedia?: SocialMediaProps }) => {
