@@ -1,7 +1,7 @@
 export type FontSizes = typeof fontSizes;
 
 export const fontSizes = {
-  h1: '4.8rem',
+  h1: '4rem',
   h2: '3.2rem',
   h3: '2.4rem',
   h4: '2.0rem',
