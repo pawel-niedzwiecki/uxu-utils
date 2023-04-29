@@ -2,41 +2,47 @@ import { Header, Wrapper } from './component.footer.styles';
 import { Container, Grid, Link, Logo } from '../../atoms';
 import React from 'react';
 import { contents } from '../../../theme';
+import { ComponentType } from './component.footer.types';
 
-export function Footer() {
+export const Footer: ComponentType = ({ columns }) => {
   return (
     <Wrapper>
       <Container>
-        <Grid gridTemplateColumns={{ xs: '1fr', m: '250px 1fr 1fr 1fr', l: '250px 1fr 1fr 1fr 1fr ' }} style={{ maxWidth: contents.maxWidth, margin: '0 auto' }} container>
+        <Grid
+          gridTemplateColumns={{
+            xs: '1fr',
+            s: '250px 1fr 1fr',
+            l: '250px 1fr 1fr 1fr',
+            xl: '250px 1fr 1fr 1fr 1fr',
+          }}
+          style={{ maxWidth: contents.maxWidth, margin: '0 auto' }}
+          container
+        >
           <Grid gridRow="1/30" className="brand">
-            <Logo type="wTrasie" height={{ x: '2rem', s: '2.5rem' }} fill="primary.foreground" />
-            <p>© 2023 UXU </p>
+            <Link href="/" title="uxu">
+              <Logo type="wTrasie" height={{ x: '2rem', s: '2.5rem' }} fill="primary.foreground" />
+            </Link>
+            <p>
+              © 2023
+              <Link href="https://www.uxu.pl" title="UXU">
+                UXU
+              </Link>
+            </p>
           </Grid>
 
-          {new Array(5).fill(undefined).map(() => (
+          {columns?.map(column => (
             <Grid>
-              <Header>Miasta</Header>
+              <Header>{column?.header}</Header>
               <ul>
-                <li>
-                  <Link href="/" title="uxu">
-                    Warszawa
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" title="uxu">
-                    Poznań
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" title="uxu">
-                    Łódź
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/" title="uxu">
-                    Gorzów Wielkopolski
-                  </Link>
-                </li>
+                {column?.link?.map(data => {
+                  return (
+                    <li>
+                      <Link href={data.url} title={data?.title || ''}>
+                        {data?.title || ''}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </Grid>
           ))}
@@ -44,4 +50,4 @@ export function Footer() {
       </Container>
     </Wrapper>
   );
-}
+};
