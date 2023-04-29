@@ -39,6 +39,7 @@ export const Wrapper = styled.footer`
       }
     }
   `}
+}
 `;
 
 export const Header = styled.span`
