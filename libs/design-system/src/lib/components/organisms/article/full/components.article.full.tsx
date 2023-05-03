@@ -8,12 +8,14 @@ import { Props } from './components.article.full.types';
 import { parserDayToName, parserMonthToName } from '../../../../utils';
 
 export const ArticleFull: Props = ({ data, isLoading }) => {
+  const { createdAt, cover, title, author, tags, stats, lead, contentparts } = data;
+
   const isLoadingImg = (
     <BoxImg>
       {isLoading ? (
         <LoadingLine height={{ x: '18rem', s: '30rem' }} />
-      ) : data?.cover?.src ? (
-        <Image layout="fill" objectFit="cover" src={data.cover.src} alt={data.cover?.alt ? data.cover.alt : data.title} />
+      ) : cover?.src ? (
+        <Image layout="fill" objectFit="cover" src={cover.src} alt={cover?.alt ? cover.alt : title} />
       ) : (
         <DummyIMG height={{ x: '18rem', s: '50rem' }} width="100%" />
       )}
