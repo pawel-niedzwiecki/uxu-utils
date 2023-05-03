@@ -18,6 +18,3 @@ export * from './lib/theme';
 
 // #utils
 export * from './lib/utils';
-
-// #gql
-export * from './lib/gql';

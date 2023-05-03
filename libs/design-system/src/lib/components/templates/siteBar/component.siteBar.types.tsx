@@ -5,7 +5,7 @@ export type CoverProps = {
 
 export type FilterProps = {
   isLoading: boolean;
-  links: { slug: string; title: string; score: number; active: boolean }[];
+  links: { slug: string; title: string; active: boolean }[];
 };
 
 export type SocialMediaProps = { isLoading: boolean; list: { url: string; typ: string }[] };

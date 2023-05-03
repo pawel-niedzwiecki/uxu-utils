@@ -7,15 +7,13 @@ import ReactMarkdown from 'react-markdown';
 import { Props } from './components.article.full.types';
 import { parserDayToName, parserMonthToName } from '../../../../utils';
 
-export const ArticleFull: Props = ({ data: { content }, isLoading }) => {
-  const { createdAt, cover, title, author, tags, stats, lead, contentparts } = content;
-
+export const ArticleFull: Props = ({ data, isLoading }) => {
   const isLoadingImg = (
     <BoxImg>
       {isLoading ? (
         <LoadingLine height={{ x: '18rem', s: '30rem' }} />
-      ) : cover?.src ? (
-        <Image layout="fill" objectFit="cover" src={cover.src} alt={cover?.alt ? cover.alt : title} />
+      ) : data?.cover?.src ? (
+        <Image layout="fill" objectFit="cover" src={data.cover.src} alt={data.cover?.alt ? data.cover.alt : data.title} />
       ) : (
         <DummyIMG height={{ x: '18rem', s: '50rem' }} width="100%" />
       )}
@@ -37,17 +35,17 @@ export const ArticleFull: Props = ({ data: { content }, isLoading }) => {
         </>
       ) : (
         <>
-          <Avatar src={author?.avatar?.src || ''} name={author?.name} />
+          <Avatar src={data?.author?.avatar?.src} name={data?.author?.name} />
           <BoxAuthorData>
-            <span>{author?.name}</span>
-            <span>{`${new Date(createdAt).getDate()} ${parserMonthToName(createdAt)} ( ${parserDayToName(createdAt)} )`}</span>
+            <span>{data?.author?.name}</span>
+            {data?.createdAt && <span>{`${new Date(data?.createdAt).getDate()} ${parserMonthToName(data?.createdAt)} ( ${parserDayToName(data?.createdAt)} )`}</span>}
           </BoxAuthorData>
         </>
       )}
     </BoxAuthor>
   );
 
-  const isLoadingHeader = <Header>{isLoading ? <LoadingLine height="4.2rem" /> : <>{title}</>}</Header>;
+  const isLoadingHeader = <Header>{isLoading ? <LoadingLine height="4.2rem" /> : <>{data?.title}</>}</Header>;
 
   const isLoadingTags = (
     <Tags>
@@ -57,11 +55,13 @@ export const ArticleFull: Props = ({ data: { content }, isLoading }) => {
               <LoadingLine height="2rem" width="3.5rem" style={{ marginRight: '1rem' }} />
             </Tag>,
           )
-        : tags?.map(tag => (
+        : data?.tags?.map(tag => (
             <Tag>
-              <Link href={tag.slug} title={tag.title}>
-                {tag.title}
-              </Link>
+              {tag?.slug && tag?.title && (
+                <Link href={tag.slug} title={tag.title}>
+                  {tag.title}
+                </Link>
+              )}
             </Tag>
           ))}
     </Tags>
@@ -71,7 +71,7 @@ export const ArticleFull: Props = ({ data: { content }, isLoading }) => {
     <Article>
       <BoxContent>
         {isLoadingHeader}
-        <p className="lead">{lead}</p>
+        <p className="lead">{data?.lead}</p>
         <ParseContentPartToChunk
           contentParts={[
             {
@@ -104,10 +104,10 @@ export const ArticleFull: Props = ({ data: { content }, isLoading }) => {
       {isLoadingImg}
       <BoxContent>
         {isLoadingTags}
-        {contentparts?.map(item => {
-          if (item.__typename === 'txt') return item?.content && <ReactMarkdown>{item.content}</ReactMarkdown>;
-          else if (item.__typename === 'quote') return <q>{item.content}</q>;
-          else if (item.__typename === 'img') {
+        {data?.contentparts?.map(item => {
+          if (item.type === 'txt') return item?.content && <ReactMarkdown>{item.content}</ReactMarkdown>;
+          else if (item.type === 'quote') return <q>{item.content}</q>;
+          else if (item.type === 'img') {
             return item?.src ? (
               <div className="img">
                 <Image layout="fill" objectFit="cover" src={item.src} alt={item?.alt ? item.alt : ''} />
