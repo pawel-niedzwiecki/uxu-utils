@@ -5,7 +5,6 @@ export const Article = styled.article`
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    overflow: hidden;
     position: relative;
     border-radius: ${radiis.default};
     border: var(--uxu-border-default);
@@ -19,7 +18,7 @@ export const Article = styled.article`
 
 export const BoxContent = styled.div`
   ${({ theme: { spaces, breakpoints, fontSizes } }) => css`
-    width: calc(100% - 28rem);
+    width: 100%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -30,6 +29,10 @@ export const BoxContent = styled.div`
         font-size: ${fontSizes.h4};
         padding-bottom: ${spaces.default};
       }
+    }
+
+    @media all and (min-width: ${breakpoints.l}px) {
+      width: calc(100% - 28rem);
     }
 
     h1,
@@ -110,7 +113,6 @@ export const BoxContent = styled.div`
 export const BoxAds = styled.div`
   ${({ theme: { spaces } }) => css`
     width: 25rem;
-    height: 100%;
     position: relative;
     margin: ${spaces.default};
   `}
@@ -184,7 +186,7 @@ export const Tags = styled.ul`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
-    margin: 0 0 ${spaces.default} calc(4.2rem + ${spaces.default});
+    margin-bottom: ${spaces.default};
   `}
 `;
 

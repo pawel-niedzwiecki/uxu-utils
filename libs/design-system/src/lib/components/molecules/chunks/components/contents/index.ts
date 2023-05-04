@@ -7,3 +7,4 @@ export * from './ListChunk';
 export * from './ParagraphChunk';
 export * from './QuoteChunk';
 export * from './TableChunk';
+export * from './EmptyChunk';

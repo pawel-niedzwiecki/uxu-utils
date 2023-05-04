@@ -1,4 +1,4 @@
-export enum UXUChunkType {
+export enum ContentPartTypeEnum {
   PARAGRAPH,
   HEADER,
   IMG,

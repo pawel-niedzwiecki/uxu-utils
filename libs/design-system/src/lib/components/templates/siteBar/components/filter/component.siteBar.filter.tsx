@@ -14,14 +14,12 @@ export const SiteBarFilter = ({ filter }: { filter?: FilterProps }) => {
           <Link type="button" color="primarry" variant={link.active ? 'disabled' : 'primary'} href={link.slug} title={link.title}>
             {link.title}
           </Link>
-          <span>{link.score}</span>
         </Item>
       ));
     const showAnimationLoad = new Array(4).fill(undefined).map((_, index) => {
       return (
         <Item key={index}>
           <LoadingLine height="3rem" width="70%" borderRadius="default" />
-          <span>0</span>
         </Item>
       );
     });
