@@ -9,4 +9,5 @@ export enum ContentPartTypeEnum {
   EMBED,
   TABLE,
   GALLERY,
+  EMBEDYOUTUBE,
 }

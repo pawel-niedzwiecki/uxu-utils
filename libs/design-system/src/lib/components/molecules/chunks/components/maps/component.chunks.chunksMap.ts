@@ -1,4 +1,4 @@
-import { CodeChunk, EmbedChunk, GalleryChunk, HeaderChunk, IMGChunk, ListChunk, ParagraphChunk, QuoteChunk, TableChunk } from '../contents';
+import { CodeChunk, EmbedChunk, EmbedYouTubeChunk, GalleryChunk, HeaderChunk, IMGChunk, ListChunk, ParagraphChunk, QuoteChunk, TableChunk } from '../contents';
 import { ContentPartTypeEnum } from '../../enums';
 
 export const chunksMap = new Map([
@@ -11,4 +11,5 @@ export const chunksMap = new Map([
   [ContentPartTypeEnum.EMBED, EmbedChunk],
   [ContentPartTypeEnum.TABLE, TableChunk],
   [ContentPartTypeEnum.GALLERY, GalleryChunk],
+  [ContentPartTypeEnum.EMBEDYOUTUBE, EmbedYouTubeChunk],
 ]);

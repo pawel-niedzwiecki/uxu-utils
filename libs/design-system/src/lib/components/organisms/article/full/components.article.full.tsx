@@ -3,7 +3,7 @@ import { Avatar, Box, DummyIMG, Link, LoadingLine } from '../../../atoms';
 import { Ads } from '../../../organisms';
 import { useBreakpoints } from '../../../../hooks';
 import { ParseContentPartToChunk } from './../../../molecules';
-import { Article, BoxAds, BoxAuthor, BoxAuthorData, BoxContent, BoxImg, Header, Tag, Tags } from './components.article.full.styles';
+import { Article, BoxAds, BoxAuthor, BoxAuthorData, BoxContent, BoxImg, BoxImgData, Header, Tag, Tags } from './components.article.full.styles';
 import { Props } from './components.article.full.types';
 import { parserDayToName, parserMonthToName } from '../../../../utils';
 import { transformChunkToComponent } from '../../../molecules/chunks/components/parsers/parseChunkToComponent/parseChunkToComponent';
@@ -13,15 +13,20 @@ export const ArticleFull: Props = ({ data, isLoading }) => {
   const { createdAt, cover, title, author, tags, stats, lead, contentparts } = data;
 
   const isLoadingImg = (
-    <BoxImg>
-      {isLoading ? (
-        <LoadingLine height={{ x: '18rem', s: '30rem' }} />
-      ) : cover?.src ? (
-        <Image layout="fill" objectFit="cover" src={cover.src} alt={cover?.alt ? cover.alt : title} />
-      ) : (
-        <DummyIMG height={{ x: '18rem', s: '50rem' }} width="100%" />
-      )}
-    </BoxImg>
+    <BoxImgData>
+      <BoxImg>
+        {isLoading ? (
+          <LoadingLine height={{ x: '18rem', s: '30rem' }} />
+        ) : cover?.src ? (
+          <>
+            <Image layout="fill" objectFit="cover" src={cover.src} alt={cover?.alt ? cover.alt : title} />
+          </>
+        ) : (
+          <DummyIMG height={{ x: '18rem', s: '50rem' }} width="100%" />
+        )}
+      </BoxImg>
+      {cover?.caption && <span>Źródło: {cover.caption}</span>}
+    </BoxImgData>
   );
 
   const isLoadingAuthor = (

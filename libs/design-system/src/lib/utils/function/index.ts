@@ -3,3 +3,4 @@ export * from './function.checkIsDOM';
 export * from './function.createSlug';
 export * from './function.selectIcon';
 export * from './function.parserTimeToName';
+export * from './function.extractHashFromYoutubeUrl';

@@ -35,30 +35,6 @@ export const BoxContent = styled.div`
       width: calc(100% - 28rem);
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      padding-bottom: ${spaces.large};
-    }
-
-    p,
-    q,
-    .img,
-    .lead {
-      display: block;
-      position: relative;
-      margin-bottom: ${spaces.default};
-    }
-
-    p,
-    q {
-      width: 100%;
-      position: relative;
-    }
-
     q {
       width: 100%;
       max-width: 600px;
@@ -92,21 +68,6 @@ export const BoxContent = styled.div`
         right: ${spaces.small};
       }
     }
-
-    .img {
-      max-width: 100%;
-      width: 30rem;
-      height: 20rem;
-      margin: 0 auto;
-      position: relative;
-      overflow: hidden;
-      display: block;
-
-      @media all and (min-width: ${breakpoints.s}px) {
-        width: 60rem;
-        height: 40rem;
-      }
-    }
   `}
 `;
 
@@ -124,6 +85,21 @@ export const Header = styled.h1`
   `}
 `;
 
+export const BoxImgData = styled.div`
+  ${({ theme: { fontSizes, spaces } }) => css`
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 0 ${spaces.default};
+
+    span {
+      padding: ${spaces.small} 0;
+      font-size: ${fontSizes.small};
+      color: var(--uxu-color-primary-accent5);
+    }
+  `}
+`;
+
 export const BoxImg = styled.div`
   ${({ theme: { motions, alphas, breakpoints, radiis, spaces } }) => css`
     width: 100%;
@@ -132,19 +108,9 @@ export const BoxImg = styled.div`
     overflow: hidden;
     position: relative;
     border-radius: ${radiis.default};
-    margin: 0 ${spaces.default} ${spaces.default};
 
     @media all and (min-width: ${breakpoints.s}px) {
       height: 50rem;
-    }
-
-    a {
-      opacity: 1;
-      transition: opacity ${motions.default};
-
-      &:hover {
-        opacity: ${alphas.default};
-      }
     }
   `}
 `;
