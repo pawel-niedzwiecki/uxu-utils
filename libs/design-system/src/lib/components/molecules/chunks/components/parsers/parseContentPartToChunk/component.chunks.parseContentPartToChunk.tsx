@@ -1,20 +1,22 @@
 import React from 'react';
 import { compose, map } from 'ramda';
 import { chunksMap } from '../../maps';
-import type { ContentPartPropsType } from '../../../types';
-import type { ComponentPropsType, GetChunkComponentType } from './component.chunks.parseContentPartToChunk.types';
+import { EmptyChunk } from '../../contents';
+import type { ChunkComponentWithPropsInObject, ComponentParseContentPartToChunkType, ContentPartPropsType } from './../../../types';
 
-export const ParseContentPartToChunk: ComponentPropsType = ({ children, contentParts }) => {
-  const getChunkComponent = (contentPart: ContentPartPropsType): GetChunkComponentType => ({
-    props: contentPart,
-    ChunkComponent: chunksMap.get(contentPart.type) || null,
-  });
+export const ParseContentPartToChunk: ComponentParseContentPartToChunkType = ({ children, contentParts }) => {
+  const getChunkComponent = (contentPart: ContentPartPropsType): ChunkComponentWithPropsInObject => {
+    return {
+      props: contentPart,
+      ChunkComponent: contentPart?.type !== undefined ? chunksMap.get(contentPart.type) || EmptyChunk : EmptyChunk,
+    };
+  };
 
   const transformContentPartToChunkComponent = compose(getChunkComponent);
-  
+
   const parseAndFilterContentParts = (contentParts: ContentPartPropsType[]) => map(transformContentPartToChunkComponent, contentParts);
 
-  const chunkComponents: GetChunkComponentType[] = parseAndFilterContentParts(contentParts);
+  const chunkComponents: Array<ChunkComponentWithPropsInObject> = parseAndFilterContentParts(contentParts);
 
   return <div>{children({ chunkComponents })}</div>;
 };

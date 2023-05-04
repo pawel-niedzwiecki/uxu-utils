@@ -1,13 +1,15 @@
 import Image from 'next/legacy/image';
 import { Avatar, Box, DummyIMG, Link, LoadingLine } from '../../../atoms';
 import { Ads } from '../../../organisms';
+import { useBreakpoints } from '../../../../hooks';
 import { ParseContentPartToChunk } from './../../../molecules';
 import { Article, BoxAds, BoxAuthor, BoxAuthorData, BoxContent, BoxImg, Header, Tag, Tags } from './components.article.full.styles';
-import ReactMarkdown from 'react-markdown';
 import { Props } from './components.article.full.types';
 import { parserDayToName, parserMonthToName } from '../../../../utils';
+import { transformChunkToComponent } from '../../../molecules/chunks/components/parsers/parseChunkToComponent/parseChunkToComponent';
 
 export const ArticleFull: Props = ({ data, isLoading }) => {
+  const { isTabletOrMobile } = useBreakpoints();
   const { createdAt, cover, title, author, tags, stats, lead, contentparts } = data;
 
   const isLoadingImg = (
@@ -74,58 +76,31 @@ export const ArticleFull: Props = ({ data, isLoading }) => {
       <BoxContent>
         {isLoadingHeader}
         <p className="lead">{data?.lead}</p>
-        <ParseContentPartToChunk
-          contentParts={[
-            {
-              id: 'dwdw',
-              type: 0,
-              value: 'okoko',
-            },
-            {
-              id: 'dwd3w',
-              type: 0,
-              value: 'okoko',
-            },
-            {
-              id: 'dw32dw',
-              type: 0,
-              value: 'okoko',
-            },
-          ]}
-        >
-          {({ chunkComponents }) => {
-            console.log(chunkComponents);
-            return <p>ok</p>;
-          }}
-        </ParseContentPartToChunk>
+
         {isLoadingAuthor}
       </BoxContent>
-      <BoxAds>
-        <Ads slot="s250250" />
-      </BoxAds>
+      {!isTabletOrMobile && (
+        <BoxAds>
+          <Ads slot="s250250" />
+        </BoxAds>
+      )}
       {isLoadingImg}
       <BoxContent>
         {isLoadingTags}
-        {data?.contentparts?.map(item => {
-          if (item.type === 'txt') return item?.content && <ReactMarkdown>{item.content}</ReactMarkdown>;
-          else if (item.type === 'quote') return <q>{item.content}</q>;
-          else if (item.type === 'img') {
-            return item?.src ? (
-              <div className="img">
-                <Image layout="fill" objectFit="cover" src={item.src} alt={item?.alt ? item.alt : ''} />
-              </div>
-            ) : (
-              <>ok</>
-            );
-          }
-          return <></>;
-        })}
+        {data?.contentparts && <ParseContentPartToChunk contentParts={data.contentparts}>{({ chunkComponents }) => chunkComponents.map(transformChunkToComponent)}</ParseContentPartToChunk>}
       </BoxContent>
-      <BoxAds>
-        <Box position="sticky" style={{ top: '35px', display: 'block' }}>
-          <Ads slot="s250600" />
-        </Box>
-      </BoxAds>
+      {!isTabletOrMobile && (
+        <BoxAds>
+          <Box
+            position="sticky"
+            style={{
+              top: '6rem',
+            }}
+          >
+            <Ads slot="s250600" />
+          </Box>
+        </BoxAds>
+      )}
     </Article>
   );
 };

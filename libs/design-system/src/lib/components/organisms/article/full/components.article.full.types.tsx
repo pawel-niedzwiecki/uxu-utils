@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import type { FunctionComponentDiv } from './../../../../utils';
+import { ContentPartPropsType } from './../../../molecules/chunks';
 
 export type ArticleDataType = {
   lead?: string;
@@ -13,7 +14,7 @@ export type ArticleDataType = {
   };
   tags?: { title?: string; slug?: string }[];
   stats?: { ratings?: number; comments?: number; views?: number };
-  contentparts?: { type?: string; content?: string; src?: string; alt?: string; caption?: string }[];
+  contentparts?: ContentPartPropsType[];
 };
 
 export type SpecialProps = {
