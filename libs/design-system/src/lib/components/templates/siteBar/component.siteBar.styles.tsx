@@ -143,14 +143,7 @@ export const Item = styled.li`
 
     a,
     button {
-      width: 70%;
-    }
-
-    span {
-      width: 30%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      width: 100%;
     }
 
     &:first-of-type {
