@@ -9,8 +9,14 @@ export const Wrapper = styled.footer`
 
     .brand {
       display: flex;
+      margin: 0 auto;
       flex-direction: column;
       justify-content: space-between;
+      padding-bottom: ${spaces.large};
+
+      p {
+        display: none;
+      }
     }
 
     p {
@@ -28,6 +34,16 @@ export const Wrapper = styled.footer`
       li {
         text-align: center;
         padding: ${spaces.small} 0;
+      }
+    }
+
+    @media all and (min-width: ${breakpoints.s}px) {
+      .brand {
+        margin: 0;
+
+        p {
+          display: block;
+        }
       }
     }
 
