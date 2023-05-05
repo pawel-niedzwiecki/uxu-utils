@@ -1,6 +1,6 @@
-import type { ComponentWithProps } from '../../../utils';
-import type { Tab } from '../../organisms/tabs/component.tabs.types';
-import type { CallBack, Query, ResData } from '../../organisms/form/search/component.search.types';
+import type { ComponentWithProps } from "../../../utils";
+import type { Tab } from "../../organisms/tabs/component.tabs.types";
+import type { CallBack, Query, ResData } from "../../organisms/form/search/component.search.types";
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace HeaderDataTypes {
@@ -15,7 +15,7 @@ export namespace HeaderDataTypes {
   export type Alert = {
     alert?: {
       tel?: string;
-      title: string;
+      title?: string;
     };
   };
 }

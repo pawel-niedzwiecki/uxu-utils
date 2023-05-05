@@ -10,6 +10,7 @@ export const Wrapper = styled.div<{ open: boolean }>`
     top: 0;
     left: ${open ? '0rem' : '-27rem'};
     width: 27rem;
+    height: 100%;
     position: fixed;
     z-index: 9999999;
     padding: 0 ${spaces.default};
