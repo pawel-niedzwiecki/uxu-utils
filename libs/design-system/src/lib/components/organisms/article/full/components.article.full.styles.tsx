@@ -24,6 +24,12 @@ export const BoxContent = styled.div`
     position: relative;
     padding: ${spaces.default};
 
+    .lead {
+      display: block;
+      position: relative;
+      margin-bottom: ${spaces.default};
+    }
+
     @media all and (min-width: ${breakpoints.s}px) {
       .lead {
         font-size: ${fontSizes.h4};
