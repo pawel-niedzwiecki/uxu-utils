@@ -10,22 +10,21 @@ import { transformChunkToComponent } from '../../../molecules/chunks/components/
 
 export const ArticleFull: Props = ({ data, isLoading }) => {
   const { isTabletOrMobile } = useBreakpoints();
-  const { createdAt, cover, title, author, tags, stats, lead, contentparts } = data;
 
   const isLoadingImg = (
     <BoxImgData>
       <BoxImg>
         {isLoading ? (
           <LoadingLine height={{ x: '18rem', s: '30rem' }} />
-        ) : cover?.src ? (
+        ) : data?.cover?.src ? (
           <>
-            <Image layout="fill" objectFit="cover" src={cover.src} alt={cover?.alt ? cover.alt : title} />
+            <Image layout="fill" objectFit="cover" src={data.cover.src} alt={data?.cover?.alt ? data.cover.alt : data.title} />
           </>
         ) : (
           <DummyIMG height={{ x: '18rem', s: '50rem' }} width="100%" />
         )}
       </BoxImg>
-      {cover?.caption && <span>Źródło: {cover.caption}</span>}
+      {data?.cover?.caption && <span>Źródło: {data.cover.caption}</span>}
     </BoxImgData>
   );
 
