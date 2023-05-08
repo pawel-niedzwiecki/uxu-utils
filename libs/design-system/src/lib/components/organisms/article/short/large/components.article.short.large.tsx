@@ -108,7 +108,7 @@ export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
   );
 
   return (
-    <Article>
+    <Article className="article">
       {isLoadingImg}
       <BoxContent>
         {isLoadingAuthor}

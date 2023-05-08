@@ -66,7 +66,7 @@ export const ArticleShortSmall: Props = ({
   );
 
   return (
-    <Article>
+    <Article className="article">
       {isLoadingImg}
       {isLoadingContent}
     </Article>
