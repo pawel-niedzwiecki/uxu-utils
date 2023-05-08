@@ -12,7 +12,7 @@ export const Article = styled.article`
     border: var(--uxu-border-default);
     background-color: var(--uxu-color-primary-accent1);
 
-    html[data-theme='light'] & {
+    html[data-theme='light'] &.article {
       box-shadow: ${shadows.default};
     }
   `}

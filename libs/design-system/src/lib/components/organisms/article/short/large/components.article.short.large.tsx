@@ -5,7 +5,7 @@ import { Props } from './../components.article.short.types';
 import { functionSelectIcon, parserDayToName, parserMonthToName } from './../../../../../utils';
 
 export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
-  const { slug, createdAt, cover, title, author, tags, stats } = content;
+  const { slug = '/', createdAt = new Date(), cover, title = '', author, tags = [], stats } = content;
   const statIcons = ['smile', 'messagesquare', 'eye'];
 
   const isLoadingImg = (
@@ -108,7 +108,7 @@ export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
   );
 
   return (
-    <Article>
+    <Article className="article">
       {isLoadingImg}
       <BoxContent>
         {isLoadingAuthor}

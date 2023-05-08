@@ -76,7 +76,7 @@ export const ArticleFull: Props = ({ data, isLoading }) => {
   );
 
   return (
-    <Article>
+    <Article className="article">
       <BoxContent>
         {isLoadingHeader}
         <p className="lead">{data?.lead}</p>
