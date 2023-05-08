@@ -6,7 +6,7 @@ import { parserDayToName, parserMonthToName } from '../../../../../utils';
 
 export const ArticleShortSmall: Props = ({
   data: {
-    content: { createdAt, cover, author, title, slug },
+    content: { createdAt = new Date(), cover, author, title = '', slug = '/' },
   },
   isLoading,
 }) => {
