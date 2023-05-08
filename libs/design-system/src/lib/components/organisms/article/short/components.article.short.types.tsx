@@ -3,19 +3,17 @@ import type { FunctionComponentDiv } from './../../../../utils';
 
 export type ArticleShortDataType = {
   content: {
-    id: string;
-    cover?: { src?: string; alt?: string } | undefined;
-    author:
-      | {
-          name: string;
-          avatar?: { src?: string | undefined; alt?: string | undefined };
-        }
-      | undefined;
+    id?: string;
+    cover?: { src?: string; alt?: string };
+    author?: {
+      name?: string;
+      avatar?: { src?: string; alt?: string };
+    };
     tags?: { title: string; slug: string }[];
-    stats?: { ratings: number; comments: number; views: number };
-    title: string;
-    slug: string;
-    createdAt: Date;
+    stats?: { ratings?: number; comments?: number; views?: number };
+    title?: string;
+    slug?: string;
+    createdAt?: Date;
   };
 };
 
