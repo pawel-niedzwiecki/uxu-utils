@@ -9,7 +9,7 @@ export type ArticleShortDataType = {
       name?: string;
       avatar?: { src?: string; alt?: string };
     };
-    tags?: { title: string; slug: string }[];
+    tags?: { title?: string; slug?: string }[];
     stats?: { ratings?: number; comments?: number; views?: number };
     title?: string;
     slug?: string;
