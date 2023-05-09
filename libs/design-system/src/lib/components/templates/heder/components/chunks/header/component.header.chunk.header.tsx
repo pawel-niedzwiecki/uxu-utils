@@ -1,9 +1,9 @@
-import { ComponentProps } from './component.header.chunk.header.types';
+import { ComponentChunkHeaderType } from './component.header.chunk.header.types';
 import { Box, Col, Grid, Link, Logo } from '../../../../../atoms';
 import { FormSearch, StyleSwitch } from '../../../../../organisms';
 import React from 'react';
 
-export function ChunkHeader({ isMobile, scroll = false, res, callBack }: ComponentProps): JSX.Element {
+export const ChunkHeader: ComponentChunkHeaderType = ({ isMobile, scroll = false, res, callBack }) => {
   return (
     <Col xs={12} style={{ padding: '0.6rem 1.5rem' }}>
       <Grid
