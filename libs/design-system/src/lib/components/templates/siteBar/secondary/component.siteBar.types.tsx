@@ -1,7 +1,7 @@
-import type { PropsWithChildren } from 'react';
+import type { ComponentWithProps } from "../../../../utils";
 
-export type SpecialProps = {
+export type SiteBarSecondaryDataTypes = {
   ads?: boolean;
 };
 
-export type ComponentProps = PropsWithChildren<SpecialProps>;
+export type ComponentSiteBarSecondaryProps = ComponentWithProps<SiteBarSecondaryDataTypes>;
