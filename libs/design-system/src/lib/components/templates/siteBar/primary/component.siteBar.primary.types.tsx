@@ -1,11 +1,11 @@
-import type { PropsWithChildren } from 'react';
+import type { ComponentWithProps } from "../../../../utils";
 import type { CoverProps, FilterProps, SocialMediaProps } from './../component.siteBar.types';
 
-export type SpecialProps = {
+export type SiteBarPrimaryDataTypes = {
   ads?: boolean;
   cover?: CoverProps;
   filter?: FilterProps;
   socialMedia?: SocialMediaProps;
 };
 
-export type ComponentProps = PropsWithChildren<SpecialProps>;
+export type ComponentSiteBarPrimaryProps = ComponentWithProps<SiteBarPrimaryDataTypes>;

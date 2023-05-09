@@ -16,6 +16,4 @@ export type FooterDataType = {
   columns: Column;
 };
 
-type OtherProps = FooterDataType;
-
-export type ComponentType = ComponentWithProps<OtherProps>;
+export type ComponentType = ComponentWithProps<FooterDataType>;
