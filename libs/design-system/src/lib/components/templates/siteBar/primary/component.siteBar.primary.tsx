@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { ArrowRight } from 'react-feather';
 import { Button } from '../../../index';
 import { Box, Wrapper } from './../component.siteBar.styles';
-import { ComponentProps } from './component.siteBar.primary.types';
+import { ComponentSiteBarPrimaryProps } from './component.siteBar.primary.types';
 import { ContainerForAds, SiteBarCover, SiteBarFilter, SiteSocialMedia } from './../components';
 
-export const SiteBarPrimary = ({ cover, filter, socialMedia, ads = true }: ComponentProps) => {
+export const SiteBarPrimary: ComponentSiteBarPrimaryProps = ({ cover, filter, socialMedia, ads = true }) => {
   const [open, setOpen] = useState(false);
 
   if (cover || filter || socialMedia)

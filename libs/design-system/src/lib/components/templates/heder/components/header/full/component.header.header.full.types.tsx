@@ -3,9 +3,6 @@ import type { HeaderDataTypes } from '../../../component.header.types';
 
 type OtherProps = {
   isMobile?: boolean;
-} & HeaderDataTypes.Res &
-  HeaderDataTypes.CallBackSearch &
-  HeaderDataTypes.Tabs &
-  HeaderDataTypes.Alert;
+} & HeaderDataTypes
 
 export type ComponentProps = PropsWithChildren<OtherProps>;
