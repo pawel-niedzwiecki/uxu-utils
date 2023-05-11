@@ -1,6 +1,7 @@
-import type { PropsWithChildren } from 'react';
-import type { HeaderDataTypes } from '../../../component.header.types';
+import type { ComponentWithProps } from "../../../../../../utils";
+import type { Tab } from "./../../../../../organisms/tabs/component.tabs.types";
 
-type OtherProps = HeaderDataTypes.Tabs;
 
-export type ComponentProps = PropsWithChildren<OtherProps>;
+type ChunkFooterDataType = { tabs: Tab[] };
+
+export type ComponentChunkFooterType = ComponentWithProps<ChunkFooterDataType>;
