@@ -1,20 +1,35 @@
 import Image from 'next/legacy/image';
 import { Avatar, DummyIMG, Link, LoadingLine } from '../../../../atoms';
-import { Article, BoxAuthor, BoxAuthorData, BoxContent, BoxImg, Footer, Header, Stat, StatList, Tag, Tags } from './components.article.short.large.style';
+import {
+  Article,
+  BoxAuthor,
+  BoxAuthorData,
+  BoxContent,
+  BoxImg,
+  Footer,
+  Header,
+  Stat,
+  StatList,
+  Tag,
+  Tags
+} from './components.article.short.large.style';
 import { Props } from './../components.article.short.types';
 import { functionSelectIcon, parserDayToName, parserMonthToName } from './../../../../../utils';
 
-export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
-  const { slug = '/', createdAt = new Date(), cover, title = '', author, tags = [], stats } = content;
+export const ArticleShortLarge: Props = ( props ) => {
+  const content = props?.data?.content;
+  const createdAt = content?.createdAt || new Date ()
   const statIcons = ['smile', 'messagesquare', 'eye'];
 
   const isLoadingImg = (
     <BoxImg>
-      {isLoading ? (
-        <LoadingLine height={{ x: '18rem', s: '30rem' }} />
-      ) : (
-        <Link title={title} href={slug}>
-          {cover?.src ? <Image layout="fill" objectFit="cover" src={cover.src} alt={cover?.alt ? cover.alt : ''} /> : <DummyIMG height={{ x: '18rem', s: '30rem' }} width="100%" />}
+      {props?.isLoading ? (
+        <LoadingLine height={{x: '18rem', s: '30rem'}}/>
+      ) : content?.slug && content?.title && (
+        <Link title={content.title} href={content.slug}>
+          {content.cover?.src ? <Image layout="fill" objectFit="cover" src={content.cover.src}
+                                       alt={content.cover?.alt ? content.cover.alt : ''}/> :
+            <DummyIMG height={{x: '18rem', s: '30rem'}} width="100%"/>}
         </Link>
       )}
     </BoxImg>
@@ -22,23 +37,23 @@ export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
 
   const isLoadingAuthor = (
     <BoxAuthor>
-      {isLoading ? (
+      {props.isLoading ? (
         <>
-          <Avatar isLoading={isLoading} />
+          <Avatar isLoading={props.isLoading}/>
           <BoxAuthorData>
-            {...new Array(2).fill(
+            {...new Array ( 2 ).fill (
               <span>
-                <LoadingLine />
+                <LoadingLine/>
               </span>,
             )}
           </BoxAuthorData>
         </>
       ) : (
         <>
-          <Avatar src={author?.avatar?.src} name={author?.name} />
+          <Avatar src={content?.author?.avatar?.src} name={content?.author?.name}/>
           <BoxAuthorData>
-            <span>{author?.name}</span>
-            <span>{`${new Date(createdAt).getDate()} ${parserMonthToName(createdAt)} ( ${parserDayToName(createdAt)} )`}</span>
+            <span>{content?.author?.name}</span>
+            <span>{`${new Date ( createdAt ).getDate ()} ${parserMonthToName ( createdAt )} ( ${parserDayToName ( createdAt )} )`}</span>
           </BoxAuthorData>
         </>
       )}
@@ -47,11 +62,11 @@ export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
 
   const isLoadingHeader = (
     <Header>
-      {isLoading ? (
-        <LoadingLine height="4.2rem" />
-      ) : (
-        <Link href={slug} title={title}>
-          {title}
+      {props.isLoading ? (
+        <LoadingLine height="4.2rem"/>
+      ) : content?.title && content.slug && (
+        <Link href={content.slug} title={content.title}>
+          {content.title}
         </Link>
       )}
     </Header>
@@ -59,48 +74,50 @@ export const ArticleShortLarge: Props = ({ data: { content }, isLoading }) => {
 
   const isLoadingTags = (
     <Tags>
-      {isLoading
-        ? new Array(5).fill(
-            <Tag>
-              <LoadingLine height="2rem" width="3.5rem" style={{ marginRight: '1rem' }} />
-            </Tag>,
-          )
-        : tags?.map(tag => (
-            <Tag>
+      {props.isLoading
+        ? new Array ( 5 ).fill (
+          <Tag>
+            <LoadingLine height="2rem" width="3.5rem" style={{marginRight: '1rem'}}/>
+          </Tag>,
+        )
+        : content?.tags?.map ( tag => (
+          <Tag>
+            {tag?.slug && tag?.title && (
               <Link href={tag.slug} title={tag.title}>
                 {tag.title}
               </Link>
-            </Tag>
-          ))}
+            )}
+          </Tag>
+        ) )}
     </Tags>
   );
 
   const isLoadingFooter = (
     <Footer>
-      {isLoading ? (
+      {props.isLoading ? (
         <>
           <StatList>
-            {new Array(3).fill(undefined).map((_, index) => (
+            {new Array ( 3 ).fill ( undefined ).map ( ( _, index ) => (
               <Stat>
-                {functionSelectIcon(statIcons[index], 20)}
+                {functionSelectIcon ( statIcons[ index ], 20 )}
                 <span>
-                  <LoadingLine height="1.6rem" width="2rem" />
+                  <LoadingLine height="1.6rem" width="2rem"/>
                 </span>
               </Stat>
-            ))}
+            ) )}
           </StatList>
-          <LoadingLine height="2.8rem" width="9rem" className="link" />
+          <LoadingLine height="2.8rem" width="9rem" className="link"/>
         </>
       ) : (
         <>
           <StatList>
-            {stats &&
-              Object.entries(stats).map((stat, index) => (
+            {content?.stats &&
+              Object.entries ( content.stats ).map ( ( stat, index ) => (
                 <Stat>
-                  {functionSelectIcon(statIcons[index], 20)}
-                  <span>{stat[1]}</span>
+                  {functionSelectIcon ( statIcons[ index ], 20 )}
+                  <span>{stat[ 1 ]}</span>
                 </Stat>
-              ))}
+              ) )}
           </StatList>
         </>
       )}

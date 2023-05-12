@@ -2,7 +2,7 @@ import { FC } from 'react';
 import type { FunctionComponentDiv } from './../../../../utils';
 
 export type ArticleShortDataType = {
-  content: {
+  content?: {
     id?: string;
     cover?: { src?: string; alt?: string };
     author?: {
@@ -19,7 +19,7 @@ export type ArticleShortDataType = {
 
 export type SpecialProps = {
   isLoading: boolean;
-  data: ArticleShortDataType;
+  data?: ArticleShortDataType;
 };
 
 export type Props = FC<FunctionComponentDiv & SpecialProps>;
