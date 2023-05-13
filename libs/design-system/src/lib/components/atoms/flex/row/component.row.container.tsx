@@ -1,5 +1,5 @@
-import { Props } from './component.flex.row.props';
+import { ComponentRowWithProps } from './component.flex.row.types';
 import { Wrapper } from './component.row.container.style';
 
 
-export const Row: Props = ({ children, ...args }, props) => <Wrapper {...props} {...args}>{children}</Wrapper>;
+export const Row: ComponentRowWithProps = ({ children, ...args }, props) => <Wrapper {...props} {...args}>{children}</Wrapper>;
