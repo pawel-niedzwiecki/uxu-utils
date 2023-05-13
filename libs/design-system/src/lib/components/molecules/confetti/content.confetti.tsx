@@ -1,11 +1,11 @@
+import { useEffect, useState } from "react";
 import ComponentConfetti from "react-confetti";
 import { functionCheckIsDOM } from "./../../../utils";
-import { Wrapper } from './content.confetti.styles'
-import { useEffect, useState } from "react";
+import { Wrapper } from './content.confetti.styles';
+import { ComponentConfettiProps } from './content.confetti.types'
 
-export const Confetti = () => {
+export const Confetti: ComponentConfettiProps = ( {title, ...porps} ) => {
   const [size, setSize] = useState ( {height: 1000, width: 1000} )
-
 
   useEffect ( () => {
     functionCheckIsDOM ( () => {
@@ -16,9 +16,9 @@ export const Confetti = () => {
   }, [] );
 
   return (
-    <Wrapper>
-      <span>Właśnie dotarłeś do końca internetów, brawo 😎</span>
-      <ComponentConfetti height={size.height} width={size.width}/>
+    <Wrapper {...porps}>
+      {title && <span>{title}</span>}
+      <ComponentConfetti height={size.height} width={size.width} style={{top: "-3rem"}}/>
     </Wrapper>
   )
 }

@@ -5,12 +5,12 @@ export const Wrapper = styled.div`
   ${( {theme: {spaces, fontSizes}} ) => css`
     width: 100%;
     display: flex;
-    min-height: 50vh;
     overflow: hidden;
+    min-height: 50vh;
     position: relative;
     align-items: center;
     justify-content: center;
-    padding: ${spaces.large} ${spaces.default};
+    padding: 0 ${spaces.default};
 
     span {
       font-weight: bold;
