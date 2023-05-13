@@ -19,7 +19,7 @@ export function ListingArticles ( {data, listingType}: ListingArticlesProps ) {
       return (
         <>
           {data?.map ( ( content, index ) => (
-            <Col xs={12} s={6} m={4} style={{marginBottom: '3rem'}} key={index}>
+            <Col xs={12} style={{marginBottom: '3rem'}} key={index}>
               <ArticleShortLarge data={content}/>
             </Col>
           ) )}

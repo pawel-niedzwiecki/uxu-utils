@@ -19,7 +19,7 @@ export function usePagination ( {paginationClient, paginationSSR, refListing}: U
   const LoadNextPage = () => {
     if (page < pageCount) scrollThrottle.setLastTimeOut (() => {
       const offsetBottomEdgeOfElement = list?.current?.getBoundingClientRect ()?.bottom || 0;
-      (offsetBottomEdgeOfElement - Math.floor (window.innerHeight * 2 / 1.5)) < 0 && callBack && callBack ((page || 1) + 1)
+      (offsetBottomEdgeOfElement - Math.floor (window.innerHeight * 3 / 1.5)) <= 0 && callBack && callBack ((page || 1) + 1)
     });
   }
 
