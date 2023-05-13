@@ -7,6 +7,7 @@ import { ComponentConfettiProps } from './content.confetti.types'
 export const Confetti: ComponentConfettiProps = ( {title, ...porps} ) => {
   const [size, setSize] = useState ( {height: 1000, width: 1000} )
 
+
   useEffect ( () => {
     functionCheckIsDOM ( () => {
       const height = window.innerHeight
