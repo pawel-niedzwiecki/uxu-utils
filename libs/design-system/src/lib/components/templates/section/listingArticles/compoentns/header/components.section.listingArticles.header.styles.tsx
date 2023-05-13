@@ -1,13 +1,7 @@
 import styled, { css } from 'styled-components';
 
-export const Wraper = styled.section`
-  ${({ theme: { spaces } }) => css`
-    min-height: calc(100vh - 32rem);
-    margin-bottom: ${spaces.large};
-  `}
-`;
 
-export const Header = styled.span`
+export const Wrapper = styled.span`
   ${({ theme: { spaces } }) => css`
     height: 3rem;
     display: flex;
@@ -21,3 +15,4 @@ export const Header = styled.span`
     }
   `}
 `;
+

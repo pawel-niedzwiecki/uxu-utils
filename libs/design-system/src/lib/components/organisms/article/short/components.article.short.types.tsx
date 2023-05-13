@@ -18,7 +18,7 @@ export type ArticleShortDataType = {
 };
 
 export type SpecialProps = {
-  isLoading: boolean;
+  isLoading?: boolean;
   data?: ArticleShortDataType;
 };
 
