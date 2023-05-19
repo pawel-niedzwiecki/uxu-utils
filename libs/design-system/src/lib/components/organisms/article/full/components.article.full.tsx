@@ -1,5 +1,6 @@
 import Image from 'next/legacy/image';
 import { Ads } from '../../../organisms';
+
 import { useBreakpoints } from '../../../../hooks';
 import { Avatar, Box, DummyIMG, Link, LoadingLine } from '../../../atoms';
 import { ParseContentPartToChunk ,ListButtonsSocialShare, Comments} from './../../../molecules';
