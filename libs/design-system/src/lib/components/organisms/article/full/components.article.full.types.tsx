@@ -3,9 +3,11 @@ import type { FunctionComponentDiv } from './../../../../utils';
 import { ContentPartPropsType } from './../../../molecules/chunks';
 
 export type ArticleDataType = {
+  id?: string;
   lead?: string;
   type?: string;
   title?: string;
+  pageID?: string;
   createdAt?: Date;
   canonicalURL?: string;
   cover?: { src?: string; alt?: string; caption?: string };
