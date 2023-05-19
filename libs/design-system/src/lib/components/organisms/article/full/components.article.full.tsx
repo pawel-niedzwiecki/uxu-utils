@@ -1,9 +1,9 @@
 import Image from 'next/legacy/image';
-import { Avatar, Box, DummyIMG, Link, LoadingLine } from '../../../atoms';
 import { Ads } from '../../../organisms';
 
 import { useBreakpoints } from '../../../../hooks';
-import { ParseContentPartToChunk ,ListButtonsSocialShare} from './../../../molecules';
+import { Avatar, Box, DummyIMG, Link, LoadingLine } from '../../../atoms';
+import { ParseContentPartToChunk ,ListButtonsSocialShare, Comments} from './../../../molecules';
 import { Article, BoxAds, BoxAuthor, BoxAuthorData, BoxContent, BoxImg, BoxImgData, Header, Tag, Tags } from './components.article.full.styles';
 import { Props } from './components.article.full.types';
 import { parserDayToName, parserMonthToName } from '../../../../utils';
@@ -108,6 +108,7 @@ export const ArticleFull: Props = ({ data, isLoading }) => {
       )}
       <BoxContent>
         <ListButtonsSocialShare canonicalURL={data.canonicalURL}/>
+        <Comments header={data.title} id={data.id} pageID={data.pageID} canonicalURL={data.canonicalURL} />
       </BoxContent>
       <BoxAds></BoxAds>
     </Article>
