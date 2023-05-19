@@ -7,6 +7,7 @@ export type ArticleDataType = {
   type?: string;
   title?: string;
   createdAt?: Date;
+  canonicalURL?: string;
   cover?: { src?: string; alt?: string; caption?: string };
   author?: {
     name?: string;
