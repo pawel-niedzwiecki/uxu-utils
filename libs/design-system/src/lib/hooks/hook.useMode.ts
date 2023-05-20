@@ -14,14 +14,11 @@ export const useMode = () => {
 
   const getMode = (): void => {
     functionCheckIsDOM(() => {
-      const mql = window?.matchMedia('(prefers-color-scheme: dark)').matches;
       const lsg = localStorage?.getItem('theme');
-
       if (lsg) setMode(lsg);
-      else setMode(mql ? 'dark' : 'light');
     });
   };
-  
+
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => getMode(), []);
 
