@@ -2,7 +2,7 @@
 // @ts-nocheck
 import { css } from 'styled-components';
 import type { ObjectMapType } from './../utils';
-const createMediaPrefersColorScheme = (mode: string) => mode === "dark" ? `html[data-theme='${mode}']` : `html`
+const createMediaPrefersColorScheme = ( {mode, isDefault}: {mode: string, isDefault: boolean}) => isDefault ? `html` : `html[data-theme='${mode}']`;
 
 
 
@@ -10,11 +10,13 @@ const createMediaPrefersColorScheme = (mode: string) => mode === "dark" ? `html[
 
 export const variables = css`
   ${({ theme: {alphas, borders, colors, contents, focuses, fontSizes, fontWeights, lineHeights, motions, radiis, shadows, spaces} }) => {
-    const modeDark = createMediaPrefersColorScheme('dark');
-    const modeDefault = createMediaPrefersColorScheme('default');
-    const styles: ObjectMapType<string | object> = {[modeDark]: {}, [modeDefault]: {}};
+    const nameDefaultMode = 'dark';
+    const nameSecondaryMode = 'light';
+    const modeDefault = createMediaPrefersColorScheme( {mode: nameDefaultMode, isDefault: true});
+    const modeSecondary = createMediaPrefersColorScheme( {mode: nameSecondaryMode, isDefault: false});
+    const styles: ObjectMapType<string | object> = {[modeDefault]: {}, [modeSecondary]: {}};
 
-
+console.log(styles)
     for (const alpha in alphas) {
       Object.assign(styles[modeDefault], {[`--uxu-alpha-${alpha}`]: `${alphas[alpha]}`})
     }
@@ -25,13 +27,13 @@ export const variables = css`
 
     for (const group in colors) {
       for (const color in colors[group]) {
-        Object.assign(styles[modeDark], {
-          [`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color].dark})`,
-          [`--uxu-color-${group}-${color}-rgba`]: colors[group][color].dark
-        })
         Object.assign(styles[modeDefault], {
-          [`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color].light})`,
-          [`--uxu-color-${group}-${color}-rgba`]: colors[group][color].light
+          [`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color][nameDefaultMode]})`,
+          [`--uxu-color-${group}-${color}-rgba`]: colors[group][color][nameDefaultMode]
+        })
+        Object.assign(styles[modeSecondary], {
+          [`--uxu-color-${group}-${color}`]: `rgb(${colors[group][color][nameSecondaryMode]})`,
+          [`--uxu-color-${group}-${color}-rgba`]: colors[group][color][nameSecondaryMode]
         })
       }
     }
