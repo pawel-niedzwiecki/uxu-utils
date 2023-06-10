@@ -63,8 +63,8 @@ export const ArticleFull: Props = ({ data, isLoading }) => {
               <LoadingLine height="2rem" width="3.5rem" style={{ marginRight: '1rem' }} />
             </Tag>,
           )
-        : data?.tags?.map(tag => (
-            <Tag>
+        : data?.tags?.map((tag, i) => (
+            <Tag key={i}>
               {tag?.slug && tag?.title && (
                 <Link href={tag.slug} title={tag.title}>
                   {tag.title}
