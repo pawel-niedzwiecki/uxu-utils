@@ -31,8 +31,6 @@ export const Avatar: Props = ({ src, size = 'default', name = 'avatar', isLoadin
         <Image
           src={src}
           alt={name}
-          width={setSize}
-          height={setSize}
           layout='fill'
           objectFit='cover'
         />
