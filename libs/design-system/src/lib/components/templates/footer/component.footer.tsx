@@ -30,13 +30,13 @@ export const Footer: ComponentType = ({ columns }) => {
             </p>
           </Grid>
 
-          {columns?.map(column => (
-            <Grid>
+          {columns?.map((column, i) => (
+            <Grid key={i}>
               <Header>{column?.header}</Header>
               <ul>
-                {column?.link?.map(data => {
+                {column?.link?.map((data, i) => {
                   return (
-                    <li>
+                    <li key={i}>
                       <Link href={data.url} title={data?.title || ''}>
                         {data?.title || ''}
                       </Link>

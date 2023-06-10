@@ -16,7 +16,6 @@ export const variables = css`
     const modeSecondary = createMediaPrefersColorScheme( {mode: nameSecondaryMode, isDefault: false});
     const styles: ObjectMapType<string | object> = {[modeDefault]: {}, [modeSecondary]: {}};
 
-console.log(styles)
     for (const alpha in alphas) {
       Object.assign(styles[modeDefault], {[`--uxu-alpha-${alpha}`]: `${alphas[alpha]}`})
     }
