@@ -1,6 +1,6 @@
 import Image from 'next/legacy/image';
 import { Avatar, DummyIMG, Link, LoadingLine } from '../../../../atoms';
-import { Article, BoxAuthor, BoxAuthorData, BoxContent, BoxImg } from './components.article.short.small.style';
+import styles from './components.article.short.small.module.scss';
 import { Props } from './../components.article.short.types';
 import { parserDayToName, parserMonthToName } from '../../../../../utils';
 
@@ -10,7 +10,7 @@ export const ArticleShortSmall: Props = ( {data, isLoading} ) => {
 
 
   const isLoadingImg = (
-    <BoxImg>
+    <div className={styles.wrapperImg}>
       {isLoading ? (
         <LoadingLine height="18rem"/>
       ) : content?.slug && content?.title && (
@@ -20,36 +20,36 @@ export const ArticleShortSmall: Props = ( {data, isLoading} ) => {
             <DummyIMG height="18rem" width="100%"/>}
         </Link>
       )}
-    </BoxImg>
+    </div>
   );
 
   const isLoadingAuthor = (
-    <BoxAuthor>
+    <div className={styles.wrapperAuthor}>
       {isLoading ? (
         <>
           <Avatar isLoading={isLoading} size="1rem"/>
-          <BoxAuthorData>
+          <div className={styles.wrapperAuthorData}>
             {...new Array ( 2 ).fill (
               <span>
                 <LoadingLine/>
               </span>,
             )}
-          </BoxAuthorData>
+          </div>
         </>
       ) : (
         <>
           <Avatar src={content?.author?.avatar?.src} name={content?.author?.name} size="small"/>
-          <BoxAuthorData>
+          <div className={styles.wrapperAuthorData}>
             <span>{content?.author?.name}</span>
             <span>{`${new Date ( createdAt ).getDate ()} ${parserMonthToName ( createdAt )} ( ${parserDayToName ( createdAt )} )`}</span>
-          </BoxAuthorData>
+          </div>
         </>
       )}
-    </BoxAuthor>
+    </div>
   );
 
   const isLoadingContent = (
-    <BoxContent>
+    <div className={styles.wrapperContent}>
       {isLoading ? (
         <>
           <LoadingLine height="2.4rem"/>
@@ -65,13 +65,13 @@ export const ArticleShortSmall: Props = ( {data, isLoading} ) => {
           {isLoadingAuthor}
         </>
       )}
-    </BoxContent>
+    </div>
   );
 
   return (
-    <Article className="article">
+    <article className={styles.article}>
       {isLoadingImg}
       {isLoadingContent}
-    </Article>
+    </article>
   );
 };

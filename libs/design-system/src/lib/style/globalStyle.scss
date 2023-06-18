@@ -1,0 +1,19 @@
+@import "variebles";
+@import "typography";
+@import "body";
+@import "reset";
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+
