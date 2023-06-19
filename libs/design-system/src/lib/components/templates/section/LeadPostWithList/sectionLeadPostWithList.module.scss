@@ -36,7 +36,7 @@
     background: linear-gradient(180deg, rgba(var(--uxu-color-body-background-rgba),0) 0%, rgba(var(--uxu-color-body-background-rgba),1) 90%);
   }
 
-  p,h1,a,button{
+  p,h1,button{
     z-index: 1;
     position: relative;
   }
@@ -56,6 +56,14 @@
   width: 100%;
   height: 65rem;
   position: absolute;
+
+  &:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(var(--uxu-color-body-background-rgba),0) 70%, rgba(var(--uxu-color-body-background-rgba),1) 90%);
+  }
 }
 
 .boxContent {

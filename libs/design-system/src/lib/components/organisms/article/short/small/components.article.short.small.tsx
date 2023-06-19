@@ -15,8 +15,13 @@ export const ArticleShortSmall: Props = ( {data, isLoading} ) => {
         <LoadingLine height="18rem"/>
       ) : content?.slug && content?.title && (
         <Link title={content.title} href={content.slug}>
-          {content?.cover?.src ? <Image layout="fill" objectFit="cover" src={content?.cover.src}
-                                        alt={content?.cover?.alt ? content?.cover?.alt : ''}/> :
+          {content?.cover?.src ? (
+            <Image
+              layout="fill"
+              objectFit="cover"
+              src={content?.cover.src}
+              alt={content?.cover?.alt ? content?.cover?.alt : ''}/>
+            ) :
             <DummyIMG height="18rem" width="100%"/>}
         </Link>
       )}
