@@ -1,0 +1,37 @@
+.collapseComponent {
+  border: var(--uxu-border-default);
+  border-radius: var(--uxu-radii-default);
+  background-color: var(--uxu-color-primary-accent1);
+  padding: 0 var(--uxu-space-default) var(--uxu-space-default);
+
+  .collapseButton {
+    margin: 0;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: var(--uxu-space-default) 0;
+    font-size: var(--uxu-font-size-default);
+    color: var(--uxu-color-primary-foreground);
+
+    svg{
+      margin-left: var(--uxu-space-small)
+    }
+  }
+
+  .collapseContent {
+    overflow: hidden;
+    max-height: 3.5rem;
+    transition: max-height 0.5s ease-out;
+  }
+
+  &.open {
+    .collapseContent {
+      max-height: 120rem;
+      transition: max-height 0.5s ease-in;
+    }
+  }
+}
