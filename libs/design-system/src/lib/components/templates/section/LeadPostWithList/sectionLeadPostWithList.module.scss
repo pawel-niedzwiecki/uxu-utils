@@ -1,0 +1,92 @@
+@import "./../../../../theme/breakpoints";
+
+.wrapper {
+  width: 100%;
+  min-height: 65rem;
+  position: relative;
+  padding: var(--uxu-space-large) 0 var(--uxu-space-large) 0;
+
+  @media all and (min-width: #{map-get($breakpoints, s)}px) {
+    padding: 15rem 0 var(--uxu-space-large) 0;
+  }
+
+  @media all and (min-width: #{map-get($breakpoints, l)}px) {
+    padding: 25rem 0 var(--uxu-space-large) 0;
+  }
+
+  &:before {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    background: radial-gradient(circle, rgba(var(--uxu-color-body-background-rgba),0) 0%, rgba(var(--uxu-color-body-background-rgba),1) 100%);
+  }
+
+  &:after {
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    background: linear-gradient(180deg, rgba(var(--uxu-color-body-background-rgba),0) 0%, rgba(var(--uxu-color-body-background-rgba),1) 90%);
+  }
+
+  p,h1,button{
+    z-index: 1;
+    position: relative;
+  }
+
+  h1 {
+    padding-bottom: var(--uxu-space-large);
+  }
+
+  p {
+    padding-bottom: var(--uxu-space-default);
+  }
+}
+
+.wrapperImage{
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65rem;
+  position: absolute;
+
+  &:after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(var(--uxu-color-body-background-rgba),0) 70%, rgba(var(--uxu-color-body-background-rgba),1) 90%);
+  }
+}
+
+.boxContent {
+  z-index: 0;
+  padding: 0;
+  border: transparent;
+  background: var(--uxu-color-body-background);
+  box-shadow: 0 0 60px 70px var(--uxu-color-body-background);
+}
+
+
+.boxSlider {
+  gap: 3rem;
+  z-index: 0;
+  display: grid;
+  justify-content: flex-start;
+  grid-template-columns: 30rem 30rem 30rem 30rem;
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
