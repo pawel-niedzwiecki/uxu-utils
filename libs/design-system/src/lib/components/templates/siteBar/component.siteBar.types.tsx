@@ -1,11 +1,11 @@
 export type CoverProps = {
-  isLoading: boolean;
-  img: { url: string; alt: string };
+  isLoading: boolean | null;
+  img: { url: string | null; alt: string | null } | null;
 };
 
 export type FilterProps = {
-  isLoading: boolean;
-  links: { slug: string; title: string; active: boolean }[];
+  isLoading: boolean | null;
+  links: { slug: string | null; title: string | null; active: boolean | null }[] | null;
 };
 
-export type SocialMediaProps = { isLoading: boolean; list: { url: string; typ: string }[] };
+export type SocialMediaProps = { isLoading: boolean | null; list: { url: string | null; typ: string | null }[] | null };
