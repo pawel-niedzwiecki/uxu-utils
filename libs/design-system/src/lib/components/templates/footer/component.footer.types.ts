@@ -1,16 +1,18 @@
 import type { ComponentWithProps } from '../../../utils';
 
-type Column = {
-  id: string;
-  header?: string;
-  link: {
-    id: string;
-    url: string;
-    rel?: string;
-    target?: string;
-    title?: string;
-  }[];
-}[];
+type ColumnLink = {
+  id: string | null;
+  url: string | null;
+  rel: string | null;
+  target: string | null;
+  title: string | null;
+};
+
+type Column = Array<{
+  id: string | null;
+  header: string | null;
+  link: Array<ColumnLink> | null;
+}> | null;
 
 export type FooterDataType = {
   columns: Column;
