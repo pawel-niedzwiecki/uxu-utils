@@ -1,7 +1,7 @@
 import type { ComponentWithProps } from "../../../../utils";
 
 export type SiteBarSecondaryDataTypes = {
-  ads?: boolean;
+  ads: boolean | null;
 };
 
 export type ComponentSiteBarSecondaryProps = ComponentWithProps<SiteBarSecondaryDataTypes>;

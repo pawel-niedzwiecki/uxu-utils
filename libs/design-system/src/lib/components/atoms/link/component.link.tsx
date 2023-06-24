@@ -20,7 +20,7 @@ export const Link: ComponentLinkType = ({ children, style, ...args }, props) => 
     );
 
   return (
-    <Wrapper {...args} {...props} {...url}>
+    <Wrapper {...args} {...props} {...url} style={style}>
       {content}
     </Wrapper>
   );

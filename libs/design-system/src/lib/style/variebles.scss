@@ -1,0 +1,80 @@
+@import "../theme/theme";
+
+html {
+  /* colors for css */
+  @each $colorName, $colorMap in $colors {
+    @each $toneName, $toneMap in $colorMap {
+      --uxu-color-#{$colorName}-#{$toneName}: rgb(#{map-get($toneMap, dark)});
+      --uxu-color-#{$colorName}-#{$toneName}-rgba: #{map-get($toneMap, dark)};
+    }
+  }
+}
+
+html[data-theme='light'] {
+  /* colors for css */
+  @each $colorName, $colorMap in $colors {
+    @each $toneName, $toneMap in $colorMap {
+      --uxu-color-#{$colorName}-#{$toneName}: rgb(#{map-get($toneMap, light)});
+      --uxu-color-#{$colorName}-#{$toneName}-rgba: #{map-get($toneMap, light)};
+    }
+  }
+}
+
+
+:root{
+
+  /* variabels alpha for css */
+  @each $alphaName, $alphaValue in $alphas {
+    --uxu-alpha-#{$alphaName}: #{$alphaValue};
+  }
+
+  /* variabels borders for css */
+  @each $borderName, $borderValue in $borders {
+    --uxu-border-#{$borderName}: #{$borderValue};
+  }
+
+  /* variabels breakpoint for css */
+  @each $breakpointName, $breakpointValue in $breakpoints {
+    --uxu-breakpoint-#{$breakpointName}: #{$breakpointValue}px;
+  }
+
+  /* variabels content for css */
+  @each $contentKey, $contentValue in $contents {
+    --uxu-content-#{$contentKey}: #{$contentValue};
+  }
+
+  /* variabels font Size for css */
+  @each $fontSizeKey, $fontSizeValue in $fontSizes {
+    --uxu-font-size-#{$fontSizeKey}: #{$fontSizeValue};
+  }
+
+  /* variabels font Weight for css */
+  @each $fontWeightKey, $fontWeightValue in $fontWeights {
+    --uxu-font-weight-#{$fontWeightKey}: #{$fontWeightValue};
+  }
+
+  /* variabels line Height for css */
+  @each $lineHeightKey, $lineHeightValue in $lineHeights {
+    --uxu-line-height-#{$lineHeightKey}: #{$lineHeightValue};
+  }
+
+  /* variabels motion for css */
+  @each $motionKey, $motionValue in $motions {
+    --uxu-motion-#{$motionKey}: #{$motionValue};
+  }
+
+  /* variabels radius for css */
+  @each $radiusKey, $radiusValue in $radiis {
+    --uxu-radii-#{$radiusKey}: #{$radiusValue};
+  }
+
+  /* variabels shadow for css */
+  @each $shadowName, $shadowValue in $shadows {
+    --uxu-shadow-#{$shadowName}: #{$shadowValue};
+  }
+
+  /* variabels space for css */
+  @each $spaceKey, $spaceValue in $spaces {
+    --uxu-space-#{$spaceKey}: #{$spaceValue};
+  }
+}
