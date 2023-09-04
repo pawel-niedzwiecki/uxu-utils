@@ -1,0 +1,9 @@
+.popup {
+  position: absolute;
+  margin: var(--uxu-space-small);
+  padding: var(--uxu-space-default);
+  backdrop-filter: blur(1rem);
+  border: var(--uxu-border-alpha-100);
+  border-radius: var(--uxu-radii-default);
+  background-color: rgba(var(--uxu-color-primary-background-rgba), 0.8);
+}

@@ -1,0 +1,13 @@
+@import "./../../../theme/breakpoints";
+
+.modalContainer {
+  z-index: 998;
+  position: fixed;
+  overflow-y: auto;
+  background-color: var(--uxu-color-primary-background);
+
+  @media all and (min-width: #{map-get($breakpoints, m)}px) {
+    backdrop-filter: blur(1rem);
+    background-color: rgba(var(--uxu-color-primary-background-rgba), 0.8);
+  }
+}

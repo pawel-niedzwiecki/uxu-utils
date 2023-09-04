@@ -1,0 +1,23 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+
+.wrapperModal {
+  top: 4rem;
+  width: 40rem;
+  position: absolute;
+}
+
+.modal {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: var(--uxu-space-default);
+  border: var(--uxu-border-alpha-100);
+  border-radius: var(--uxu-radii-default);
+  background: var(--uxu-color-background-100);
+}

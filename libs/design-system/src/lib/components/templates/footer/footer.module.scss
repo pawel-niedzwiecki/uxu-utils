@@ -1,0 +1,76 @@
+@import "../../../theme/theme";
+
+.footer {
+  width: 100%;
+  padding: var(--uxu-space-large) 0;
+  border-top: var(--uxu-border-default);
+  background-color: var(--uxu-color-primary-accent1);
+
+  p {
+    font-weight: bold;
+
+    a {
+      padding-left: var(--uxu-space-small);
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding-bottom: var(--uxu-space-large);
+
+    li {
+      text-align: center;
+      padding: var(--uxu-space-small) 0;
+    }
+  }
+
+  @media (min-width: map-get($breakpoints, 'm')) {
+    ul {
+      li {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.wrapperBrand {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: var(--uxu-space-large);
+
+  p {
+    display: none;
+  }
+}
+
+.columnHeader {
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: var(--uxu-space-default);
+
+  @media (min-width: map-get($breakpoints, 'm')) {
+    text-align: left;
+  }
+}
+
+.container {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+  max-width: var(--uxu-content-maxWidth);
+
+  @media (min-width: map-get($breakpoints, 's')) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: map-get($breakpoints, 'l')) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (min-width: map-get($breakpoints, 'xl')) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

@@ -1,0 +1,58 @@
+@import "./../../../theme/breakpoints";
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--uxu-space-small) 0;
+  background-color: var(--uxu-color-primary-background);
+  border-bottom: var(--uxu-border-alpha-100);
+  z-index: 999;
+
+  @media all and (min-width: #{map-get($breakpoints, m)}px) {
+    backdrop-filter: blur(1rem);
+    background-color: rgba(var(--uxu-color-primary-background-rgba), 0.5);
+  }
+}
+
+.headerContainer {
+  height: calc(6.3rem - var(--uxu-space-small) * 2);
+  display: flex;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  align-items: center;
+  grid-auto-flow: column;
+  gap: var(--uxu-space-default);
+}
+
+.left, .right {
+  @extend .grid-container;
+}
+
+.left {
+  width: 100%;
+  justify-content: flex-start;
+}
+
+.right {
+  max-width: fit-content;
+}
+
+.modalMenu {
+  width: 100%;
+  height: calc(100% - 6.4rem);
+  top: 6.4rem;
+  left: 0;
+  padding: var(--uxu-space-default);
+}
+
+.modalMenuContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--uxu-space-default);
+  padding: var(--uxu-space-default) 0;
+}

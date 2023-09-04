@@ -9,3 +9,6 @@ export * from './text';
 export * from './avatar';
 export * from './dummyIMG';
 export * from './alert';
+export * from './modal';
+export * from './tree';
+export * from './feedback';

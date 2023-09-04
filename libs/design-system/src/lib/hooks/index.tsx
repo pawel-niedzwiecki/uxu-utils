@@ -4,3 +4,4 @@ export * from './hook.useMode';
 export * from './hook.useScrollY';
 export * from './hook.usePagination';
 export * from './hook.useListingType';
+export * from './hook.useSiteConfig';
