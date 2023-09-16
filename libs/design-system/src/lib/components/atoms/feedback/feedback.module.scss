@@ -13,10 +13,20 @@
   width: 30rem;
   border-radius: var(--uxu-radii-default);
 
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
   @media all and (min-width: #{map-get($breakpoints, s)}px) {
     width: 45rem;
   }
 }
+
+
 
 .modalFeedback {
   width: 100%;
