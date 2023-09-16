@@ -1,1 +1,1 @@
-export const regexYoutubeHashTagFromUrl = /(?:v=|youtu\.be\/)([^&]+)/;
+export const regexYoutubeHashTagFromUrlRegExp = /(?:v=|youtu\.be\/)([^&]+)/;

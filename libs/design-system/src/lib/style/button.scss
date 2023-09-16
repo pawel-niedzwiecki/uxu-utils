@@ -15,7 +15,7 @@
   border-radius: var(--uxu-radii-default);
   font-size: var(--uxu-font-size-default);
   line-height: var(--uxu-line-height-small);
-  border: var(--uxu-border-alpha-400);
+  border: var(--uxu-border-alpha-default);
   padding: var(--uxu-space-small) calc(var(--uxu-space-default) - 0.2rem);
 
   &:focus {
@@ -23,14 +23,15 @@
   }
 
   &:hover {
-    border: var(--uxu-border-alpha-900);
+    border: var(--uxu-border-alpha-default);
     color: var(--uxu-color-primary-foreground);
+    background-color: var(--uxu-color-background-200);
   }
 }
 
 .btn.disabled {
   cursor: no-drop;
-  border: var(--uxu-border-alpha-400);
+  border: var(--uxu-border-alpha-default);
   color: var(--uxu-color-primary-accent5);
 }
 
@@ -39,7 +40,7 @@
   background-color: var(--uxu-color-primary-foreground);
 
   &:hover {
-    border: var(--uxu-border-alpha-100);
+    border: var(--uxu-border-alpha-default);
     background-color: var(--uxu-color-gray-900);
   }
 }

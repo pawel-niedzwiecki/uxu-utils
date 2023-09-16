@@ -1,6 +1,6 @@
 export * from './utils';
 export * from './pagination';
 export * from './siteConfigTypes';
-export * from './functionComponent';
+export * from './compoents';
 
 

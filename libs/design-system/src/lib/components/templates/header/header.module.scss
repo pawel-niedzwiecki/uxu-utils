@@ -7,7 +7,7 @@
   width: 100%;
   padding: var(--uxu-space-small) 0;
   background-color: var(--uxu-color-primary-background);
-  border-bottom: var(--uxu-border-alpha-100);
+  border-bottom: var(--uxu-border-alpha-default);
   z-index: 999;
 
   @media all and (min-width: #{map-get($breakpoints, m)}px) {

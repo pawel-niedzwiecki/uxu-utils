@@ -12,3 +12,4 @@ export * from './alert';
 export * from './modal';
 export * from './tree';
 export * from './feedback';
+export * from './note';

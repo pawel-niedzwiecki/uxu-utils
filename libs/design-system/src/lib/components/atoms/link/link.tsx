@@ -2,11 +2,11 @@ import React from 'react';
 import DynamicLink from 'next/link';
 import classnames from 'classnames';
 
-import { regexURL } from './../../../utils';
+import { regexURLRegExp } from './../../../utils';
 import type { LinkProps } from './types';
 
 export function Link({ href, children, className, ...args }: LinkProps) {
-  const isExternal = regexURL.test(href);
+  const isExternal = regexURLRegExp.test(href);
   const externalLinkProps = isExternal && { target: '_blank', rel: 'noopener noreferrer' };
 
   const linkClasses = classnames({ [className]: className });
