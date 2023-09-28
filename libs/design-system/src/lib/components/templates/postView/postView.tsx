@@ -1,6 +1,6 @@
 import styles from './postView.module.scss';
 import { Ads } from '../../organisms';
-import { ParseContentPartToChunk, ListButtonsSocialShare, Comments } from '../../molecules';
+import { ParseContentPartToChunk, ListButtonsSocialShare } from '../../molecules';
 import { TagList } from '../../atoms';
 import { useBreakpoints, useSiteConfig } from '../../../hooks';
 import classnames from 'classnames';
@@ -51,7 +51,6 @@ export const PostView = ( {postViewData}: PostViewProps ) => {
         )}
         <div className={styles.content}>
           <ListButtonsSocialShare canonicalURL={site?.canonicalUrl}/>
-          <Comments header={title} id={id} pageID={projectName} canonicalURL={site?.canonicalUrl}/>
         </div>
       </div>
     </article>
