@@ -1,3 +1,3 @@
 export * from './url';
 export * from './email';
-export * from './YoutubeHashTagFromUrl';
+export * from './youtubeHashTagFromUrl';

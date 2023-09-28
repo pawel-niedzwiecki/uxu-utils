@@ -62,6 +62,7 @@ type SiteConfig = {
   authEnabled: boolean;
   switchTheme: boolean;
   themeDefault: 'dark' | 'light';
+  images: Array<{ url: string }>
 };
 
 
@@ -79,6 +80,11 @@ export type SiteConfigTypes = Partial<{
     platform: {
       isMobile: boolean;
       isDesktop: boolean;
+    }
+    osInfo: {
+      isWindows: boolean;
+      isLinux: boolean;
+      isMacOS: boolean;
     }
   }
 }>;

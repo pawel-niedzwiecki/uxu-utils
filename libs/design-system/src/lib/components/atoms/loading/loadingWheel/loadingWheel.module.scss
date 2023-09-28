@@ -1,0 +1,32 @@
+.wrapper {
+  position: relative;
+}
+
+.wheel {
+  position: relative;
+}
+
+.item {
+  display: block;
+  position: absolute;
+  top: 12%;
+  left: 18%;
+  width: 24%;
+  height: 8%;
+  margin: var(--uxu-space-small);
+  border-radius: var(--uxu-radii-default);
+  background-color: var(--uxu-color-primary-accent6);
+  animation-name: loading-wheel-blink;
+  animation-duration: 1.4s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading-wheel-blink {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.15;
+  }
+}

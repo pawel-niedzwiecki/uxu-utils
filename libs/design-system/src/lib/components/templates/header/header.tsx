@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
 import { useSiteConfig } from './../../../hooks';
+import { Modal, Hamburger } from './../../atoms';
 import { HeaderProps } from './header.types';
-import { Modal } from './../../atoms/modal';
-import { Hamburger } from './../../atoms/hamburger';
 import styles from './header.module.scss';
 
-export function Header({ leftAlignedComponents, rightAlignedComponents, mobileVerticalModal }: HeaderProps) {
+export function Header({ leftComponents, rightComponents, mobileHamburgerMenu }: HeaderProps) {
   const { client } = useSiteConfig();
   const [isHamburgerOpen, setHamburgerOpen] = useState(false);
   const isMobile = client?.platform?.isMobile;
@@ -16,8 +15,8 @@ export function Header({ leftAlignedComponents, rightAlignedComponents, mobileVe
   };
 
   const renderRightAlignedComponents = () => (
-    !isMobile ? rightAlignedComponents : (
-      mobileVerticalModal && (
+    !isMobile ? rightComponents : (
+      mobileHamburgerMenu && (
         <Hamburger open={isHamburgerOpen} onClick={handleHamburgerClick} />
       )
     )
@@ -27,17 +26,17 @@ export function Header({ leftAlignedComponents, rightAlignedComponents, mobileVe
     <>
       <header className={styles.header}>
         <div className={classnames('container', styles.headerContainer)}>
-          <div className={styles.left}>{leftAlignedComponents}</div>
+          <div className={styles.left}>{leftComponents}</div>
           <div className={styles.right}>
             {renderRightAlignedComponents()}
           </div>
         </div>
       </header>
-      {mobileVerticalModal && isMobile && (
+      {mobileHamburgerMenu && isMobile && (
         <Modal open={isHamburgerOpen} className={styles.modalMenu}>
           <div className={classnames('container', styles.modalMenuContainer)}>
-            {mobileVerticalModal}
-            {isMobile && rightAlignedComponents}
+            {mobileHamburgerMenu}
+            {isMobile && rightComponents}
           </div>
         </Modal>
       )}

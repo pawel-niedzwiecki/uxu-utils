@@ -30,6 +30,7 @@ const initialSiteConfigContext:SiteConfigTypes = {
     authEnabled: false,
     switchTheme: true,
     themeDefault: 'dark',
+    images: [],
   },
   social: {
     facebook: {
@@ -41,6 +42,11 @@ const initialSiteConfigContext:SiteConfigTypes = {
     platform: {
       isDesktop: false,
       isMobile: false,
+    },
+    osInfo: {
+      isWindows: false,
+      isLinux: false,
+      isMacOS: false,
     }
   }
 }
@@ -49,18 +55,15 @@ const initialSiteConfigContext:SiteConfigTypes = {
 export const SiteConfigContext: React.Context<SiteConfigTypes> = React.createContext(initialSiteConfigContext);
 
 type SiteConfigProviderProps = PropsWithChildren<{
-  SITE_CONFIG: (clientLocale: string, isMobilePlatform: boolean, router: NextRouter) => SiteConfigTypes;
+  SITE_CONFIG: (clientLocale: string, isMobilePlatform: boolean, router: NextRouter, osInfo: { isWindows: boolean, isLinux: boolean, isMacOS: boolean }) => SiteConfigTypes;
   clientLocale: string;
   isMobilePlatform: boolean;
+  osInfo: { isWindows: boolean, isLinux: boolean, isMacOS: boolean }
 }>;
 
-export function SiteConfigProvider({ SITE_CONFIG, children, clientLocale, isMobilePlatform }: SiteConfigProviderProps) {
+export function SiteConfigProvider({ SITE_CONFIG, children, clientLocale, isMobilePlatform, osInfo }: SiteConfigProviderProps) {
   const router = useRouter();
-  const [config, setConfig] = useState(() => SITE_CONFIG(clientLocale, isMobilePlatform, router));
-
-  useEffect(() => {
-    setConfig(SITE_CONFIG(clientLocale, isMobilePlatform, router));
-  }, [clientLocale, isMobilePlatform, router]);
+  const [config, setConfig] = useState(() => SITE_CONFIG(clientLocale, isMobilePlatform, router, osInfo));
 
   return (
     <SiteConfigContext.Provider value={config}>

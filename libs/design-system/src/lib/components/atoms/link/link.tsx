@@ -9,7 +9,7 @@ export function Link({ href, children, className, ...args }: LinkProps) {
   const isExternal = regexURLRegExp.test(href);
   const externalLinkProps = isExternal && { target: '_blank', rel: 'noopener noreferrer' };
 
-  const linkClasses = classnames({ [className]: className });
+  const linkClasses = classnames(className);
 
   if (isExternal) {
     return (

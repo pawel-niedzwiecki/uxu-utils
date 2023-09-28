@@ -1,14 +1,13 @@
-import { vectorLogos } from './../../../assets';
-import { LogoProps } from './logo.types';
-import styles from './logo.module.scss';
+import React from 'react';
 import classnames from 'classnames';
+import { vectorBrands } from './../../../assets';
+import { LogoProps } from "./types";
+import styles from './logo.module.scss';
 
-export function Logo({ brandName, className }: LogoProps) {
-  const logo = vectorLogos[brandName];
-
+export function Logo({ brand, className }: LogoProps) {
   return (
-    <div className={classnames(styles.wrapperLogo, className)}>
-      {logo}
+    <div className={classnames(styles.wrapper, className)}>
+      {vectorBrands[brand]}
     </div>
   );
 }

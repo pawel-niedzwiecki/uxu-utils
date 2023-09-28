@@ -1,15 +1,17 @@
 import React from 'react';
-import { FooterProps } from './footer.types';
+import { FooterProps } from './types';
 import { Link, Logo } from '../../atoms';
 import styles from './footer.module.scss';
+import { useSiteConfig } from "../../../hooks";
 
-export function Footer({ footerColumnDataWithHeaderAndLinks }: FooterProps) {
+export function Footer ( { footerColumns, brand }: FooterProps ) {
+  const {site} = useSiteConfig ();
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.wrapperBrand}>
-          <Link href="/" title="uxu">
-            <Logo brandName="wTrasie" />
+          <Link href="/" title={site?.shortname || ""}>
+            <Logo brand={brand}/>
           </Link>
           <p>
             © 2023
@@ -19,20 +21,20 @@ export function Footer({ footerColumnDataWithHeaderAndLinks }: FooterProps) {
           </p>
         </div>
 
-        {footerColumnDataWithHeaderAndLinks?.map((headerAndLinks, i) => (
+        {footerColumns?.map(( column, i ) => (
           <div key={i}>
-            {headerAndLinks?.header && <strong className={styles.columnHeader}>{headerAndLinks.header}</strong>}
+            {column?.header && <strong className={styles.columnHeader}>{column.header}</strong>}
             <ul>
-              {headerAndLinks?.links?.map((link, j) => (
+              {column?.links?.map ( ( link, j ) => (
                 <li key={j}>
-                  <Link href={link?.url || ''} title={link?.title || ''}>
+                  <Link href={link?.linkPath} title={link?.title || ''}>
                     {link?.title || ''}
                   </Link>
                 </li>
-              ))}
+              ) )}
             </ul>
           </div>
-        ))}
+        ) )}
       </div>
     </footer>
   );

@@ -1,24 +1,55 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useRef } from "react";
 import classnames from 'classnames';
-import styles from './modal.module.scss'
+import styles from './modal.module.scss';
+import ReactDOM from 'react-dom';
 import type { ModalProps } from "./types";
 
+export function Modal({ open = false, className, children, onClick, renderDirectlyInBody = false, onClose }: ModalProps) {
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
-export function Modal ( {open = false, className, children}: ModalProps ) {
-  const style = useMemo(() => ({
-    display: `${open ? "block" : "none"}`,
-  }), [open]);
+  useEffect(() => {
+    const modalDiv = document.createElement('div');
+    modalRef.current = modalDiv;
+    document.body.appendChild(modalDiv);
 
-  const bodyCSS = useMemo(() => `
-    body {
-      overflow: ${open ? 'hidden' : 'scroll'};
-    }
-  `, [open]);
+    return () => {
+      if (modalDiv) {
+        document.body.removeChild(modalDiv);
+      }
+    };
+  }, []);
 
-  return (
-    <div className={classnames(styles.modalContainer, className)} style={style}>
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : 'scroll';
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && open) {
+        onClose?.();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = 'scroll';
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  const modalContent = (
+    <div
+      className={classnames(styles.modalContainer, className)}
+      onClick={onClick}
+    >
       {children}
-      <style jsx global>{bodyCSS}</style>
     </div>
-  )
+  );
+
+  if (!renderDirectlyInBody) {
+    return modalRef.current ? ReactDOM.createPortal(modalContent, modalRef.current) : null;
+  } else {
+    return modalContent;
+  }
 }

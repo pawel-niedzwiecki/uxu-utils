@@ -1,19 +1,13 @@
-@import "./../../../theme/breakpoints";
-
 .header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   padding: var(--uxu-space-small) 0;
-  background-color: var(--uxu-color-primary-background);
+  backdrop-filter: blur(1rem);
+  background-color: rgba(var(--uxu-color-primary-background-rgba), 0.5);
   border-bottom: var(--uxu-border-alpha-default);
   z-index: 999;
-
-  @media all and (min-width: #{map-get($breakpoints, m)}px) {
-    backdrop-filter: blur(1rem);
-    background-color: rgba(var(--uxu-color-primary-background-rgba), 0.5);
-  }
 }
 
 .headerContainer {
@@ -23,9 +17,8 @@
 }
 
 .grid-container {
-  display: grid;
+  display: flex;
   align-items: center;
-  grid-auto-flow: column;
   gap: var(--uxu-space-default);
 }
 
