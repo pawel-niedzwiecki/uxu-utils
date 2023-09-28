@@ -1,0 +1,99 @@
+@import "../../../style/mixins";
+
+.article {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  background-color: transparent;
+  padding: var(--uxu-space-large) 0;
+}
+
+
+.adWithContentWrapper {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: auto;
+  position: relative;
+
+ @include media(m){
+   grid-template-columns: calc(100% - 26.5rem) 25rem;
+ }
+}
+
+.header {
+  padding-bottom: var(--uxu-space-large);
+}
+
+
+.content {
+  width: 100%;
+  display: flex;
+  position: relative;
+  gap: var(--uxu-space-small);
+  flex-direction: column;
+  padding-bottom: var(--uxu-space-default);
+
+  .lead {
+    display: block;
+    position: relative;
+    padding-bottom: var(--uxu-space-default);
+  }
+
+  @include media(s) {
+    .lead {
+      font-size: var(--uxu-font-size-large);
+      padding-bottom: var(--uxu-space-default);
+    }
+  }
+
+  q {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    border-radius: 0.6rem;
+    justify-content: center;
+    padding: var(--uxu-space-large);
+    margin: var(--uxu-space-default) auto;
+    border: var(--uxu-border-default);
+    background-color: var(--uxu-color-body-background);
+
+    &::before,
+    &::after {
+      line-height: 0;
+      font-size: 6rem;
+      font-weight: bold;
+      position: absolute;
+    }
+
+    &::before {
+      bottom: 4rem;
+      content: ',,';
+      left: var(--uxu-space-small);
+    }
+
+    &::after {
+      top: 3rem;
+      content: '"';
+      right: var(--uxu-space-small);
+    }
+  }
+}
+
+
+.boxAds {
+  display: flex;
+  width: 26.5rem;
+  position: relative;
+}
+
+.boxText {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 var(--uxu-space-default) calc(4.2rem + var(--uxu-space-default));
+}
+

@@ -1,1 +1,1 @@
-export * from './content.confetti'
+export * from './confetti'

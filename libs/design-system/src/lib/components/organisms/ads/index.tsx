@@ -1,1 +1,1 @@
-export * from './component.ads';
+export * from './ads';

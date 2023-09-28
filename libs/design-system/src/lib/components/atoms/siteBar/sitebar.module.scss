@@ -1,0 +1,15 @@
+.wrapper {
+  width: 25rem;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: var(--uxu-space-default);
+
+  &.left {
+    padding-right: var(--uxu-space-default);
+  }
+
+  &.right {
+    padding-left: var(--uxu-space-default);
+  }
+}

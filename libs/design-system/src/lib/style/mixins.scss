@@ -1,0 +1,8 @@
+@import "./../theme/breakpoints";
+
+@mixin media($breakpoint) {
+  @media all and (min-width: map-get($breakpoints, $breakpoint) + px) {
+    @content;
+  }
+}
+

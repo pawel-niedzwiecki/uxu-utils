@@ -1,1 +1,1 @@
-export * from './component.dummyIMG';
+export * from './dummyIMG';
