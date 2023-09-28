@@ -1,0 +1,55 @@
+.note {
+  width: 100%;
+  max-width: 100%;
+  display: grid;
+  align-items: center;
+  gap: var(--uxu-space-default);
+  grid-template-columns: 2.4rem 1fr;
+  border-radius: var(--uxu-radii-default);
+  padding: var(--uxu-space-small) var(--uxu-space-default);
+}
+
+.action {
+  grid-template-columns: 2.4rem 1fr auto;
+}
+
+.default, .success, .warning, .error {
+  background: transparent;
+  color: var(--uxu-color-success-default);
+}
+
+.default, .defaultFill {
+  border: var(--uxu-border-alpha-default);
+}
+
+.success, .successFill {
+  color: var(--uxu-color-success-default);
+  border: var(--uxu-border-alpha-success);
+}
+
+.warning, .warningFill {
+  color: var(--uxu-color-warning-default);
+  border: var(--uxu-border-alpha-warning);
+}
+
+.error, .errorFill {
+  color: var(--uxu-color-error-default);
+  border: var(--uxu-border-alpha-error);
+}
+
+.defaultFill {
+  color: var(--uxu-color-primary-accent5);
+  background-color: var(--uxu-color-primary-accent2);
+}
+
+.successFill {
+  background-color: rgba(var(--uxu-color-success-default-rgba), 0.1);
+}
+
+.warningFill {
+  background-color: rgba(var(--uxu-color-warning-default-rgba), 0.1);
+}
+
+.errorFill {
+  background-color: rgba(var(--uxu-color-error-default-rgba), 0.1);
+}

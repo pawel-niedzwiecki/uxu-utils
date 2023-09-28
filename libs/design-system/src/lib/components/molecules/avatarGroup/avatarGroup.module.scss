@@ -1,0 +1,17 @@
+.wrapper {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: -4rem;
+  list-style: none;
+  position: relative;
+
+  li {
+    margin-left: -2rem;
+    width: fit-content;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}

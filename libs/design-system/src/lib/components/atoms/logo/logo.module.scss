@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  svg {
+    height: 2.4rem;
+    display: block;
+
+    path {
+      fill: var(--uxu-color-primary-foreground);
+      transition: fill var(--uxu-motion-default) ease-in-out;
+    }
+  }
+}

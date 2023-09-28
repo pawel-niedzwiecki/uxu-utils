@@ -1,0 +1,34 @@
+
+.wrapper {
+  width: 100%;
+  color: black;
+  display: block;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  padding: var(--uxu-space-default);
+  border: var(--uxu-border-warning-default);
+  background-color: var(--uxu-color-warning-light);
+
+  a {
+    color: white;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: center;
+    font-size: var(--uxu-font-size-large);
+    margin-bottom: var(--uxu-space-small);
+    border-radius: var(--uxu-space-default);
+    padding: var(--uxu-space-small) var(--uxu-space-default);
+
+    &:hover {
+      color: black;
+      background-color: white;
+    }
+  }
+
+  span {
+    display: block;
+  }
+}
+

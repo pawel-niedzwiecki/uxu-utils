@@ -1,17 +1,11 @@
 export class Throttle {
-  public wait: number;
-  private lastTimeOut: ReturnType<typeof setTimeout> | null;
+  private lastTimeOut: NodeJS.Timeout | null = null;
+  constructor(public wait: number) {}
 
-  constructor({ wait }: { wait: number }) {
-    this.wait = wait;
-    this.lastTimeOut = null;
+  public setLastTimeOut(callback: () => void): void {
+    if (this.lastTimeOut) {
+      clearTimeout(this.lastTimeOut);
+    }
+    this.lastTimeOut = setTimeout(callback, this.wait);
   }
-
-
-  setLastTimeOut(callBack: () => void) {
-    this.lastTimeOut && clearTimeout(this.lastTimeOut);
-    this.lastTimeOut = setTimeout(callBack, this.wait);
-  }
-
 }
-

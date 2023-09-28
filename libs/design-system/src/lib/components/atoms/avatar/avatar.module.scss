@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: var(--uxu-border-default);
+  background-color: var(--uxu-color-primary-accent1);
+
+  svg {
+    color: var(--uxu-color-primary-accent3);
+  }
+
+  &.small {
+    min-width: 3rem;
+    min-height: 3rem;
+    max-width: 3rem;
+    max-height: 3rem;
+  }
+  &.default {
+    min-width: 4.2rem;
+    min-height: 4.2rem;
+    max-width: 4.2rem;
+    max-height: 4.2rem;
+  }
+  &.large {
+    min-width: 6rem;
+    min-height: 6rem;
+    max-width: 6rem;
+    max-height: 6rem;
+  }
+}

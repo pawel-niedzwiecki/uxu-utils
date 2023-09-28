@@ -1,0 +1,9 @@
+.modalContainer {
+  top: 0;
+  left: 0;
+  z-index: 998;
+  position: fixed;
+  overflow-y: auto;
+  backdrop-filter: blur(1rem);
+  background-color: rgba(var(--uxu-color-primary-background-rgba), 0.6);
+}

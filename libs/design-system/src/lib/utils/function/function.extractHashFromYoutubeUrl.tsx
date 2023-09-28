@@ -1,7 +1,7 @@
-import { regexYoutubeHashTagFromUrl } from './../regex/YoutubeHashTagFromUrl';
+import { regexYoutubeHashTagFromUrlRegExp } from './../regex';
 
 export const extractHashFromYoutubeUrl = (url: string): string | null => {
-  const match = url.match(regexYoutubeHashTagFromUrl);
+  const match = url.match(regexYoutubeHashTagFromUrlRegExp);
 
   if (match) {
     const hash = match[1];

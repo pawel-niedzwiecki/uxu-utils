@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  line-height: 0.1;
+  gap: var(--uxu-space-small);
+  padding: 0 var(--uxu-space-small);
+  font-size: var(--uxu-font-size-small);
+  border: var(--uxu-border-alpha-default);
+  border-radius: var(--uxu-radii-default);
+  color: var(--uxu-color-primary-foreground);
+  background-color: var(--uxu-color-background-100);
+}

@@ -1,0 +1,35 @@
+.label {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.input {
+  width: 0;
+  height: 0;
+}
+
+.message {
+  font-size: var(--uxu-font-size-mini);
+}
+
+.wrapperIcon, .wrapperIconCheck {
+  display: flex;
+  border-radius: 100%;
+  align-items: center;
+}
+
+.wrapperIcon {
+  padding: var(--uxu-space-small);
+  color: var(--uxu-color-primary-accent5);
+
+  &:hover {
+    color: var(--icon-hover-color, rgba(var(--uxu-color-success-default-rgba), 0.9));
+    background-color: var(--icon-hover-bg-color, rgba(var(--uxu-color-success-default-rgba), 0.2));
+  }
+}
+
+.wrapperIconCheck {
+  color: var(--icon-container-check-color, rgba(var(--uxu-color-success-default-rgba), 0.9));
+  background-color: var(--icon-container-check-bg-color, rgba(var(--uxu-color-success-default-rgba), 0.2));
+}
