@@ -1,0 +1,39 @@
+.hamburger {
+  background: transparent;
+  border: none;
+  position: relative;
+  width: 3.2rem;
+  height: 3.2rem;
+  z-index: 10;
+  cursor: pointer;
+
+  span {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    transform-origin: center;
+    transition: all 0.3s ease;
+    background-color: var(--uxu-color-primary-foreground);
+
+    &:nth-child(1) {
+      transform: translateY(calc(-50% + 0.6rem));
+    }
+
+    &:nth-child(2) {
+      transform: translateY(calc(-50% - 0.6rem));
+    }
+  }
+
+  &.open {
+    span {
+      &:nth-child(1) {
+        transform: translateY(-50%) rotate(-45deg);
+      }
+
+      &:nth-child(2) {
+        transform: translateY(-50%) rotate(45deg);
+      }
+    }
+  }
+}

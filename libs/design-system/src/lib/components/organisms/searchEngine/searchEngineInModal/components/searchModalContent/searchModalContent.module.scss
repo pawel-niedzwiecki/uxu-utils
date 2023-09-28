@@ -1,0 +1,65 @@
+@import "../../../../../../style/mixins";
+
+.container {
+  width: 100%;
+  max-width: calc(var(--uxu-content-maxWidth) / 2);
+  margin-top: 12rem;
+  min-height: calc(100% - 12rem);
+  max-height: calc(100% - 12rem);
+  display: flex;
+  flex-direction: column;
+  border: var(--uxu-border-alpha-default);
+  border-radius: var(--uxu-radii-default);
+  background-color: var(--uxu-color-background-200);
+
+  @include media(m) {
+    width: 80%;
+    min-height: 60%;
+    max-height: 60%;
+  }
+
+  .header {
+    margin: 0 var(--uxu-space-small);
+    padding: 0 var(--uxu-space-small);
+    border-bottom: var(--uxu-border-alpha-default);
+
+    .wrapperSearch {
+      input {
+        border: none;
+        min-height: 6rem;
+        font-size: var(--uxu-font-size-large);
+        background-color: var(--uxu-color-background-200);
+
+        &:focus {
+          border: none;
+        }
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    gap: var(--uxu-space-small);
+    padding: var(--uxu-space-default) 0;
+
+    .info {
+      width: 100%;
+      min-height: 2.2rem;
+      display: flex;
+      font-weight: 600;
+      font-size: var(--uxu-font-size-mini);
+      color: var(--uxu-color-primary-accent5);
+      padding: var(--uxu-space-small) var(--uxu-space-default) 0;
+    }
+
+    .wrapperLoading {
+      width: 100%;
+      min-height: 2.2rem;
+      display: block;
+      overflow: hidden;
+      padding: 0 var(--uxu-space-default);
+    }
+  }
+}

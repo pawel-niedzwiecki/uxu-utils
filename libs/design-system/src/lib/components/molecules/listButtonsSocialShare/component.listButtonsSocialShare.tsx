@@ -1,4 +1,3 @@
-import { Button } from "./../../atoms/button";
 import { Facebook, Twitter, Link } from 'react-feather'
 import { Wrapper } from "./component.listButtonsSocialShare.styles";
 import { useState } from "react";
@@ -28,20 +27,20 @@ export function ListButtonsSocialShare ( {canonicalURL = ""}: { canonicalURL?: s
 
   return (
     <Wrapper>
-      <Button
-        onClick={() => shareCanonicalURL ( 'facebook' )}>
+      <button className="btn"
+        onClick={() => shareCanonicalURL ( 'facebook' )} >
         <span>Udostępnij</span>
         <Facebook/>
-      </Button>
-      <Button>
-        <Twitter
-          onClick={() => shareCanonicalURL ( 'twitter' )}/>
-      </Button>
-      <Button
+      </button>
+      <button className="btn" >
+        <Twitter onClick={() => shareCanonicalURL ( 'twitter' )}/>
+      </button>
+      <button
+        className="btn"
         onClick={() => copyCanonicalURL ()}>
         <Link/>
         <span>{canonicalURLCopyStatus ? "Skopiowano link!" : "Kopiuj link"}</span>
-      </Button>
+      </button>
     </Wrapper>
   )
 }

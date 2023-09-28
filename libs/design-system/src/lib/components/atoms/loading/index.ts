@@ -1,3 +1,2 @@
-export * from './dots/component.loading.dots';
-export * from './wheel/component.loading.wheel';
-export * from './line/component.loading.line';
+export * from './loadingDots/loadingDots';
+export * from './loadingWheel/loadingWheel';

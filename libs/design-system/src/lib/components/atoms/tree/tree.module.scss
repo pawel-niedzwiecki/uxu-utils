@@ -1,0 +1,81 @@
+.tree {
+  width: 100%;
+  list-style: none;
+}
+
+.branch {
+  padding: var(--uxu-space-small) 0;
+
+  &.full {
+    padding: var(--uxu-space-default) 0;
+  }
+
+  &:last-of-type {
+    padding-bottom: 0;
+  }
+
+}
+
+.branchWrapperLink {
+  border: none;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  background-color: transparent;
+  color: var(--uxu-color-primary-accent5);
+
+  svg {
+    height: 1.8rem;
+  }
+
+  &.active {
+
+    svg {
+      color: var(--uxu-color-primary-foreground);
+    }
+
+    &.activeSlug {
+      cursor: no-drop;
+      font-weight: bold;
+      color: var(--uxu-color-primary-foreground);
+    }
+  }
+
+  &:hover {
+    color: var(--uxu-color-primary-foreground);
+
+    svg {
+      color: var(--uxu-color-primary-accent5);
+    }
+  }
+
+  &.full {
+    width: 100%;
+    justify-content: space-between;
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+.branchLink {
+  text-align: left;
+
+  &.full {
+    width: calc(100% - 10rem);
+    font-size: var(--uxu-font-size-h4);
+  }
+}
+
+.nodeList {
+  list-style: none;
+  margin-left: 1.1rem;
+  padding-left: var(--uxu-space-small);
+  border-left: var(--uxu-border-default);
+
+  &.full {
+    border-left: 0;
+  }
+}

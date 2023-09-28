@@ -1,0 +1,71 @@
+@import "./../../../theme/breakpoints";
+
+.wrapperFeedback {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+
+.wrapperModalFeedback {
+  position: absolute;
+  top: 4rem;
+  width: 30rem;
+  border-radius: var(--uxu-radii-default);
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
+
+  @media all and (min-width: #{map-get($breakpoints, s)}px) {
+    width: 45rem;
+  }
+}
+
+
+
+.modalFeedback {
+  width: 100%;
+  height: auto;
+  position: relative;
+  padding: var(--uxu-space-default);
+  border: var(--uxu-border-alpha-default);
+  border-radius: var(--uxu-radii-default);
+  background: var(--uxu-color-background-100);
+}
+
+.formFeedback {
+  display: grid;
+  gap: var(--uxu-space-default);
+}
+
+.footerModalFeedback {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background: rgba(var(--uxu-color-primary-background-rgba), 0.6);
+  border-top: var(--uxu-border-alpha-default);
+  padding: var(--uxu-space-default);
+  margin: 0 calc(var(--uxu-space-default) * -1) calc(var(--uxu-space-default) * -1);
+  width: calc(100% + var(--uxu-space-default) * 2);
+}
+
+.btnSubmitFeedback {
+  margin-left: auto;
+}
+
+
+.wrapperRatingFeedback {
+  display: flex;
+}
+
+.wrapperRatingNoteFeedback {
+  width: 100%;
+  margin-top: var(--uxu-space-small);
+  font-size: var(--uxu-font-size-mini);
+  grid-column: 1 / 4;
+}

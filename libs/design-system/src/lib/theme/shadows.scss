@@ -1,3 +1,12 @@
 $shadows: (
-  default: 0px 0px 10px rgba(var(--uxu-color-primary-foreground-rgba), 0.2),
+  alpha-100: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.1),
+  alpha-200: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.2),
+  alpha-300: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.3),
+  alpha-400: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.4),
+  alpha-500: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.5),
+  alpha-600: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.6),
+  alpha-700: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.7),
+  alpha-800: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.8),
+  alpha-900: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 0.9),
+  alpha-1000: 0px 0px 15px rgba(var(--uxu-color-primary-foreground-rgba), 1),
 )

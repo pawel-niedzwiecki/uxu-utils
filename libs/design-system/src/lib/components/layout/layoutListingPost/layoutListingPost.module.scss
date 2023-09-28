@@ -1,0 +1,31 @@
+@import './../../../style/mixins';
+
+$default-grid-layout: (
+  xs: 1fr,
+  m: 250px 1fr,
+  l: 250px 1fr 250px
+);
+
+.menuSpacer {
+  top: 0;
+  width: 100%;
+  height: 64px;
+  display: block;
+  position: absolute;
+  background: linear-gradient(to right, var(--uxu-color-gray-100), var(--uxu-color-primary-background));
+}
+
+.container {
+  display: grid;
+  margin: 0 auto;
+  max-width: var(--lt-color-gray-100);
+  grid-template-columns: map-get($default-grid-layout, xs);
+
+  @include media(m) {
+    grid-template-columns: map-get($default-grid-layout, m);
+  }
+
+  @include media(l) {
+    grid-template-columns: map-get($default-grid-layout, l);
+  }
+}

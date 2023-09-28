@@ -1,1 +1,1 @@
-export * from './component.logo'
+export * from './logo'

@@ -1,0 +1,56 @@
+@import "../theme/theme";
+
+@mixin container-styles {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding-left: var(--uxu-space-default);
+  padding-right: var(--uxu-space-default);
+}
+
+.container {
+  @include container-styles;
+  max-width: var(--uxu-content-maxWidth);
+}
+
+.containerFull {
+  @include container-styles;
+  max-width: 100%;
+}
+
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  flex-direction: row;
+  box-sizing: border-box;
+  margin-left: calc(0rem - var(--uxu-space-default));
+  margin-right: calc(0rem - var(--uxu-space-default));
+}
+
+@each $breakpoint, $width in $breakpoints {
+  @for $i from 1 through map-get($grid, col) {
+    @if $breakpoint == xs {
+      .col-#{$i} {
+        position: relative;
+        width: 100%;
+        max-width: percentage($i / map-get($grid, col));
+        margin-left: var(--uxu-space-default);
+        margin-right: var(--uxu-space-default);
+        flex: 1;
+      }
+    } @else {
+      @media (min-width: #{$width}px) {
+        .col-#{$breakpoint}-#{$i} {
+          position: relative;
+          width: 100%;
+          max-width: percentage($i / map-get($grid, col));
+          margin-left: var(--uxu-space-default);
+          margin-right: var(--uxu-space-default);
+          flex: 1;
+        }
+      }
+    }
+  }
+}
