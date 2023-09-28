@@ -18,5 +18,5 @@ export const ParseContentPartToChunk: ComponentParseContentPartToChunkType = ({ 
 
   const chunkComponents: Array<ChunkComponentWithPropsInObject> = parseAndFilterContentParts(contentParts);
 
-  return <div>{children({ chunkComponents })}</div>;
+  return (<>{children({ chunkComponents })}</>);
 };

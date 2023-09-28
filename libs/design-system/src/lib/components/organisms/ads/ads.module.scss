@@ -1,0 +1,23 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--uxu-color-primary-accent2);
+
+  &:before,
+  &:after {
+    content: attr(data-content);
+    text-align: center;
+    color: var(--uxu-color-primary-accent3);
+  }
+
+  &:before {
+    content: 'UXU';
+    font-size: var(--uxu-font-size-large);
+    font-weight: bold;
+  }
+
+  &:after {
+    content: 'reklama';
+  }
+}

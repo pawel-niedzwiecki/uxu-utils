@@ -1,0 +1,37 @@
+.label {
+  width: 100%;
+  display: grid;
+  position: relative;
+  gap: var(--uxu-space-small);
+}
+
+.input {
+  width: 100%;
+  height: 4rem;
+  display: block;
+  border: var(--uxu-border-alpha-default);
+  border-radius: var(--uxu-radii-default);
+  background: var(--uxu-color-gray-100);
+  color: var(--uxu-color-primary-foreground);
+  padding: var(--uxu-space-default);
+  transition: border-color var(--uxu-motion-default);
+
+  &::placeholder {
+    color: var(--uxu-color-primary-accent3);
+    opacity: 1;
+    transition: opacity var(--uxu-motion-default);
+  }
+
+  &:focus {
+    outline: none;
+    border: var(--uxu-border-active);
+
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+.message {
+  font-size: var(--uxu-font-size-mini);
+}

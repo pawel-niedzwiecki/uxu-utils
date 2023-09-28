@@ -1,0 +1,21 @@
+.list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: var(--uxu-space-small);
+
+
+  li {
+    width: fit-content;
+    color: var(--uxu-color-primary-accent5);
+
+    &::before {
+      content: "#";
+      position: relative;
+      display: inline-block;
+      color: var(--uxu-color-primary-accent5);
+    }
+  }
+}
