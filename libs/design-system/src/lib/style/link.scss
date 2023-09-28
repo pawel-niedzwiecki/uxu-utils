@@ -1,0 +1,9 @@
+a {
+  color: var(--uxu-color-primary-accent5);
+  font-size: var(--uxu-font-size-default);
+  transition: color var(--uxu-motion-default) ease-in-out;
+
+  &:hover {
+    color: var(--uxu-color-primary-foreground)
+  }
+}

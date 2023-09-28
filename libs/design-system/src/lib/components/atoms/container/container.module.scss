@@ -1,0 +1,12 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  max-width: var(--uxu-content-maxWidth);
+  padding-left: var(--uxu-space-default);
+  padding-right: var(--uxu-space-default);
+
+  &.full {
+    max-width: 100%
+  }
+}

@@ -1,3 +1,3 @@
-export * from './assets.vector.logos';
+export * from './vectorBrands';
 
 
