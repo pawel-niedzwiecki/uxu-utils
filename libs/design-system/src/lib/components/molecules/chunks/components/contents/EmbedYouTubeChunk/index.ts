@@ -1,1 +1,1 @@
-export * from './component.chunks.embedYouTubeChunk';
+export * from './embedYouTubeChunk';

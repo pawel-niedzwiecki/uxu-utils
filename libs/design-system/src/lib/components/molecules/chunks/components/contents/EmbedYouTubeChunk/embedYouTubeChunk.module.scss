@@ -1,0 +1,11 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  padding: var(--uxu-space-default);
+  border-radius: var(--uxu-radii-default);
+  margin-bottom: var(--uxu-space-default);
+  background-color: var(--uxu-color-primary-accent2);
+}
+

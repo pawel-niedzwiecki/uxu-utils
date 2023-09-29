@@ -1,5 +1,5 @@
 import type { PropsWithChildren } from 'react';
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState } from 'react';
 import { NextRouter, useRouter } from 'next/router';
 import { SiteConfigTypes, SiteIdEnums } from './../utils'
 

@@ -1,1 +1,1 @@
-export * from './component.chunk.paragraphChunk';
+export * from './paragraphChunk';

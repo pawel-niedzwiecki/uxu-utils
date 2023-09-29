@@ -1,1 +1,1 @@
-export * from './component.chunks.embedChunk';
+export * from './embedChunk';

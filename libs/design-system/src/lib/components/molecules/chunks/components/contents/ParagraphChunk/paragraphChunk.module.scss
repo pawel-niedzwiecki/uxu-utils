@@ -1,15 +1,13 @@
-import styled, { css } from 'styled-components';
-import ReactMarkdown from 'react-markdown';
 
-export const Wrapper = styled(ReactMarkdown)`
-  ${({ theme: { spaces, fontSizes } }) => css`
+
+.wrapper {
     h1,
     h2,
     h3,
     h4,
     h5,
     h6 {
-      padding-bottom: ${spaces.large};
+      padding-bottom: var(--uxu-space-large);
     }
 
     p,
@@ -18,7 +16,7 @@ export const Wrapper = styled(ReactMarkdown)`
     .lead {
       display: block;
       position: relative;
-      margin-bottom: ${spaces.default};
+      margin-bottom: var(--uxu-space-default);
     }
 
     p,
@@ -32,19 +30,19 @@ export const Wrapper = styled(ReactMarkdown)`
       padding: 0;
       counter-reset: item;
       list-style-type: none;
-      margin: 0 0 ${spaces.default};
+      margin: 0 0 var(--uxu-space-default);
 
       li {
         counter-increment: item;
-        padding-left: ${spaces.default};
-        margin-bottom: ${spaces.default};
+        padding-left: var(--uxu-space-default);
+        margin-bottom: var(--uxu-space-default);
 
         &:before {
           content: counter(item) '.';
           font-weight: bold;
-          font-size: ${fontSizes.h4};
+          font-size: var(--uxu-font-size-h4);
         }
       }
     }
-  `}
-`;
+  }
+

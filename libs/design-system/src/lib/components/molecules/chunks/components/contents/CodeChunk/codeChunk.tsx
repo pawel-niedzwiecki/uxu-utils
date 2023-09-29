@@ -3,6 +3,6 @@ import { ContentPartPropsType } from './../../../types';
 
 export type CodeChunk = FC<ContentPartPropsType>;
 
-export function CodeChunk({}: any): JSX.Element {
+export function CodeChunk(): JSX.Element {
   return <p>CodeChunk</p>;
 }

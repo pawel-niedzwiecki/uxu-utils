@@ -1,1 +1,1 @@
-export * from './component.chunks.galleryChunk';
+export * from './galleryChunk';

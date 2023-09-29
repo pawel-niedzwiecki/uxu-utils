@@ -1,1 +1,1 @@
-export * from './component.chunks.emptyChunk';
+export * from './emptyChunk';
