@@ -1,11 +1,11 @@
 import React from 'react';
-import { Logo, Link, SearchEngineInModal } from './../../../../index';
+import { Logo, Link, SearchEngineInModal } from '../../../index';
 import styles from './headerLeftComponents.module.scss';
 import classnames from 'classnames';
 import type { HeaderLeftComponentsProps } from './types';
 
 
-export function HeaderLeftComponents({ isDesktop, menuItems, isLinkActive, searchEngine }: HeaderLeftComponentsProps) {
+export function HeaderLeftComponents({ menuItems, isLinkActive, searchEngine }: HeaderLeftComponentsProps) {
 
   const createNavLink = ( slug: string, title: string ) => (
     <li key={slug}>
@@ -17,14 +17,15 @@ export function HeaderLeftComponents({ isDesktop, menuItems, isLinkActive, searc
 
   return (
     <>
-      <Link href="/" title="wTrasie" className={styles.logo}>
-        <Logo brand={isDesktop ? "wTrasie" : "wTrasieShort"} className={styles.logo}/>
+      <Link href="/" title="wTrasie" className={classnames(styles.logoMobile, styles.logo)}>
+        <Logo brand="wTrasieShort" className={styles.logo}/>
       </Link>
-      {isDesktop && (
+      <Link href="/" title="wTrasie" className={classnames(styles.logoDesktop, styles.logo)}>
+        <Logo brand="wTrasie" className={styles.logo}/>
+      </Link>
         <nav className={styles.nav}>
           {menuItems.map(({ slug, title }) => createNavLink(slug, title))}
         </nav>
-      )}
       <SearchEngineInModal
         className={styles.wrapperSearch}
         defaultSuggestions={searchEngine?.defaultSuggestions}

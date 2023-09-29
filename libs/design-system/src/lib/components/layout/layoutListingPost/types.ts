@@ -1,7 +1,7 @@
 import { PropsWithChildren } from "react";
 import { NextSeoProps } from "next-seo";
 import { FooterProps } from "../../templates/footer/types";
-import { SearchEngine } from "./components/headerLeftComponents/types";
+import { SearchEngine } from "../components/headerLeftComponents/types";
 
 export type LayoutListingPostProps = PropsWithChildren<{
   seo?: NextSeoProps;

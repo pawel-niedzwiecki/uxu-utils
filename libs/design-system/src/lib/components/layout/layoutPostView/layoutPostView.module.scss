@@ -32,7 +32,15 @@ $default-grid-layout: (
   max-width: var(--lt-color-gray-100);
   grid-template-columns: map-get($default-grid-layout, xs);
 
+  .siteBarLeft {
+    display: none;
+  }
+
   @include media(m) {
     grid-template-columns: map-get($default-grid-layout, m);
+
+    .siteBarLeft {
+      display: block;
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { DefaultSuggestions, OnSearchQuery } from "../../../../organisms/searchEngine/searchEngineInModal/types";
+import { DefaultSuggestions, OnSearchQuery } from "../../../organisms/searchEngine/searchEngineInModal/types";
 
 export type SearchEngine = {
   onSearchQuery?: OnSearchQuery;
@@ -6,7 +6,6 @@ export type SearchEngine = {
 }
 
 export type HeaderLeftComponentsProps = {
-  isDesktop: boolean;
   searchEngine?: SearchEngine;
   isLinkActive: (slug: string) => boolean;
   menuItems: { slug: string, title: string }[];

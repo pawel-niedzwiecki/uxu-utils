@@ -1,4 +1,4 @@
-import { SearchSuggestionContentDetails } from "../../../../organisms/searchEngine/searchEngineInModal/types";
+import { SearchSuggestionContentDetails } from "../../../organisms/searchEngine/searchEngineInModal/types";
 
 export type HeaderLeftComponentsProps = {
   isDesktop: boolean;

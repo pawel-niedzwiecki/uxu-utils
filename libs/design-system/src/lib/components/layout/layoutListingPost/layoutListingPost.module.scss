@@ -21,11 +21,25 @@ $default-grid-layout: (
   max-width: var(--lt-color-gray-100);
   grid-template-columns: map-get($default-grid-layout, xs);
 
+  .siteBarLeft,
+  .siteBarRight {
+    display: none;
+
+  }
+
   @include media(m) {
     grid-template-columns: map-get($default-grid-layout, m);
+
+    .siteBarLeft {
+      display: block;
+    }
   }
 
   @include media(l) {
     grid-template-columns: map-get($default-grid-layout, l);
+
+    .siteBarRight {
+      display: block;
+    }
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Tree, Branch } from './../../../../index';
-import { menuItems } from "./../../consts";
+import { Tree, Branch } from '../../../index';
+import { menuItems } from "../../layoutListingPost/consts";
 
 
 

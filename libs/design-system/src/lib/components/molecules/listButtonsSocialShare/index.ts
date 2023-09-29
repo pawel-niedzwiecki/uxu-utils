@@ -1,1 +1,1 @@
-export * from './component.listButtonsSocialShare';
+export * from './buttonsSocialShare';

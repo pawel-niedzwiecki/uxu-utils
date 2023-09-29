@@ -1,8 +1,8 @@
 import styles from './postView.module.scss';
 import { Ads } from '../../organisms';
-import { ParseContentPartToChunk, ListButtonsSocialShare } from '../../molecules';
+import { ParseContentPartToChunk, ButtonsSocialShare } from '../../molecules';
 import { TagList } from '../../atoms';
-import { useBreakpoints, useSiteConfig } from '../../../hooks';
+import { useSiteConfig } from '../../../hooks';
 import classnames from 'classnames';
 import {
   transformChunkToComponent
@@ -13,8 +13,7 @@ import { ArticleMetaWrapper, Cover } from "./components";
 
 
 export const PostView = ( {postViewData}: PostViewProps ) => {
-  const {site, projectName} = useSiteConfig ();
-  const {isTabletOrMobile} = useBreakpoints ();
+  const { site } = useSiteConfig ();
 
   const {cover, authors, createdAt, title, lead, tags, contentparts, id} = postViewData || {};
 
@@ -26,13 +25,9 @@ export const PostView = ( {postViewData}: PostViewProps ) => {
           {lead && <p className={styles.lead}>{lead}</p>}
           <ArticleMetaWrapper authors={authors} createdAt={createdAt}/>
         </div>
-        { !isTabletOrMobile && (
-          <div style={{position: 'relative', paddingBottom: "1.5rem"}}>
-            <div className={styles.boxAds} style={{top: '9rem', position: 'sticky'}}>
-              <Ads slot="s250250"/>
-            </div>
-          </div>
-        )}
+        <div className={classnames(styles.wrapperAds, styles.adsInPost)}>
+          <Ads slot="s250250" stickyOffset="9rem" />
+        </div>
       </div>
       <Cover cover={cover} title={title}/>
       <div className={styles.adWithContentWrapper}>
@@ -40,17 +35,17 @@ export const PostView = ( {postViewData}: PostViewProps ) => {
           <TagList tags={tags || []}/>
           {contentparts && (
             <ParseContentPartToChunk contentParts={contentparts}>
-              {( {chunkComponents} ) => chunkComponents.map ( transformChunkToComponent )}
+              {( {chunkComponents} ) => chunkComponents.map (transformChunkToComponent)}
             </ParseContentPartToChunk>
           )}
         </div>
-        { !isTabletOrMobile && (
-          <div className={styles.boxAds} style={{ top: '9rem', position: 'sticky' }}>
-            <Ads slot="s250600"/>
+        {
+          <div className={classnames(styles.wrapperAds, styles.adsInPost)}>
+            <Ads slot="s250600"  stickyOffset="9rem" />
           </div>
-        )}
+        }
         <div className={styles.content}>
-          <ListButtonsSocialShare canonicalURL={site?.canonicalUrl}/>
+          <ButtonsSocialShare canonicalURL={site?.canonicalUrl}/>
         </div>
       </div>
     </article>

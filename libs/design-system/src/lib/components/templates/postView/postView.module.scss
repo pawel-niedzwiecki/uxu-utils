@@ -40,7 +40,7 @@
     padding-bottom: var(--uxu-space-default);
   }
 
-  @include media(s) {
+  @include media(m) {
     .lead {
       font-size: var(--uxu-font-size-large);
       padding-bottom: var(--uxu-space-default);
@@ -83,10 +83,18 @@
 }
 
 
-.boxAds {
-  display: flex;
-  width: 26.5rem;
+.wrapperAds {
+  width: 25rem;
   position: relative;
+  padding-bottom: var(--uxu-space-default);
+
+  &.adsInPost {
+    display: none;
+
+    @include media(m) {
+      display: block;
+    }
+  }
 }
 
 .boxText {

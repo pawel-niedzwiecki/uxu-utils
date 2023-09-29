@@ -1,5 +1,5 @@
 import React from 'react';
-import { Feedback } from './../../../../index';
+import { Feedback } from '../../../index';
 import type { HeaderRightComponentsProps } from './types';
 
 export function HeaderRightComponents( { modalAlignment, switchModalButtonText }: HeaderRightComponentsProps) {
