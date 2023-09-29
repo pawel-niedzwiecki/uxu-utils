@@ -2,7 +2,6 @@ import styles from './postView.module.scss';
 import { Ads } from '../../organisms';
 import { ParseContentPartToChunk, ButtonsSocialShare } from '../../molecules';
 import { TagList } from '../../atoms';
-import { useSiteConfig } from '../../../hooks';
 import classnames from 'classnames';
 import {
   transformChunkToComponent
@@ -13,9 +12,8 @@ import { ArticleMetaWrapper, Cover } from "./components";
 
 
 export const PostView = ( {postViewData}: PostViewProps ) => {
-  const { site } = useSiteConfig ();
 
-  const {cover, authors, createdAt, title, lead, tags, contentparts, id} = postViewData || {};
+  const {cover, authors, createdAt, title, lead, tags, contentparts} = postViewData || {};
 
   return (
     <article className={classnames( styles.article, 'article' )}>
@@ -45,7 +43,7 @@ export const PostView = ( {postViewData}: PostViewProps ) => {
           </div>
         }
         <div className={styles.content}>
-          <ButtonsSocialShare canonicalURL={site?.canonicalUrl}/>
+          <ButtonsSocialShare />
         </div>
       </div>
     </article>
